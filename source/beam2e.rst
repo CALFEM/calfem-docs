@@ -1,10 +1,9 @@
 beam2e - Two Dimensional Beam Element
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: beam2e
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a two-dimensional beam element.
 
@@ -12,8 +11,7 @@ Compute element stiffness matrix for a two-dimensional beam element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
@@ -46,8 +44,7 @@ contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q
     :align: center
     :width: 70%
     
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\mathbf{K}^e`, stored in **Ke**, is computed according to:
 

@@ -1,10 +1,9 @@
 bar1e - One dimensional bar element
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: bar1e
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a one dimensional bar element.
 
@@ -12,16 +11,14 @@ Compute element stiffness matrix for a one dimensional bar element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     Ke = bar1e(ex, ep)
     [Ke, fe] = bar1e(ex, ep, eq)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``bar1e`` provides the element stiffness matrix ``Ke`` for a one dimensional bar element.
 The input variables
@@ -48,8 +45,7 @@ contains the distributed load per unit length, :math:`q_{\bar{x}}`.
     :align: center
     :width: 70%
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\bar{\mathbf{K}}^e`, stored in ``Ke``, is computed according to
 

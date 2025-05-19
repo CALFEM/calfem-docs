@@ -1,8 +1,7 @@
 beam2te - Two dimensional Timoshenko beam element
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a two dimensional Timoshenko beam element.
 
@@ -13,16 +12,14 @@ Compute element stiffness matrix for a two dimensional Timoshenko beam element.
 
     Two dimensional beam element
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     Ke = beam2te(ex, ey, ep)
     [Ke, fe] = beam2te(ex, ey, ep, eq)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2te`` provides the global element stiffness matrix ``Ke`` for a
 two dimensional Timoshenko beam element.
@@ -59,8 +56,7 @@ contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q
 
     Uniformly distributed load
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\mathbf{K}^e`, stored in ``Ke``, is computed
 according to

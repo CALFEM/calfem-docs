@@ -1,8 +1,7 @@
 beam3s - Three dimensional beam element
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces in a three dimensional beam element.
 
@@ -10,8 +9,7 @@ Compute section forces in a three dimensional beam element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
@@ -20,8 +18,7 @@ Syntax
     [es,edi]=beam3s(ex,ey,ez,eo,ep,ed,eq,n)
     [es,edi,eci]=beam3s(ex,ey,ez,eo,ep,ed,eq,n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam3s`` computes the section forces and displacements in local directions along the beam element ``beam3e``.
 
@@ -65,8 +62,7 @@ The output variables:
 contain the section forces, the displacements, and the evaluation points on the local :math:`\bar{x}`-axis.
 :math:`L` is the length of the beam element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by
 

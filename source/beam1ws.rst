@@ -1,8 +1,7 @@
 beam1ws - One dimensional beam element with elastic support
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces in a one dimensional beam element with elastic support.
 
@@ -10,8 +9,7 @@ Compute section forces in a one dimensional beam element with elastic support.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 ::
 
@@ -19,8 +17,7 @@ Syntax
     es = beam1ws(ex, ep, ed, eq)
     [es, edi, eci] = beam1ws(ex, ep, ed, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam1ws`` computes the section forces and displacements in local directions
 along the beam element ``beam1we``.
@@ -76,8 +73,7 @@ The output variables
 contain the section forces, the displacements, and the evaluation points on the local :math:`\bar{x}`-axis.
 :math:`L` is the length of the beam element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by
 

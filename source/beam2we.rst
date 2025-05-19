@@ -1,15 +1,9 @@
-.. _beam2we:
-
-
-=======
-
 beam2we - Two dimensional beam element on elastic support
----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: beam2we
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a two dimensional beam element on elastic support.
 
@@ -17,16 +11,14 @@ Compute element stiffness matrix for a two dimensional beam element on elastic s
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     Ke = beam2we(ex, ey, ep)
     [Ke, fe] = beam2we(ex, ey, ep, eq)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2we`` provides the global element stiffness matrix ``Ke`` for a two dimensional beam element with elastic support.
 
@@ -50,8 +42,7 @@ The element load vector ``fe`` can also be computed if uniformly distributed loa
 
 contains the distributed load per unit length, :math:`q_{\bar{x}}` and :math:`q_{\bar{y}}`.
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\mathbf{K}^e`, stored in ``Ke``, is computed according to
 

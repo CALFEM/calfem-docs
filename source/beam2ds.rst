@@ -1,8 +1,7 @@
 beam2ds - Two dimensional beam element for dynamic analysis
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces for a two dimensional beam element in dynamic analysis.
 
@@ -10,15 +9,13 @@ Compute section forces for a two dimensional beam element in dynamic analysis.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 ::
     es = beam2ds(ex, ey, ep, ed, ev, ea)
     #[es, edi, eci] = beam2gs(ex, ey, ep, ed, ev, ea, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2ds`` computes the section forces at the ends of the dynamic beam element ``beam2de``.
 
@@ -33,8 +30,7 @@ The output variable ``es`` contains the section forces at the ends of the beam:
     N_2 & V_2 & M_2
     \end{bmatrix}
 
-Theory
-^^^^^^
+**Theory**
 
 The section forces at the ends of the beam are obtained from the element force vector:
 

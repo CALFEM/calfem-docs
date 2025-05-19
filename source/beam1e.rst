@@ -1,8 +1,7 @@
 beam1e - One dimensional beam element
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a one dimensional beam element.
 
@@ -10,16 +9,14 @@ Compute element stiffness matrix for a one dimensional beam element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     Ke = beam1e(ex, ep)
     [Ke, fe] = beam1e(ex, ep, eq)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam1e`` provides the global element stiffness matrix ``Ke`` for a one dimensional beam element.
 
@@ -42,8 +39,7 @@ then contains the distributed load per unit length, :math:`q_{\bar{y}}`.
     :align: center
     :width: 70%
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\bar{\mathbf{K}}^e`, stored in ``Ke``, is computed according to
 

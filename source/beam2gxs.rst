@@ -1,8 +1,7 @@
 beam2gxs - Two dimensional geometric nonlinear exact beam element
------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces in a two dimensional geometric nonlinear beam element with exact solution.
 
@@ -11,8 +10,7 @@ Compute section forces in a two dimensional geometric nonlinear beam element wit
     :width: 70%
     :alt: Two dimensional geometric nonlinear exact beam element
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
@@ -21,8 +19,7 @@ Syntax
     [es,Qx,edi] = beam2gxs(ex, ey, ep, ed, Qx, eq, n)
     [es,Qx,edi,eci] = beam2gxs(ex, ey, ep, ed, Qx, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2gxs`` computes the section forces and displacements in local directions along the geometric nonlinear beam element ``beam2gxe``.
 
@@ -63,8 +60,7 @@ The output variable ``Qx`` contains :math:`Q_{\bar{x}}` and the output variables
 
 contain the section forces, the displacements, and the evaluation points on the local :math:`\bar{x}`-axis. :math:`L` is the length of the beam element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by
 

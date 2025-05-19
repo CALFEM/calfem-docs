@@ -1,10 +1,7 @@
-.. index:: beam1e
-
 beam1we - One dimensional beam element with elastic support
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a one dimensional beam element on elastic support.
 
@@ -12,16 +9,15 @@ Compute element stiffness matrix for a one dimensional beam element on elastic s
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     Ke = beam1we(ex, ep)
     [Ke, fe] = beam1we(ex, ep, eq)
 
-Description
-^^^^^^^^^^^
+**Description**
+
 
 **beam1we** provides the global element stiffness matrix **Ke** for a one dimensional beam element with elastic support.
 
@@ -46,8 +42,7 @@ contains the distributed load per unit length, :math:`q_{\bar{y}}`.
 .. figure:: images/beam1e_2.png
     :align: center
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\bar{\mathbf{K}}^e`, stored in **Ke**, is computed according to
 

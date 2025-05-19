@@ -1,10 +1,9 @@
 bar3e - Three dimensional bar element
-------------------------------------- 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: bar3e
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a three dimensional bar element.
 
@@ -12,16 +11,14 @@ Compute element stiffness matrix for a three dimensional bar element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     Ke = bar3e(ex, ey, ez, ep)
     [Ke, fe] = bar3e(ex, ey, ez, ep, eq)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``bar3e`` provides the global element stiffness matrix ``Ke`` for a three dimensional bar element.
 
@@ -47,8 +44,7 @@ The element load vector ``fe`` can also be computed if a uniformly distributed a
 
 contains the distributed load per unit length, :math:`q_{\bar{x}}`.
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\mathbf{K}^e`, stored in ``Ke``, is computed according to
 

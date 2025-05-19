@@ -1,5 +1,5 @@
 beam2s - Two Dimensional Beam Element
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: beam2s
 
@@ -11,8 +11,7 @@ beam2s - Two Dimensional Beam Element
     :left: **Two dimensional beam element**
     :right: **beam2s**
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces in a two-dimensional beam element.
 
@@ -20,8 +19,7 @@ Compute section forces in a two-dimensional beam element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^ 
+**Syntax**
 
 .. code-block:: none
 
@@ -30,8 +28,7 @@ Syntax
     [es, edi] = beam2s(ex, ey, ep, ed, eq, n)
     [es, edi, eci] = beam2s(ex, ey, ep, ed, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 **beam2s** computes the section forces and displacements in local directions along the beam element **beam2e**.
 
@@ -72,8 +69,7 @@ The output variables:
 
 contain the section forces, the displacements, and the evaluation points on the local :math:`\bar{x}`-axis. :math:`L` is the length of the beam element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by:
 

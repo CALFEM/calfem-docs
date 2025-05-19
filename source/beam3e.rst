@@ -1,8 +1,7 @@
 beam3e - Three dimensional beam element
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a three dimensional beam element.
 
@@ -10,16 +9,14 @@ Compute element stiffness matrix for a three dimensional beam element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     Ke = beam3e(ex, ey, ez, eo, ep)
     [Ke, fe] = beam3e(ex, ey, ez, eo, ep, eq)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam3e`` provides the global element stiffness matrix ``Ke`` for a three dimensional beam element.
 
@@ -53,8 +50,7 @@ The element load vector ``fe`` can also be computed if uniformly distributed loa
 
 then contains the distributed loads. The positive directions of :math:`q_{\bar{x}}`, :math:`q_{\bar{y}}`, and :math:`q_{\bar{z}}` follow the local beam coordinate system. The distributed torque :math:`q_{\bar{\omega}}` is positive if directed in the local :math:`\bar{x}`-direction, i.e. from local :math:`\bar{y}` to local :math:`\bar{z}`. All the loads are per unit length.
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\mathbf{K}^e` is computed according to
 

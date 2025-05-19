@@ -1,13 +1,7 @@
-.. _beam2ws:
-
-
-=======
-
 beam2ws - Two dimensional beam element on elastic support
----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces in a two dimensional beam element with elastic support.
 
@@ -15,16 +9,15 @@ Compute section forces in a two dimensional beam element with elastic support.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
-::
+**Syntax**
+
+.. code:: matlab
 
     es = beam2ws(ex, ey, ep, ed)
     es = beam2ws(ex, ey, ep, ed, eq)
     es, edi, eci = beam2ws(ex, ey, ep, ed, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2ws`` computes the section forces and displacements in local directions
 along the beam element ``beam2we``.
@@ -74,8 +67,7 @@ The output variables
 contain the section forces, the displacements, and the evaluation points on the local :math:`\bar{x}`-axis.
 :math:`L` is the length of the beam element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by
 

@@ -19,6 +19,7 @@ extensions = [
     'sphinx.ext.autodoc',   # For auto-documentation from Python code
     'sphinx.ext.viewcode',  # For linking to source code
     'sphinx.ext.napoleon',  # For NumPy/Google style docstrings
+    'sphinx_immaterial',  # For Material Design theme
 ]
 
 # Configure MathJax settings
@@ -32,28 +33,28 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_material'
+html_theme = 'sphinx_immaterial'
 
 html_theme_options = {
 
     # Set the name of the project to appear in the navigation.
-    'nav_title': 'CALFEM - A Finite Element Toolbox',
 
-    # Set the color and the accent color
-    'color_primary': 'blue',
-    'color_accent': 'light-blue',
 
     # Set the repo location to get a badge with stats
     'repo_url': 'https://github.com/CALFEM/calfem-python/',
     'repo_name': 'CALFEM for Python',
 
-    # Visible levels of the global TOC; -1 means unlimited
-    'globaltoc_depth': 3,
     # If False, expand all TOC entries
     'globaltoc_collapse': True,
     # If True, show hidden TOC entries
     'globaltoc_includehidden': False,
     #'logo_icon': "&#xe913;"
+    'toc_title': 'Contents',
+
+    'icon': {
+        'repo': 'fontawesome/brands/github',
+        'edit': 'material/file-edit-outline',
+    }   
 }
 
 html_sidebars = {

@@ -1,8 +1,7 @@
 beam2ge - Two dimensional geometric nonlinear beam element
-----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose:
-^^^^^^^^
+**Purpose:**
 
 Compute element stiffness matrix for a two dimensional nonlinear beam element with respect to geometrical nonlinearity.
 
@@ -11,16 +10,14 @@ Compute element stiffness matrix for a two dimensional nonlinear beam element wi
     :width: 70%
     :alt: Two dimensional geometric nonlinear beam element
 
-Syntax:
-^^^^^^^
+**Syntax:**
 
 .. code-block:: matlab
 
     Ke = beam2ge(ex, ey, ep, Qx)
     [Ke, fe] = beam2ge(ex, ey, ep, Qx, eq)
 
-Description:
-^^^^^^^^^^^^
+**Description:**
 
 ``beam2ge`` provides the global element stiffness matrix ``Ke`` for a two dimensional beam element with respect to geometrical nonlinearity.
 
@@ -42,8 +39,7 @@ The element load vector ``fe`` can also be computed if a uniformly distributed t
 
 contains the distributed transverse load per unit length, ``q_ybar``. Note that ``eq`` is a scalar and not a vector as in ``beam2e``.
 
-Theory:
-^^^^^^^
+**Theory:**
 
 The element stiffness matrix :math:`\mathbf{K}^e`, stored in the variable ``Ke``, is computed according to
 

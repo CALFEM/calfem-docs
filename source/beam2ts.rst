@@ -1,8 +1,7 @@
 beam2ts - Two dimensional Timoshenko beam element
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces in a two dimensional Timoshenko beam element.
 
@@ -13,8 +12,7 @@ Compute section forces in a two dimensional Timoshenko beam element.
 
     Section forces
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
@@ -22,8 +20,7 @@ Syntax
     es = beam2ts(ex, ey, ep, ed, eq)
     [es, edi, eci] = beam2ts(ex, ey, ep, ed, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2ts`` computes the section forces and displacements in local directions
 along the beam element ``beam2te``.
@@ -83,8 +80,7 @@ The explicit matrix expressions are
 
 where :math:`L` is the length of the beam element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by
 

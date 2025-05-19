@@ -1,10 +1,9 @@
 bar1s - One dimensional bar element
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: bar1s
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute normal force in a one dimensional bar element.
 
@@ -12,8 +11,7 @@ Compute normal force in a one dimensional bar element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
@@ -22,8 +20,7 @@ Syntax
     [es, edi] = bar1s(ex, ep, ed, eq, n)
     [es, edi, eci] = bar1s(ex, ep, ed, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``bar1s`` computes the normal force in the one dimensional bar element ``bar1e``.
 
@@ -64,8 +61,7 @@ The output variables
 
 contain the normal force, the displacement, and the evaluation points on the local :math:`\bar{x}`-axis. :math:`L` is the length of the bar element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by
 

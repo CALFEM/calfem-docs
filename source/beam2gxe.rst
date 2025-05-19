@@ -1,9 +1,8 @@
 
 beam2gxe - Two dimensional geometric nonlinear exact beam element
------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness matrix for a two dimensional nonlinear beam element with exact solution.
 
@@ -11,16 +10,14 @@ Compute element stiffness matrix for a two dimensional nonlinear beam element wi
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     Ke = beam2gxe(ex, ey, ep, Qx)
     [Ke, fe] = beam2gxe(ex, ey, ep, Qx, eq)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2gxe`` provides the global element stiffness matrix ``Ke`` for a two dimensional beam element with respect to geometrical nonlinearity considering exact solution.
 
@@ -42,8 +39,7 @@ The element load vector ``fe`` can also be computed if a uniformly distributed t
 
 then contains the distributed transverse load per unit length, :math:`q_{\bar{y}}`. Note that ``eq`` is a scalar and not a vector as in ``beam2e``.
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\mathbf{K}^e`, stored in the variable ``Ke``, is computed according to
 

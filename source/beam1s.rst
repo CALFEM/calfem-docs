@@ -1,8 +1,7 @@
 beam1s - One dimensional beam element
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces in a one dimensional beam element.
 
@@ -10,8 +9,7 @@ Compute section forces in a one dimensional beam element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
@@ -19,8 +17,7 @@ Syntax
     es = beam1s(ex, ep, ed, eq)
     [es, edi, eci] = beam1s(ex, ep, ed, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam1s`` computes the section forces and displacements in local directions
 along the beam element ``beam1e``.
@@ -68,8 +65,7 @@ The output variables
 contain the section forces, the displacements, and the evaluation points on the local :math:`\bar{x}`-axis.
 :math:`L` is the length of the beam element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by
 

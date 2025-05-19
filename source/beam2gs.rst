@@ -1,8 +1,7 @@
 beam2gs - Two dimensional geometric nonlinear beam element
-----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute section forces in a two dimensional nonlinear beam element with geometrical nonlinearity.
 
@@ -10,8 +9,7 @@ Compute section forces in a two dimensional nonlinear beam element with geometri
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 ::
 
@@ -20,8 +18,7 @@ Syntax
     [es, Qx, edi] = beam2gs(ex, ey, ep, ed, Qx, eq, n)
     [es, Qx, edi, eci] = beam2gs(ex, ey, ep, ed, Qx, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2gs`` computes the section forces and displacements in local directions along the geometric nonlinear beam element ``beam2ge``.
 
@@ -62,8 +59,7 @@ The output variable ``Qx`` contains :math:`Q_{\bar{x}}` and the output variables
 
 contain the section forces, the displacements, and the evaluation points on the local :math:`\bar{x}`-axis. :math:`L` is the length of the beam element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in local coordinates are given by
 

@@ -3,18 +3,23 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-CALFEM - A Finite Element Toolbox documentation
-===============================================
+CALFEM - A Finite Element Toolbox
+=================================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+Welcome to the documentation page for CALFEM for Python and CALFEM for MATLAB. On this page you will find examples of how to use CALFEM as well as reference documentation for the different modules in the CALFEM toolbox. 
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    introduction
-   elements
-   
+   general_purpose_functions
+   matrix_functions
+   material_functions
+   element_functions
+   bar_functions
+   beam_functions
+   system_functions
+   statements
+   graphics_functions
+   examples

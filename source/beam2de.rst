@@ -1,8 +1,7 @@
 beam2de - Two dimensional beam element for dynamic analysis
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute element stiffness, mass and damping matrices for a two dimensional beam element.
 
@@ -10,16 +9,14 @@ Compute element stiffness, mass and damping matrices for a two dimensional beam 
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
     [Ke, Me] = beam2de(ex, ey, ep)
     [Ke, Me, Ce] = beam2de(ex, ey, ep)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``beam2de`` provides the global element stiffness matrix ``Ke``, the global element mass matrix ``Me``, and the global element damping matrix ``Ce``, for a two dimensional beam element.
 
@@ -32,8 +29,7 @@ The input variables ``ex`` and ``ey`` are described in ``beam2e``, and
 contains the modulus of elasticity :math:`E`, the cross section area :math:`A`, the moment of inertia :math:`I`, the mass per unit length :math:`m`, and the Rayleigh damping coefficients :math:`a_0` and :math:`a_1`.  
 If :math:`a_0` and :math:`a_1` are omitted, the element damping matrix ``Ce`` is not computed.
 
-Theory
-^^^^^^
+**Theory**
 
 The element stiffness matrix :math:`\mathbf{K}^e`, the element mass matrix :math:`\mathbf{M}^e` and the element damping matrix :math:`\mathbf{C}^e`, stored in the variables ``Ke``, ``Me`` and ``Ce``, respectively, are computed according to
 

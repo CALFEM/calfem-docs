@@ -1,10 +1,9 @@
 bar3s - Three dimensional bar element
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. index:: bar3s
 
-Purpose
-^^^^^^^
+**Purpose**
 
 Compute normal force in a three dimensional bar element.
 
@@ -12,8 +11,7 @@ Compute normal force in a three dimensional bar element.
     :align: center
     :width: 70%
 
-Syntax
-^^^^^^
+**Syntax**
 
 .. code-block:: matlab
 
@@ -22,8 +20,7 @@ Syntax
     [es, edi] = bar3s(ex, ey, ez, ep, ed, eq, n)
     [es, edi, eci] = bar3s(ex, ey, ez, ep, ed, eq, n)
 
-Description
-^^^^^^^^^^^
+**Description**
 
 ``bar3s`` computes the normal force in a three dimensional bar element (see ``bar3e``).
 
@@ -64,8 +61,7 @@ The output variables:
 contain the normal force, the displacement, and the evaluation points on the local :math:`\bar{x}`-axis.  
 :math:`L` is the length of the bar element.
 
-Theory
-^^^^^^
+**Theory**
 
 The nodal displacements in global coordinates are given by
 
