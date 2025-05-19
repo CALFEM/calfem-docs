@@ -24,5 +24,6 @@ When the element nodal values have been computed, the element flux or element st
 
 For some elements, a function for computing the internal force vector is also available. These functions are identified by their last letter `-f`.
 
+.. include:: bar_functions.rst
 .. include:: beam_functions.rst
 

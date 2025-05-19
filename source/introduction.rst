@@ -39,25 +39,25 @@ provides information about the purpose and syntax for the specified function.
 
 The available functions are organized in groups as follows.  Each group is described in a separate chapter.
 
-+--------------------------+--------------------------------------------------+
-| Groups of functions      |                                                  |
-+--------------------------+--------------------------------------------------+
-| General purpose commands | For managing variables, workspace,               |
-|                          | output, etc.                                     |
-+--------------------------+--------------------------------------------------+
-| Matrix functions         | For matrix handling                              |
-+--------------------------+--------------------------------------------------+
-| Material functions       | For computing material matrices                  |
-+--------------------------+--------------------------------------------------+
-| Element functions        | For computing element matrices and element       |
-|                          | forces                                           |
-+--------------------------+--------------------------------------------------+
-| System functions         | For setting up and solving systems of            |
-|                          | equations                                        |
-+--------------------------+--------------------------------------------------+
-| Statement functions      | For algorithm definitions                        |
-+--------------------------+--------------------------------------------------+
-| Graphics functions       | For plotting                                     |
-+--------------------------+--------------------------------------------------+
+.. +--------------------------+--------------------------------------------------+
+.. | Groups of functions      |                                                  |
+.. +--------------------------+--------------------------------------------------+
+.. | General purpose commands | For managing variables, workspace,               |
+.. |                          | output, etc.                                     |
+.. +--------------------------+--------------------------------------------------+
+.. | Matrix functions         | For matrix handling                              |
+.. +--------------------------+--------------------------------------------------+
+.. | Material functions       | For computing material matrices                  |
+.. +--------------------------+--------------------------------------------------+
+.. | Element functions        | For computing element matrices and element       |
+.. |                          | forces                                           |
+.. +--------------------------+--------------------------------------------------+
+.. | System functions         | For setting up and solving systems of            |
+.. |                          | equations                                        |
+.. +--------------------------+--------------------------------------------------+
+.. | Statement functions      | For algorithm definitions                        |
+.. +--------------------------+--------------------------------------------------+
+.. | Graphics functions       | For plotting                                     |
+.. +--------------------------+--------------------------------------------------+
 
 

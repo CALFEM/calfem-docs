@@ -15,6 +15,7 @@ Compute element stiffness matrix for a two dimensional beam element on elastic s
 
 .. figure:: images/beam2w.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

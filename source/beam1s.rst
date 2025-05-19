@@ -8,6 +8,7 @@ Compute section forces in a one dimensional beam element.
 
 .. figure:: images/beam1s.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

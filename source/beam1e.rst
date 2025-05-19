@@ -8,6 +8,7 @@ Compute element stiffness matrix for a one dimensional beam element.
 
 .. figure:: images/beam1e.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^
@@ -39,6 +40,7 @@ then contains the distributed load per unit length, :math:`q_{\bar{y}}`.
 
 .. figure:: images/beam1e_2.png
     :align: center
+    :width: 70%
 
 Theory
 ^^^^^^

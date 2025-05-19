@@ -64,3 +64,27 @@ html_sidebars = {
 
 #html_theme = 'alabaster'
 #html_static_path = ['_static']
+
+# -- Options for LaTeX output ------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-latex-output
+
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    'papersize': 'a5paper',
+
+    # The font size ('10pt', '11pt' or '12pt').
+    'pointsize': '10pt',
+
+    # Additional stuff for the LaTeX preamble.
+    'preamble': '',
+
+    # Latex figure (float) alignment
+    'figure_align': 'htbp',
+
+    'sphinxsetup': r'''
+        hmargin=1.5cm, 
+        vmargin=2cm,
+    ''',
+}
+
+# latex_logo = 'images/calfem.logo.bw.svg'

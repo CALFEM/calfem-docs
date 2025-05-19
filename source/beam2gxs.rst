@@ -8,6 +8,7 @@ Compute section forces in a two dimensional geometric nonlinear beam element wit
 
 .. figure:: images/beam2s.png
     :align: center
+    :width: 70%
     :alt: Two dimensional geometric nonlinear exact beam element
 
 Syntax

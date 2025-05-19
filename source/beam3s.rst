@@ -8,6 +8,7 @@ Compute section forces in a three dimensional beam element.
 
 .. figure:: images/BEAM3S.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

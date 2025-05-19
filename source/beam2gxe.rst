@@ -9,6 +9,7 @@ Compute element stiffness matrix for a two dimensional nonlinear beam element wi
 
 .. figure:: images/BEAM2G.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

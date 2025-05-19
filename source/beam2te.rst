@@ -8,6 +8,7 @@ Compute element stiffness matrix for a two dimensional Timoshenko beam element.
 
 .. figure:: images/BEAM2T.png
     :align: center
+    :width: 70%
     :alt: Two dimensional beam element
 
     Two dimensional beam element
@@ -30,11 +31,11 @@ The input variables
 
 .. math::
 
-    \begin{align*}
+    \begin{aligned}
     \mathbf{ex} &= [x_1 \;\; x_2] \\
     \mathbf{ey} &= [y_1 \;\; y_2] \\
     \mathbf{ep} &= [E \;\; G \;\; A \;\; I \;\; k_s]
-    \end{align*}
+    \end{aligned}
 
 supply the element nodal coordinates
 :math:`x_1`, :math:`y_1`, :math:`x_2`, and :math:`y_2`, the modulus of elasticity :math:`E`, the
@@ -53,6 +54,7 @@ contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q
 
 .. figure:: images/BEAM2LOA.png
     :align: center
+    :width: 70%
     :alt: Uniformly distributed load
 
     Uniformly distributed load

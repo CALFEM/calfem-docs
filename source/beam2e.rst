@@ -10,7 +10,7 @@ Compute element stiffness matrix for a two-dimensional beam element.
 
 .. figure:: images/BEAM2E.png
     :align: center
-    :width: 50%
+    :width: 70%
 
 Syntax
 ^^^^^^
@@ -44,8 +44,8 @@ contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q
 
 .. figure:: images/BEAM2LOA.png
     :align: center
-    :width: 50%
-
+    :width: 70%
+    
 Theory
 ^^^^^^
 

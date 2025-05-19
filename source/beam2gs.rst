@@ -8,6 +8,7 @@ Compute section forces in a two dimensional nonlinear beam element with geometri
 
 .. figure:: images/beam2s.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

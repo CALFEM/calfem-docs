@@ -8,6 +8,7 @@ Compute section forces for a two dimensional beam element in dynamic analysis.
 
 .. figure:: images/BEAM2S.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

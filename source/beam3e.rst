@@ -8,6 +8,7 @@ Compute element stiffness matrix for a three dimensional beam element.
 
 .. figure:: images/BEAM3E.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^
@@ -26,11 +27,11 @@ The input variables
 
 .. math::
 
-    \begin{align*}
+    \begin{aligned}
     \mathrm{ex} &= [x_1 \;\; x_2] \\
     \mathrm{ey} &= [y_1 \;\; y_2] \\
     \mathrm{ez} &= [z_1 \;\; z_2]
-    \end{align*}
+    \end{aligned}
     \qquad
     \mathrm{eo} = [x_{\bar{z}} \;\; y_{\bar{z}} \;\; z_{\bar{z}}]
 
@@ -119,13 +120,13 @@ The transformation matrix :math:`\mathbf{G}` contains direction cosines computed
 
 .. math::
 
-    \begin{align*}
+    \begin{aligned}
     n_{x\bar{x}} &= \frac{x_2 - x_1}{L} \qquad n_{y\bar{x}} = \frac{y_2 - y_1}{L} \qquad n_{z\bar{x}} = \frac{z_2 - z_1}{L} \\
     n_{x\bar{z}} &= \frac{x_{\bar{z}}}{L_{\bar{z}}} \qquad n_{y\bar{z}} = \frac{y_{\bar{z}}}{L_{\bar{z}}} \qquad n_{z\bar{z}} = \frac{z_{\bar{z}}}{L_{\bar{z}}} \\
     n_{x\bar{y}} &= n_{y\bar{z}} n_{z\bar{x}} - n_{z\bar{z}} n_{y\bar{x}} \\
     n_{y\bar{y}} &= n_{z\bar{z}} n_{x\bar{x}} - n_{x\bar{z}} n_{z\bar{x}} \\
     n_{z\bar{y}} &= n_{x\bar{z}} n_{y\bar{x}} - n_{y\bar{z}} n_{x\bar{x}}
-    \end{align*}
+    \end{aligned}
 
 where
 

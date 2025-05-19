@@ -8,6 +8,7 @@ Compute element stiffness, mass and damping matrices for a two dimensional beam 
 
 .. figure:: images/BEAM2D.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

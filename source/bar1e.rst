@@ -10,6 +10,7 @@ Compute element stiffness matrix for a one dimensional bar element.
 
 .. figure:: images/bar1e_1.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^
@@ -45,6 +46,7 @@ contains the distributed load per unit length, :math:`q_{\bar{x}}`.
 
 .. figure:: images/bar1e_2.png
     :align: center
+    :width: 70%
 
 Theory
 ^^^^^^

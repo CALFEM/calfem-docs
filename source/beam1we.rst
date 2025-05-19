@@ -10,6 +10,7 @@ Compute element stiffness matrix for a one dimensional beam element on elastic s
 
 .. figure:: images/beam1w.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

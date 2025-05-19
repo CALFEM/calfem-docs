@@ -8,6 +8,7 @@ Compute section forces in a two dimensional Timoshenko beam element.
 
 .. figure:: images/beam2s.png
     :align: center
+    :width: 70%
     :alt: Section forces
 
     Section forces
@@ -40,11 +41,11 @@ The output variables
 
 .. math::
 
-    \begin{align*}
+    \begin{aligned}
     \mathrm{es} &= \left[\; \mathbf{N} \; \mathbf{V} \; \mathbf{M}\; \right] \\
     \mathrm{edi} &= \left[\; \mathbf{u} \; \mathbf{v} \; \boldsymbol{\theta} \; \right] \\
     \mathrm{eci} &= \left[ \mathbf{\bar{x}} \right]
-    \end{align*}
+    \end{aligned}
 
 consist of column matrices that contain
 the section forces, the displacements and rotation of the cross section

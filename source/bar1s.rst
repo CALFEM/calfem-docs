@@ -10,6 +10,7 @@ Compute normal force in a one dimensional bar element.
 
 .. figure:: images/bar1s.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^

@@ -8,6 +8,7 @@ Compute section forces in a one dimensional beam element with elastic support.
 
 .. figure:: images/beam1s.png
     :align: center
+    :width: 70%
 
 Syntax
 ^^^^^^
