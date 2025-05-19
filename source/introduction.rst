@@ -1,5 +1,6 @@
+************
 Introduction
-============
+************
 
 The computer program CALFEM is a MATLAB toolbox for finite element applications. This manual concerns mainly the finite element functions, but it also contains descriptions of some often-used MATLAB functions.
 

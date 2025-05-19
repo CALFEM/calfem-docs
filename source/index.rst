@@ -15,8 +15,6 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
-   intro/index
-   elements/beam/elements
-   elements/beam/beam2e
-   elements/beam/beam2s
-
+   introduction
+   elements
+   

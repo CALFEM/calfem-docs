@@ -1,8 +1,9 @@
+*****************
 Element functions
-=================
+*****************
 
 Introduction
-------------
+============
 
 The group of element functions contains functions for computation of element
 matrices and element forces for different element types. The element functions
@@ -22,3 +23,6 @@ Using the function `assem()`, the element stiffness matrices and element load ve
 When the element nodal values have been computed, the element flux or element stresses can be calculated using functions specific to the element type concerned. These functions are identified by their last letter `-s`.
 
 For some elements, a function for computing the internal force vector is also available. These functions are identified by their last letter `-f`.
+
+.. include:: beam_functions.rst
+
