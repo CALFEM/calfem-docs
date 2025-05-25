@@ -1,0 +1,20 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter B
+  \item \spxentry{bar1e}, \hyperpage{19}
+  \item \spxentry{bar1s}, \hyperpage{20}
+  \item \spxentry{bar3e}, \hyperpage{34}
+  \item \spxentry{bar3s}, \hyperpage{35}
+  \item \spxentry{beam2e}, \hyperpage{102}
+  \item \spxentry{beam2s}, \hyperpage{104}
+  \item \spxentry{beam2we}, \hyperpage{114}
+
+  \indexspace
+  \bigletter C
+  \item \spxentry{coordxtr}, \hyperpage{153}
+
+\end{sphinxtheindex}
