@@ -1,112 +1,114 @@
-beam2e - Two Dimensional Beam Element
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beam2e
+^^^^^^
 
 .. index:: beam2e
 
-**Purpose**
+:Purpose:
 
-Compute element stiffness matrix for a two-dimensional beam element.
+    Compute element stiffness matrix for a two-dimensional beam element.
 
-.. figure:: images/BEAM2E.png
-    :align: center
-    :width: 70%
+    .. figure:: images/BEAM2E.png
+        :align: center
+        :width: 70%
 
-**Syntax**
+:Syntax:
 
 .. code-block:: matlab
 
     Ke = beam2e(ex, ey, ep)
     [Ke, fe] = beam2e(ex, ey, ep, eq)
 
-**beam2e** provides the global element stiffness matrix **Ke** for a two-dimensional beam element.
+:Description:
 
-The input variables:
+    **beam2e** provides the global element stiffness matrix **Ke** for a two-dimensional beam element.
 
-.. math::
+    The input variables:
 
-    \begin{aligned}
-    &\text{ex} = [x_1, x_2] \\
-    &\text{ey} = [y_1, y_2] \\
-    &\text{ep} = [E, A, I]
-    \end{aligned}
+    .. math::
 
-supply the element nodal coordinates :math:`x_1`, :math:`y_1`, :math:`x_2`, and :math:`y_2`, the modulus of elasticity :math:`E`, the cross-section area :math:`A`, and the moment of inertia :math:`I`.
+        \begin{aligned}
+        &\text{ex} = [x_1, x_2] \\
+        &\text{ey} = [y_1, y_2] \\
+        &\text{ep} = [E, A, I]
+        \end{aligned}
 
-The element load vector **fe** can also be computed if a uniformly distributed transverse load is applied to the element. The optional input variable:
+    supply the element nodal coordinates :math:`x_1`, :math:`y_1`, :math:`x_2`, and :math:`y_2`, the modulus of elasticity :math:`E`, the cross-section area :math:`A`, and the moment of inertia :math:`I`.
 
-.. math::
+    The element load vector **fe** can also be computed if a uniformly distributed transverse load is applied to the element. The optional input variable:
 
-    \text{eq} = [q_{\bar{x}}, q_{\bar{y}}]
+    .. math::
 
-contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q_{\bar{y}}`.
+        \text{eq} = [q_{\bar{x}}, q_{\bar{y}}]
 
-.. figure:: images/BEAM2LOA.png
-    :align: center
-    :width: 70%
+    contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q_{\bar{y}}`.
+
+    .. figure:: images/BEAM2LOA.png
+        :align: center
+        :width: 70%
     
-**Theory**
+:Theory:
 
-The element stiffness matrix :math:`\mathbf{K}^e`, stored in **Ke**, is computed according to:
+    The element stiffness matrix :math:`\mathbf{K}^e`, stored in **Ke**, is computed according to:
 
-.. math::
+    .. math::
 
-    \mathbf{K}^e = \mathbf{G}^T \bar{\mathbf{K}}^e \mathbf{G}
+        \mathbf{K}^e = \mathbf{G}^T \bar{\mathbf{K}}^e \mathbf{G}
 
-where:
+    where:
 
-.. math::
+    .. math::
 
-    \bar{\mathbf{K}}^e =
-    \begin{bmatrix}
-    \frac{D_{EA}}{L} & 0 & 0 & -\frac{D_{EA}}{L} & 0 & 0 \\
-    0 & \frac{12D_{EI}}{L^3} & \frac{6D_{EI}}{L^2} & 0 & -\frac{12D_{EI}}{L^3} & \frac{6D_{EI}}{L^2} \\
-    0 & \frac{6D_{EI}}{L^2} & \frac{4D_{EI}}{L} & 0 & -\frac{6D_{EI}}{L^2} & \frac{2D_{EI}}{L} \\
-    -\frac{D_{EA}}{L} & 0 & 0 & \frac{D_{EA}}{L} & 0 & 0 \\
-    0 & -\frac{12D_{EI}}{L^3} & -\frac{6D_{EI}}{L^2} & 0 & \frac{12D_{EI}}{L^3} & -\frac{6D_{EI}}{L^2} \\
-    0 & \frac{6D_{EI}}{L^2} & \frac{2D_{EI}}{L} & 0 & -\frac{6D_{EI}}{L^2} & \frac{4D_{EI}}{L}
-    \end{bmatrix}
+        \bar{\mathbf{K}}^e =
+        \begin{bmatrix}
+        \frac{D_{EA}}{L} & 0 & 0 & -\frac{D_{EA}}{L} & 0 & 0 \\
+        0 & \frac{12D_{EI}}{L^3} & \frac{6D_{EI}}{L^2} & 0 & -\frac{12D_{EI}}{L^3} & \frac{6D_{EI}}{L^2} \\
+        0 & \frac{6D_{EI}}{L^2} & \frac{4D_{EI}}{L} & 0 & -\frac{6D_{EI}}{L^2} & \frac{2D_{EI}}{L} \\
+        -\frac{D_{EA}}{L} & 0 & 0 & \frac{D_{EA}}{L} & 0 & 0 \\
+        0 & -\frac{12D_{EI}}{L^3} & -\frac{6D_{EI}}{L^2} & 0 & \frac{12D_{EI}}{L^3} & -\frac{6D_{EI}}{L^2} \\
+        0 & \frac{6D_{EI}}{L^2} & \frac{2D_{EI}}{L} & 0 & -\frac{6D_{EI}}{L^2} & \frac{4D_{EI}}{L}
+        \end{bmatrix}
 
-.. math::
+    .. math::
 
-    \mathbf{G} =
-    \begin{bmatrix}
-    n_{x\bar{x}} & n_{y\bar{x}} & 0 & 0 & 0 & 0 \\
-    n_{x\bar{y}} & n_{y\bar{y}} & 0 & 0 & 0 & 0 \\
-    0 & 0 & 1 & 0 & 0 & 0 \\
-    0 & 0 & 0 & n_{x\bar{x}} & n_{y\bar{x}} & 0 \\
-    0 & 0 & 0 & n_{x\bar{y}} & n_{y\bar{y}} & 0 \\
-    0 & 0 & 0 & 0 & 0 & 1
-    \end{bmatrix}
+        \mathbf{G} =
+        \begin{bmatrix}
+        n_{x\bar{x}} & n_{y\bar{x}} & 0 & 0 & 0 & 0 \\
+        n_{x\bar{y}} & n_{y\bar{y}} & 0 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 0 \\
+        0 & 0 & 0 & n_{x\bar{x}} & n_{y\bar{x}} & 0 \\
+        0 & 0 & 0 & n_{x\bar{y}} & n_{y\bar{y}} & 0 \\
+        0 & 0 & 0 & 0 & 0 & 1
+        \end{bmatrix}
 
-where the axial stiffness :math:`D_{EA}`, the bending stiffness :math:`D_{EI}`, and the length :math:`L` are given by:
+    where the axial stiffness :math:`D_{EA}`, the bending stiffness :math:`D_{EI}`, and the length :math:`L` are given by:
 
-.. math::
+    .. math::
 
-    D_{EA} = EA, \quad D_{EI} = EI, \quad L = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+        D_{EA} = EA, \quad D_{EI} = EI, \quad L = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 
-The transformation matrix :math:`\mathbf{G}` contains the direction cosines:
+    The transformation matrix :math:`\mathbf{G}` contains the direction cosines:
 
-.. math::
+    .. math::
 
-    n_{x\bar{x}} = n_{y\bar{y}} = \frac{x_2 - x_1}{L}, \quad
-    n_{y\bar{x}} = -n_{x\bar{y}} = \frac{y_2 - y_1}{L}
+        n_{x\bar{x}} = n_{y\bar{y}} = \frac{x_2 - x_1}{L}, \quad
+        n_{y\bar{x}} = -n_{x\bar{y}} = \frac{y_2 - y_1}{L}
 
-The element loads :math:`\mathbf{f}^e_l`, stored in the variable **fe**, are computed according to:
+    The element loads :math:`\mathbf{f}^e_l`, stored in the variable **fe**, are computed according to:
 
-.. math::
+    .. math::
 
-    \mathbf{f}^e_l = \mathbf{G}^T \bar{\mathbf{f}}^e_l
+        \mathbf{f}^e_l = \mathbf{G}^T \bar{\mathbf{f}}^e_l
 
-where:
+    where:
 
-.. math::
+    .. math::
 
-    \bar{\mathbf{f}}^e_l =
-    \begin{bmatrix}
-    \frac{q_{\bar{x}}L}{2} \\
-    \frac{q_{\bar{y}}L}{2} \\
-    \frac{q_{\bar{y}}L^2}{12} \\
-    \frac{q_{\bar{x}}L}{2} \\
-    \frac{q_{\bar{y}}L}{2} \\
-    -\frac{q_{\bar{y}}L^2}{12}
-    \end{bmatrix}
+        \bar{\mathbf{f}}^e_l =
+        \begin{bmatrix}
+        \frac{q_{\bar{x}}L}{2} \\
+        \frac{q_{\bar{y}}L}{2} \\
+        \frac{q_{\bar{y}}L^2}{12} \\
+        \frac{q_{\bar{x}}L}{2} \\
+        \frac{q_{\bar{y}}L}{2} \\
+        -\frac{q_{\bar{y}}L^2}{12}
+        \end{bmatrix}

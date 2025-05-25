@@ -1,54 +1,55 @@
-solveq - Solve equation system
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+solveq
+^^^^^^
 
-Solve equation system.
+:Purpose:
 
-**Syntax:**
+    Solve equation system.
 
-.. code-block:: matlab
+:Syntax:
 
-    a = solveq(K, f)
-    a = solveq(K, f, bc)
-    [a, r] = solveq(K, f, bc)
+    .. code-block:: matlab
 
-**Description:**
+        a = solveq(K, f)
+        a = solveq(K, f, bc)
+        [a, r] = solveq(K, f, bc)
 
-The function ``solveq`` solves the equation system
+:Description:
 
-.. math::
+    The function ``solveq`` solves the equation system
 
-    \mathbf{K}\;\mathbf{a} = \mathbf{f}
+    .. math::
 
-where :math:`\mathbf{K}` is a matrix and :math:`\mathbf{a}` and :math:`\mathbf{f}` are vectors.
+        \mathbf{K}\;\mathbf{a} = \mathbf{f}
 
-The matrix :math:`\mathbf{K}` and the vector :math:`\mathbf{f}` must be predefined. The solution of the system of equations is stored in a vector :math:`\mathbf{a}` which is created by the function.
+    where :math:`\mathbf{K}` is a matrix and :math:`\mathbf{a}` and :math:`\mathbf{f}` are vectors.
 
-If some values of :math:`\mathbf{a}` are to be prescribed, the row number and the corresponding values are given in the boundary condition matrix
+    The matrix :math:`\mathbf{K}` and the vector :math:`\mathbf{f}` must be predefined. The solution of the system of equations is stored in a vector :math:`\mathbf{a}` which is created by the function.
 
-.. math::
+    If some values of :math:`\mathbf{a}` are to be prescribed, the row number and the corresponding values are given in the boundary condition matrix
 
-    \mathbf{bc} = \left[
-    \begin{array}{c}
-    dof_1 \\
-    dof_2 \\
-    \vdots \\
-    dof_{nbc}
-    \end{array}
-    \quad
-    \begin{array}{c}
-    u_1 \\
-    u_2 \\
-    \vdots \\
-    u_{nbc}
-    \end{array}
-    \right]
+    .. math::
 
-where the first column contains the row numbers and the second column the corresponding prescribed values.
+        \mathbf{bc} = \left[
+        \begin{array}{c}
+        dof_1 \\
+        dof_2 \\
+        \vdots \\
+        dof_{nbc}
+        \end{array}
+        \quad
+        \begin{array}{c}
+        u_1 \\
+        u_2 \\
+        \vdots \\
+        u_{nbc}
+        \end{array}
+        \right]
 
-If ``r`` is given in the function, support forces are computed according to
+    where the first column contains the row numbers and the second column the corresponding prescribed values.
 
-.. math::
+    If ``r`` is given in the function, support forces are computed according to
 
-    \mathbf{r} = \mathbf{K}\;\mathbf{a} - \mathbf{f}
+    .. math::
 
-% Examples and See also sections can be added here if needed.
+        \mathbf{r} = \mathbf{K}\;\mathbf{a} - \mathbf{f}
+

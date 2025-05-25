@@ -6,8 +6,8 @@ The group of system functions comprises functions for the setting up, solving,
 and elimination of systems of equations. The functions are separated 
 in two groups:
 
- * Static system functions
- * Dynamic system functions
+* Static system functions
+* Dynamic system functions
 
 Static system functions concern the linear system of equations
 

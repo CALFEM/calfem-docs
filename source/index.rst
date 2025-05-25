@@ -19,6 +19,8 @@ Welcome to the documentation page for CALFEM for Python and CALFEM for MATLAB. O
    element_functions
    bar_functions
    beam_functions
+   heat_functions
+   solid_functions
    system_functions
    statements
    graphics_functions

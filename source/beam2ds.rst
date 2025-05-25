@@ -1,79 +1,80 @@
-beam2ds - Two dimensional beam element for dynamic analysis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beam2ds
+^^^^^^^
 
-**Purpose**
+:Purpose:
 
-Compute section forces for a two dimensional beam element in dynamic analysis.
+    Compute section forces for a two dimensional beam element in dynamic analysis.
 
-.. figure:: images/BEAM2S.png
-    :align: center
-    :width: 70%
+    .. figure:: images/BEAM2S.png
+        :align: center
+        :width: 70%
 
-**Syntax**
+:Syntax:
 
-::
-    es = beam2ds(ex, ey, ep, ed, ev, ea)
-    #[es, edi, eci] = beam2gs(ex, ey, ep, ed, ev, ea, n)
+    .. code:: matlab
 
-**Description**
+        es = beam2ds(ex, ey, ep, ed, ev, ea)
+        [es, edi, eci] = beam2gs(ex, ey, ep, ed, ev, ea, n)
 
-``beam2ds`` computes the section forces at the ends of the dynamic beam element ``beam2de``.
+:Description:
 
-The input variables ``ex``, ``ey``, and ``ep`` are defined in ``beam2de``. The element displacements, velocities, and accelerations, stored in ``ed``, ``ev``, and ``ea`` respectively, are obtained by the function ``extract``.
+    ``beam2ds`` computes the section forces at the ends of the dynamic beam element ``beam2de``.
 
-The output variable ``es`` contains the section forces at the ends of the beam:
+    The input variables ``ex``, ``ey``, and ``ep`` are defined in ``beam2de``. The element displacements, velocities, and accelerations, stored in ``ed``, ``ev``, and ``ea`` respectively, are obtained by the function ``extract``.
 
-.. math::
+    The output variable ``es`` contains the section forces at the ends of the beam:
 
-    es = \begin{bmatrix}
-    N_1 & V_1 & M_1 \\
-    N_2 & V_2 & M_2
-    \end{bmatrix}
+    .. math::
 
-**Theory**
+        es = \begin{bmatrix}
+        N_1 & V_1 & M_1 \\
+        N_2 & V_2 & M_2
+        \end{bmatrix}
 
-The section forces at the ends of the beam are obtained from the element force vector:
+:Theory:
 
-.. math::
+    The section forces at the ends of the beam are obtained from the element force vector:
 
-    \bar{\mathbf{P}} =
-    \begin{bmatrix}
-    -N_1 & -V_1 & -M_1 & N_2 & V_2 & M_2
-    \end{bmatrix}^T
+    .. math::
 
-computed according to:
+        \bar{\mathbf{P}} =
+        \begin{bmatrix}
+        -N_1 & -V_1 & -M_1 & N_2 & V_2 & M_2
+        \end{bmatrix}^T
 
-.. math::
+    computed according to:
 
-    \bar{\mathbf{P}} =
-        \bar{\mathbf{K}}^e \mathbf{G} \mathbf{a}^e
-     + \bar{\mathbf{C}}^e \mathbf{G} \dot{\mathbf{a}}^e
-     + \bar{\mathbf{M}}^e \mathbf{G} \ddot{\mathbf{a}}^e
+    .. math::
 
-The matrices :math:`\bar{\mathbf{K}}^e` and :math:`\mathbf{G}` are described in ``beam2e``, and the matrices :math:`\bar{\mathbf{M}}^e` and :math:`\bar{\mathbf{C}}^e` are described in ``beam2d``.
+        \bar{\mathbf{P}} =
+            \bar{\mathbf{K}}^e \mathbf{G} \mathbf{a}^e
+        + \bar{\mathbf{C}}^e \mathbf{G} \dot{\mathbf{a}}^e
+        + \bar{\mathbf{M}}^e \mathbf{G} \ddot{\mathbf{a}}^e
 
-The nodal displacements:
+    The matrices :math:`\bar{\mathbf{K}}^e` and :math:`\mathbf{G}` are described in ``beam2e``, and the matrices :math:`\bar{\mathbf{M}}^e` and :math:`\bar{\mathbf{C}}^e` are described in ``beam2d``.
 
-.. math::
+    The nodal displacements:
 
-    \mathbf{a}^e = \begin{bmatrix}
-    u_1 & u_2 & u_3 & u_4 & u_5 & u_6
-    \end{bmatrix}^T
+    .. math::
 
-shown in ``beam2de`` also define the directions of the nodal velocities:
+        \mathbf{a}^e = \begin{bmatrix}
+        u_1 & u_2 & u_3 & u_4 & u_5 & u_6
+        \end{bmatrix}^T
 
-.. math::
+    shown in ``beam2de`` also define the directions of the nodal velocities:
 
-    \dot{\mathbf{a}}^e = \begin{bmatrix}
-    \dot{u}_1 & \dot{u}_2 & \dot{u}_3 & \dot{u}_4 & \dot{u}_5 & \dot{u}_6
-    \end{bmatrix}^T
+    .. math::
 
-and the nodal accelerations:
+        \dot{\mathbf{a}}^e = \begin{bmatrix}
+        \dot{u}_1 & \dot{u}_2 & \dot{u}_3 & \dot{u}_4 & \dot{u}_5 & \dot{u}_6
+        \end{bmatrix}^T
 
-.. math::
+    and the nodal accelerations:
 
-    \ddot{\mathbf{a}}^e = \begin{bmatrix}
-    \ddot{u}_1 & \ddot{u}_2 & \ddot{u}_3 & \ddot{u}_4 & \ddot{u}_5 & \ddot{u}_6
-    \end{bmatrix}^T
+    .. math::
 
-Note that the transposes of :math:`\mathbf{a}^e`, :math:`\dot{\mathbf{a}}^e`, and :math:`\ddot{\mathbf{a}}^e` are stored in ``ed``, ``ev``, and ``ea`` respectively.
+        \ddot{\mathbf{a}}^e = \begin{bmatrix}
+        \ddot{u}_1 & \ddot{u}_2 & \ddot{u}_3 & \ddot{u}_4 & \ddot{u}_5 & \ddot{u}_6
+        \end{bmatrix}^T
+
+    Note that the transposes of :math:`\mathbf{a}^e`, :math:`\dot{\mathbf{a}}^e`, and :math:`\ddot{\mathbf{a}}^e` are stored in ``ed``, ``ev``, and ``ea`` respectively.

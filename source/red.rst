@@ -1,48 +1,48 @@
-red - Reduce the size of a square matrix
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+red
+^^^
 
-**Purpose**
+:Purpose:
 
-Reduce the size of a square matrix by omitting rows and columns.
+    Reduce the size of a square matrix by omitting rows and columns.
 
-**Syntax**
+:Syntax:
 
-.. code:: matlab
+    .. code:: matlab
 
-    B = red(A, b)
-    [B, b] = red(A, b)
+        B = red(A, b)
+        [B, b] = red(A, b)
 
-**Description**
+:Description:
 
-``B = red(A, b)`` reduces the square matrix ``A`` to a smaller matrix ``B`` by omitting rows and columns of ``A``. The indices for rows and columns to be omitted are specified by the column vector ``b``.
+    ``B = red(A, b)`` reduces the square matrix ``A`` to a smaller matrix ``B`` by omitting rows and columns of ``A``. The indices for rows and columns to be omitted are specified by the column vector ``b``.
 
-**Examples**
+:Example:
 
-Assume that the matrix ``A`` is defined as
+    Assume that the matrix ``A`` is defined as
 
-.. math::
+    .. math::
 
-    A = \begin{bmatrix}
-    1 & 2 & 3 & 4 \\
-    5 & 6 & 7 & 8 \\
-    9 & 10 & 11 & 12 \\
-    13 & 14 & 15 & 16
-    \end{bmatrix}
+        A = \begin{bmatrix}
+        1 & 2 & 3 & 4 \\
+        5 & 6 & 7 & 8 \\
+        9 & 10 & 11 & 12 \\
+        13 & 14 & 15 & 16
+        \end{bmatrix}
 
-and ``b`` as
+    and ``b`` as
 
-.. math::
+    .. math::
 
-    b = \begin{bmatrix}
-    2 \\
-    4
-    \end{bmatrix}
+        b = \begin{bmatrix}
+        2 \\
+        4
+        \end{bmatrix}
 
-The statement ``B = red(A, b)`` results in the matrix
+    The statement ``B = red(A, b)`` results in the matrix
 
-.. math::
+    .. math::
 
-    B = \begin{bmatrix}
-    1 & 3 \\
-    9 & 11
-    \end{bmatrix}
+        B = \begin{bmatrix}
+        1 & 3 \\
+        9 & 11
+        \end{bmatrix}

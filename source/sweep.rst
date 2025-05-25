@@ -1,40 +1,38 @@
-.. _sweep:
+sweep
+^^^^^
 
-sweep - Complex frequency response function
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:Purpose:
 
-**Purpose**
+    Compute complex frequency response functions.
 
-Compute complex frequency response functions.
+:Syntax:
 
-**Syntax**
+    .. code-block:: matlab
 
-.. code-block:: matlab
+        Y = sweep(K, C, M, p, w)
 
-    Y = sweep(K, C, M, p, w)
+:Description:
 
-**Description**
+    ``sweep`` computes the complex frequency response function for a system of the form:
 
-``sweep`` computes the complex frequency response function for a system of the form:
+    .. math::
 
-.. math::
+        [\mathbf{K} + i\omega\mathbf{C} - \omega^2 \mathbf{M} ]\mathbf{y}(\omega) = \mathbf{p}
 
-    [\mathbf{K} + i\omega\mathbf{C} - \omega^2 \mathbf{M} ]\mathbf{y}(\omega) = \mathbf{p}
+    Here, ``K``, ``C``, and ``M`` represent the *m*-by-*m* stiffness, damping, and mass matrices, respectively. The vector ``p`` defines the amplitude of the force. The frequency response function is computed for the values of :math:`\omega` given by the vector ``w``.
 
-Here, ``K``, ``C``, and ``M`` represent the *m*-by-*m* stiffness, damping, and mass matrices, respectively. The vector ``p`` defines the amplitude of the force. The frequency response function is computed for the values of :math:`\omega` given by the vector ``w``.
+    The complex frequency response function is stored in the matrix ``Y`` with dimension *m*-by-*n*, where *n* is equal to the number of circular frequencies defined in ``w``.
 
-The complex frequency response function is stored in the matrix ``Y`` with dimension *m*-by-*n*, where *n* is equal to the number of circular frequencies defined in ``w``.
+:Example:
 
-**Example**
+    The steady-state response can be computed by:
 
-The steady-state response can be computed by:
+    .. code-block:: matlab
 
-.. code-block:: matlab
+        X = real(Y * exp(i * w * t));
 
-    X = real(Y * exp(i * w * t));
+    and the amplitude by:
 
-and the amplitude by:
+    .. code-block:: matlab
 
-.. code-block:: matlab
-
-    Z = abs(Y)
+        Z = abs(Y)

@@ -20,6 +20,22 @@ extensions = [
     'sphinx.ext.viewcode',  # For linking to source code
     'sphinx.ext.napoleon',  # For NumPy/Google style docstrings
     'sphinx_immaterial',  # For Material Design theme
+    'myst_parser'
+]
+
+myst_enable_extensions = [
+    "amsmath",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "html_admonition",
+    "html_image",
+    "linkify",
+    "replacements",
+    "smartquotes",
+    "substitution",
+    "tasklist",
+    "fieldlist",
 ]
 
 # Configure MathJax settings

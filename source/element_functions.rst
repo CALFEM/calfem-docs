@@ -6,12 +6,12 @@ The group of element functions contains functions for computation of element
 matrices and element forces for different element types. The element functions
 have been divided into the following groups:
 
- * Spring elements
- * Bar elements
- * Heat flow elements
- * Solid elements
- * Beam elements
- * Plate elements
+* Spring elements
+* Bar elements
+* Heat flow elements
+* Solid elements
+* Beam elements
+* Plate elements
 
 For each element type, there is a function for computation of the element stiffness matrix :math:`K^e`. For most of the elements, an element load vector :math:`f^e` can also be computed. These functions are identified by their last letter `-e`.
 

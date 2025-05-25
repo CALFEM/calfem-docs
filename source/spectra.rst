@@ -1,36 +1,38 @@
-spectra - Seismic Response Spectra
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spectra
+^^^^^^^
 
-Compute seismic response spectra for elastic design.
+:Purpose:
 
-**Syntax**
+    Compute seismic response spectra for elastic design.
 
-.. code-block:: matlab
+:Syntax:
 
-    s = spectra(a, xi, dt, f)
+    .. code-block:: matlab
 
-**Description**
+        s = spectra(a, xi, dt, f)
 
-The ``spectra`` function computes the seismic response spectrum for a known acceleration history function.
+:Description:
 
-- The computation is based on the vector ``a``, which contains an acceleration time history function defined at equal time steps.
-- The time step is specified by the variable ``dt``.
-- The value of the damping ratio is given by the variable ``xi``.
-- Output from the computation, stored in the vector ``s``, is achieved at frequencies specified by the column vector ``f``.
+    The ``spectra`` function computes the seismic response spectrum for a known acceleration history function.
 
-**Example**
+    - The computation is based on the vector ``a``, which contains an acceleration time history function defined at equal time steps.
+    - The time step is specified by the variable ``dt``.
+    - The value of the damping ratio is given by the variable ``xi``.
+    - Output from the computation, stored in the vector ``s``, is achieved at frequencies specified by the column vector ``f``.
 
-The following procedure can be used to produce a seismic response spectrum for a damping ratio :math:`\xi = 0.05`, defined at 34 logarithmically spaced frequency points. The acceleration time history ``a`` has been sampled at a frequency of 50 Hz, corresponding to a time increment ``dt = 0.02`` between collected points:
+:Example:
 
-.. code-block:: matlab
+    The following procedure can be used to produce a seismic response spectrum for a damping ratio :math:`\xi = 0.05`, defined at 34 logarithmically spaced frequency points. The acceleration time history ``a`` has been sampled at a frequency of 50 Hz, corresponding to a time increment ``dt = 0.02`` between collected points:
 
-    freq = logspace(0, log10(2^(33/6)), 34);
-    xi = 0.05;
-    dt = 0.02;
-    s = spectra(a, xi, dt, freq');
+    .. code-block:: matlab
 
-The resulting spectrum can be plotted by the command:
+        freq = logspace(0, log10(2^(33/6)), 34);
+        xi = 0.05;
+        dt = 0.02;
+        s = spectra(a, xi, dt, freq');
 
-.. code-block:: matlab
+    The resulting spectrum can be plotted by the command:
 
-    loglog(freq, s, '*')
+    .. code-block:: matlab
+
+        loglog(freq, s, '*')

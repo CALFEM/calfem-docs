@@ -1,114 +1,114 @@
-bar3s - Three dimensional bar element
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bar3s
+^^^^^
 
 .. index:: bar3s
 
-**Purpose**
+:Purpose:
 
-Compute normal force in a three dimensional bar element.
+    Compute normal force in a three dimensional bar element.
 
-.. figure:: images/bar3s.png
-    :align: center
-    :width: 70%
+    .. figure:: images/bar3s.png
+        :align: center
+        :width: 70%
 
-**Syntax**
+:Syntax:
 
-.. code-block:: matlab
+    .. code-block:: matlab
 
-    es = bar3s(ex, ey, ez, ep, ed)
-    es = bar3s(ex, ey, ez, ep, ed, eq)
-    [es, edi] = bar3s(ex, ey, ez, ep, ed, eq, n)
-    [es, edi, eci] = bar3s(ex, ey, ez, ep, ed, eq, n)
+        es = bar3s(ex, ey, ez, ep, ed)
+        es = bar3s(ex, ey, ez, ep, ed, eq)
+        [es, edi] = bar3s(ex, ey, ez, ep, ed, eq, n)
+        [es, edi, eci] = bar3s(ex, ey, ez, ep, ed, eq, n)
 
-**Description**
+:Description:
 
-``bar3s`` computes the normal force in a three dimensional bar element (see ``bar3e``).
+    ``bar3s`` computes the normal force in a three dimensional bar element (see ``bar3e``).
 
-The input variables ``ex``, ``ey``, and ``ep`` are defined in ``bar3e`` and the element nodal displacements, stored in ``ed``, are obtained by the function ``extract``.  
-The number of evaluation points for section forces and displacements are determined by ``n``. If ``n`` is omitted, only the ends of the bar are evaluated.
+    The input variables ``ex``, ``ey``, and ``ep`` are defined in ``bar3e`` and the element nodal displacements, stored in ``ed``, are obtained by the function ``extract``.  
+    The number of evaluation points for section forces and displacements are determined by ``n``. If ``n`` is omitted, only the ends of the bar are evaluated.
 
-The output variables:
+    The output variables:
 
-.. math::
+    .. math::
 
-    \mathrm{es} =
-    \begin{bmatrix}
-    N(0) \\
-    N(\bar{x}_2) \\
-    \vdots \\
-    N(\bar{x}_{n-1}) \\
-    N(L)
-    \end{bmatrix}
-    \qquad
-    \mathrm{edi} =
-    \begin{bmatrix}
-    u(0) \\
-    u(\bar{x}_2) \\
-    \vdots \\
-    u(\bar{x}_{n-1}) \\
-    u(L)
-    \end{bmatrix}
-    \qquad
-    \mathrm{eci} =
-    \begin{bmatrix}
-    0 \\
-    \bar{x}_2 \\
-    \vdots \\
-    \bar{x}_{n-1} \\
-    L
-    \end{bmatrix}
+        \mathrm{es} =
+        \begin{bmatrix}
+        N(0) \\
+        N(\bar{x}_2) \\
+        \vdots \\
+        N(\bar{x}_{n-1}) \\
+        N(L)
+        \end{bmatrix}
+        \qquad
+        \mathrm{edi} =
+        \begin{bmatrix}
+        u(0) \\
+        u(\bar{x}_2) \\
+        \vdots \\
+        u(\bar{x}_{n-1}) \\
+        u(L)
+        \end{bmatrix}
+        \qquad
+        \mathrm{eci} =
+        \begin{bmatrix}
+        0 \\
+        \bar{x}_2 \\
+        \vdots \\
+        \bar{x}_{n-1} \\
+        L
+        \end{bmatrix}
 
-contain the normal force, the displacement, and the evaluation points on the local :math:`\bar{x}`-axis.  
-:math:`L` is the length of the bar element.
+    contain the normal force, the displacement, and the evaluation points on the local :math:`\bar{x}`-axis.  
+    :math:`L` is the length of the bar element.
 
-**Theory**
+:Theory:
 
-The nodal displacements in global coordinates are given by
+    The nodal displacements in global coordinates are given by
 
-.. math::
+    .. math::
 
-    \mathbf{a}^e = \begin{bmatrix} u_1 & u_2 & u_3 & u_4 & u_5 & u_6 \end{bmatrix}^T
+        \mathbf{a}^e = \begin{bmatrix} u_1 & u_2 & u_3 & u_4 & u_5 & u_6 \end{bmatrix}^T
 
-The transpose of :math:`\mathbf{a}^e` is stored in ``ed``.
+    The transpose of :math:`\mathbf{a}^e` is stored in ``ed``.
 
-The nodal displacements in local coordinates are given by
+    The nodal displacements in local coordinates are given by
 
-.. math::
+    .. math::
 
-    \mathbf{\bar{a}}^e = \mathbf{G} \mathbf{a}^e
+        \mathbf{\bar{a}}^e = \mathbf{G} \mathbf{a}^e
 
-where the transformation matrix :math:`\mathbf{G}` is defined in ``bar3e``.
+    where the transformation matrix :math:`\mathbf{G}` is defined in ``bar3e``.
 
-The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
+    The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
 
-.. math::
+    .. math::
 
-    u(\bar{x}) = \mathbf{N} \mathbf{\bar{a}}^e + u_p(\bar{x})
+        u(\bar{x}) = \mathbf{N} \mathbf{\bar{a}}^e + u_p(\bar{x})
 
-.. math::
+    .. math::
 
-    N(\bar{x}) = D_{EA} \mathbf{B} \mathbf{\bar{a}}^e + N_p(\bar{x})
+        N(\bar{x}) = D_{EA} \mathbf{B} \mathbf{\bar{a}}^e + N_p(\bar{x})
 
-where
+    where
 
-.. math::
+    .. math::
 
-    \mathbf{N} = \begin{bmatrix} 1 & \bar{x} \end{bmatrix} \mathbf{C}^{-1} = \begin{bmatrix} 1-\frac{\bar{x}}{L} & \frac{\bar{x}}{L} \end{bmatrix}
+        \mathbf{N} = \begin{bmatrix} 1 & \bar{x} \end{bmatrix} \mathbf{C}^{-1} = \begin{bmatrix} 1-\frac{\bar{x}}{L} & \frac{\bar{x}}{L} \end{bmatrix}
 
-.. math::
+    .. math::
 
-    \mathbf{B} = \begin{bmatrix} 0 & 1 \end{bmatrix} \mathbf{C}^{-1} = \frac{1}{L} \begin{bmatrix} -1 & 1 \end{bmatrix}
+        \mathbf{B} = \begin{bmatrix} 0 & 1 \end{bmatrix} \mathbf{C}^{-1} = \frac{1}{L} \begin{bmatrix} -1 & 1 \end{bmatrix}
 
-.. math::
+    .. math::
 
-    u_p(\bar{x}) = -\frac{q_{\bar{x}}}{D_{EA}} \left( \frac{\bar{x}^2}{2} - \frac{L\bar{x}}{2} \right)
+        u_p(\bar{x}) = -\frac{q_{\bar{x}}}{D_{EA}} \left( \frac{\bar{x}^2}{2} - \frac{L\bar{x}}{2} \right)
 
-.. math::
+    .. math::
 
-    N_p(\bar{x}) = -q_{\bar{x}} \left( \bar{x} - \frac{L}{2} \right)
+        N_p(\bar{x}) = -q_{\bar{x}} \left( \bar{x} - \frac{L}{2} \right)
 
-where :math:`D_{EA}`, :math:`L`, :math:`q_{\bar{x}}` are defined in ``bar3e`` and
+    where :math:`D_{EA}`, :math:`L`, :math:`q_{\bar{x}}` are defined in ``bar3e`` and
 
-.. math::
+    .. math::
 
-    \mathbf{C}^{-1} = \begin{bmatrix} 1 & 0 \\ -\frac{1}{L} & \frac{1}{L} \end{bmatrix}
+        \mathbf{C}^{-1} = \begin{bmatrix} 1 & 0 \\ -\frac{1}{L} & \frac{1}{L} \end{bmatrix}
