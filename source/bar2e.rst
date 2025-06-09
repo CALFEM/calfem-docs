@@ -6,7 +6,7 @@ bar2e
 
     .. figure:: images/bar2e.png
         :align: center
-        :width: 70%
+        :width: 71%
 
 :Syntax:
     .. code-block:: matlab
