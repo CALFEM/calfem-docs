@@ -6,10 +6,17 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'CALFEM - A Finite Element Toolbox'
+project = 'CALFEM - A Finite Element Toolbox for MATLAB'
 copyright = '2025, ...'
 author = '...'
 release = '0.1'
+
+#target_lang = "matlab"
+
+#if target_lang == 'matlab':
+#    tags.add('matlab')
+#else:
+#    tags.add('python')
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
