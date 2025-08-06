@@ -1,294 +1,296 @@
-General purpose functions (IPython/Python)
-==========================================
+.. only:: python
 
-The following are general purpose functions for managing variables, workspace, and output in IPython or Python interactive sessions. These are analogous to MATLAB's general functions.
+    General purpose functions (IPython/Python)
+    ==========================================
 
-General functions
------------------
+    The following are general purpose functions for managing variables, workspace, and output in IPython or Python interactive sessions. These are analogous to MATLAB's general functions.
 
-help
-^^^^
+    General functions
+    -----------------
 
-.. index:: help
+    help
+    ^^^^
 
-:Purpose:
-    Display documentation for a specific function or object.
+    .. index:: help
 
-:Syntax:
-    .. code-block:: ipython
+    :Purpose:
+        Display documentation for a specific function or object.
 
-        help(function_name)
-        function_name?
-        function_name??
+    :Syntax:
+        .. code-block:: ipython
 
-:Description:
-    :code:`help(function_name)` displays the docstring/documentation for the specified function.
-    :code:`function_name?` shows a summary in IPython.
-    :code:`function_name??` shows the full docstring and source if available.
+            help(function_name)
+            function_name?
+            function_name??
 
-:Example:
-    Typing
+    :Description:
+        :code:`help(function_name)` displays the docstring/documentation for the specified function.
+        :code:`function_name?` shows a summary in IPython.
+        :code:`function_name??` shows the full docstring and source if available.
 
-    .. code-block:: ipython
+    :Example:
+        Typing
 
-        help(len)
-        len?
-        len??
+        .. code-block:: ipython
 
-    yields documentation for the :code:`len` function.
+            help(len)
+            len?
+            len??
 
-:Note:
-    In IPython, :code:`?` and :code:`??` are convenient shortcuts.
+        yields documentation for the :code:`len` function.
 
-type
-^^^^
+    :Note:
+        In IPython, :code:`?` and :code:`??` are convenient shortcuts.
 
-.. index:: type
+    type
+    ^^^^
 
-:Purpose:
-    Show the type of an object.
+    .. index:: type
 
-:Syntax:
-    .. code-block:: python
+    :Purpose:
+        Show the type of an object.
 
-        type(obj)
+    :Syntax:
+        .. code-block:: python
 
-:Description:
-    :code:`type(obj)` returns the type of the object.
+            type(obj)
 
-:Note:
-    To display the source code of a function in IPython, use :code:`function_name??`.
+    :Description:
+        :code:`type(obj)` returns the type of the object.
 
-what
-^^^^
+    :Note:
+        To display the source code of a function in IPython, use :code:`function_name??`.
 
-.. index:: what
+    what
+    ^^^^
 
-:Purpose:
-    List variables in the current namespace.
+    .. index:: what
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        List variables in the current namespace.
 
-        %who
-        %whos
+    :Syntax:
+        .. code:: python
 
-:Description:
-    :code:`%who` lists variable names in the interactive namespace.
-    :code:`%whos` gives a detailed list with type and info.
+            %who
+            %whos
 
-:Note:
-    These are IPython magic commands.
+    :Description:
+        :code:`%who` lists variable names in the interactive namespace.
+        :code:`%whos` gives a detailed list with type and info.
 
-...
-^^^
+    :Note:
+        These are IPython magic commands.
 
-:Purpose:
-    Line continuation.
+    ...
+    ^^^
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Line continuation.
 
-        ...
+    :Syntax:
+        .. code:: python
 
-:Description:
-    In Python, :code:`...` is used as an Ellipsis object or for line continuation in some contexts (e.g., multi-line lambdas or function definitions). For line continuation, use the backslash :code:`\` or parentheses.
+            ...
 
-:Note:
-    In IPython, multi-line statements are handled automatically.
+    :Description:
+        In Python, :code:`...` is used as an Ellipsis object or for line continuation in some contexts (e.g., multi-line lambdas or function definitions). For line continuation, use the backslash :code:`\` or parentheses.
 
-#
-^
+    :Note:
+        In IPython, multi-line statements are handled automatically.
 
-:Purpose:
-    Write a comment line.
+    #
+    ^
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Write a comment line.
 
-        # arbitrary text
+    :Syntax:
+        .. code:: python
 
-:Description:
-    Any text after :code:`#` is a comment.
+            # arbitrary text
 
-:Note:
-    This is standard Python syntax.
+    :Description:
+        Any text after :code:`#` is a comment.
 
-Variables and workspace
------------------------
+    :Note:
+        This is standard Python syntax.
 
-clear
-^^^^^
+    Variables and workspace
+    -----------------------
 
-.. index:: clear
+    clear
+    ^^^^^
 
-:Purpose:
-    Remove variables from workspace.
+    .. index:: clear
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Remove variables from workspace.
 
-        del var1, var2
-        %reset
+    :Syntax:
+        .. code:: python
 
-:Description:
-    :code:`del var1` deletes a variable.
-    :code:`%reset` (IPython magic) clears all variables (asks for confirmation).
+            del var1, var2
+            %reset
 
-:Note:
-    Use with caution; :code:`%reset` cannot be undone.
+    :Description:
+        :code:`del var1` deletes a variable.
+        :code:`%reset` (IPython magic) clears all variables (asks for confirmation).
 
-disp
-^^^^
+    :Note:
+        Use with caution; :code:`%reset` cannot be undone.
 
-.. index:: disp
+    disp
+    ^^^^
 
-:Purpose:
-    Display a variable.
+    .. index:: disp
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Display a variable.
 
-        print(A)
-        display(A)  # in Jupyter/IPython
+    :Syntax:
+        .. code:: python
 
-:Description:
-    :code:`print(A)` prints the value of :code:`A`.
-    :code:`display(A)` (from :code:`IPython.display`) can be used for rich display in Jupyter.
+            print(A)
+            display(A)  # in Jupyter/IPython
 
-load
-^^^^
+    :Description:
+        :code:`print(A)` prints the value of :code:`A`.
+        :code:`display(A)` (from :code:`IPython.display`) can be used for rich display in Jupyter.
 
-.. index:: load
+    load
+    ^^^^
 
-:Purpose:
-    Load variables from disk.
+    .. index:: load
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Load variables from disk.
 
-        import numpy as np
-        A = np.load('filename.npy')
-        data = np.loadtxt('filename.txt')
+    :Syntax:
+        .. code:: python
 
-:Description:
-    Use :code:`np.load` for binary NumPy files, :code:`np.loadtxt` or :code:`pandas.read_csv` for text files.
+            import numpy as np
+            A = np.load('filename.npy')
+            data = np.loadtxt('filename.txt')
 
-:Note:
-    There is no direct equivalent to MATLAB's :code:`load` for .mat files, but :code:`scipy.io.loadmat` can be used for MATLAB files.
+    :Description:
+        Use :code:`np.load` for binary NumPy files, :code:`np.loadtxt` or :code:`pandas.read_csv` for text files.
 
-save
-^^^^
+    :Note:
+        There is no direct equivalent to MATLAB's :code:`load` for .mat files, but :code:`scipy.io.loadmat` can be used for MATLAB files.
 
-.. index:: save
+    save
+    ^^^^
 
-:Purpose:
-    Save variables to disk.
+    .. index:: save
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Save variables to disk.
 
-        np.save('filename.npy', A)
-        np.savetxt('filename.txt', A)
+    :Syntax:
+        .. code:: python
 
-:Description:
-    Use :code:`np.save` for binary, :code:`np.savetxt` for text files. For multiple variables, consider using :code:`np.savez` or :code:`pickle`.
+            np.save('filename.npy', A)
+            np.savetxt('filename.txt', A)
 
-who, whos
-^^^^^^^^^
+    :Description:
+        Use :code:`np.save` for binary, :code:`np.savetxt` for text files. For multiple variables, consider using :code:`np.savez` or :code:`pickle`.
 
-.. index:: who
-.. index:: whos
+    who, whos
+    ^^^^^^^^^
 
-:Purpose:
-    List variables in the workspace.
+    .. index:: who
+    .. index:: whos
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        List variables in the workspace.
 
-        %who
-        %whos
+    :Syntax:
+        .. code:: python
 
-:Description:
-    :code:`%who` lists variable names.
-    :code:`%whos` gives detailed info.
+            %who
+            %whos
 
-:Note:
-    These are IPython magic commands.
+    :Description:
+        :code:`%who` lists variable names.
+        :code:`%whos` gives detailed info.
 
-Files and command window
-------------------------
+    :Note:
+        These are IPython magic commands.
 
-diary
-^^^^^
+    Files and command window
+    ------------------------
 
-.. index:: diary
+    diary
+    ^^^^^
 
-:Purpose:
-    Save session output to a file.
+    .. index:: diary
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Save session output to a file.
 
-        %logstart filename
-        %logstop
+    :Syntax:
+        .. code:: python
 
-:Description:
-    :code:`%logstart filename` begins logging input/output to a file.
-    :code:`%logstop` stops logging.
+            %logstart filename
+            %logstop
 
-:Note:
-    These are IPython magic commands.
+    :Description:
+        :code:`%logstart filename` begins logging input/output to a file.
+        :code:`%logstop` stops logging.
 
-echo
-^^^^
+    :Note:
+        These are IPython magic commands.
 
-.. index:: echo
+    echo
+    ^^^^
 
-:Purpose:
-    Not directly applicable in Python. For script debugging, use print statements or logging.
+    .. index:: echo
 
-:Note:
-    No direct equivalent. Use :code:`print` or the :code:`logging` module.
+    :Purpose:
+        Not directly applicable in Python. For script debugging, use print statements or logging.
 
-format
-^^^^^^
+    :Note:
+        No direct equivalent. Use :code:`print` or the :code:`logging` module.
 
-.. index:: format
+    format
+    ^^^^^^
 
-:Purpose:
-    Control output display format.
+    .. index:: format
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Control output display format.
 
-        # For NumPy arrays:
-        np.set_printoptions(precision=5)
-        np.set_printoptions(precision=15, suppress=True)
+    :Syntax:
+        .. code:: python
 
-:Description:
-    Use :code:`np.set_printoptions` to control NumPy array display precision.
+            # For NumPy arrays:
+            np.set_printoptions(precision=5)
+            np.set_printoptions(precision=15, suppress=True)
 
-:Note:
-    For pandas DataFrames, use :code:`pd.set_option`.
+    :Description:
+        Use :code:`np.set_printoptions` to control NumPy array display precision.
 
-quit
-^^^^
+    :Note:
+        For pandas DataFrames, use :code:`pd.set_option`.
 
-.. index:: quit
+    quit
+    ^^^^
 
-:Purpose:
-    Terminate session.
+    .. index:: quit
 
-:Syntax:
-    .. code:: python
+    :Purpose:
+        Terminate session.
 
-        exit()
-        quit()
+    :Syntax:
+        .. code:: python
 
-:Description:
-    :code:`exit()` or :code:`quit()` exits the Python interpreter or IPython session.
+            exit()
+            quit()
 
-:Note:
-    In Jupyter, use :code:`exit()` in a cell.
+    :Description:
+        :code:`exit()` or :code:`quit()` exits the Python interpreter or IPython session.
+
+    :Note:
+        In Jupyter, use :code:`exit()` in a cell.
 

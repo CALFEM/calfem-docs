@@ -1,380 +1,382 @@
-General purpose functions
-=========================
+.. only:: matlab
 
-The general purpose functions are used for managing variables and workspace, control of output, etc. The functions listed here are a subset of the general purpose functions described in the MATLAB manual. The functions can be divided into the following groups:
+    General purpose functions
+    =========================
 
+    The general purpose functions are used for managing variables and workspace, control of output, etc. The functions listed here are a subset of the general purpose functions described in the MATLAB manual. The functions can be divided into the following groups:
 
-General functions
------------------
 
-help
-^^^^
+    General functions
+    -----------------
 
-.. index:: help
+    help
+    ^^^^
 
-:Purpose:
-    Display a description of purpose and syntax for a specific function.
+    .. index:: help
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Display a description of purpose and syntax for a specific function.
 
-        help function_name
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`help` provides an online documentation for the specified function.
+            help function_name
 
-:Example:
-    Typing
+    :Description:
+        :code:`help` provides an online documentation for the specified function.
 
-    .. code:: matlab
+    :Example:
+        Typing
 
-        >> help spring1e
+        .. code:: matlab
 
-    yields
+            >> help spring1e
 
-    .. code:: none
+        yields
 
-        Ke=spring1e(ep)
-        -------------------------------------------------------------
-        PURPOSE
-         Compute element stiffness matrix for spring (analog) element.
+        .. code:: none
 
-        INPUT:  ep = [k]; spring stiffness or analog quantity.
+            Ke=spring1e(ep)
+            -------------------------------------------------------------
+            PURPOSE
+            Compute element stiffness matrix for spring (analog) element.
 
-        OUTPUT: Ke : stiffness matrix, dim(Ke)= 2 x 2
-        -------------------------------------------------------------
+            INPUT:  ep = [k]; spring stiffness or analog quantity.
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`help` function, type :code:`help help`.
+            OUTPUT: Ke : stiffness matrix, dim(Ke)= 2 x 2
+            -------------------------------------------------------------
 
-type
-^^^^
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`help` function, type :code:`help help`.
 
-.. index:: type
+    type
+    ^^^^
 
-:Purpose:
-    List file.
+    .. index:: type
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        List file.
 
-        type filename
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`type filename` lists the specified file. Use path names in the usual way for your operating system. If a filename extension is not given, .m is added by default. This makes it convenient to list the contents of .m-files on the screen.
+            type filename
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`type` function, type :code:`help type`.
+    :Description:
+        :code:`type filename` lists the specified file. Use path names in the usual way for your operating system. If a filename extension is not given, .m is added by default. This makes it convenient to list the contents of .m-files on the screen.
 
-what
-^^^^
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`type` function, type :code:`help type`.
 
-.. index:: what
+    what
+    ^^^^
 
-:Purpose:
-    Directory listing of .m-files, .mat-files and .mex-files.
+    .. index:: what
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Directory listing of .m-files, .mat-files and .mex-files.
 
-        what
-        what dirname
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`what` lists the .m-files, .mat-files and .mex-files in the current directory.
+            what
+            what dirname
 
-    :code:`what dirname` lists the files in directory :code:`dirname` in the MATLAB search path. The syntax of the path depends on your operating system.
+    :Description:
+        :code:`what` lists the .m-files, .mat-files and .mex-files in the current directory.
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`what` function, type :code:`help what`.
+        :code:`what dirname` lists the files in directory :code:`dirname` in the MATLAB search path. The syntax of the path depends on your operating system.
 
-...
-^^^
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`what` function, type :code:`help what`.
 
-:Purpose:
-    Continuation.
+    ...
+    ^^^
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Continuation.
 
-        ...
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    An expression can be continued on the next line by using :code:`...`.
+            ...
 
-:Note:
-    This is a MATLAB built-in function.
+    :Description:
+        An expression can be continued on the next line by using :code:`...`.
 
-%
-^
+    :Note:
+        This is a MATLAB built-in function.
 
-:Purpose:
-    Write a comment line.
+    %
+    ^
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Write a comment line.
 
-        % arbitrary text
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    An arbitrary text can be written after the symbol :code:`\%`.
+            % arbitrary text
 
-:Note:
-    This is a MATLAB built-in character.
+    :Description:
+        An arbitrary text can be written after the symbol :code:`\%`.
 
+    :Note:
+        This is a MATLAB built-in character.
 
 
-Variables and workspace
------------------------
 
-clear
-^^^^^
+    Variables and workspace
+    -----------------------
 
-.. index:: clear
+    clear
+    ^^^^^
 
-:Purpose:
-    Remove variables from workspace.
+    .. index:: clear
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Remove variables from workspace.
 
-        clear
-        clear name1 name2 name3 ...
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`clear` removes all variables from workspace.
+            clear
+            clear name1 name2 name3 ...
 
-    :code:`clear name1 name2 name3 ...` removes specified variables from workspace.
+    :Description:
+        :code:`clear` removes all variables from workspace.
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`clear` function, type :code:`help clear`.
+        :code:`clear name1 name2 name3 ...` removes specified variables from workspace.
 
-.. _diary:
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`clear` function, type :code:`help clear`.
 
-disp
-^^^^
+    .. _diary:
 
-.. index:: disp
+    disp
+    ^^^^
 
-:Purpose:
-    Display a variable in matrix bank on display screen.
+    .. index:: disp
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Display a variable in matrix bank on display screen.
 
-        disp(A)
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`disp(A)` displays the matrix :code:`A` on the display screen.
+            disp(A)
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`disp` function, type :code:`help disp`.
+    :Description:
+        :code:`disp(A)` displays the matrix :code:`A` on the display screen.
 
-load
-^^^^
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`disp` function, type :code:`help disp`.
 
-.. index:: load
+    load
+    ^^^^
 
-:Purpose:
-    Retrieve variable from disk and load in workspace.
+    .. index:: load
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Retrieve variable from disk and load in workspace.
 
-        load filename
-        load filename.ext
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`load filename` retrieves the variables from the binary file :code:`filename.mat`.
+            load filename
+            load filename.ext
 
-    :code:`load filename.ext` reads the ASCII file :code:`filename.ext` with numeric data arranged in :code:`m` rows and :code:`n` columns. The result is an :code:`m \times n` matrix residing in workspace with the name :code:`filename`, i.e. with the extension stripped.
+    :Description:
+        :code:`load filename` retrieves the variables from the binary file :code:`filename.mat`.
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`load` function, type :code:`help load`.
+        :code:`load filename.ext` reads the ASCII file :code:`filename.ext` with numeric data arranged in :code:`m` rows and :code:`n` columns. The result is an :code:`m \times n` matrix residing in workspace with the name :code:`filename`, i.e. with the extension stripped.
 
-save
-^^^^
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`load` function, type :code:`help load`.
 
-.. index:: save
+    save
+    ^^^^
 
-:Purpose:
-    Save workspace variables on disk.
+    .. index:: save
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Save workspace variables on disk.
 
-        save filename
-        save filename variables
-        save filename variables -ascii
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`save filename` writes all variables residing in workspace in a binary file named :code:`filename.mat`.
+            save filename
+            save filename variables
+            save filename variables -ascii
 
-    :code:`save filename variables` writes named variables, separated by blanks, in a binary file named :code:`filename.mat`.
+    :Description:
+        :code:`save filename` writes all variables residing in workspace in a binary file named :code:`filename.mat`.
 
-    :code:`save filename variables -ascii` writes named variables in an ASCII file named :code:`filename`.
+        :code:`save filename variables` writes named variables, separated by blanks, in a binary file named :code:`filename.mat`.
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`save` function, type :code:`help save`.
+        :code:`save filename variables -ascii` writes named variables in an ASCII file named :code:`filename`.
 
-who, whos
-^^^^^^^^^
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`save` function, type :code:`help save`.
 
-.. index:: who
-.. index:: whos
+    who, whos
+    ^^^^^^^^^
 
-:Purpose:
-    List directory of variables in matrix bank.
+    .. index:: who
+    .. index:: whos
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        List directory of variables in matrix bank.
 
-        who
-        whos
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`who` lists the variables currently in memory.
+            who
+            whos
 
-    :code:`whos` lists the current variables and their size.
+    :Description:
+        :code:`who` lists the variables currently in memory.
 
-:Examples:
+        :code:`whos` lists the current variables and their size.
 
-    .. code:: matlab
+    :Examples:
 
-        who
+        .. code:: matlab
 
-    Your variables are:
+            who
 
-    :code:`A \quad B \quad C \quad K \quad M \quad X \quad k \quad \lambda`
+        Your variables are:
 
-    .. code:: matlab
+        :code:`A \quad B \quad C \quad K \quad M \quad X \quad k \quad \lambda`
 
-        whos
+        .. code:: matlab
 
-    +--------+---------+----------+-------+---------+---------+
-    | name   | size    | elements | bytes | density | complex |
-    +--------+---------+----------+-------+---------+---------+
-    | A      | 3x3     | 9        | 72    | Full    | No      |
-    | B      | 3x3     | 9        | 72    | Full    | No      |
-    | C      | 3x3     | 9        | 72    | Full    | No      |
-    | K      | 20x20   | 400      | 3200  | Full    | No      |
-    | M      | 20x20   | 400      | 3200  | Full    | No      |
-    | X      | 20x20   | 400      | 3200  | Full    | No      |
-    | k      | 1x1     | 1        | 8     | Full    | No      |
-    | lambda | 20x1    | 20       | 160   | Full    | No      |
-    +--------+---------+----------+-------+---------+---------+
+            whos
 
-    Grand total is 1248 elements using 9984 bytes
+        +--------+---------+----------+-------+---------+---------+
+        | name   | size    | elements | bytes | density | complex |
+        +--------+---------+----------+-------+---------+---------+
+        | A      | 3x3     | 9        | 72    | Full    | No      |
+        | B      | 3x3     | 9        | 72    | Full    | No      |
+        | C      | 3x3     | 9        | 72    | Full    | No      |
+        | K      | 20x20   | 400      | 3200  | Full    | No      |
+        | M      | 20x20   | 400      | 3200  | Full    | No      |
+        | X      | 20x20   | 400      | 3200  | Full    | No      |
+        | k      | 1x1     | 1        | 8     | Full    | No      |
+        | lambda | 20x1    | 20       | 160   | Full    | No      |
+        +--------+---------+----------+-------+---------+---------+
 
-:Note:
-    These are MATLAB built-in functions. For more information about the functions, type :code:`help who` or :code:`help whos`.
+        Grand total is 1248 elements using 9984 bytes
 
+    :Note:
+        These are MATLAB built-in functions. For more information about the functions, type :code:`help who` or :code:`help whos`.
 
-Files and command window
-------------------------
 
-diary
-^^^^^
+    Files and command window
+    ------------------------
 
-.. index:: diary
+    diary
+    ^^^^^
 
-:Purpose:
-    Save session in a disk file.
+    .. index:: diary
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Save session in a disk file.
 
-        diary filename
-        diary off
-        diary on
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`diary filename` writes a copy of all subsequent keyboard input and most of the resulting output (but not graphs) on the named file. If the file :code:`filename` already exists, the output is appended to the end of that file.
+            diary filename
+            diary off
+            diary on
 
-    :code:`diary off` stops storage of the output.
+    :Description:
+        :code:`diary filename` writes a copy of all subsequent keyboard input and most of the resulting output (but not graphs) on the named file. If the file :code:`filename` already exists, the output is appended to the end of that file.
 
-    :code:`diary on` turns it back on again, using the current filename or default filename :code:`diary` if none has yet been specified.
+        :code:`diary off` stops storage of the output.
 
-    The :code:`diary` function may be used to store the current session for later runs. To make this possible, finish each command line with semicolon ';' to avoid the storage of intermediate results on the named diary file.
+        :code:`diary on` turns it back on again, using the current filename or default filename :code:`diary` if none has yet been specified.
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`diary` function, type :code:`help diary`.
+        The :code:`diary` function may be used to store the current session for later runs. To make this possible, finish each command line with semicolon ';' to avoid the storage of intermediate results on the named diary file.
 
-.. _disp:
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`diary` function, type :code:`help diary`.
 
+    .. _disp:
 
-.. _echo:
 
-echo
-^^^^
+    .. _echo:
 
-.. index:: echo
+    echo
+    ^^^^
 
-:Purpose:
-    Control output on the display screen.
+    .. index:: echo
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Control output on the display screen.
 
-        echo on
-        echo off
-        echo
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`echo on` turns on echoing of commands inside Script-files.
+            echo on
+            echo off
+            echo
 
-    :code:`echo off` turns off echoing.
+    :Description:
+        :code:`echo on` turns on echoing of commands inside Script-files.
 
-    :code:`echo` by itself toggles the echo state.
+        :code:`echo off` turns off echoing.
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`echo` function, type :code:`help echo`.
+        :code:`echo` by itself toggles the echo state.
 
-.. _format:
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`echo` function, type :code:`help echo`.
 
-format
-^^^^^^
+    .. _format:
 
-.. index:: format
+    format
+    ^^^^^^
 
-:Purpose:
-    Control the output display format.
+    .. index:: format
 
-:Syntax:
-    See the listing below.
+    :Purpose:
+        Control the output display format.
 
-:Description:
-    :code:`format` controls the output format. By default, MATLAB displays numbers in a short format with five decimal digits.
+    :Syntax:
+        See the listing below.
 
-    +---------------------+-------------------------------+--------------------------+
-    | Command             | Result                        | Example                  |
-    +---------------------+-------------------------------+--------------------------+
-    | format short        | 5 digit scaled fixed point    | 3.1416                   |
-    | format long         | 15 digit scaled fixed point   | 3.14159265358979         |
-    | format short e      | 5 digit floating point        | 3.1416e+000              |
-    | format long e       | 16 digit floating point       | 3.141592653589793e+000   |
-    +---------------------+-------------------------------+--------------------------+
+    :Description:
+        :code:`format` controls the output format. By default, MATLAB displays numbers in a short format with five decimal digits.
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`format` function, type :code:`help format`.
+        +---------------------+-------------------------------+--------------------------+
+        | Command             | Result                        | Example                  |
+        +---------------------+-------------------------------+--------------------------+
+        | format short        | 5 digit scaled fixed point    | 3.1416                   |
+        | format long         | 15 digit scaled fixed point   | 3.14159265358979         |
+        | format short e      | 5 digit floating point        | 3.1416e+000              |
+        | format long e       | 16 digit floating point       | 3.141592653589793e+000   |
+        +---------------------+-------------------------------+--------------------------+
 
-quit
-^^^^
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`format` function, type :code:`help format`.
 
-.. index:: quit
+    quit
+    ^^^^
 
-:Purpose:
-    Terminate CALFEM session.
+    .. index:: quit
 
-:Syntax:
-    .. code:: matlab
+    :Purpose:
+        Terminate CALFEM session.
 
-        quit
+    :Syntax:
+        .. code:: matlab
 
-:Description:
-    :code:`quit` terminates CALFEM without saving the workspace.
+            quit
 
-:Note:
-    This is a MATLAB built-in function. For more information about the :code:`quit` function, type :code:`help quit`.
+    :Description:
+        :code:`quit` terminates CALFEM without saving the workspace.
+
+    :Note:
+        This is a MATLAB built-in function. For more information about the :code:`quit` function, type :code:`help quit`.
 
 
