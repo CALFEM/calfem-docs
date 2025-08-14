@@ -20,7 +20,7 @@ bar1e
 
 :Description:
 
-    ``bar1e`` provides the element stiffness matrix ``Ke`` for a one dimensional bar element.
+    :math:`\mathsf{bar1e}` provides the element stiffness matrix  :math:`\bar{\mathbf{K}}^e` as variable :math:`\mathsf{Ke}` for a one dimensional bar element.
     The input variables
 
     .. math::
@@ -47,7 +47,7 @@ bar1e
 
 :Theory:
 
-    The element stiffness matrix :math:`\bar{\mathbf{K}}^e`, stored in ``Ke``, is computed according to
+    The element stiffness matrix :math:`\bar{\mathbf{K}}^e`, stored in :math:`\mathsf{Ke}`, is computed according to
 
     .. math::
 
