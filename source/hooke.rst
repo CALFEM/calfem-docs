@@ -12,23 +12,17 @@ hooke
 :Description:
     The function :code:`hooke` computes the material matrix :math:`\mathbf{D}` for a linear elastic and isotropic material.
 
-    The variable :math:`\mathrm{ptype}` is used to define the type of analysis:
+    The variable :code:`ptype` is used to define the type of analysis:
 
-    .. math::
-
-        \mathrm{ptype} = \left\{
-            \begin{array}{ll}
-                1 & \text{plane stress} \\
-                2 & \text{plane strain} \\
-                3 & \text{axisymmetry} \\
-                4 & \text{three dimensional analysis}
-            \end{array}
-        \right.
+    * :code:`ptype = 1` - plane stress
+    * :code:`ptype = 2` - plane strain  
+    * :code:`ptype = 3` - axisymmetry
+    * :code:`ptype = 4` - three dimensional analysis
 
     The material parameters :math:`E` and :math:`\nu` define the modulus of elasticity and the Poisson's ratio, respectively.
 
 :Theory:
-    For plane stress (:math:`\mathrm{ptype}=1`), :math:`\mathbf{D}` is formed as
+    For plane stress (:code:`ptype=1`), :math:`\mathbf{D}` is formed as
 
     .. math::
 
@@ -39,7 +33,7 @@ hooke
             0 & 0 & \frac{1-\nu}{2}
         \end{bmatrix}
 
-    For plane strain (:math:`\mathrm{ptype}=2`) and axisymmetry (:math:`\mathrm{ptype}=3`), :math:`\mathbf{D}` is formed as
+    For plane strain (:code:`ptype=2`) and axisymmetry (:code:`ptype=3`), :math:`\mathbf{D}` is formed as
 
     .. math::
 
@@ -51,7 +45,7 @@ hooke
             0 & 0 & 0 & \frac{1}{2}(1-2\nu)
         \end{bmatrix}
 
-    For the three dimensional case (:math:`\mathrm{ptype}=4`), :math:`\mathbf{D}` is formed as
+    For the three dimensional case (:code:`ptype=4`), :math:`\mathbf{D}` is formed as
 
     .. math::
 
