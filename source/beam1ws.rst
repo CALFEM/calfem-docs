@@ -35,7 +35,7 @@ beam1ws
 
     .. math::
 
-        \mathrm{es} =
+        \mathsf{es} =
         \left[
         \begin{array}{cc}
         V(0)  & M(0) \\
@@ -47,7 +47,7 @@ beam1ws
         \right]
 
         \quad
-        \mathrm{edi} =
+        \mathsf{edi} =
         \left[
         \begin{array}{c}
         v(0)   \\
@@ -59,7 +59,7 @@ beam1ws
         \right]
 
         \quad
-        \mathrm{eci} =
+        \mathsf{eci} =
         \left[
         \begin{array}{c}
         0  \\
@@ -81,7 +81,7 @@ beam1ws
 
         \mathbf{\bar{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \end{bmatrix}
 
-    where the transpose of :math:`\mathbf{a}^e` is stored in ``ed``.
+    where the transpose of :math:`\mathbf{a}^e` is stored in ``\mathsf{ed}``.
 
     The displacement :math:`v(\bar{x})`, the bending moment :math:`M(\bar{x})` and the shear force :math:`V(\bar{x})` are computed from
 

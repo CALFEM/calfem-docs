@@ -22,17 +22,17 @@ bar1s
 
 :Description:
 
-    ``bar1s`` computes the normal force in the one dimensional bar element ``bar1e``.
+    :math:`\mathsf{bar1s}` computes the normal force in the one dimensional bar element :math:`\mathsf{bar1e}`.
 
-    The input variables ``ex`` and ``ep`` are defined in ``bar1e`` and the element nodal displacements, stored in ``ed``, are obtained by the function ``extract``. If distributed load is applied to the element, the variable ``eq`` must be included.
+    The input variables :math:`\mathsf{ex}` and :math:`\mathsf{ep}` are defined in :math:`\mathsf{bar1e}` and the element nodal displacements, stored in :math:`\mathsf{ed}`, are obtained by the function :math:`\mathsf{extract_ed}`. If distributed load is applied to the element, the variable :math:`\mathsf{eq}` must be included.
 
-    The number of evaluation points for normal force and displacement are determined by ``n``. If ``n`` is omitted, only the ends of the bar are evaluated.
+    The number of evaluation points for normal force and displacement are determined by :math:`\mathsf{n}`. If :math:`\mathsf{n}` is omitted, only the ends of the bar are evaluated.
 
     The output variables
 
     .. math::
 
-        \mathrm{es} =
+        \mathsf{es} =
         \begin{bmatrix}
         N(0) \\
         N(\bar{x}_2) \\
@@ -41,7 +41,7 @@ bar1s
         N(L)
         \end{bmatrix}
         \qquad
-        \mathrm{edi} =
+        \mathsf{edi} =
         \begin{bmatrix}
         u(0) \\
         u(\bar{x}_2) \\
@@ -50,7 +50,7 @@ bar1s
         u(L)
         \end{bmatrix}
         \qquad
-        \mathrm{eci} =
+        \mathsf{eci} =
         \begin{bmatrix}
         0 \\
         \bar{x}_2 \\
@@ -69,7 +69,7 @@ bar1s
 
         \mathbf{\bar{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \end{bmatrix}
 
-    The transpose of :math:`\mathbf{\bar{a}}^e` is stored in ``ed``.
+    The transpose of :math:`\mathbf{\bar{a}}^e` is stored in :math:`\mathsf{ed}`.
 
     The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
 
@@ -99,7 +99,7 @@ bar1s
 
         N_p(\bar{x}) = -q_{\bar{x}} \left( \bar{x} - \frac{L}{2} \right)
 
-    in which :math:`D_{EA}`, :math:`L`, and :math:`q_{\bar{x}}` are defined in ``bar1e`` and
+    in which :math:`D_{EA}`, :math:`L`, and :math:`q_{\bar{x}}` are defined in :math:`\mathsf{bar1e}` and
 
     .. math::
 

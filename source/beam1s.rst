@@ -35,7 +35,7 @@ beam1s
 
     .. math::
 
-        \mathrm{es} =
+        \mathsf{es} =
         \begin{bmatrix}
         V(0)  & M(0) \\
         V(\bar{x}_{2}) & M(\bar{x}_{2})  \\
@@ -44,7 +44,7 @@ beam1s
         V(L) & M(L)
         \end{bmatrix}
         \qquad
-        \mathrm{edi} =
+        \mathsf{edi} =
         \begin{bmatrix}
         v(0)   \\
         v(\bar{x}_{2})   \\
@@ -53,7 +53,7 @@ beam1s
         v(L)
         \end{bmatrix}
         \qquad
-        \mathrm{eci} =
+        \mathsf{eci} =
         \begin{bmatrix}
         0  \\
         \bar x_{2} \\

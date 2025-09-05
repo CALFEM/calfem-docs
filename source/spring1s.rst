@@ -14,18 +14,16 @@ spring1s
         es = spring1s(ep, ed)
 
 :Description:
-    :math:`\mathrm{spring1s}` computes the spring force :math:`\mathrm{es}` in a spring element.
+    :code:`spring1s` computes the spring force in the spring element :code:`spring1e`.
 
-    The input variable :math:`\mathrm{ep}` is defined in :math:`\mathrm{spring1e}` and the
-    element nodal displacements :math:`\mathrm{ed}` are obtained by the function :math:`\mathrm{extract}`.
+    The input variable :code:`ep` is defined in :code:`spring1e` and the
+    element nodal displacements :code:`ed` are obtained by the function :code:`extract_ed()`.
 
-    The output variable
-
-    .. math::
-
-        \mathrm{es} = \left[\,N\,\right]
-
-    contains the spring force :math:`N`, or the analog quantity.
+    The output variable 
+        
+        :code:`es = [`:math:`N` :code:`]` 
+        
+    contains the spring force, or the analog quantity. 
 
 :Theory:
     The spring force :math:`N`, or analog quantity, is computed according to

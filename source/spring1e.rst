@@ -14,16 +14,16 @@ spring1e
         Ke = spring1e(ep)
 
 :Description:
-    :math:`\mathtt{spring1e}` provides the element stiffness matrix :math:`\mathtt{Ke}` for a spring element.
+    :math:`\mathsf{spring1e}` provides the element stiffness matrix :math:`\bar{\mathbf{K}}^e` for a spring element.
 
     The input variable
 
-    :math:`\mathtt{ep} = [\,k\,]`
+    :math:`\mathsf{ep} = [\,k\,]`
 
     supplies the spring stiffness :math:`k` or the analog quantity defined in Table :ref:`tanalog`.
 
 :Theory:
-    The element stiffness matrix :math:`\mathbf{K}^e`, stored in :math:`\mathtt{Ke}`, is computed according to
+    The element stiffness matrix :math:`\mathbf{K}^e`, stored in :math:`\mathsf{Ke}`, is computed according to
 
     .. math::
 
@@ -32,4 +32,4 @@ spring1e
             -k & k
         \end{bmatrix}
 
-    where :math:`k` is defined by :math:`\mathtt{ep}`.
+    where :math:`k` is defined by :math:`\mathsf{ep}`.

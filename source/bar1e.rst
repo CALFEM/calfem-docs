@@ -10,6 +10,7 @@ bar1e
     .. figure:: images/bar1e_1.png
         :align: center
         :width: 70%
+    
 
 :Syntax:
 
@@ -20,24 +21,24 @@ bar1e
 
 :Description:
 
-    :math:`\mathsf{bar1e}` provides the element stiffness matrix  :math:`\bar{\mathbf{K}}^e` as variable :math:`\mathsf{Ke}` for a one dimensional bar element.
+    :math:`\mathsf{bar1e}` provides the element stiffness matrix :math:`\bar{\mathbf{K}}^e` for a one dimensional bar element.
     The input variables
 
     .. math::
 
-        \text{ex} = [x_1 \;\; x_2]
+        \mathsf{ex} = [x_1 \;\; x_2]
         \qquad
-        \text{ep} = [E \; A]
+        \mathsf{ep} = [E \; A]
 
     supply the element nodal coordinates :math:`x_1` and :math:`x_2`, the modulus of elasticity :math:`E`,
     and the cross section area :math:`A`.
 
-    The element load vector ``fe`` can also be computed if a uniformly distributed load is applied to the element.
+    The element load vector :math:`\bar{\mathbf{f}}_l^e` can also be computed if a uniformly distributed load is applied to the element.
     The optional input variable
 
     .. math::
 
-        \text{eq} = [q_{\bar{x}}]
+        \mathsf{eq} = [q_{\bar{x}}]
 
     contains the distributed load per unit length, :math:`q_{\bar{x}}`.
 
@@ -63,7 +64,7 @@ bar1e
 
         D_{EA} = EA; \quad L = x_2 - x_1
 
-    The element load vector :math:`\bar{\mathbf{f}}_l^e`, stored in ``fe``, is computed according to
+    The element load vector :math:`\bar{\mathbf{f}}_l^e`, stored in :math:`\mathsf{fe}`, is computed according to
 
     .. math::
 
