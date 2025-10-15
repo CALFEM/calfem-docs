@@ -1,3 +1,6 @@
+.. _gfunc:
+.. index:: gfunc, dynamic analysis, time functions, interpolation
+
 gfunc
 ^^^^^
 

@@ -31,7 +31,10 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx_design',
     'sphinxcontrib.inkscapeconverter',
     'sphinx_immaterial',  # For Material Design theme
-    'myst_parser'
+    'myst_parser',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon'
 ]
 
 myst_enable_extensions = [

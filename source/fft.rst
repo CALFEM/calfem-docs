@@ -1,3 +1,6 @@
+.. _fft:
+.. index:: fft, fast fourier transform, fft, frequency domain, time domain
+
 fft
 ^^^
 

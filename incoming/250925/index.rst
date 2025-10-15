@@ -18,18 +18,34 @@
 
    Welcome to the documentation page for CALFEM for MATLAB. On this page you will find examples of how to use CALFEM as well as reference documentation for the different modules in the CALFEM toolbox. 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+.. only:: python
 
-   introduction
-   general_purpose_matlab
-   general_purpose_python
-   matrix_functions
-   material_functions
-   element_functions
-   system_functions
-   statements
-   graphics_functions
-   examples
+   .. toctree::
+      :maxdepth: 2
+      :caption: Contents:
 
+      introduction
+      general_purpose_python
+      matrix_functions
+      material_functions
+      element_functions
+      system_functions
+      statements
+      graphics_functions
+      examples
+
+.. only:: matlab
+
+   .. toctree::
+      :maxdepth: 2
+      :caption: Contents:
+
+      introduction
+      general_purpose_matlab
+      matrix_functions
+      material_functions
+      element_functions
+      system_functions
+      statements
+      graphics_functions
+      examples

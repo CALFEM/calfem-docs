@@ -33,3 +33,8 @@
    matrix_functions
    examples
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Reference:
+
+   genindex

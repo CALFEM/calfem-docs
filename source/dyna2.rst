@@ -1,3 +1,6 @@
+.. _dyna2:
+.. index:: dyna2, dynamic analysis, differential equations
+
 dyna2
 ^^^^^
 

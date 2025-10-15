@@ -1,3 +1,6 @@
+.. _ifft:
+.. index:: ifft, inverse fast fourier transform, frequency domain, time domain
+
 ifft
 ^^^^
 

@@ -31,7 +31,10 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx_design',
     'sphinxcontrib.inkscapeconverter',
     'sphinx_immaterial',  # For Material Design theme
-    'myst_parser'
+    'myst_parser',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon'
 ]
 
 myst_enable_extensions = [
@@ -140,6 +143,8 @@ html_sidebars = {
 
 #html_theme = 'alabaster'
 #html_static_path = ['_static']
+
+html_use_index = True
 
 # -- Options for LaTeX output ------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-latex-output
