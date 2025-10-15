@@ -14,24 +14,6 @@ Introduction
 
     The finite element analysis can be carried out either interactively or in a batch-oriented fashion. In the interactive mode, the functions are evaluated one by one in an interactive Python session. In the batch-oriented mode, a sequence of functions is written in a file named `.py` file and evaluated by calling python interpreter with the filename as an argument. The batch-oriented mode is a more flexible way of performing finite element analysis because the `.py` file can be written in an ordinary editor. This way of using CALFEM is recommended because it gives a structured organization of the functions. Changes and reruns are also easily executed in the batch-oriented mode.
 
-    To use the CALFEM package, it must first be imported. This is done by the command:
-
-.. only:: python
-
-    .. code-block:: python
-
-        import calfem.core as cfc
-
-    The function of this package is then available with the prefix :code:`cfc`. So the function :code:`spring1e` is called as :code:`cfc.spring1e`.
-
-    Plot functions are available in the :code:`calfem.vis_mpl` package. To use these functions, this package must also be imported:
-
-    .. code-block:: python
-
-        import calfem.vis_mpl as cfv
-
-    The these functions are then called with the prefix :code:`cfv`. So the function :code:`eldraw` is called as :code:`cfv.eldraw`.
-
 A command line typically consists of functions for vector and matrix operations, calls to functions in the CALFEM finite element library, or commands for workspace operations. An example of a command line for a matrix operation is:
 
 .. only:: matlab
