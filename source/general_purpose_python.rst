@@ -1,7 +1,7 @@
 .. only:: python
 
-    General purpose functions (IPython/Python)
-    ==========================================
+    General purpose functions
+    =========================
 
     The following are general purpose functions for managing variables, workspace, and output in IPython or Python interactive sessions. These are analogous to MATLAB's general functions.
 

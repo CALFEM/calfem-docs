@@ -35,62 +35,136 @@ a) Frame structure                          b) Element and DOF numbering
 
 The structure is divided into 4 elements. The numbering of elements and degrees-of-freedom are apparent from the figure. The following ``.m``-file defines the finite element model:
 
-:Example: Material data:
+:Example: The computation is initialized by importing CALFEM and NumPy. Material data and topology are defined:
 
-.. code-block:: matlab
+.. code-block:: python
 
-   % --- material data ------------------------------------------
-   E=3e10;                rho=2500;
-   Av=0.1030e-2;          Iv=0.0171e-4;                 % IPE100
-   Ah=0.0764e-2;          Ih=0.00801e-4;                % IPE80
-   epv=[E Av Iv rho*Av];  eph=[E Ah Ih rho*Ah];
+   >>> import numpy as np
+   >>> import calfem.core as cfc
+   >>> 
+   >>> # Material data
+   >>> E = 3e10        # Young's modulus [N/m²]
+   >>> rho = 2500      # Density [kg/m³]
+   >>> 
+   >>> # Vertical beam properties (IPE100)
+   >>> Av = 0.1030e-2   # Cross-sectional area [m²]
+   >>> Iv = 0.0171e-4   # Moment of inertia [m⁴]
+   >>> epv = [E, Av, Iv, rho*Av]  # Element properties for vertical beam
+   >>> 
+   >>> # Horizontal beam properties (IPE80)
+   >>> Ah = 0.0764e-2   # Cross-sectional area [m²]  
+   >>> Ih = 0.00801e-4  # Moment of inertia [m⁴]
+   >>> eph = [E, Ah, Ih, rho*Ah]  # Element properties for horizontal beam
+   >>> 
+   >>> print("Material properties defined successfully")
+   Material properties defined successfully
 
-.. code-block:: matlab
+.. code-block:: python
 
-   % ---  topology ----------------------------------------------
-   Edof=[1    1  2  3  4  5  6
-         2    4  5  6  7  8  9
-         3    7  8  9 10 11 12
-         4   10 11 12 13 14 15];
-   % --- list of coordinates  -----------------------------------
-   Coord=[0 0; 0 1.5; 0 3; 1 3; 2 3];
-   % --- list of degrees-of-freedom  ----------------------------
-   Dof=[1 2 3;  4 5 6;  7 8 9;  10 11 12;  13 14 15];
-   % --- generate element matrices, assemble in global matrices -
-   K=zeros(15);   M=zeros(15);
-   [Ex,Ey]=coordxtr(Edof,Coord,Dof,2);
-   for i=1:2
-     [k,m,c]=beam2de(Ex(i,:),Ey(i,:),epv);
-     K=assem(Edof(i,:),K,k);    M=assem(Edof(i,:),M,m);
-   end
-   for i=3:4
-     [k,m,c]=beam2de(Ex(i,:),Ey(i,:),eph);
-     K=assem(Edof(i,:),K,k);    M=assem(Edof(i,:),M,m);
-   end
+   >>> # Element topology matrix (DOFs only, no element numbers)
+   >>> Edof = np.array([
+   ...     [1, 2, 3, 4, 5, 6],      # Element 1: vertical beam lower
+   ...     [4, 5, 6, 7, 8, 9],      # Element 2: vertical beam upper
+   ...     [7, 8, 9, 10, 11, 12],   # Element 3: horizontal beam left
+   ...     [10, 11, 12, 13, 14, 15] # Element 4: horizontal beam right
+   ... ])
+   >>> 
+   >>> # Global coordinate matrix [m]
+   >>> Coord = np.array([
+   ...     [0, 0],     # Node 1: base of vertical beam
+   ...     [0, 1.5],   # Node 2: mid vertical beam
+   ...     [0, 3],     # Node 3: top of vertical beam / left end of horizontal
+   ...     [1, 3],     # Node 4: mid horizontal beam
+   ...     [2, 3]      # Node 5: right end of horizontal beam
+   ... ])
+   >>> 
+   >>> # Degrees of freedom numbering
+   >>> Dof = np.array([
+   ...     [1, 2, 3],     # Node 1 DOFs
+   ...     [4, 5, 6],     # Node 2 DOFs
+   ...     [7, 8, 9],     # Node 3 DOFs
+   ...     [10, 11, 12],  # Node 4 DOFs
+   ...     [13, 14, 15]   # Node 5 DOFs
+   ... ])
 
-The finite element mesh is plotted, using the following commands:
+Element matrices are generated and assembled into global stiffness and mass matrices:
 
-.. code-block:: matlab
+.. code-block:: python
 
-   clf;
-   eldraw2(Ex,Ey,[1 2 2],Edof);
-   grid; title('2D Frame Structure');
-   pause;
+   >>> # Initialize global matrices
+   >>> K = np.zeros((15, 15))  # Global stiffness matrix
+   >>> M = np.zeros((15, 15))  # Global mass matrix
+   >>> 
+   >>> # Extract element coordinates
+   >>> Ex, Ey = cfc.coordxtr(Edof, Coord, Dof, 2)
+   >>> 
+   >>> # Assemble vertical beam elements (elements 1-2) with epv properties
+   >>> for i in range(2):  # Elements 1 and 2 (vertical beam)
+   ...     k, m, c = cfc.beam2de(Ex[i], Ey[i], epv)
+   ...     K = cfc.assem(Edof[i], K, k)
+   ...     M = cfc.assem(Edof[i], M, m)
+   >>> 
+   >>> # Assemble horizontal beam elements (elements 3-4) with eph properties  
+   >>> for i in range(2, 4):  # Elements 3 and 4 (horizontal beam)
+   ...     k, m, c = cfc.beam2de(Ex[i], Ey[i], eph)
+   ...     K = cfc.assem(Edof[i], K, k)
+   ...     M = cfc.assem(Edof[i], M, m)
+   >>> 
+   >>> print("Global stiffness and mass matrices assembled successfully")
+   Global stiffness and mass matrices assembled successfully
+
+The finite element mesh can be plotted using CALFEM visualization functions:
+
+.. code-block:: python
+
+   >>> import calfem.vis_mpl as cfv
+   >>> import matplotlib.pyplot as plt
+   >>> 
+   >>> # Plot finite element mesh
+   >>> cfv.figure(figsize=(10, 8))
+   >>> cfv.eldraw2(Ex, Ey, [1, 2, 2], Edof[:, 0])  # Draw elements with numbering
+   >>> plt.grid(True, alpha=0.3)
+   >>> plt.title('2D Frame Structure')
+   >>> plt.xlabel('x [m]')
+   >>> plt.ylabel('y [m]')
+   >>> plt.axis('equal')
+   >>> plt.show()
 
 .. figure:: images/exd1f2.png
    :align: center
 
    Finite element mesh
 
-A standard procedure in dynamic analysis is eigenvalue analysis. This is accomplished by the following set of commands:
+Eigenvalue analysis is performed to determine natural frequencies and mode shapes:
 
-.. code-block:: matlab
+.. code-block:: python
 
-   b=[1 2 3 14]';
-   [La,Egv]=eigen(K,M,b);
-   Freq=sqrt(La)/(2*pi);
+   >>> # Boundary conditions (constrained DOFs)
+   >>> b = np.array([1, 2, 3, 14])  # Fixed base and pinned right end
+   >>> 
+   >>> # Perform eigenvalue analysis
+   >>> La, Egv = cfc.eigen(K, M, b)
+   >>> 
+   >>> # Calculate natural frequencies in Hz
+   >>> Freq = np.sqrt(La) / (2 * np.pi)
+   >>> 
+   >>> print("Natural frequencies [Hz]:")
+   >>> for i, f in enumerate(Freq):
+   ...     print(f"Mode {i+1}: {f:.4f} Hz")
+   Natural frequencies [Hz]:
+   Mode 1: 6.9826 Hz
+   Mode 2: 43.0756 Hz  
+   Mode 3: 66.5772 Hz
+   Mode 4: 162.7453 Hz
+   Mode 5: 230.2709 Hz
+   Mode 6: 295.6136 Hz
+   Mode 7: 426.2271 Hz
+   Mode 8: 697.7628 Hz
+   Mode 9: 877.2765 Hz
+   Mode 10: 955.9809 Hz
+   Mode 11: 1751.3000 Hz
 
-Note that the boundary condition matrix, ``b``, only lists the degrees-of-freedom that are zero. The results of these commands are the eigenvalues, stored in ``La``, and the eigenvectors, stored in ``Egv``. The corresponding frequencies in Hz are calculated and stored in the column matrix ``Freq``:
+Note that the boundary condition array :code:`b` lists only the constrained degrees-of-freedom. The eigenvalues are stored in :code:`La`, eigenvectors in :code:`Egv`, and frequencies in :code:`Freq`:
 
 .. math::
 
@@ -108,41 +182,83 @@ Note that the boundary condition matrix, ``b``, only lists the degrees-of-freedo
    1751.3
    \end{bmatrix}^T
 
-The eigenvectors can be plotted by entering the commands below:
+Individual eigenvectors (mode shapes) can be plotted:
 
-.. code-block:: matlab
+.. code-block:: python
 
-   figure(1),    clf,     grid,    title('The first eigenmode'),
-   eldraw2(Ex,Ey,[2 3 1]);
-   Edb=extract_ed(Edof,Egv(:,1));     eldisp2(Ex,Ey,Edb,[1 2 2]);
-   FreqText=num2str(Freq(1));      text(.5,1.75,FreqText);
-   pause;
+   >>> # Plot the first eigenmode
+   >>> cfv.figure(1, figsize=(10, 8))
+   >>> plt.grid(True, alpha=0.3)
+   >>> plt.title('The first eigenmode')
+   >>> 
+   >>> # Draw undeformed structure
+   >>> cfv.eldraw2(Ex, Ey, [2, 3, 1])
+   >>> 
+   >>> # Extract and plot deformed shape for first mode
+   >>> Edb = cfc.extract_ed(Edof, Egv[:, 0])  # First mode (index 0)
+   >>> cfv.eldisp2(Ex, Ey, Edb, [1, 2, 2])
+   >>> 
+   >>> # Add frequency text
+   >>> plt.text(0.5, 1.75, f'{Freq[0]:.2f} Hz', fontsize=12, 
+   ...          bbox=dict(boxstyle="round,pad=0.3", facecolor="white"))
+   >>> plt.xlabel('x [m]')
+   >>> plt.ylabel('y [m]')
+   >>> plt.axis('equal')
+   >>> plt.show()
 
 .. figure:: images/exd1f3.png
    :align: center
 
    The first eigenmode, 6.98 Hz
 
-An attractive way of displaying the eigenmodes is shown in the figure below. The result is accomplished by translating the different eigenmodes in the x-direction, see the ``Ext``-matrix defined below, and in the y-direction, see the ``Eyt``-matrix:
+Multiple eigenmodes can be displayed simultaneously by translating each mode in x and y directions:
 
-.. code-block:: matlab
+.. code-block:: python
 
-   clf, axis('equal'), hold on, axis off
-   sfac=0.5;
-   title('The first eight eigenmodes (Hz)' )
-   for i=1:4;
-     Ext=Ex+(i-1)*3;             eldraw2(Ext,Ey,[2 3 1]);
-     Edb=extract_ed(Edof,Egv(:,i));
-     eldisp2(Ext,Ey,Edb,[1 2 2],sfac);
-     FreqText=num2str(Freq(i));  text(3*(i-1)+.5,1.5,FreqText);
-   end;
-   Eyt=Ey-4;
-   for i=5:8;
-     Ext=Ex+(i-5)*3;             eldraw2(Ext,Eyt,[2 3 1]);
-     Edb=extract_ed(Edof,Egv(:,i));
-     eldisp2(Ext,Eyt,Edb,[1 2 2],sfac);
-     FreqText=num2str(Freq(i));  text(3*(i-5)+.5,-2.5,FreqText);
-   end
+   >>> # Display first eight eigenmodes in a 2x4 grid layout
+   >>> cfv.figure(figsize=(16, 10))
+   >>> plt.axis('equal')
+   >>> plt.axis('off')
+   >>> plt.title('The first eight eigenmodes (Hz)', fontsize=16, pad=20)
+   >>> 
+   >>> sfac = 0.5  # Scale factor for deformation display
+   >>> 
+   >>> # First row: modes 1-4
+   >>> for i in range(4):
+   ...     # Translate structure in x-direction
+   ...     Ext = Ex + i * 3
+   ...     
+   ...     # Draw undeformed structure
+   ...     cfv.eldraw2(Ext, Ey, [2, 3, 1])
+   ...     
+   ...     # Extract and draw deformed shape
+   ...     Edb = cfc.extract_ed(Edof, Egv[:, i])
+   ...     cfv.eldisp2(Ext, Ey, Edb, [1, 2, 2], sfac)
+   ...     
+   ...     # Add frequency label
+   ...     plt.text(3*i + 0.5, 1.5, f'{Freq[i]:.1f}', 
+   ...              fontsize=10, ha='center',
+   ...              bbox=dict(boxstyle="round,pad=0.2", facecolor="white"))
+   >>> 
+   >>> # Second row: modes 5-8 (translated down by 4 units)
+   >>> Eyt = Ey - 4
+   >>> for i in range(4, 8):
+   ...     # Translate structure in x-direction
+   ...     Ext = Ex + (i-4) * 3
+   ...     
+   ...     # Draw undeformed structure
+   ...     cfv.eldraw2(Ext, Eyt, [2, 3, 1])
+   ...     
+   ...     # Extract and draw deformed shape
+   ...     Edb = cfc.extract_ed(Edof, Egv[:, i])
+   ...     cfv.eldisp2(Ext, Eyt, Edb, [1, 2, 2], sfac)
+   ...     
+   ...     # Add frequency label
+   ...     plt.text(3*(i-4) + 0.5, -2.5, f'{Freq[i]:.1f}', 
+   ...              fontsize=10, ha='center',
+   ...              bbox=dict(boxstyle="round,pad=0.2", facecolor="white"))
+   >>> 
+   >>> plt.show()
 
 .. figure:: images/exd1f4.png
    :align: center

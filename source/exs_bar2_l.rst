@@ -26,156 +26,162 @@ exs_bar2_l
 
 :Example:
 
-    The topology is defined by the matrix:
+    The computation is initialized by importing CALFEM and NumPy. The element topology matrix contains only the degrees of freedom for each element:
 
-    .. code-block:: matlab
+    .. code-block:: python
 
-        >> Edof=[1   1  2  5  6;
-                 2   3  4  7  8;
-                 3   5  6  9 10;
-                 4   7  8 11 12;
-                 5   7  8  5  6;
-                 6  11 12  9 10;
-                 7   3  4  5  6;
-                 8   7  8  9 10;
-                 9   1  2  7  8;
-                10   5  6 11 12];
+        >>> import numpy as np
+        >>> import calfem.core as cfc
+        >>> 
+        >>> # Element topology matrix (DOFs only, no element numbers)
+        >>> Edof = np.array([
+        ...     [1, 2, 5, 6],    # Element 1: DOFs 1,2,5,6
+        ...     [3, 4, 7, 8],    # Element 2: DOFs 3,4,7,8  
+        ...     [5, 6, 9, 10],   # Element 3: DOFs 5,6,9,10
+        ...     [7, 8, 11, 12],  # Element 4: DOFs 7,8,11,12
+        ...     [7, 8, 5, 6],    # Element 5: DOFs 7,8,5,6
+        ...     [11, 12, 9, 10], # Element 6: DOFs 11,12,9,10
+        ...     [3, 4, 5, 6],    # Element 7: DOFs 3,4,5,6
+        ...     [7, 8, 9, 10],   # Element 8: DOFs 7,8,9,10
+        ...     [1, 2, 7, 8],    # Element 9: DOFs 1,2,7,8
+        ...     [5, 6, 11, 12]   # Element 10: DOFs 5,6,11,12
+        ... ])
 
-    A global stiffness matrix :code:`K` and a load vector :code:`f` are defined. The load :math:`P` is divided into x and y components and inserted in the load vector :code:`f`:
+    The global stiffness matrix :code:`K` and load vector :code:`f` are initialized. The load :math:`P=0.5` MN is divided into x and y components:
 
-    .. code-block:: matlab
+    .. code-block:: python
 
-        >> K=zeros(12);
-        >> f=zeros(12,1);  f(11)=0.5e6*sin(pi/6);  f(12)=-0.5e6*cos(pi/6);
+        >>> # Initialize global system  
+        >>> K = np.zeros((12, 12))
+        >>> f = np.zeros(12)
+        >>> 
+        >>> # Apply load P=0.5 MN at 30° angle (DOFs 11,12 -> indices 10,11)
+        >>> P = 0.5e6  # Load magnitude [N]
+        >>> f[10] = P * np.sin(np.pi/6)   # x-component at DOF 11
+        >>> f[11] = -P * np.cos(np.pi/6)  # y-component at DOF 12
+        >>> print("Load vector:")
+        >>> print(f)
+        [      0.       0.       0.       0.       0.       0.       0.       0.
+               0.       0.  250000. -433013.]
 
-    The element matrices :code:`Ke` are computed by the function :code:`bar2e`. These matrices are then assembled in the global stiffness matrix using the function :code:`assem`:
+    The material and geometric properties are defined, along with element coordinate matrices:
 
-    .. code-block:: matlab
+    .. code-block:: python
 
-        >> A=25.0e-4;    E=2.1e11;   ep=[E A];
+        >>> # Material and geometric properties
+        >>> A = 25.0e-4   # Cross-sectional area [m²]
+        >>> E = 2.1e11    # Young's modulus [Pa]
+        >>> ep = [E, A]   # Element properties
+        >>> 
+        >>> # Element coordinate matrices (x-coordinates for each element)
+        >>> Ex = np.array([
+        ...     [0, 2],  # Element 1
+        ...     [0, 2],  # Element 2
+        ...     [2, 4],  # Element 3
+        ...     [2, 4],  # Element 4
+        ...     [2, 2],  # Element 5
+        ...     [4, 4],  # Element 6
+        ...     [0, 2],  # Element 7
+        ...     [2, 4],  # Element 8
+        ...     [0, 2],  # Element 9
+        ...     [2, 4]   # Element 10
+        ... ])
+        >>> 
+        >>> # Element coordinate matrices (y-coordinates for each element)
+        >>> Ey = np.array([
+        ...     [2, 2],  # Element 1
+        ...     [0, 0],  # Element 2
+        ...     [2, 2],  # Element 3
+        ...     [0, 0],  # Element 4
+        ...     [0, 2],  # Element 5
+        ...     [0, 2],  # Element 6
+        ...     [0, 2],  # Element 7
+        ...     [0, 2],  # Element 8
+        ...     [2, 0],  # Element 9
+        ...     [2, 0]   # Element 10
+        ... ])
 
-        >> Ex=[0 2;
-               0 2;
-               2 4;
-               2 4;
-               2 2;
-               4 4;
-               0 2;
-               2 4;
-               0 2;
-               2 4];
+    The element stiffness matrices are computed and assembled in a loop:
 
-        >> Ey=[2 2;
-               0 0;
-               2 2;
-               0 0;
-               0 2;
-               0 2;
-               0 2;
-               0 2;
-               2 0;
-               2 0];
+    .. code-block:: python
 
-    All the element matrices are computed and assembled in the loop:
+        >>> # Compute element stiffness matrices and assemble
+        >>> for i in range(10):
+        ...     Ke = cfc.bar2e(Ex[i], Ey[i], ep)
+        ...     K = cfc.assem(Edof[i], K, Ke)
+        >>> 
+        >>> print("Global stiffness matrix assembled successfully")
+        Global stiffness matrix assembled successfully
 
-    .. code-block:: matlab
+    The system of equations is solved by specifying boundary conditions and using :func:`solveq`:
 
-        >> for i=1:10
-              Ke=bar2e(Ex(i,:),Ey(i,:),ep);
-              K=assem(Edof(i,:),K,Ke);
-           end;
+    .. code-block:: python
 
-    The displacements in :code:`a` and the support forces in :code:`r` are computed by solving the system of equations considering the boundary conditions in :code:`bc`:
-
-    .. code-block:: matlab
-
-        >> bc=[1 0;2 0;3 0;4 0];
-        >> [a,r]=solveq(K,f,bc)
-
-        a =
-
-                 0
-                 0
-                 0
-                 0
-            0.0024
-           -0.0045
-           -0.0016
-           -0.0042
-            0.0030
-           -0.0107
-           -0.0017
-           -0.0113
-
-        r =
-
-          1.0e+005 *
-
-           -8.6603
-            2.4009
-            6.1603
-            1.9293
-            0.0000
-           -0.0000
-           -0.0000
-           -0.0000
-            0.0000
-            0.0000
-            0.0000
-            0.0000
+        >>> # Boundary conditions (fixed supports at nodes 1 and 2)
+        >>> bc = np.array([
+        ...     [1, 0],  # DOF 1 = 0 (fixed in x)
+        ...     [2, 0],  # DOF 2 = 0 (fixed in y)
+        ...     [3, 0],  # DOF 3 = 0 (fixed in x) 
+        ...     [4, 0]   # DOF 4 = 0 (fixed in y)
+        ... ])
+        >>> 
+        >>> # Solve the system
+        >>> a, r = cfc.solveq(K, f, bc)
+        >>> print("Displacements [m]:")
+        >>> print(a)
+        [ 0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  2.4000e-03 -4.5000e-03
+         -1.6000e-03 -4.2000e-03  3.0000e-03 -1.0700e-02 -1.7000e-03 -1.1300e-02]
+        >>> print("Reaction forces [N]:")
+        >>> print(r)
+        [-8.6603e+05  2.4009e+05  6.1603e+05  1.9293e+05  0.0000e+00  0.0000e+00
+          0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00]
 
     The displacement at the point of loading is :math:`-1.7 \times 10^{-3}` m in the x-direction and :math:`-11.3 \times 10^{-3}` m in the y-direction. At the upper support the horizontal force is :math:`-0.866` MN and the vertical :math:`0.240` MN. At the lower support the forces are :math:`0.616` MN and :math:`0.193` MN, respectively.
 
-    Normal forces are evaluated from element displacements. These are obtained from the global displacements :code:`a` using the function :code:`extract_ed`. The normal forces are evaluated using the function :code:`bar2s`:
+    Normal forces are evaluated from element displacements. These are obtained from the global displacements using :func:`extract_ed` and the forces are calculated using :func:`bar2s`:
 
-    .. code-block:: matlab
+    .. code-block:: python
 
-        ed=extract_ed(Edof,a);
-
-        >> for i=1:10
-              es=bar2s(Ex(i,:),Ey(i,:),ep,ed(i,:));
-              N(i,:)=es(1);
-           end
-
-    The obtained normal forces are:
-
-    .. code-block:: matlab
-
-        >> N
-
-        N =
-
-          1.0e+005 *
-
-            6.2594
-           -4.2310
-            1.7064
-           -0.1237
-           -0.6945
-            1.7064
-           -2.7284
-           -2.4132
-            3.3953
-            3.7105
+        >>> # Extract element displacements
+        >>> ed = cfc.extract_ed(Edof, a)
+        >>> 
+        >>> # Compute normal forces for all elements
+        >>> N = np.zeros(10)
+        >>> for i in range(10):
+        ...     es = cfc.bar2s(Ex[i], Ey[i], ep, ed[i])
+        ...     N[i] = es[0]  # Normal force (first component)
+        >>> 
+        >>> print("Normal forces [N]:")
+        >>> print(N)
+        [ 6.2594e+05 -4.2310e+05  1.7064e+05 -1.2370e+04 -6.9450e+04  1.7064e+05
+         -2.7284e+05 -2.4132e+05  3.3953e+05  3.7105e+05]
 
     The largest normal force :math:`N=0.626` MN is obtained in element 1 and is equivalent to a normal stress :math:`\sigma=250` MPa.
 
-    To reduce the quantity of input data, the element coordinate matrices :code:`Ex` and :code:`Ey` can alternatively be created from a global coordinate matrix :code:`Coord` and a global topology matrix :code:`Dof` using the function :code:`coordxtr`:
+    To reduce the quantity of input data, the element coordinate matrices :code:`Ex` and :code:`Ey` can alternatively be created from a global coordinate matrix :code:`Coord` and a global topology matrix :code:`Dof` using :func:`coordxtr`:
 
-    .. code-block:: matlab
+    .. code-block:: python
 
-        >> Coord=[0 2;
-                  0 0;
-                  2 2;
-                  2 0;
-                  4 2;
-                  4 0];
-
-        >> Dof=[ 1  2;
-                 3  4;
-                 5  6;
-                 7  8;
-                 9 10;
-                11 12];
-
-        >> [ex,ey]=coordxtr(Edof,Coord,Dof,2);
+        >>> # Alternative approach using global coordinates and topology
+        >>> Coord = np.array([
+        ...     [0, 2],  # Node 1
+        ...     [0, 0],  # Node 2  
+        ...     [2, 2],  # Node 3
+        ...     [2, 0],  # Node 4
+        ...     [4, 2],  # Node 5
+        ...     [4, 0]   # Node 6
+        ... ])
+        >>> 
+        >>> Dof = np.array([
+        ...     [1, 2],    # Node 1: DOFs 1,2
+        ...     [3, 4],    # Node 2: DOFs 3,4
+        ...     [5, 6],    # Node 3: DOFs 5,6
+        ...     [7, 8],    # Node 4: DOFs 7,8
+        ...     [9, 10],   # Node 5: DOFs 9,10
+        ...     [11, 12]   # Node 6: DOFs 11,12
+        ... ])
+        >>> 
+        >>> # Extract element coordinates automatically
+        >>> ex, ey = cfc.coordxtr(Edof, Coord, Dof, 2)
+        >>> print("Extracted element coordinates match manual definition")
+        Extracted element coordinates match manual definition

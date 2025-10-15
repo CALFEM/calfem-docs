@@ -23,13 +23,13 @@
    :caption: Contents:
 
    introduction
-   general_purpose_matlab
-   general_purpose_python
-   matrix_functions
    material_functions
    element_functions
    system_functions
-   statements
    graphics_functions
+   general_purpose_matlab
+   general_purpose_python
+   statements
+   matrix_functions
    examples
 
