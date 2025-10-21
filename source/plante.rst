@@ -1,3 +1,16 @@
+.. _plante:
+.. index:: 
+   single: plante
+   single: triangular element
+   single: plane element
+   single: plane strain
+   single: plane stress
+   pair: finite element; plane
+   pair: triangular; element
+   pair: plane; strain
+   pair: plane; stress
+   pair: 2D; element
+
 plante
 ^^^^^^ 
 

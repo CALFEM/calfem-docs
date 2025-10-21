@@ -1,3 +1,14 @@
+.. _red:
+.. index:: 
+   single: red
+   single: matrix reduction
+   single: model reduction
+   single: matrix condensation
+   pair: matrix; reduction
+   pair: model; reduction
+   pair: finite element; reduction
+   pair: equation; elimination
+
 red
 ^^^
 

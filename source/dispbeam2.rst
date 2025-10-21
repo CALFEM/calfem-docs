@@ -1,3 +1,15 @@
+.. _dispbeam2:
+.. index:: 
+   single: dispbeam2
+   single: beam displacement
+   single: displacement visualization
+   single: 2D beam visualization
+   single: beam plotting
+   pair: visualization; beam
+   pair: displacement; visualization
+   pair: beam; plotting
+   pair: 2D; visualization
+
 dispbeam2
 ^^^^^^^^^
 

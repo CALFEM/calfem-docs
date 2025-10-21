@@ -1,7 +1,20 @@
+.. _beam2we:
+.. index:: 
+   single: beam2we
+   single: beam element
+   single: elastic support
+   single: 2D beam
+   single: foundation beam
+   single: Winkler foundation
+   pair: finite element; beam
+   pair: structural; element
+   pair: elastic; support
+   pair: 2D; element
+   pair: foundation; beam
+   pair: Winkler; foundation
+
 beam2we
 ^^^^^^^
-
-.. index:: beam2we
 
 :Purpose:
 

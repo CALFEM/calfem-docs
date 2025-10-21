@@ -1,3 +1,12 @@
+.. _assem:
+.. index:: 
+   single: assem
+   single: assembly
+   single: element matrices
+   single: stiffness matrix
+   pair: finite element; assembly
+   pair: global; stiffness matrix
+
 assem
 ^^^^^
 

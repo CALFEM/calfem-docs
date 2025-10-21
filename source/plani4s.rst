@@ -1,3 +1,17 @@
+.. _plani4s:
+.. index:: 
+   single: plani4s
+   single: plane stress
+   single: plane strain
+   single: 4 node stress
+   single: isoparametric stress
+   pair: finite element; stress
+   pair: plane; stress
+   pair: post-processing; stress
+   pair: 2D; stress
+   pair: isoparametric; stress
+   pair: quadrilateral; stress
+
 plani4s
 ^^^^^^^
 

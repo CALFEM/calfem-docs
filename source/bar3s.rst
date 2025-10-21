@@ -1,7 +1,17 @@
+.. _bar3s:
+.. index:: 
+   single: bar3s
+   single: bar stress
+   single: normal force
+   single: 3D bar stress
+   single: axial force
+   pair: finite element; stress
+   pair: bar; stress
+   pair: post-processing; stress
+   pair: 3D; stress
+
 bar3s
 ^^^^^
-
-.. index:: bar3s
 
 :Purpose:
 

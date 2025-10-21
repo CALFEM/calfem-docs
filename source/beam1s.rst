@@ -1,3 +1,17 @@
+.. _beam1s:
+.. index:: 
+   single: beam1s
+   single: beam stress
+   single: section forces
+   single: 1D beam stress
+   single: bending moment
+   single: shear force
+   pair: finite element; stress
+   pair: beam; stress
+   pair: post-processing; stress
+   pair: 1D; stress
+   pair: section; forces
+
 beam1s
 ^^^^^^
 

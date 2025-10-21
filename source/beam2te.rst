@@ -1,3 +1,16 @@
+.. _beam2te:
+.. index:: 
+   single: beam2te
+   single: Timoshenko beam
+   single: beam element
+   single: 2D beam
+   single: shear deformation
+   pair: finite element; beam
+   pair: Timoshenko; beam
+   pair: shear; deformation
+   pair: 2D; element
+   pair: beam; theory
+
 beam2te
 ^^^^^^^
 

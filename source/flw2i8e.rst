@@ -1,3 +1,18 @@
+.. _flw2i8e:
+.. index:: 
+   single: flw2i8e
+   single: flow element
+   single: heat flow
+   single: thermal element
+   single: 8 node element
+   single: isoparametric element
+   pair: finite element; thermal
+   pair: heat; flow
+   pair: thermal; analysis
+   pair: 2D; flow
+   pair: isoparametric; element
+   pair: higher order; element
+
 flw2i8e
 ^^^^^^^
 

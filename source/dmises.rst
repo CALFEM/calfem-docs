@@ -1,3 +1,17 @@
+.. _dmises:
+.. index:: 
+   single: dmises
+   single: von Mises material
+   single: elasto-plastic matrix
+   single: continuum matrix
+   single: isotropic hardening
+   single: plasticity matrix
+   pair: material; matrix
+   pair: von Mises; material
+   pair: elasto-plastic; matrix
+   pair: constitutive; matrix
+   pair: plasticity; matrix
+
 dmises
 ^^^^^^
 

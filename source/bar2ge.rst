@@ -1,3 +1,17 @@
+.. _bar2ge:
+.. index:: 
+   single: bar2ge
+   single: geometric nonlinear
+   single: bar element
+   single: 2D bar
+   single: nonlinear analysis
+   single: large deformation
+   pair: finite element; nonlinear
+   pair: geometric; nonlinearity
+   pair: bar; nonlinear
+   pair: 2D; nonlinear
+   pair: large; deformation
+
 bar2ge
 ^^^^^^
 

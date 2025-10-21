@@ -1,3 +1,14 @@
+.. _spring1s:
+.. index:: 
+   single: spring1s
+   single: spring force
+   single: spring stress
+   single: elastic force
+   pair: finite element; stress
+   pair: spring; stress
+   pair: post-processing; stress
+   pair: elastic; force
+
 spring1s
 ^^^^^^^^
 

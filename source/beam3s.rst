@@ -1,3 +1,20 @@
+.. _beam3s:
+.. index:: 
+   single: beam3s
+   single: beam stress
+   single: section forces
+   single: 3D beam stress
+   single: bending moment
+   single: shear force
+   single: axial force
+   single: torsion
+   pair: finite element; stress
+   pair: beam; stress
+   pair: post-processing; stress
+   pair: 3D; stress
+   pair: section; forces
+   pair: space frame; stress
+
 beam3s
 ^^^^^^
 

@@ -1,3 +1,16 @@
+.. _freqresp:
+.. index:: 
+   single: freqresp
+   single: frequency response
+   single: frequency domain
+   single: transfer function
+   single: vibration analysis
+   pair: frequency; response
+   pair: vibration; analysis
+   pair: transfer; function
+   pair: frequency; domain
+   pair: dynamic; response
+
 freqresp
 ^^^^^^^^
 

@@ -1,3 +1,18 @@
+.. _beam2gs:
+.. index:: 
+   single: beam2gs
+   single: geometric nonlinear stress
+   single: beam stress
+   single: 2D beam stress
+   single: nonlinear stress
+   single: section forces
+   pair: finite element; stress
+   pair: geometric; nonlinear
+   pair: beam; stress
+   pair: 2D; stress
+   pair: nonlinear; stress
+   pair: section; forces
+
 beam2gs
 ^^^^^^^
 

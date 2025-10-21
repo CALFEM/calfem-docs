@@ -1,3 +1,16 @@
+.. _flw2ts:
+.. index:: 
+   single: flw2ts
+   single: triangular thermal stress
+   single: heat flux
+   single: temperature gradient
+   single: thermal analysis
+   pair: finite element; thermal
+   pair: triangular; element
+   pair: heat; flux
+   pair: thermal; analysis
+   pair: temperature; gradient
+
 flw2ts
 ^^^^^^
 

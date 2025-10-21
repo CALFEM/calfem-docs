@@ -1,3 +1,17 @@
+.. _beam2de:
+.. index:: 
+   single: beam2de
+   single: dynamic beam element
+   single: beam element
+   single: mass matrix
+   single: damping matrix
+   single: 2D beam
+   pair: finite element; beam
+   pair: dynamic; beam
+   pair: mass; matrix
+   pair: damping; matrix
+   pair: 2D; element
+
 beam2de
 ^^^^^^^
 

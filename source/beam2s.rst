@@ -1,7 +1,21 @@
+.. _beam2s:
+.. index:: 
+   single: beam2s
+   single: beam stress
+   single: section forces
+   single: 2D beam stress
+   single: bending moment
+   single: shear force
+   single: axial force
+   pair: finite element; stress
+   pair: beam; stress
+   pair: post-processing; stress
+   pair: 2D; stress
+   pair: section; forces
+   pair: frame; stress
+
 beam2s
 ^^^^^^
-
-.. index:: beam2s
 
 :Purpose:
 

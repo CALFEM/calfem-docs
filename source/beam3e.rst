@@ -1,3 +1,17 @@
+.. _beam3e:
+.. index:: 
+   single: beam3e
+   single: beam element
+   single: 3D beam
+   single: space frame
+   single: three dimensional
+   pair: finite element; beam
+   pair: structural; element
+   pair: stiffness; matrix
+   pair: 3D; element
+   pair: bending; element
+   pair: space frame; analysis
+
 beam3e
 ^^^^^^
 

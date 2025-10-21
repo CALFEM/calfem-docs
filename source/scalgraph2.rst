@@ -1,3 +1,15 @@
+.. _scalgraph2:
+.. index:: 
+   single: scalgraph2
+   single: graphic scale
+   single: scale bar
+   single: visualization scale
+   single: plot legend
+   pair: visualization; scale
+   pair: graphic; scale
+   pair: plot; legend
+   pair: 2D; scale
+
 scalgraph2
 ^^^^^^^^^^
 

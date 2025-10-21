@@ -1,3 +1,15 @@
+.. _bar2s:
+.. index:: 
+   single: bar2s
+   single: bar stress
+   single: normal force
+   single: 2D bar stress
+   single: axial force
+   pair: finite element; stress
+   pair: bar; stress
+   pair: post-processing; stress
+   pair: 2D; stress
+
 bar2s
 ^^^^^
 

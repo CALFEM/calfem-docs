@@ -1,3 +1,15 @@
+.. _bar2e:
+.. index:: 
+   single: bar2e
+   single: bar element
+   single: 2D bar
+   single: truss element
+   single: two dimensional
+   pair: finite element; bar
+   pair: structural; element
+   pair: stiffness; matrix
+   pair: 2D; element
+
 bar2e
 ^^^^^
 

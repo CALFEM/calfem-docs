@@ -1,3 +1,18 @@
+.. _beam1we:
+.. index:: 
+   single: beam1we
+   single: beam element
+   single: elastic support
+   single: 1D beam
+   single: foundation beam
+   single: Winkler foundation
+   pair: finite element; beam
+   pair: structural; element
+   pair: elastic; support
+   pair: 1D; element
+   pair: foundation; beam
+   pair: Winkler; foundation
+
 beam1we
 ^^^^^^^
 

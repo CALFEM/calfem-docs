@@ -1,3 +1,14 @@
+.. _statcon:
+.. index:: 
+   single: statcon
+   single: static condensation
+   single: model reduction
+   single: equation reduction
+   pair: finite element; reduction
+   pair: static; condensation
+   pair: model; reduction
+   pair: equation; elimination
+
 statcon
 ^^^^^^^
 

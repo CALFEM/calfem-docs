@@ -1,7 +1,16 @@
+.. _coordxtr:
+.. index:: 
+   single: coordxtr
+   single: coordinate extraction
+   single: element coordinates
+   single: geometry utilities
+   pair: finite element; coordinates
+   pair: geometry; extraction
+   pair: element; coordinates
+   pair: mesh; utilities
+
 coordxtr
 ^^^^^^^^
-
-.. index:: coordxtr
 
 :Purpose:  
 

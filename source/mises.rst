@@ -1,3 +1,17 @@
+.. _mises:
+.. index:: 
+   single: mises
+   single: von Mises stress
+   single: plasticity
+   single: elasto-plastic
+   single: isotropic hardening
+   single: yield criterion
+   pair: material; plasticity
+   pair: von Mises; stress
+   pair: elasto-plastic; material
+   pair: constitutive; relations
+   pair: plastic; strain
+
 mises
 ^^^^^
 

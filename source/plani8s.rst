@@ -1,3 +1,18 @@
+.. _plani8s:
+.. index:: 
+   single: plani8s
+   single: plane stress
+   single: plane strain
+   single: 8 node stress
+   single: isoparametric stress
+   pair: finite element; stress
+   pair: plane; stress
+   pair: post-processing; stress
+   pair: 2D; stress
+   pair: isoparametric; stress
+   pair: quadrilateral; stress
+   pair: higher order; stress
+
 plani8s
 ^^^^^^^
 

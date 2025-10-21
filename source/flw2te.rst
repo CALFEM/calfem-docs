@@ -1,3 +1,16 @@
+.. _flw2te:
+.. index:: 
+   single: flw2te
+   single: triangular element
+   single: heat flow
+   single: thermal element
+   single: 2D flow
+   pair: finite element; thermal
+   pair: triangular; element
+   pair: heat; flow
+   pair: thermal; analysis
+   pair: 2D; flow
+
 flw2te
 ^^^^^^
 

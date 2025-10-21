@@ -1,3 +1,16 @@
+.. _ritz:
+.. index:: 
+   single: ritz
+   single: Lanczos method
+   single: eigenvalue approximation
+   single: modal analysis
+   single: iterative eigenvalue
+   pair: eigenvalue; approximation
+   pair: Lanczos; method
+   pair: modal; analysis
+   pair: iterative; solver
+   pair: Ritz; vectors
+
 ritz
 ^^^^
 

@@ -1,3 +1,18 @@
+.. _beam1ws:
+.. index:: 
+   single: beam1ws
+   single: beam stress
+   single: elastic support stress
+   single: 1D beam stress
+   single: foundation beam stress
+   single: section forces
+   pair: finite element; stress
+   pair: beam; stress
+   pair: elastic; support
+   pair: foundation; stress
+   pair: section; forces
+   pair: 1D; stress
+
 beam1ws
 ^^^^^^^
 

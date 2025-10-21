@@ -1,3 +1,16 @@
+.. _beam1e:
+.. index:: 
+   single: beam1e
+   single: beam element
+   single: 1D beam
+   single: Euler-Bernoulli beam
+   single: one dimensional
+   pair: finite element; beam
+   pair: structural; element
+   pair: stiffness; matrix
+   pair: 1D; element
+   pair: bending; element
+
 beam1e
 ^^^^^^
 

@@ -1,3 +1,15 @@
+.. _scalfact2:
+.. index:: 
+   single: scalfact2
+   single: scale factor
+   single: visualization scaling
+   single: plot scaling
+   single: drawing scale
+   pair: visualization; scaling
+   pair: plot; scaling
+   pair: drawing; utilities
+   pair: 2D; scaling
+
 scalfact2
 ^^^^^^^^^
 

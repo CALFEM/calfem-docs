@@ -1,3 +1,16 @@
+.. _eldisp2:
+.. index:: 
+   single: eldisp2
+   single: deformed mesh
+   single: displacement visualization
+   single: deformation plot
+   single: 2D visualization
+   pair: visualization; deformation
+   pair: finite element; plotting
+   pair: mesh; deformation
+   pair: 2D; visualization
+   pair: displacement; plotting
+
 eldisp2
 ^^^^^^^
 

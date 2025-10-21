@@ -1,3 +1,16 @@
+.. _flw2qe:
+.. index:: 
+   single: flw2qe
+   single: quadrilateral flow element
+   single: heat flow
+   single: thermal element
+   single: 2D flow
+   pair: finite element; thermal
+   pair: quadrilateral; element
+   pair: heat; flow
+   pair: thermal; analysis
+   pair: 2D; flow
+
 flw2qe
 ^^^^^^
 

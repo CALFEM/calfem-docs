@@ -1,3 +1,14 @@
+.. _extract_ed:
+.. index:: 
+   single: extract_ed
+   single: element extraction
+   single: nodal quantities
+   single: post-processing
+   pair: finite element; extraction
+   pair: post-processing; utilities
+   pair: element; data
+   pair: nodal; values
+
 extract_ed
 ^^^^^^^^^^
 

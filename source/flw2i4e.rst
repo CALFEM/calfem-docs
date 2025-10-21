@@ -1,3 +1,17 @@
+.. _flw2i4e:
+.. index:: 
+   single: flw2i4e
+   single: flow element
+   single: heat flow
+   single: thermal element
+   single: 4 node element
+   single: isoparametric element
+   pair: finite element; thermal
+   pair: heat; flow
+   pair: thermal; analysis
+   pair: 2D; flow
+   pair: isoparametric; element
+
 flw2i4e
 ^^^^^^^
 

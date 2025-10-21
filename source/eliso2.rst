@@ -1,3 +1,16 @@
+.. _eliso2:
+.. index:: 
+   single: eliso2
+   single: iso lines
+   single: contour lines
+   single: stress contours
+   single: 2D visualization
+   pair: visualization; contours
+   pair: iso; lines
+   pair: stress; contours
+   pair: 2D; visualization
+   pair: post-processing; visualization
+
 eliso2
 ^^^^^^
 

@@ -1,3 +1,14 @@
+.. _solveq:
+.. index:: 
+   single: solveq
+   single: equation solver
+   single: linear system
+   single: boundary conditions
+   pair: finite element; solver
+   pair: linear algebra; solver
+   pair: boundary conditions; enforcement
+   pair: system; solution
+
 solveq
 ^^^^^^
 

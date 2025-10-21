@@ -1,3 +1,16 @@
+.. _bar1ws:
+.. index:: 
+   single: bar1ws
+   single: bar stress
+   single: elastic support stress
+   single: 1D bar stress
+   single: foundation stress
+   pair: finite element; stress
+   pair: bar; stress
+   pair: elastic; support
+   pair: foundation; stress
+   pair: 1D; stress
+
 bar1ws
 ^^^^^^
 

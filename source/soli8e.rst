@@ -1,3 +1,18 @@
+.. _soli8e:
+.. index:: 
+   single: soli8e
+   single: solid element
+   single: 3D element
+   single: 8 node element
+   single: isoparametric element
+   single: hexahedral element
+   pair: finite element; solid
+   pair: structural; element
+   pair: stiffness; matrix
+   pair: 3D; element
+   pair: isoparametric; element
+   pair: hexahedral; element
+
 soli8e
 ^^^^^^
 

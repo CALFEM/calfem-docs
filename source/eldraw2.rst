@@ -1,3 +1,15 @@
+.. _eldraw2:
+.. index:: 
+   single: eldraw2
+   single: element drawing
+   single: mesh visualization
+   single: undeformed mesh
+   single: 2D visualization
+   pair: visualization; elements
+   pair: finite element; plotting
+   pair: mesh; drawing
+   pair: 2D; visualization
+
 eldraw2
 ^^^^^^^
 

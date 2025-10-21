@@ -1,3 +1,18 @@
+.. _soli8s:
+.. index:: 
+   single: soli8s
+   single: solid stress
+   single: 3D stress
+   single: 8 node stress
+   single: isoparametric stress
+   single: hexahedral stress
+   pair: finite element; stress
+   pair: solid; stress
+   pair: post-processing; stress
+   pair: 3D; stress
+   pair: isoparametric; stress
+   pair: hexahedral; stress
+
 soli8s
 ^^^^^^
 

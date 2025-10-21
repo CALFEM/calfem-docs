@@ -1,3 +1,16 @@
+.. _secforce2:
+.. index:: 
+   single: secforce2
+   single: section force diagram
+   single: force diagram
+   single: beam force visualization
+   single: 2D force diagram
+   pair: visualization; forces
+   pair: section; forces
+   pair: force; diagram
+   pair: beam; forces
+   pair: 2D; visualization
+
 secforce2
 ^^^^^^^^^
 

@@ -1,3 +1,15 @@
+.. _eigen:
+.. index:: 
+   single: eigen
+   single: eigenvalue problem
+   single: modal analysis
+   single: natural frequencies
+   single: mode shapes
+   pair: dynamics; eigenvalues
+   pair: modal; analysis
+   pair: vibration; analysis
+   pair: generalized; eigenvalue
+
 eigen
 ^^^^^
 

@@ -1,3 +1,15 @@
+.. _hooke:
+.. index:: 
+   single: hooke
+   single: material matrix
+   single: elastic material
+   single: isotropic material
+   single: constitutive matrix
+   pair: material; properties
+   pair: elastic; material
+   pair: constitutive; relations
+   pair: Hooke's; law
+
 hooke
 ^^^^^
 

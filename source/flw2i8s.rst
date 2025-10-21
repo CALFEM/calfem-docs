@@ -1,3 +1,19 @@
+.. _flw2i8s:
+.. index:: 
+   single: flw2i8s
+   single: heat flux
+   single: temperature gradient
+   single: thermal analysis
+   single: 8 node thermal
+   single: flow analysis
+   pair: finite element; thermal
+   pair: heat; flux
+   pair: thermal; analysis
+   pair: post-processing; thermal
+   pair: 2D; thermal
+   pair: isoparametric; thermal
+   pair: higher order; thermal
+
 flw2i8s
 ^^^^^^^
 

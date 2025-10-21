@@ -1,3 +1,17 @@
+.. _dyna2f:
+.. index:: 
+   single: dyna2f
+   single: dynamic analysis
+   single: differential equations
+   single: uncoupled equations
+   single: modal analysis
+   single: frequency domain
+   pair: dynamics; analysis
+   pair: differential equations; second order
+   pair: modal; coordinates
+   pair: frequency; domain
+   pair: uncoupled; equations
+
 dyna2f
 ^^^^^^
 

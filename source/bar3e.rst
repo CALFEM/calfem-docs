@@ -1,7 +1,17 @@
+.. _bar3e:
+.. index:: 
+   single: bar3e
+   single: bar element
+   single: 3D bar
+   single: truss element
+   single: three dimensional
+   pair: finite element; bar
+   pair: structural; element
+   pair: stiffness; matrix
+   pair: 3D; element
+
 bar3e
 ^^^^^
-
-.. index:: bar3e
 
 :Purpose:
 

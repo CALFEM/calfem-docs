@@ -1,3 +1,17 @@
+.. _bar2gs:
+.. index:: 
+   single: bar2gs
+   single: geometric nonlinear stress
+   single: bar stress
+   single: 2D bar stress
+   single: nonlinear stress
+   single: axial force
+   pair: finite element; stress
+   pair: geometric; nonlinear
+   pair: bar; stress
+   pair: 2D; stress
+   pair: nonlinear; stress
+
 bar2gs
 ^^^^^^
 

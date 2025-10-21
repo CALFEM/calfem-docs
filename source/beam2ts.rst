@@ -1,3 +1,18 @@
+.. _beam2ts:
+.. index:: 
+   single: beam2ts
+   single: Timoshenko beam stress
+   single: beam stress
+   single: 2D beam stress
+   single: shear deformation stress
+   single: section forces
+   pair: finite element; stress
+   pair: Timoshenko; beam
+   pair: beam; stress
+   pair: shear; deformation
+   pair: section; forces
+   pair: 2D; stress
+
 beam2ts
 ^^^^^^^
 

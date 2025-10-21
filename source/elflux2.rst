@@ -1,3 +1,16 @@
+.. _elflux2:
+.. index:: 
+   single: elflux2
+   single: flow arrows
+   single: flux visualization
+   single: thermal visualization
+   single: 2D visualization
+   pair: visualization; flow
+   pair: flux; arrows
+   pair: thermal; visualization
+   pair: 2D; visualization
+   pair: post-processing; visualization
+
 elflux2
 ^^^^^^^
 

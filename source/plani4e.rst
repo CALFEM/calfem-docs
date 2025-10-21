@@ -1,3 +1,18 @@
+.. _plani4e:
+.. index:: 
+   single: plani4e
+   single: plane element
+   single: isoparametric element
+   single: 4 node element
+   single: plane strain
+   single: plane stress
+   pair: finite element; plane
+   pair: structural; element
+   pair: stiffness; matrix
+   pair: 2D; element
+   pair: isoparametric; element
+   pair: quadrilateral; element
+
 plani4e
 ^^^^^^^
 

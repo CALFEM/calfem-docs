@@ -1,3 +1,16 @@
+.. _elprinc2:
+.. index:: 
+   single: elprinc2
+   single: principal stress
+   single: stress visualization
+   single: stress arrows
+   single: 2D visualization
+   pair: visualization; stress
+   pair: principal; stress
+   pair: stress; arrows
+   pair: 2D; visualization
+   pair: post-processing; visualization
+
 elprinc2
 ^^^^^^^^
 

@@ -58,6 +58,9 @@ mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
 templates_path = ['_templates']
 exclude_patterns = []
 
+# Suppress duplicate label warnings
+suppress_warnings = ['ref.duplicate']
+
 inkscape_converter_bin = ""
 
 if sys.platform.startswith('win'):
@@ -144,6 +147,14 @@ html_sidebars = {
 #html_theme = 'alabaster'
 #html_static_path = ['_static']
 
+html_use_index = True
+
+# Enable index generation for LaTeX
+latex_use_index = True
+
+# Force use of makeindex instead of xindy (which has Windows issues)
+latex_use_xindy = False
+
 # -- Options for LaTeX output ------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-latex-output
 
@@ -158,7 +169,8 @@ latex_documents = [
 
 latex_elements = {
     'papersize': '',
-    'makeindex': '',
+    'makeindex': r'\usepackage{makeidx}\makeindex',
+    'printindex': r'\printindex',
     'pointsize': '10pt',
     'preamble': r"""
 \geometry{

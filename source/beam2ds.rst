@@ -1,3 +1,18 @@
+.. _beam2ds:
+.. index:: 
+   single: beam2ds
+   single: dynamic beam stress
+   single: beam section forces
+   single: 2D beam stress
+   single: dynamic analysis
+   single: section forces
+   pair: finite element; stress
+   pair: dynamic; beam
+   pair: beam; stress
+   pair: section; forces
+   pair: 2D; stress
+   pair: dynamic; analysis
+
 beam2ds
 ^^^^^^^
 

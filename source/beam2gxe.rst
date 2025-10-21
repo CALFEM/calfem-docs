@@ -1,3 +1,18 @@
+.. _beam2gxe:
+.. index:: 
+   single: beam2gxe
+   single: geometric nonlinear beam
+   single: exact solution
+   single: 2D beam
+   single: nonlinear analysis
+   single: large deformation
+   pair: finite element; nonlinear
+   pair: geometric; nonlinearity
+   pair: beam; nonlinear
+   pair: exact; solution
+   pair: 2D; nonlinear
+   pair: large; deformation
+
 beam2gxe
 ^^^^^^^^
 

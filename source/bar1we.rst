@@ -1,3 +1,16 @@
+.. _bar1we:
+.. index:: 
+   single: bar1we
+   single: bar element
+   single: elastic support
+   single: 1D bar
+   single: foundation
+   pair: finite element; bar
+   pair: structural; element
+   pair: elastic; support
+   pair: 1D; element
+   pair: foundation; stiffness
+
 bar1we
 ^^^^^^
 

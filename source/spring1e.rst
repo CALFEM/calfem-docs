@@ -1,3 +1,14 @@
+.. _spring1e:
+.. index:: 
+   single: spring1e
+   single: spring element
+   single: elastic spring
+   single: simple element
+   pair: finite element; spring
+   pair: structural; element
+   pair: stiffness; matrix
+   pair: elastic; element
+
 spring1e
 ^^^^^^^^
 

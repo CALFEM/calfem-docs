@@ -1,7 +1,19 @@
+.. _beam2e:
+.. index:: 
+   single: beam2e
+   single: beam element
+   single: 2D beam
+   single: frame element
+   single: two dimensional
+   pair: finite element; beam
+   pair: structural; element
+   pair: stiffness; matrix
+   pair: 2D; element
+   pair: bending; element
+   pair: frame; analysis
+
 beam2e
 ^^^^^^
-
-.. index:: beam2e
 
 :Purpose:
 
