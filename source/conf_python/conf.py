@@ -186,6 +186,14 @@ latex_elements = {
 \renewcommand{\sphinxcode}[1]{{\footnotesize\texttt{#1}}}
 \makeatother
 
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+% Allow equations to break at binary operators and relations
+\allowdisplaybreaks
+
+% Use smaller math font globally - proper way
+\DeclareMathSizes{10}{8}{6}{5}   % for 10pt text: 8pt math, 6pt script, 5pt scriptscript
 
 \usepackage{fontspec}
 \usepackage{sectsty}
@@ -327,7 +335,8 @@ latex_elements = {
 """,
     #'fvset': r"""\fvset{frame=none, framerule=0pt, framesep=20pt, xleftmargin=0pt, xrightmargin=0pt, fontsize=\scriptsize}""",
     'figure_align': 'htbp',
-    'sphinxsetup': 'verbatimwithframe=false'
+    'sphinxsetup': 'verbatimwithframe=false',
+    'extraclassoptions': 'openany,oneside'
 }
 
 
