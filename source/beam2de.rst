@@ -19,9 +19,17 @@ beam2de
 
     Compute element stiffness, mass and damping matrices for a two dimensional beam element.
 
-    .. figure:: images/BEAM2D.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/BEAM2D.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+    
+        .. figure:: images/BEAM2D.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

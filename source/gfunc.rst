@@ -8,9 +8,17 @@ gfunc
 
     Form vector with function values at equally spaced points by linear interpolation.
 
-    .. figure:: images/F32.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/F32.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/F32.svg
+            :align: center
+            :width: 70%
 
         Piecewise linear time dependent function
 

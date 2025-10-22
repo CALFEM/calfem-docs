@@ -19,10 +19,18 @@ beam2ge
 
     Compute element stiffness matrix for a two dimensional nonlinear beam element with respect to geometrical nonlinearity.
 
-    .. figure:: images/beam2g.png
-        :align: center
-        :width: 70%
-        :alt: Two dimensional geometric nonlinear beam element
+    .. only:: html
+
+        .. figure:: images/beam2g.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/beam2g.svg
+            :align: center
+            :width: 70%
+            :alt: Two dimensional geometric nonlinear beam element
 
 :Syntax:
 

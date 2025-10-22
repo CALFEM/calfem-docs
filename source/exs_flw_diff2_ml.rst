@@ -5,8 +5,17 @@ exs_flw_diff2
 
 :Description: Consider a filter paper of square shape. Three sides are in contact with pure water and the fourth side is in contact with a solution of concentration :math:`c=1.0 \cdot 10^{-3}` kg/m³. The length of each side is 0.100 m. Using symmetry, only half of the paper has to be analyzed. The paper and the corresponding finite element mesh are shown. The following boundary conditions are applied:
 
-.. figure:: images/exs8f1.png
-   :align: center
+.. only:: html
+    
+    .. figure:: images/exs8f1.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/exs8f1.svg
+        :align: center
+        :width: 70%
 
 :Example: The element topology is defined by the topology matrix:
 
@@ -167,13 +176,31 @@ The following ``.m``-file shows an alternative set of commands to perform the di
     eldraw2(Ex,Ey,[1,3,0]);
     eliso2(Ex,Ey,Ed,5,[1,4]);
 
-.. figure:: images/exs8f2.png
-   :align: center
+.. only:: html
+    
+    .. figure:: images/exs8f2.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/exs8f2.svg
+        :align: center
+        :width: 70%
 
    Flux vectors
 
-.. figure:: images/exs8f3.png
-   :align: center
+.. only:: html
+    
+    .. figure:: images/exs8f3.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/exs8f3.svg
+        :align: center
+        :width: 70%
 
    Contour lines
 

@@ -4,9 +4,17 @@ plantcs
 :Purpose:
     Compute stresses and strains in a Turner-Clough element in plane strain or plane stress.
 
-    .. figure:: images/PLANTRS.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/PLANTRS.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLANTRS.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code:: matlab

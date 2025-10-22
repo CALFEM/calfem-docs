@@ -11,13 +11,31 @@ exs_bar2_l
 
     Consider a plane truss, loaded by a single force :math:`P=0.5` MN.
 
-    .. figure:: images/exs4_1.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs4_1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs4_1.svg
+            :align: center
+            :width: 70%
 
     The corresponding finite element model consists of ten elements and twelve degrees of freedom.
 
-    .. figure:: images/exs4_2.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs4_2.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs4_2.svg
+            :align: center
+            :width: 70%
 
     **Material properties:**
     

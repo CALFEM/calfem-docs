@@ -17,9 +17,17 @@ planqe
 :Purpose:
     Compute element matrices for a quadrilateral element in plane strain or plane stress.
 
-    .. figure:: images/PLANI4E.png
-        :width: 70%
-        :align: center    
+    .. only:: html
+        
+        .. figure:: images/PLANI4E.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLANI4E.svg
+            :align: center
+            :width: 70%    
 
 :Syntax:
     .. code:: matlab

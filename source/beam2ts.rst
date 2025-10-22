@@ -20,10 +20,19 @@ beam2ts
 
     Compute section forces in a two dimensional Timoshenko beam element.
 
-    .. figure:: images/beam2s.png
-        :align: center
-        :width: 70%
-        :alt: Section forces
+    .. only:: html
+
+        .. figure:: images/beam2s.svg
+            :align: center
+            :width: 400px
+            :alt: Section forces
+
+    .. only:: latex
+
+        .. figure:: images/beam2s.svg
+            :align: center
+            :width: 70%
+            :alt: Section forces
 
 :Syntax:
 

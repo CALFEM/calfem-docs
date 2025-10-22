@@ -16,10 +16,21 @@ exd_beam2_b
     Note that the structure of the boundary condition matrix **bc**
     differs from the structure of the load matrix **f** defined in **exd_beam2_t**.
 
-    .. figure:: images/EXD4f1.png
-        :align: center
+    .. only:: html
+
+        .. figure:: images/exd4f1.svg
+            :align: center
+            :width: 400px
 
         Time dependent boundary condition at the support, DOF 1.
+
+    .. only:: latex
+
+        .. figure:: images/exd4f1.svg
+            :align: center
+            :width: 70%
+
+            Time dependent boundary condition at the support, DOF 1.
 
 .. code-block:: python
 
@@ -117,9 +128,17 @@ The time history plots are generated using matplotlib:
     DOF 4 (center vertical): 0.015000 m
     DOF 11 (center horizontal): 0.010000 m
 
-.. figure:: images/exd4f2.png
-    :align: center
-    :width: 70%
+.. only:: html
+    
+    .. figure:: images/exd4f2.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/exd4f2.svg
+        :align: center
+        :width: 70%
 
     Time history at DOF 1, DOF 4 and DOF 11.
 
@@ -183,7 +202,18 @@ The snapshots of the deformed geometry are visualized using CALFEM visualization
     >>> 
     >>> print("Deformed shape snapshots with moving boundary created successfully")
 
-.. figure:: images/exd4f3.png
-    :align: center
+.. only:: html
+
+    .. figure:: images/exd4f3.svg
+        :align: center
+        :width: 400px
 
     Snapshots of the deformed geometry for every 0.1 sec.
+
+.. only:: latex
+
+    .. figure:: images/exd4f3.svg
+        :align: center
+        :width: 70%
+
+        Snapshots of the deformed geometry for every 0.1 sec.

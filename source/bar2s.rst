@@ -17,9 +17,17 @@ bar2s
 :Purpose:
     Compute normal force in a two dimensional bar element.
 
-    .. figure:: images/bar2s.png
-        :align: center
-        :width: 70%
+     .. only:: html
+          
+          .. figure:: images/bar2s.svg
+               :align: center
+               :width: 400px
+
+     .. only:: latex
+
+          .. figure:: images/bar2s.svg
+               :align: center
+               :width: 70%
 
 :Syntax:
 

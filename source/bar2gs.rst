@@ -17,10 +17,18 @@ bar2gs
 
 :Purpose:
     Compute axial force and normal force in a two dimensional bar element.
+    
+     .. only:: html
+          
+          .. figure:: images/bar2s.svg
+               :align: center
+               :width: 400px
 
-    .. figure:: images/bar2s.png
-        :align: center
-        :width: 70%
+     .. only:: latex
+
+          .. figure:: images/bar2s.svg
+               :align: center
+               :width: 70%
 
 :Syntax:
 

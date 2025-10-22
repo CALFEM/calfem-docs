@@ -4,9 +4,17 @@ platre
 :Purpose:
     Compute element stiffness matrix for a rectangular plate element.
 
-    .. figure:: images/PLATRE.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/PLATRE.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLATRE.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code:: matlab

@@ -11,8 +11,17 @@ exs_beam2
 
     A frame consists of one horizontal and two vertical beams according to the figure.
 
-    .. figure:: images/exs6_1.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs6_1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs6_1.svg
+            :align: center
+            :width: 70%
 
     **Material and geometric properties:**
 
@@ -44,8 +53,17 @@ exs_beam2
 
     The corresponding finite element model consists of three beam elements and twelve degrees of freedom.
 
-    .. figure:: images/exs6_2.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs6_2.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs6_2.svg
+            :align: center
+            :width: 70%
 
 :Example:
 
@@ -186,22 +204,58 @@ exs_beam2
         >> scalgraph2(sfac,[3e4 0.5 0]);
         >> title('Moment')
 
-    .. figure:: images/exs6_3.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs6_3.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs6_3.svg
+            :align: center
+            :width: 70%
         
         Displacement diagram
 
-    .. figure:: images/exs6_4.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs6_4.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs6_4.svg
+            :align: center
+            :width: 70%
         
         Normal force diagram
 
-    .. figure:: images/exs6_5.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs6_5.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs6_5.svg
+            :align: center
+            :width: 70%
         
         Shear force diagram
 
-    .. figure:: images/exs6_6.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs6_6.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs6_6.svg
+            :align: center
+            :width: 70%
         
         Moment diagram

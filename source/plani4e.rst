@@ -19,8 +19,17 @@ plani4e
 :Purpose:
     Compute element matrices for a 4 node isoparametric element in plane strain or plane stress.
 
-    .. figure:: images/PLANI4E.png
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/PLANI4E.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLANI4E.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code:: matlab

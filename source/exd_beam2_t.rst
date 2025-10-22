@@ -23,9 +23,17 @@ exd_beam2_t
     At every 0.1 second the deformed shape of the whole structure shall
     be displayed.
 
-    .. figure:: images/EXD2f1.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/EXD2f1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/EXD2f1.svg
+            :align: center
+            :width: 70%
 
         Time history of the impact load
 
@@ -133,9 +141,17 @@ The time history plots are generated using matplotlib:
     DOF 4 (impact point): 0.012500 m
     DOF 11 (beam center): 0.008750 m
 
-.. figure:: images/exd2f2.png
-    :align: center
-    :width: 70%
+.. only:: html
+    
+    .. figure:: images/exd2f2.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/exd2f2.svg
+        :align: center
+        :width: 70%
 
     Time history at DOF 4 and DOF 11.
 
@@ -200,8 +216,16 @@ The deformed shapes at time increment 0.1 sec are stored in **a**. They are visu
     >>> 
     >>> print("Deformed shape snapshots created successfully")
 
-.. figure:: images/exd2f3.png
-    :align: center
-    :width: 90%
+.. only:: html
+    
+    .. figure:: images/exd2f3.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/exd2f3.svg
+        :align: center
+        :width: 70%
 
     Snapshots of the deformed geometry for every 0.1 sec.

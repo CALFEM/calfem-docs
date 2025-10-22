@@ -18,9 +18,17 @@ flw2qe
 :Purpose:
      Compute element stiffness matrix for a quadrilateral heat flow element.
 
-    .. figure:: images/f14.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/f14.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/f14.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code-block:: matlab

@@ -11,9 +11,17 @@ exs_bar2
 
     Consider a plane truss consisting of three bars with the properties :math:`E=200` GPa, :math:`A_1=6.0 \times 10^{-4}` m², :math:`A_2=3.0 \times 10^{-4}` m² and :math:`A_3=10.0 \times 10^{-4}` m², and loaded by a single force :math:`P=80` kN. The corresponding finite element model consists of three elements and eight degrees of freedom.
 
-    .. figure:: images/exs3.png
-        :align: center
-        :width: 80%
+    .. only:: html
+        
+        .. figure:: images/exs3.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs3.svg
+            :align: center
+            :width: 70%
 
 :Example:
 
@@ -215,12 +223,30 @@ exs_bar2
         >> scalgraph2(sfac,[5e4 0 -0.3]);
         >> title('Normal force')
 
-    .. figure:: images/exs3_1.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs3_1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs3_1.svg
+            :align: center
+            :width: 70%
         
         Displacement diagram
 
-    .. figure:: images/exs3_2.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs3_2.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs3_2.svg
+            :align: center
+            :width: 70%
         
         Normal force diagram

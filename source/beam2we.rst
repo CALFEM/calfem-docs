@@ -20,9 +20,18 @@ beam2we
 
     Compute element stiffness matrix for a two dimensional beam element on elastic support.
 
-    .. figure:: images/beam2w.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/beam2w.svg
+            :align: center
+            :width: 400px
+            :alt: Two dimensional beam element with elastic support
+
+    .. only:: latex
+
+        .. figure:: images/beam2w.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

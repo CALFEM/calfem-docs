@@ -18,9 +18,17 @@ bar2ge
 :Purpose:
     Compute element stiffness matrix for a two dimensional geometric nonlinear bar.
 
-    .. figure:: images/bar2g.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/bar2g.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/bar2g.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

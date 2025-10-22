@@ -20,9 +20,17 @@ beam2ds
 
     Compute section forces for a two dimensional beam element in dynamic analysis.
 
-    .. figure:: images/BEAM2S.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/BEAM2S.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/BEAM2S.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

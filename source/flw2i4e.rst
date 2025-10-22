@@ -18,9 +18,17 @@ flw2i4e
 :Purpose:
     Compute element stiffness matrix for a 4 node isoparametric heat flow element.
 
-    .. figure:: images/FLW2I4E.png
-        :align: center
-        :width: 70mm
+    .. only:: html
+        
+        .. figure:: images/FLW2I4E.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/FLW2I4E.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

@@ -17,9 +17,17 @@ bar1e
 
     Compute element stiffness matrix for a one dimensional bar element.
 
-    .. figure:: images/bar1e_1.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/bar1e_1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/bar1e_1.svg
+            :align: center
+            :width: 70%
     
 
 :Syntax:
@@ -57,9 +65,17 @@ bar1e
 
     contains the distributed load per unit length, :math:`q_{\bar{x}}`.
 
-    .. figure:: images/bar1e_2.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/bar1e_2.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/bar1e_2.svg
+            :align: center
+            :width: 70%
 
 :Theory:
 

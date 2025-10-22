@@ -20,8 +20,17 @@ plani8e
 :Purpose:
     Compute element matrices for an 8 node isoparametric element in plane strain or plane stress.
 
-    .. figure:: images/PLANI8E.png
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/PLANI8E.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLANI8E.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code:: matlab

@@ -14,9 +14,17 @@ assem
 
     Assemble element matrices.
 
-    .. figure:: images/ASSEM.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/ASSEM.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/ASSEM.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

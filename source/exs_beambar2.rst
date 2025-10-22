@@ -11,11 +11,29 @@ exs_beambar2
 
     Consider a structure consisting of a beam with :math:`A_1=4.0 \times 10^{-3}` m² and :math:`I_1=5.4 \times 10^{-5}` m⁴ supported by two bars with :math:`A_2=1.0 \times 10^{-3}` m². The beam as well as the bars have :math:`E=200` GPa. The structure is loaded by a distributed load :math:`q=10` kN/m. The corresponding finite element model consists of three beam elements and two bar elements and has 14 degrees of freedom.
 
-    .. figure:: images/exs7_1.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs7_1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs7_1.svg
+            :align: center
+            :width: 70%
 
-    .. figure:: images/exs7_2.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs7_2.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs7_2.svg
+            :align: center
+            :width: 70%
 
 :Example:
 

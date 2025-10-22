@@ -19,8 +19,17 @@ plani8s
 :Purpose:
     Compute stresses and strains in an 8 node isoparametric element in plane strain or plane stress.
 
-    .. figure:: images/PLANI8S.png
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/PLANI8S.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLANI8S.svg
+            :align: center
+            :width: 70%
         :align: center
 
 :Syntax:

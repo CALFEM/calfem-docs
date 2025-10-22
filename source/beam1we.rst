@@ -20,9 +20,17 @@ beam1we
 
     Compute element stiffness matrix for a one dimensional beam element on elastic support.
 
-    .. figure:: images/beam1w.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/beam1w.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/beam1w.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 
@@ -58,8 +66,17 @@ beam1we
 
     contains the distributed load per unit length, :math:`q_{\bar{y}}`.
 
-    .. figure:: images/beam1e_2.png
-        :align: center
+    .. only:: html
+
+        .. figure:: images/beam1e_2.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/beam1e_2.svg
+            :align: center
+            :width: 70%
 
 :Theory:
 

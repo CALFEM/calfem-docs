@@ -19,8 +19,17 @@ soli8s
 :Purpose:
     Compute stresses and strains in an 8 node isoparametric solid element.
 
-    .. figure:: images/SOLI8S.png
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/SOLI8S.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/SOLI8S.svg
+            :align: center
+            :width: 70%
         :align: center
 
 :Syntax:

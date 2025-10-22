@@ -17,9 +17,17 @@ flw2te
 :Purpose:
     Compute element stiffness matrix for a triangular heat flow element.
 
-    .. figure:: images/FLW2TE.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/FLW2TE.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/FLW2TE.svg
+            :align: center
+            :width: 70%
         :alt: Two dimensional heat flow elements    
 
 :Syntax:

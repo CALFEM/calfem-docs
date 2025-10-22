@@ -18,10 +18,19 @@ beam2te
 
     Compute element stiffness matrix for a two dimensional Timoshenko beam element.
 
-    .. figure:: images/BEAM2T.png
-        :align: center
-        :width: 70%
-        :alt: Two dimensional beam element
+    .. only:: html
+
+        .. figure:: images/BEAM2T.svg
+            :align: center
+            :width: 400px
+            :alt: Two dimensional beam element
+
+    .. only:: latex
+
+        .. figure:: images/BEAM2T.svg
+            :align: center
+            :width: 70%
+            :alt: Two dimensional beam element
 
         Two dimensional beam element
 
@@ -67,12 +76,23 @@ beam2te
 
     contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q_{\bar{y}}`.
 
-    .. figure:: images/BEAM2LOA.png
-        :align: center
-        :width: 70%
-        :alt: Uniformly distributed load
+    .. only:: html
 
-        Uniformly distributed load
+        .. figure:: images/BEAM2LOA.svg
+            :align: center
+            :width: 400px
+            :alt: Uniformly distributed load
+
+            Uniformly distributed load
+
+    .. only:: latex
+
+        .. figure:: images/BEAM2LOA.svg
+            :align: center
+            :width: 70%
+            :alt: Uniformly distributed load
+
+            Uniformly distributed load
 
 :Theory:
 

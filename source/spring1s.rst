@@ -15,22 +15,31 @@ spring1s
 :Purpose:
     Compute spring force in a spring element.
 
-    .. figure:: images/SPRING3.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/SPRING3.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/SPRING3.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
-.. only:: matlab
 
-    .. code-block:: matlab
+    .. only:: matlab
 
-        es = spring1s(ep, ed)
+        .. code-block:: matlab
 
-.. only:: python
+            es = spring1s(ep, ed)
 
-    .. code-block:: python
+    .. only:: python
 
-        es = cfc.spring1s(ep, ed)
+        .. code-block:: python
+
+            es = cfc.spring1s(ep, ed)
 
 :Description:
     :code:`spring1s` computes the spring force in the spring element :code:`spring1e`.

@@ -19,9 +19,17 @@ beam3e
 
     Compute element stiffness matrix for a three dimensional beam element.
 
-    .. figure:: images/BEAM3E.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/BEAM3E.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/BEAM3E.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

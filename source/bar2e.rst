@@ -16,9 +16,17 @@ bar2e
 :Purpose:
     Compute element stiffness matrix for a two dimensional bar element.
 
-    .. figure:: images/bar2e.png
-        :align: center
-        :width: 71%
+    .. only:: html
+        
+        .. figure:: images/bar2e.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/bar2e.svg
+            :align: center
+            :width: 71%
 
 :Syntax:
 
@@ -55,10 +63,18 @@ bar2e
     :code:`eq`:math:`= [q_{\bar{x}}]`
 
     contains the distributed load per unit length, :math:`q_{\bar{x}}`.
+
+    .. only:: html
+        
+        .. figure:: images/bar2e_2.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
     
-    .. figure:: images/bar2e_2.png
-        :align: center
-        :width: 70%
+        .. figure:: images/bar2e_2.svg
+            :align: center
+            :width: 70%
 
 :Theory:
     The element stiffness matrix :math:`\mathbf{K}^e`, stored in :code:`Ke`, is computed according to

@@ -11,11 +11,29 @@ exs_beam1
 
     Consider a beam with the length :math:`9.0` m. The beam is simply supported and loaded by a point load :math:`P=10000` N applied at a point :math:`3.0` m from the left support. The corresponding computational model has six degrees of freedom and consists of two beam elements with four degrees of freedom. The beam has Young's modulus :math:`E=210` GPa and moment of inertia :math:`I=2510 \times 10^{-8}` m⁴.
 
-    .. figure:: images/exs5_1.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs5_1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs5_1.svg
+            :align: center
+            :width: 70%
 
-    .. figure:: images/exs5_2.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs5_2.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs5_2.svg
+            :align: center
+            :width: 70%
 
 :Example:
 
@@ -181,17 +199,44 @@ exs_beam1
         >>> plt.legend()
         >>> plt.show()
 
-    .. figure:: images/exs5_3.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs5_3.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs5_3.svg
+            :align: center
+            :width: 70%
         
         Displacement diagram
 
-    .. figure:: images/exs5_4.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs5_4.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs5_4.svg
+            :align: center
+            :width: 70%
         
         Shear force diagram
 
-    .. figure:: images/exs5_5.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs5_5.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs5_5.svg
+            :align: center
+            :width: 70%
         
         Moment diagram

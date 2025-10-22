@@ -4,9 +4,17 @@ Spring element functions
 The spring element, shown below, can be used for the analysis of
 one-dimensional spring systems and for a variety of analogous physical problems.
 
-.. figure:: images/SPRING1.png
-    :width: 70%
-    :align: center
+.. only:: html
+    
+    .. figure:: images/SPRING1.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/SPRING1.svg
+        :align: center
+        :width: 70%
 
     Spring element
 

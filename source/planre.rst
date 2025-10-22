@@ -4,8 +4,17 @@ planre
 :Purpose:
     Compute element matrices for a rectangular (Melosh) element in plane strain or plane stress.
 
-    .. figure:: images/PLANTRE.png
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/PLANTRE.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLANTRE.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code:: matlab

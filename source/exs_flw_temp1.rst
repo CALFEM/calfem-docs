@@ -11,11 +11,29 @@ exs_flw_temp1
 
     Consider a wall built up of concrete and thermal insulation. The outdoor temperature is :math:`-17°\text{C}` and the temperature inside is :math:`20°\text{C}`. At the inside of the thermal insulation there is a heat source yielding :math:`10` W/m².
 
-    .. figure:: images/exs2_1.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs2_1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs2_1.svg
+            :align: center
+            :width: 70%
 
-    .. figure:: images/exs2_2.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exs2_2.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exs2_2.svg
+            :align: center
+            :width: 70%
 
     The wall is subdivided into five elements and the one-dimensional spring (analogy) element :code:`spring1e` is used. Equivalent spring stiffnesses are :math:`k_i=\lambda A/L` for thermal conductivity and :math:`k_i=A/R` for thermal surface resistance. Corresponding spring stiffnesses per m² of the wall are:
 

@@ -17,9 +17,17 @@ plante
 :Purpose:
     Compute element matrices for a triangular element in plane strain or plane stress.
 
-    .. figure:: images/PLANTE.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/PLANTE.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLANTE.svg
+            :align: center
+            :width: 70%
 
 
 :Syntax:

@@ -15,22 +15,31 @@ spring1e
 :Purpose:
     Compute element stiffness matrix for a spring element.
 
-    .. figure:: images/SPRING1.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/SPRING1.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/SPRING1.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
-.. only:: matlab
 
-    .. code-block:: matlab
+    .. only:: matlab
 
-        Ke = spring1e(ep)
+        .. code-block:: matlab
 
-.. only:: python
+            Ke = spring1e(ep)
 
-    .. code-block:: python
+    .. only:: python
 
-        Ke = cfc.spring1e(ep)
+        .. code-block:: python
+
+            Ke = cfc.spring1e(ep)
 
 :Description:
     :code:`spring1e` provides the element stiffness matrix :math:`\bar{\mathbf{K}}^e` for a spring element.

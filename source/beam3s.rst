@@ -22,9 +22,17 @@ beam3s
 
     Compute section forces in a three dimensional beam element.
 
-    .. figure:: images/BEAM3S.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/BEAM3S.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/BEAM3S.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

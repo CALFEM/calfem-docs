@@ -20,9 +20,17 @@ beam2gxe
 
     Compute element stiffness matrix for a two dimensional nonlinear beam element with exact solution.
 
-    .. figure:: images/BEAM2G.png
-        :align: center
-        :width: 70%
+    .. only:: html
+ 
+         .. figure:: images/BEAM2G.svg
+             :align: center
+             :width: 400px
+ 
+    .. only:: latex
+
+        .. figure:: images/BEAM2G.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

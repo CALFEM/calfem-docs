@@ -20,8 +20,17 @@ exd_beam2_tr
     The result in the figure below
     shall be compared to the result in **exd2**.
 
-    .. figure:: images/exd31.png
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/exd31.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exd31.svg
+            :align: center
+            :width: 70%
 
         Time history at DOF 4 and DOF 11 using two eigenvectors.
 

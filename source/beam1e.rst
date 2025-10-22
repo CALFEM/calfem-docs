@@ -18,9 +18,17 @@ beam1e
 
     Compute element stiffness matrix for a one dimensional beam element.
 
-    .. figure:: images/beam1e.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/beam1e.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/beam1e.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 
@@ -58,9 +66,17 @@ beam1e
 
     then contains the distributed load per unit length, :math:`q_{\bar{y}}`.
 
-    .. figure:: images/beam1e_2.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/beam1e_2.svg
+            :align: center
+            :width: 70%
+
+    .. only:: latex
+
+        .. figure:: images/beam1e_2.svg
+            :align: center
+            :width: 70%
 
 :Theory:
 

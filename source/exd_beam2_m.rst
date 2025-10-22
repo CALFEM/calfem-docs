@@ -27,8 +27,17 @@ The following data apply to the beams:
      - 2500
      - 2500
 
-.. figure:: images/EXD1fBIG.png
-   :align: center
+.. only:: html
+
+    .. figure:: images/EXD1fBIG.svg
+        :align: center
+        :width: 500px
+
+.. only:: latex
+
+   .. figure:: images/EXD1fBIG.svg
+      :align: center
+      :width: 70%
 
 
 a) Frame structure                          b) Element and DOF numbering
@@ -130,8 +139,17 @@ The finite element mesh can be plotted using CALFEM visualization functions:
    >>> plt.axis('equal')
    >>> plt.show()
 
-.. figure:: images/exd1f2.png
-   :align: center
+.. only:: html
+    
+    .. figure:: images/exd1f2.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/exd1f2.svg
+        :align: center
+        :width: 70%
 
    Finite element mesh
 
@@ -206,8 +224,17 @@ Individual eigenvectors (mode shapes) can be plotted:
    >>> plt.axis('equal')
    >>> plt.show()
 
-.. figure:: images/exd1f3.png
-   :align: center
+.. only:: html
+    
+    .. figure:: images/exd1f3.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+    
+    .. figure:: images/exd1f3.svg
+        :align: center
+        :width: 70%
 
    The first eigenmode, 6.98 Hz
 
@@ -260,7 +287,18 @@ Multiple eigenmodes can be displayed simultaneously by translating each mode in 
    >>> 
    >>> plt.show()
 
-.. figure:: images/exd1f4.png
-   :align: center
+.. only:: html
 
-   The first eight eigenmodes. Frequencies are given in Hz.
+   .. figure:: images/exd1f4.svg
+       :align: center
+       :width: 400px
+
+       The first eight eigenmodes. Frequencies are given in Hz.
+
+.. only:: latex
+
+   .. figure:: images/exd1f4.svg
+      :align: center
+      :width: 70%
+
+      The first eight eigenmodes. Frequencies are given in Hz.

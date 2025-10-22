@@ -17,9 +17,17 @@ bar1s
 
     Compute normal force in a one dimensional bar element.
 
-    .. figure:: images/bar1s.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/bar1s.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/bar1s.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

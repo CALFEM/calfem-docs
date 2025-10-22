@@ -22,10 +22,19 @@ beam2gxs
 
     Compute section forces in a two dimensional geometric nonlinear beam element with exact solution.
 
-    .. figure:: images/beam2s.png
-        :align: center
-        :width: 70%
-        :alt: Two dimensional geometric nonlinear exact beam element
+    .. only:: html
+
+        .. figure:: images/beam2s.svg
+            :align: center
+            :width: 400px
+            :alt: Two dimensional geometric nonlinear exact beam element
+
+    .. only:: latex
+
+        .. figure:: images/beam2s.svg
+            :align: center
+            :width: 70%
+            :alt: Two dimensional geometric nonlinear exact beam element
 
 :Syntax:
 

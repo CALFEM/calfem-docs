@@ -4,9 +4,17 @@ flw3i8e
 :Purpose:
     Compute element stiffness matrix for an 8 node isoparametric element.
 
-    .. figure:: images/FLW3I8E.png
-        :align: center
-        :width: 70mm
+    .. only:: html
+        
+        .. figure:: images/FLW3I8E.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/FLW3I8E.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code:: matlab

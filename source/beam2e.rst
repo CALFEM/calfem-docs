@@ -19,9 +19,17 @@ beam2e
 
     Compute element stiffness matrix for a two-dimensional beam element.
 
-    .. figure:: images/BEAM2E.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/BEAM2E.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/BEAM2E.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 
@@ -59,9 +67,17 @@ beam2e
 
     contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q_{\bar{y}}`.
 
-    .. figure:: images/BEAM2LOA.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/BEAM2LOA.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/BEAM2LOA.svg
+            :align: center
+            :width: 70%
     
 :Theory:
 

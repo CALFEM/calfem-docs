@@ -4,9 +4,17 @@ platrs
 :Purpose:
     Compute section forces in a rectangular plate element.
 
-    .. figure:: images/PLATRS.png
-        :width: 70%
-        :align: center
+    .. only:: html
+        
+        .. figure:: images/PLATRS.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/PLATRS.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code:: matlab

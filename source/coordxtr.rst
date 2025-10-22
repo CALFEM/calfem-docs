@@ -16,9 +16,17 @@ coordxtr
 
     Extract element coordinates from a global coordinate matrix.
 
-    .. figure:: images/COORD.png
-        :width: 70%
-        :align: center
+    .. only:: html
+
+        .. figure:: images/COORD.svg
+            :width: 70%
+            :align: center
+
+    .. only:: latex
+
+        .. figure:: images/COORD.svg
+            :width: 70%
+            :align: center
 
 :Syntax:  
 

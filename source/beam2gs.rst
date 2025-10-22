@@ -20,9 +20,17 @@ beam2gs
 
     Compute section forces in a two dimensional nonlinear beam element with geometrical nonlinearity.
 
-    .. figure:: images/beam2s.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/beam2s.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/beam2s.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

@@ -19,8 +19,17 @@ soli8e
 :Purpose:
     Compute element matrices for an 8 node isoparametric solid element.
 
-    .. figure:: images/SOLI8E.png
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/SOLI8E.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/SOLI8E.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
     .. code:: matlab

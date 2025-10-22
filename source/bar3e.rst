@@ -17,9 +17,17 @@ bar3e
 
     Compute element stiffness matrix for a three dimensional bar element.
 
-    .. figure:: images/bar3e.png
-        :align: center
-        :width: 70%
+    .. only:: html
+        
+        .. figure:: images/bar3e.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/bar3e.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 

@@ -26,9 +26,18 @@ The following data apply to the beams:
    * - Density (kg/m³)
      - 2500
      - 2500
+  
+.. only:: html
 
-.. figure:: images/EXD1fBIG.png
-   :align: center
+    .. figure:: images/EXD1fBIG.svg
+        :align: center
+        :width: 500px
+
+.. only:: latex
+
+   .. figure:: images/EXD1fBIG.svg
+      :align: center
+      :width: 70%
 
 
 a) Frame structure                          b) Element and DOF numbering
@@ -77,8 +86,17 @@ The finite element mesh is plotted, using the following commands:
    grid; title('2D Frame Structure');
    pause;
 
-.. figure:: images/exd1f2.png
-   :align: center
+.. only:: html
+
+    .. figure:: images/exd1f2.svg
+        :align: center
+        :width: 400px
+
+.. only:: latex
+
+   .. figure:: images/exd1f2.svg
+      :align: center
+      :width: 70%
 
    Finite element mesh
 
@@ -118,10 +136,30 @@ The eigenvectors can be plotted by entering the commands below:
    FreqText=num2str(Freq(1));      text(.5,1.75,FreqText);
    pause;
 
-.. figure:: images/exd1f3.png
-   :align: center
 
-   The first eigenmode, 6.98 Hz
+.. only:: html
+
+    .. only:: html
+        
+        .. figure:: images/exd1f3.svg
+            :align: center
+            :width: 400px
+    
+    .. only:: latex
+        
+        .. figure:: images/exd1f3.svg
+            :align: center
+            :width: 70%
+
+        The first eigenmode, 6.98 Hz
+
+.. only:: latex
+
+   .. figure:: images/exd1f3.svg
+      :align: center
+      :width: 70%
+
+      The first eigenmode, 6.98 Hz
 
 An attractive way of displaying the eigenmodes is shown in the figure below. The result is accomplished by translating the different eigenmodes in the x-direction, see the ``Ext``-matrix defined below, and in the y-direction, see the ``Eyt``-matrix:
 
@@ -144,7 +182,18 @@ An attractive way of displaying the eigenmodes is shown in the figure below. The
      FreqText=num2str(Freq(i));  text(3*(i-5)+.5,-2.5,FreqText);
    end
 
-.. figure:: images/exd1f4.png
-   :align: center
+.. only:: html
 
-   The first eight eigenmodes. Frequencies are given in Hz.
+   .. figure:: images/exd1f4.svg
+      :align: center
+      :width: 400px
+
+      The first eight eigenmodes. Frequencies are given in Hz.
+
+.. only:: latex
+
+   .. figure:: images/exd1f4.svg
+      :align: center
+      :width: 70%
+
+      The first eight eigenmodes. Frequencies are given in Hz.

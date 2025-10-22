@@ -19,9 +19,17 @@ beam1s
 
     Compute section forces in a one dimensional beam element.
 
-    .. figure:: images/beam1s.png
-        :align: center
-        :width: 70%
+    .. only:: html
+
+        .. figure:: images/beam1s.svg
+            :align: center
+            :width: 400px
+
+    .. only:: latex
+
+        .. figure:: images/beam1s.svg
+            :align: center
+            :width: 70%
 
 :Syntax:
 
