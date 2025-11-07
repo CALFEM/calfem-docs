@@ -19,29 +19,11 @@ exs_spring
 
     Consider the system of three linear elastic springs, and the corresponding finite element model. The system of springs is fixed in its ends and loaded by a single load :math:`F`.
 
-    .. only:: html
-        
-        .. figure:: images/exs1_1.svg
-            :align: center
-            :width: 400px
-    
-    .. only:: latex
-        
-        .. figure:: images/exs1_1.svg
-            :align: center
-            :width: 70%
+    .. figure:: images/exs1_1.png
+        :align: center
 
-    .. only:: html
-        
-        .. figure:: images/exs1_2.svg
-            :align: center
-            :width: 400px
-    
-    .. only:: latex
-        
-        .. figure:: images/exs1_2.svg
-            :align: center
-            :width: 70%
+    .. figure:: images/exs1_2.png
+        :align: center
 
 :Example:
 
@@ -79,16 +61,22 @@ exs_spring
 
     .. code-block:: matlab
 
-        >> k=1500;  ep1=k;  ep2=2*k;
+        >> k=1500;  ep1=2*k;  ep2=k;  ep3=2*k;
         >> Ke1=spring1e(ep1)
 
         Ke1 =
-                1500       -1500
-               -1500        1500
+                3000       -3000
+               -3000        3000
 
         >> Ke2=spring1e(ep2)
 
         Ke2 =
+                1500       -1500
+               -1500        1500
+
+        >> Ke3=spring1e(ep3)
+
+        Ke1 =
                 3000       -3000
                -3000        3000
 
@@ -96,21 +84,21 @@ exs_spring
 
     .. code-block:: matlab
 
-        >> K=assem(Edof(1,:),K,Ke2)
+        >> K=assem(Edof(1,:),K,Ke1)
 
         K =
                 3000       -3000           0
                -3000        3000           0
                    0           0           0
 
-        >> K=assem(Edof(2,:),K,Ke1)
+        >> K=assem(Edof(2,:),K,Ke2)
 
         K =
                 3000       -3000           0
                -3000        4500       -1500
                    0       -1500        1500
 
-        >> K=assem(Edof(3,:),K,Ke2)
+        >> K=assem(Edof(3,:),K,Ke3)
 
         K =
                 3000       -3000           0
@@ -158,17 +146,17 @@ exs_spring
 
     .. code-block:: matlab
 
-        >> es1=spring1s(ep2,ed1)
+        >> es1=spring1s(ep1,ed1)
 
         es1 =
                40
 
-        >> es2=spring1s(ep1,ed2)
+        >> es2=spring1s(ep2,ed2)
 
         es2 =
               -20
 
-        >> es3=spring1s(ep2,ed3)
+        >> es3=spring1s(ep3,ed3)
 
         es3 =
               -40
