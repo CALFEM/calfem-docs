@@ -76,7 +76,7 @@ bar1we
 
         .. figure:: images/bar1e_2.svg
             :align: center
-            :width: 70%
+            :width: 60%
 
     Bar element with distributed load
 

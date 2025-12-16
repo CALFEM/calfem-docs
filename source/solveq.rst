@@ -94,5 +94,5 @@ solveq
 
     If ``r`` is given in the function, support forces are computed according to
 
-    :code:`r`:math:`= \mathbf{K}\;\mathbf{a} - \mathbf{f}`
+    :code:`\mathbf{r}`:math:`= \mathbf{K}\;\mathbf{a} - \mathbf{f}`
 

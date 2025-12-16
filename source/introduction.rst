@@ -60,29 +60,29 @@ An example of a call to the element library is:
 
 .. only:: python
 
-  .. code-block:: python
+    .. code-block:: python
 
-    Ke = cfc.spring1e(ep)
+        Ke = cfc.spring1e(ep)
 
-where the two-by-two element stiffness matrix :math:`{\mathbf{K}}^e` for a spring element is computed and stored in the variable :code:`Ke`. The input argument is given within parentheses :code:`( )` after the name of the function and is in this case :code:`ep` containing the spring stiffness :math:`k`. Some functions have multiple input arguments and/or multiple output arguments. For example:
+where the two-by-two element stiffness matrix :math:`{\mathbf{K}}^e` for a spring element is computed and stored in the variable :code:`Ke`. The input argument is given within parentheses :code:`( )` after the name of the function and is in this case :code:`ep`, containing the spring stiffness :math:`k`. Some functions have multiple input arguments and/or multiple output arguments. For example:
 
 .. only:: matlab
 
-  .. code-block:: matlab
+    .. code-block:: matlab
 
-    [L, X] = eigen(K, M)
+        [L, X] = eigen(K, M)
    
-  computes the eigenvalues and eigenvectors of a pair of matrices 
-  :code:`K` and :code:`M`. The output variables - the eigenvalues :math:`\lambda` stored in the vector :code:`L` and the corresponding eigenvectors stored in the matrix :code:`X` - are surrounded by brackets :code:`[ ]` and separated by commas. The input arguments are given inside the parentheses :code:`( )` and also separated by commas.
+    computes the eigenvalues and eigenvectors of a pair of matrices 
+    :code:`K` and :code:`M`. The output variables, the eigenvalues :math:`\lambda`, stored in the vector :code:`L` and the corresponding eigenvectors stored in the matrix :code:`X` are surrounded by brackets :code:`[ ]` and separated by commas. The input arguments are given inside the parentheses :code:`( )` and also separated by commas.
 
 .. only:: python
 
-  .. code-block:: python
+    .. code-block:: python
 
-    L, X = cfc.eigen(K, M)
+        L, X = cfc.eigen(K, M)
 
-  computes the eigenvalues and eigenvectors of a pair of matrices 
-  :code:`K` and :code:`M`. The output variables - the eigenvalues :math:`\lambda` stored in the vector :code:`L` and the corresponding eigenvectors stored in the matrix :code:`X` - are separated by commas. The input arguments are given inside the parentheses :code:`( )` and also separated by commas.
+    computes the eigenvalues and eigenvectors of a pair of matrices 
+    :code:`K` and :code:`M`. The output variables, the eigenvalues :math:`\lambda`, stored in the vector :code:`L` and the corresponding eigenvectors stored in the matrix :code:`X` are separated by commas. The input arguments are given inside the parentheses :code:`( )` and also separated by commas.
 
 The statement:
 

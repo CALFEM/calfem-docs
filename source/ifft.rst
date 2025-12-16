@@ -1,45 +1,47 @@
 .. _ifft:
 .. index:: ifft, inverse fast fourier transform, frequency domain, time domain
 
-ifft
-^^^^
+.. only:: matlab
 
-:Purpose:
+    ifft
+    ^^^^
 
-    Transform function in frequency domain to time domain.
+    :Purpose:
 
-:Syntax:
+        Transform function in frequency domain to time domain.
 
-    .. code-block:: matlab
+    :Syntax:
 
-        x = ifft(y)
-        x = ifft(y, N)
+        .. code-block:: matlab
 
-:Description:
+            x = ifft(y)
+            x = ifft(y, N)
 
-    ``ifft`` transforms a function in the frequency domain to a function in the time domain.
+    :Description:
 
-    The function to be transformed is given in the vector ``y``. Each row in ``y`` contains Fourier terms in the interval :math:`-\infty \leq \omega \leq +\infty`.
+        ``ifft`` transforms a function in the frequency domain to a function in the time domain.
 
-    The ``ifft`` command can be used with one or two input arguments. The scalar variable ``N`` can be used to specify the number of frequencies used in the Fourier transform. The size of the output vector in this case will be equal to ``N``. See also the description of the command ``fft``.
+        The function to be transformed is given in the vector ``y``. Each row in ``y`` contains Fourier terms in the interval :math:`-\infty \leq \omega \leq +\infty`.
 
-    The inverse Fourier coefficients :math:`x(j)`, stored in the variable ``x``, are computed according to
+        The ``ifft`` command can be used with one or two input arguments. The scalar variable ``N`` can be used to specify the number of frequencies used in the Fourier transform. The size of the output vector in this case will be equal to ``N``. See also the description of the command ``fft``.
 
-    .. math::
+        The inverse Fourier coefficients :math:`x(j)`, stored in the variable ``x``, are computed according to
 
-        x(j) = \frac{1}{N} \sum_{k=1}^N y(k) \omega_N^{-(j-1)(k-1)},
+        .. math::
 
-    where
+            x(j) = \frac{1}{N} \sum_{k=1}^N y(k) \omega_N^{-(j-1)(k-1)},
 
-    .. math::
+        where
 
-        \omega_N = e^{-2 \pi i / N}.
+        .. math::
+
+            \omega_N = e^{-2 \pi i / N}.
 
 
-    .. note:: 
+        .. note:: 
 
-        This is a MATLAB built-in function.
+            This is a MATLAB built-in function.
 
-:See also:
+    :See also:
 
-    :ref:`fft`
+        :ref:`fft`

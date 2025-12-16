@@ -94,7 +94,7 @@
             ...
 
     :Description:
-        In Python, :code:`...` is used as an Ellipsis object or for line continuation in some contexts (e.g., multi-line lambdas or function definitions). For line continuation, use the backslash :code:`\` or parentheses.
+        In Python, :code:`...` is used as an Ellipsis object or for line continuation in some contexts (e.g., multi-line lambdas or function definitions). For line continuation, use the backslash :code:`\\` or parentheses.
 
     :Note:
         In IPython, multi-line statements are handled automatically.

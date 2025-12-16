@@ -17,7 +17,7 @@ For each element type, there is a function for computation of the element stiffn
 
 Using the function :code:`assem`, the element stiffness matrices and element load vectors are assembled into a global stiffness matrix :math:`{\mathbf{K}}`, stored in :code:`K` and a load vector :math:`{\mathbf{f}}`, stored in :code:`f`. Unknown nodal values of temperatures or displacements :math:`{\mathbf{a}}` are computed by solving the system of equations :math:`{\mathbf{K}}{\mathbf{a}}= {\mathbf{f}}` using the function :code:`solveq`. A vector of nodal values of temperatures or displacements for a specific element is formed by the function :code:`extract_ed`.
 
-When the element nodal values have been computed, the element stresses or element flux can be calculated using functions specific to the element type concerned. These functions are identified by their last letter :code:`-s`.
+When the element nodal values have been computed, the section forfces can be calculated using functions specific to the element type concerned. These functions are identified by their last letter :code:`-s`.
 
 For some elements, a function for computing the internal force vector is also available. These functions are identified by their last letter :code:`-f`.
 

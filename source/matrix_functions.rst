@@ -110,7 +110,7 @@ The following functions are described in this chapter:
     **Sparse matrix handling**
 
     +---------------------------+--------------------------------------------------+
-    | ``sparse_matrix.toarray`` | Convert sparse matrix to dense array            |
+    | ``sparse_matrix.toarray`` | Convert sparse matrix to dense array             |
     +---------------------------+--------------------------------------------------+
     | ``scipy.sparse``          | Create sparse matrix                             |
     +---------------------------+--------------------------------------------------+
@@ -1175,7 +1175,7 @@ The following functions are described in this chapter:
 
     :Description:
 
-        ``A = ones(m,n)`` results in an ``m``-times-``n`` matrix ``A`` with all ones.
+        ``A = ones(m,n)`` results in an :math:`m \times n` array :math:`A` with all ones.
 
     :Note:
 
@@ -1201,7 +1201,7 @@ The following functions are described in this chapter:
 
     :Description:
 
-        ``A = np.ones((m, n))`` results in an ``m``×``n`` array ``A`` with all ones.
+        ``A = np.ones((m, n))`` results in an :math:`m \times n` array :math:`A` with all ones.
         
         ``A = np.ones(shape)`` creates an array with the specified shape filled with ones.
 
@@ -1505,7 +1505,7 @@ The following functions are described in this chapter:
 
     :Description:
 
-        ``A = zeros(m,n)`` results in an ``m``-times-``n`` matrix ``A`` of zeros.
+        ``A = zeros(m,n)`` results in an :math:`m \times n` array :math:`A` of zeros.
 
     :Note:
 
@@ -1531,7 +1531,7 @@ The following functions are described in this chapter:
 
     :Description:
 
-        ``A = np.zeros((m, n))`` results in an ``m``×``n`` array ``A`` of zeros.
+        ``A = np.zeros((m, n))`` results in an :math:`m \times n` array :math:`A` of zeros.
         
         ``A = np.zeros(shape)`` creates an array with the specified shape filled with zeros.
 
