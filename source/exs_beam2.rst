@@ -87,11 +87,22 @@ exs_beam2
 
         >>> # Initialize global system
         >>> K = np.zeros((12, 12))
-        >>> f = np.zeros(12)
+        >>> f = np.zeros((12, 1))
         >>> f[3] = 2e3  # Load at DOF 4 (index 3 in 0-based indexing)
         >>> print("Load vector:")
         >>> print(f)
-        [   0.    0.    0. 2000.    0.    0.    0.    0.    0.    0.    0.    0.]
+        [[   0.]
+         [   0.]
+         [   0.]
+         [2000.]
+         [   0.]
+         [   0.]
+         [   0.]
+         [   0.]
+         [   0.]
+         [   0.]
+         [   0.]
+         [   0.]]
 
     The material and geometric properties are defined for each element type:
 
@@ -109,12 +120,10 @@ exs_beam2
         >>> 
         >>> # Element coordinates [m]
         >>> ex1 = np.array([0, 0])  # Element 1: left column x-coordinates
-        >>> ey1 = np.array([0, 4])  # Element 1: left column y-coordinates
-        >>> 
         >>> ex2 = np.array([6, 6])  # Element 2: right column x-coordinates  
-        >>> ey2 = np.array([0, 4])  # Element 2: right column y-coordinates
-        >>> 
         >>> ex3 = np.array([0, 6])  # Element 3: horizontal beam x-coordinates
+        >>> ey1 = np.array([4, 0])  # Element 1: left column y-coordinates
+        >>> ey2 = np.array([4, 0])  # Element 2: right column y-coordinates
         >>> ey3 = np.array([4, 4])  # Element 3: horizontal beam y-coordinates
         >>> 
         >>> # Distributed loads (only on horizontal beam)
@@ -132,9 +141,9 @@ exs_beam2
         >>> Ke3, fe3 = cfc.beam2e(ex3, ey3, ep2, eq3)  # With distributed load
         >>> 
         >>> # Assemble global stiffness matrix and load vector
-        >>> K = cfc.assem(Edof[0], K, Ke1)
-        >>> K = cfc.assem(Edof[1], K, Ke2)
-        >>> K, f = cfc.assem(Edof[2], K, Ke3, f, fe3)
+        >>> K = cfc.assem(edof[0, :], K, Ke1)
+        >>> K = cfc.assem(edof[1, :], K, Ke2)
+        >>> K, f = cfc.assem(edof[2, :], K, Ke3, f, fe3)
         >>> 
         >>> print("Global system assembled successfully")
         Global system assembled successfully
@@ -144,24 +153,34 @@ exs_beam2
     .. code-block:: python
 
         >>> # Boundary conditions (fixed supports at base of columns)
-        >>> bc = np.array([
-        ...     [1, 0],   # DOF 1 = 0 (x-displacement at left base)
-        ...     [2, 0],   # DOF 2 = 0 (y-displacement at left base) 
-        ...     [3, 0],   # DOF 3 = 0 (rotation at left base)
-        ...     [10, 0],  # DOF 10 = 0 (x-displacement at right base)
-        ...     [11, 0]   # DOF 11 = 0 (y-displacement at right base)
-        ... ])
+        >>> bc_dof = np.array([1, 2, 3, 10, 11])
+        >>> bc_value = np.array([0.0, 0.0, 0.0, 0.0, 0.0])
         >>> 
         >>> # Solve the system
         >>> a, r = cfc.solveq(K, f, bc)
         >>> print("Displacements [m, rad]:")
         >>> print(a)
-        [ 0.0000e+00  0.0000e+00  0.0000e+00  7.5000e-03 -3.0000e-04 -5.4000e-03
-          7.5000e-03 -3.0000e-04  4.7000e-03  0.0000e+00  0.0000e+00 -5.2000e-03]
+        [[ 0.    ]
+         [ 0.    ]
+         [ 0.    ]
+         [ 0.0075]
+         [-0.0003]
+         [-0.0054]
+         [ 0.0075]
+         [-0.0003]
+         [ 0.0047]
+         [ 0.    ]
+         [ 0.    ]
+         [-0.0052]]
         >>> print("Reaction forces [N, Nm]:")
         >>> print(r)
-        [ 1.927e+03  2.874e+04  4.450e+02  0.000e+00  0.000e+00  0.000e+00
-          0.000e+00  0.000e+00  0.000e+00 -3.927e+03  3.126e+04  0.000e+00]
+        [[ 1.9268e+03]
+         [ 2.8741e+04]
+         [ 0.0000e+00]
+         [-7.2760e-12]
+         [-3.9268e+03]
+         [ 3.1259e+04]
+         [ 0.0000e+00]]
 
     The element displacements are extracted and section forces are computed along each element:
 
@@ -171,24 +190,24 @@ exs_beam2
         >>> Ed = cfc.extract_ed(Edof, a)
         >>> 
         >>> # Compute section forces and internal displacements (21 points each)
-        >>> es1, edi1 = cfc.beam2s(ex1, ey1, ep1, Ed[0], eq1, n_points=21)
-        >>> es2, edi2 = cfc.beam2s(ex2, ey2, ep1, Ed[1], eq2, n_points=21)
-        >>> es3, edi3 = cfc.beam2s(ex3, ey3, ep2, Ed[2], eq3, n_points=21)
+        >>> es1, edi1, ec1 = cfc.beam2s(ex1, ey1, ep1, ed[0, :], eq1, nep=21)
+        >>> es2, edi2, ec2 = cfc.beam2s(ex2, ey2, ep1, ed[1, :], eq2, nep=21)
+        >>> es3, edi3, ec3 = cfc.beam2s(ex3, ey3, ep2, ed[2, :], eq3, nep=21)
         >>> 
         >>> print("Element 1 (left column) section forces [N, N, Nm]:")
         >>> print("N =", es1[0, 0], "V =", es1[0, 1], "M =", es1[0, 2])
         Element 1 (left column) section forces [N, N, Nm]:
-        N = -28741.0 V = 1927.0 M = 8152.0
+        N = -28740.878321063385 V = 1926.7601159371466 M = 8152.31039012879
         >>> 
         >>> print("Element 2 (right column) section forces [N, N, Nm]:")
         >>> print("N =", es2[0, 0], "V =", es2[0, 1], "M =", es2[0, 2])
         Element 2 (right column) section forces [N, N, Nm]:
-        N = -31259.0 V = -3927.0 M = -15707.0
+        N = -31259.121678936615 V = -3926.760115937116 M = -15707.040463748464
         >>> 
         >>> print("Element 3 (horizontal beam) section forces [N, N, Nm]:")
         >>> print("N =", es3[0, 0], "V =", es3[0, 1], "M =", es3[0, 2])
         Element 3 (horizontal beam) section forces [N, N, Nm]:
-        N = -3927.0 V = -28741.0 M = -8152.0
+        N = -3926.760115937226 V = -28740.87832106339 M = -8152.310390128787
 
     Visualization of the frame analysis results using CALFEM's visualization functions:
 

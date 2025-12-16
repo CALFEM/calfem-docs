@@ -4,18 +4,23 @@ Extracted from exs_beam2.rst documentation
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
+
 import calfem.core as cfc
+import calfem.vis_mpl as cfv
+
+np.set_printoptions(precision=4, linewidth=120)
 
 # Element topology matrix (DOFs only, no element numbers)
-Edof = np.array([
-    [4, 5, 6, 1, 2, 3],    # Element 1: left column (node 2-1)
-    [7, 8, 9, 10, 11, 12], # Element 2: right column (node 3-4)
-    [4, 5, 6, 7, 8, 9]     # Element 3: horizontal beam (node 2-3)
+edof = np.array([
+    [4, 5, 6, 1, 2, 3], 
+    [7, 8, 9, 10, 11, 12], 
+    [4, 5, 6, 7, 8, 9]
 ])
 
 # Initialize global system
 K = np.zeros((12, 12))
-f = np.zeros(12)
+f = np.zeros((12, 1))
 f[3] = 2e3  # Load at DOF 4 (index 3 in 0-based indexing)
 print("Load vector:")
 print(f)
@@ -32,12 +37,10 @@ ep2 = [E, A2, I2]  # Element properties for horizontal beam
 
 # Element coordinates [m]
 ex1 = np.array([0, 0])  # Element 1: left column x-coordinates
-ey1 = np.array([0, 4])  # Element 1: left column y-coordinates
-
 ex2 = np.array([6, 6])  # Element 2: right column x-coordinates  
-ey2 = np.array([0, 4])  # Element 2: right column y-coordinates
-
 ex3 = np.array([0, 6])  # Element 3: horizontal beam x-coordinates
+ey1 = np.array([4, 0])  # Element 1: left column y-coordinates
+ey2 = np.array([4, 0])  # Element 2: right column y-coordinates
 ey3 = np.array([4, 4])  # Element 3: horizontal beam y-coordinates
 
 # Distributed loads (only on horizontal beam)
@@ -51,35 +54,31 @@ Ke2 = cfc.beam2e(ex2, ey2, ep1)  # Same properties as element 1
 Ke3, fe3 = cfc.beam2e(ex3, ey3, ep2, eq3)  # With distributed load
 
 # Assemble global stiffness matrix and load vector
-K = cfc.assem(Edof[0], K, Ke1)
-K = cfc.assem(Edof[1], K, Ke2)
-K, f = cfc.assem(Edof[2], K, Ke3, f, fe3)
+K = cfc.assem(edof[0, :], K, Ke1)
+K = cfc.assem(edof[1, :], K, Ke2)
+K, f = cfc.assem(edof[2, :], K, Ke3, f, fe3)
 
 print("Global system assembled successfully")
 
 # Boundary conditions (fixed supports at base of columns)
-bc = np.array([
-    [1, 0],   # DOF 1 = 0 (x-displacement at left base)
-    [2, 0],   # DOF 2 = 0 (y-displacement at left base) 
-    [3, 0],   # DOF 3 = 0 (rotation at left base)
-    [10, 0],  # DOF 10 = 0 (x-displacement at right base)
-    [11, 0]   # DOF 11 = 0 (y-displacement at right base)
-])
+
+bc_dof = np.array([1, 2, 3, 10, 11])
+bc_value = np.array([0.0, 0.0, 0.0, 0.0, 0.0])
 
 # Solve the system
-a, r = cfc.solveq(K, f, bc)
+a, r = cfc.solveq(K, f, bc_dof, bc_value)
 print("Displacements [m, rad]:")
 print(a)
 print("Reaction forces [N, Nm]:")
 print(r)
 
 # Extract element displacements
-Ed = cfc.extract_ed(Edof, a)
+ed = cfc.extract_ed(edof, a)
 
 # Compute section forces and internal displacements (21 points each)
-es1, edi1 = cfc.beam2s(ex1, ey1, ep1, Ed[0], eq1, n_points=21)
-es2, edi2 = cfc.beam2s(ex2, ey2, ep1, Ed[1], eq2, n_points=21)
-es3, edi3 = cfc.beam2s(ex3, ey3, ep2, Ed[2], eq3, n_points=21)
+es1, edi1, ec1 = cfc.beam2s(ex1, ey1, ep1, ed[0, :], eq1, nep=21)
+es2, edi2, ec2 = cfc.beam2s(ex2, ey2, ep1, ed[1, :], eq2, nep=21)
+es3, edi3, ec3 = cfc.beam2s(ex3, ey3, ep2, ed[2, :], eq3, nep=21)
 
 print("Element 1 (left column) section forces [N, N, Nm]:")
 print("N =", es1[0, 0], "V =", es1[0, 1], "M =", es1[0, 2])
@@ -90,80 +89,64 @@ print("N =", es2[0, 0], "V =", es2[0, 1], "M =", es2[0, 2])
 print("Element 3 (horizontal beam) section forces [N, N, Nm]:")
 print("N =", es3[0, 0], "V =", es3[0, 1], "M =", es3[0, 2])
 
-# Visualization
-import calfem.vis_mpl as cfv
-import matplotlib.pyplot as plt
+# ----- Draw deformed frame ---------------------------------------
 
-# Displacement diagram
-cfv.figure(1, figsize=(10, 8))
+plotpar = [2, 1, 0]
+sfac = cfv.scalfact2(ex3, ey3, edi3, 0.1)
+print("sfac=")
+print(sfac)
 
-# Draw undeformed structure
-plotpar = [2, 1, 0]  # Line style, marker, color
+cfv.figure(1)
 cfv.eldraw2(ex1, ey1, plotpar)
-cfv.eldraw2(ex2, ey2, plotpar)  
+cfv.eldraw2(ex2, ey2, plotpar)
 cfv.eldraw2(ex3, ey3, plotpar)
 
-# Calculate scale factor and draw deformed structure
-sfac = cfv.scalfact2(ex3, ey3, Ed[2], 0.1)
-plotpar = [1, 2, 1]  # Line style, marker, color for deformed shape
+plotpar = [1, 2, 1]
 cfv.dispbeam2(ex1, ey1, edi1, plotpar, sfac)
 cfv.dispbeam2(ex2, ey2, edi2, plotpar, sfac)
 cfv.dispbeam2(ex3, ey3, edi3, plotpar, sfac)
+cfv.axis([-1.5, 7.5, -0.5, 5.5])
+plotpar1 = 2
+cfv.scalgraph2(sfac, [1e-2, 0.5, 0], plotpar1)
+cfv.title("Displacements")
 
-plt.axis([-1.5, 7.5, -0.5, 5.5])
-cfv.scalgraph2(sfac, [1e-2, 0.5, 0])
-plt.title('Displacements')
-plt.xlabel('x [m]')
-plt.ylabel('y [m]')
-plt.grid(True, alpha=0.3)
-plt.show()
+# ----- Draw normal force diagram --------------------------------
 
-# Normal force diagram
-cfv.figure(2, figsize=(10, 8))
-plotpar = [2, 1]  # Line style, marker
+plotpar = [2, 1]
 sfac = cfv.scalfact2(ex1, ey1, es1[:, 0], 0.2)
+cfv.figure(2)
 cfv.secforce2(ex1, ey1, es1[:, 0], plotpar, sfac)
 cfv.secforce2(ex2, ey2, es2[:, 0], plotpar, sfac)
 cfv.secforce2(ex3, ey3, es3[:, 0], plotpar, sfac)
+cfv.axis([-1.5, 7.5, -0.5, 5.5])
+cfv.scalgraph2(sfac, [3e4, 1.5, 0], plotpar1)
+cfv.title("Normal force")
 
-plt.axis([-1.5, 7.5, -0.5, 5.5])
-cfv.scalgraph2(sfac, [3e4, 1.5, 0])
-plt.title('Normal Force')
-plt.xlabel('x [m]')
-plt.ylabel('y [m]')
-plt.grid(True, alpha=0.3)
-plt.show()
+# ----- Draw shear force diagram ---------------------------------
 
-# Shear force diagram
-cfv.figure(3, figsize=(10, 8))
 plotpar = [2, 1]
 sfac = cfv.scalfact2(ex3, ey3, es3[:, 1], 0.2)
+cfv.figure(3)
 cfv.secforce2(ex1, ey1, es1[:, 1], plotpar, sfac)
 cfv.secforce2(ex2, ey2, es2[:, 1], plotpar, sfac)
 cfv.secforce2(ex3, ey3, es3[:, 1], plotpar, sfac)
+cfv.axis([-1.5, 7.5, -0.5, 5.5])
+cfv.scalgraph2(sfac, [3e4, 0.5, 0], plotpar1)
+cfv.title("Shear force")
 
-plt.axis([-1.5, 7.5, -0.5, 5.5])
-cfv.scalgraph2(sfac, [3e4, 0.5, 0])
-plt.title('Shear Force')
-plt.xlabel('x [m]')
-plt.ylabel('y [m]')
-plt.grid(True, alpha=0.3)
-plt.show()
+# ----- Draw moment diagram --------------------------------------
 
-# Moment diagram
-cfv.figure(4, figsize=(10, 8))
 plotpar = [2, 1]
 sfac = cfv.scalfact2(ex3, ey3, es3[:, 2], 0.2)
+print("sfac=")
+print(sfac)
+
+cfv.figure(4)
 cfv.secforce2(ex1, ey1, es1[:, 2], plotpar, sfac)
 cfv.secforce2(ex2, ey2, es2[:, 2], plotpar, sfac)
 cfv.secforce2(ex3, ey3, es3[:, 2], plotpar, sfac)
+cfv.axis([-1.5, 7.5, -0.5, 5.5])
+cfv.scalgraph2(sfac, [3e4, 0.5, 0], plotpar1)
+cfv.title("Moment")
 
-plt.axis([-1.5, 7.5, -0.5, 5.5])
-cfv.scalgraph2(sfac, [3e4, 0.5, 0])
-plt.title('Bending Moment')
-plt.xlabel('x [m]')
-plt.ylabel('y [m]')
-plt.grid(True, alpha=0.3)
-plt.show()
-
-print("\nAll tests completed successfully!")
+cfv.show_and_wait()

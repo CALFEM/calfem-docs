@@ -87,11 +87,16 @@ exs_flw_temp1
 
         >>> # Initialize global stiffness matrix and load vector
         >>> K = np.zeros((6, 6))
-        >>> f = np.zeros(6)
+        >>> f = np.zeros((6, 1))
         >>> f[3] = 10  # Heat source at DOF 4 (index 3 in 0-based indexing)
         >>> print("Load vector f:")
         >>> print(f)
-        [ 0.  0.  0. 10.  0.  0.]
+        [[ 0.]
+         [ 0.]
+         [ 0.]
+         [10.]
+         [ 0.]
+         [ 0.]]
 
     The thermal conductance values for each element are defined, and element stiffness matrices are computed:
 
@@ -127,21 +132,27 @@ exs_flw_temp1
     .. code-block:: python
 
         >>> # Boundary conditions: DOF 1 = -17°C, DOF 6 = 20°C
-        >>> bc = np.array([[0, -17],   # DOF 1 (index 0) = -17°C
-        ...                [5, 20]])   # DOF 6 (index 5) = 20°C
-
+        >>> bc_index = np.array([1, 6])  # DOF indices for boundary conditions
+        >>> bc_value = np.array([-17.0, 20.0])  # Corresponding
         >>> # Solve system of equations
         >>> a, r = cfc.solveq(K, f, bc)
         >>> 
         >>> print("Temperatures at nodes:")
         >>> print(a)
-        [-17.          -16.43835616  -15.86073059   19.23776824   19.47534247
-          20.        ]
-        >>> 
+        [[-17.        ]
+         [-16.43842455]
+         [-15.86067203]
+         [ 19.23779344]
+         [ 19.47540439]
+         [ 20.        ]]        
         >>> print("Reaction forces (boundary heat flows):")
         >>> print(r)
-        [-14.03945205   0.           0.           0.           0.
-           4.03945205]
+        [[-1.40393862e+01]
+         [ 0.00000000e+00]
+         [ 0.00000000e+00]
+         [ 0.00000000e+00]
+         [ 5.68434189e-14]
+         [ 4.03938619e+00]]
 
     The temperature values :math:`a_i` at the node points are given in the vector :code:`a` and the boundary heat flows in the vector :code:`r`.
 

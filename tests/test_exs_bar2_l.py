@@ -6,6 +6,9 @@ Analysis of a plane truss with ten elements.
 import numpy as np
 import calfem.core as cfc
 
+np.set_printoptions(precision=4, linewidth=120)
+
+
 # Element topology matrix (DOFs only, no element numbers)
 Edof = np.array([
     [1, 2, 5, 6],    # Element 1: DOFs 1,2,5,6
@@ -22,7 +25,7 @@ Edof = np.array([
 
 # Initialize global system  
 K = np.zeros((12, 12))
-f = np.zeros(12)
+f = np.zeros((12, 1))
 
 # Apply load P=0.5 MN at 30° angle (DOFs 11,12 -> indices 10,11)
 P = 0.5e6  # Load magnitude [N]
@@ -72,15 +75,12 @@ for i in range(10):
 print("Global stiffness matrix assembled successfully")
 
 # Boundary conditions (fixed supports at nodes 1 and 2)
-bc = np.array([
-    [1, 0],  # DOF 1 = 0 (fixed in x)
-    [2, 0],  # DOF 2 = 0 (fixed in y)
-    [3, 0],  # DOF 3 = 0 (fixed in x) 
-    [4, 0]   # DOF 4 = 0 (fixed in y)
-])
+
+bc_dof = np.array([1, 2, 3, 4])
+bc_value = np.array([0.0, 0.0, 0.0, 0.0])
 
 # Solve the system
-a, r = cfc.solveq(K, f, bc)
+a, r = cfc.solveq(K, f, bc_dof, bc_value)
 print("Displacements [m]:")
 print(a)
 print("Reaction forces [N]:")
@@ -93,7 +93,7 @@ ed = cfc.extract_ed(Edof, a)
 N = np.zeros(10)
 for i in range(10):
     es = cfc.bar2s(Ex[i], Ey[i], ep, ed[i])
-    N[i] = es[0]  # Normal force (first component)
+    N[i] = float(es[0][0])  # Normal force (first component)
 
 print("Normal forces [N]:")
 print(N)

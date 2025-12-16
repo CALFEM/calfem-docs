@@ -17,7 +17,7 @@ Edof = np.array([
 
 # Initialize global stiffness matrix and load vector
 K = np.zeros((6, 6))
-f = np.zeros(6)
+f = np.zeros((6, 1))
 f[3] = 10  # Heat source at DOF 4 (index 3 in 0-based indexing)
 print("Load vector f:")
 print(f)
@@ -72,8 +72,8 @@ q4 = cfc.spring1s(ep4, ed4)
 q5 = cfc.spring1s(ep5, ed5)
 
 print("Heat flows through elements:")
-print(f"Element 1: {q1[0]:.1f} W/m²")
-print(f"Element 2: {q2[0]:.1f} W/m²")
-print(f"Element 3: {q3[0]:.1f} W/m²")
-print(f"Element 4: {q4[0]:.1f} W/m²")
-print(f"Element 5: {q5[0]:.1f} W/m²")
+print(f"Element 1: {q1:.2f} W/m²")
+print(f"Element 2: {q2:.2f} W/m²")
+print(f"Element 3: {q3:.2f} W/m²")
+print(f"Element 4: {q4:.2f} W/m²")
+print(f"Element 5: {q5:.2f} W/m²")

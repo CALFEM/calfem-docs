@@ -45,11 +45,18 @@ exs_bar2
 
         >>> # Initialize global system
         >>> K = np.zeros((8, 8))
-        >>> f = np.zeros(8)
+        >>> f = np.zeros((8, 1))
         >>> f[5] = -80e3  # Load at DOF 6 (index 5 in 0-based indexing)
         >>> print("Load vector:")
         >>> print(f)
-        [     0.      0.      0.      0.      0. -80000.      0.      0.]
+        [[     0.]
+         [     0.]
+         [     0.]
+         [     0.]
+         [     0.]
+         [-80000.]
+         [     0.]
+         [     0.]]
 
     The material and geometric properties are defined for each element:
 
@@ -81,88 +88,79 @@ exs_bar2
 
     The element stiffness matrices :code:`Ke1`, :code:`Ke2` and :code:`Ke3` are computed using :code:`bar2e`:
 
-    .. code-block:: matlab
+    .. code-block:: python
 
-        >> Ke1=bar2e(ex1,ey1,ep1)
 
-        Ke1 =
 
-          1.0e+007 *
-
-            7.5000         0   -7.5000         0
-                 0         0         0         0
-           -7.5000         0    7.5000         0
-                 0         0         0         0
-
-        >> Ke2=bar2e(ex2,ey2,ep2)
-
-        Ke2 =
-
-          1.0e+007 *
-
-                 0         0         0         0
-                 0    5.0000         0   -5.0000
-                 0         0         0         0
-                 0   -5.0000         0    5.0000
-
-        >> Ke3=bar2e(ex3,ey3,ep3)
-
-        Ke3 =
-
-          1.0e+007 *
-
-            6.4000   -4.8000   -6.4000    4.8000
-           -4.8000    3.6000    4.8000   -3.6000
-           -6.4000    4.8000    6.4000   -4.8000
-            4.8000   -3.6000   -4.8000    3.6000
 
     The element stiffness matrices are computed and assembled into the global stiffness matrix:
 
     .. code-block:: python
 
-        >>> # Compute element stiffness matrices and assemble
+        >>> # Compute element stiffness matrices 
         >>> Ke1 = cfc.bar2e(ex1, ey1, ep1)
-        >>> K = cfc.assem(Edof[0], K, Ke1)
-        >>> 
+        >>> print(Ke1)
+        [[ 75000000.         0. -75000000.         0.]
+         [        0.         0.         0.         0.]
+         [-75000000.         0.  75000000.         0.]
+         [        0.         0.         0.         0.]]
         >>> Ke2 = cfc.bar2e(ex2, ey2, ep2)  
-        >>> K = cfc.assem(Edof[1], K, Ke2)
-        >>> 
+        >>> print(Ke2)
+        [[        0.         0.         0.         0.]
+         [        0.  50000000.         0. -50000000.]
+         [        0.         0.         0.         0.]
+         [        0. -50000000.         0.  50000000.]]
         >>> Ke3 = cfc.bar2e(ex3, ey3, ep3)
-        >>> K = cfc.assem(Edof[2], K, Ke3)
-        >>> 
+        >>> print(Ke3)        
+        [[ 64000000. -48000000. -64000000.  48000000.]
+         [-48000000.  36000000.  48000000. -36000000.]
+         [-64000000.  48000000.  64000000. -48000000.]
+         [ 48000000. -36000000. -48000000.  36000000.]]        
+        >>> # Assemble global stiffness matrix
+        >>> K = cfc.assem(Edof[0], K, Ke1)
+        >>> K = cfc.assem(Edof[1], K, Ke2)
+        >>> K = cfc.assem(Edof[2], K, Ke3)        
         >>> print("Global stiffness matrix K:")
         >>> print(K)
-        [[  7.5e+07   0.0e+00   0.0e+00   0.0e+00  -7.5e+07   0.0e+00   0.0e+00   0.0e+00]
-         [  0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00]
-         [  0.0e+00   0.0e+00   6.4e+07  -4.8e+07  -6.4e+07   4.8e+07   0.0e+00   0.0e+00]
-         [  0.0e+00   0.0e+00  -4.8e+07   3.6e+07   4.8e+07  -3.6e+07   0.0e+00   0.0e+00]
-         [ -7.5e+07   0.0e+00  -6.4e+07   4.8e+07   1.39e+08  -4.8e+07   0.0e+00   0.0e+00]
-         [  0.0e+00   0.0e+00   4.8e+07  -3.6e+07  -4.8e+07   8.6e+07   0.0e+00  -5.0e+07]
-         [  0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00]
-         [  0.0e+00   0.0e+00   0.0e+00   0.0e+00   0.0e+00  -5.0e+07   0.0e+00   5.0e+07]]
+        [[ 7.50e+07  0.00e+00  0.00e+00  0.00e+00 -7.50e+07  0.00e+00  0.00e+00  0.00e+00]
+         [ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00]
+         [ 0.00e+00  0.00e+00  6.40e+07 -4.80e+07 -6.40e+07  4.80e+07  0.00e+00  0.00e+00]
+         [ 0.00e+00  0.00e+00 -4.80e+07  3.60e+07  4.80e+07 -3.60e+07  0.00e+00  0.00e+00]
+         [-7.50e+07  0.00e+00 -6.40e+07  4.80e+07  1.39e+08 -4.80e+07  0.00e+00  0.00e+00]
+         [ 0.00e+00  0.00e+00  4.80e+07 -3.60e+07 -4.80e+07  8.60e+07  0.00e+00 -5.00e+07]
+         [ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00]
+         [ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 -5.00e+07  0.00e+00  5.00e+07]]
 
     The system of equations :math:`\boldsymbol{Ka}=\boldsymbol{f}` is solved by specifying the boundary conditions and using :func:`solveq`:
 
     .. code-block:: python
 
         >>> # Boundary conditions (DOF, prescribed value)
-        >>> bc = np.array([
-        ...     [1, 0],  # DOF 1 = 0 (fixed in x)
-        ...     [2, 0],  # DOF 2 = 0 (fixed in y) 
-        ...     [3, 0],  # DOF 3 = 0 (fixed in x)
-        ...     [4, 0],  # DOF 4 = 0 (fixed in y)
-        ...     [7, 0],  # DOF 7 = 0 (fixed in x)
-        ...     [8, 0]   # DOF 8 = 0 (fixed in y)
-        ... ])
+        >>> bc_dof = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+        >>> bc_value = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
         >>> 
         >>> # Solve the system
-        >>> a, r = cfc.solveq(K, f, bc)
+        >>> a, r = cfc.solveq(K, f, bc_dof, bc_value)
         >>> print("Displacements [m]:")
         >>> print(a)
-        [ 0.0e+00  0.0e+00  0.0e+00  0.0e+00 -3.98e-04 -1.152e-03  0.0e+00  0.0e+00]
+        [[ 0.    ]
+         [ 0.    ]
+         [ 0.    ]
+         [ 0.    ]
+         [-0.0004]
+         [-0.0012]
+         [ 0.    ]
+         [ 0.    ]]
         >>> print("Reaction forces [N]:")
         >>> print(r)
-        [ 2.9845e+04  0.0e+00 -2.9845e+04  2.2383e+04  0.0e+00  0.0e+00  0.0e+00  5.7617e+04]
+        [[ 29844.5596]
+         [     0.    ]
+         [-29844.5596]
+         [ 22383.4197]
+         [     0.    ]
+         [     0.    ]
+         [     0.    ]
+         [ 57616.5803]]
 
     The vertical displacement at the point of loading is 1.15 mm. The element forces are calculated by extracting element displacements and computing stresses:
 
@@ -171,18 +169,18 @@ exs_bar2
         >>> # Extract element displacements and compute forces
         >>> ed1 = cfc.extract_ed(Edof[0], a)
         >>> es1 = cfc.bar2s(ex1, ey1, ep1, ed1)
-        >>> print(f"Element 1 forces [N]: {es1}")
-        Element 1 forces [N]: [-29845. -29845.]
+        >>> print(f"Element 1 forces [N]: {es1[0]}")
+        Element 1 forces [N]: [-29844.5596]
         >>> 
         >>> ed2 = cfc.extract_ed(Edof[1], a) 
         >>> es2 = cfc.bar2s(ex2, ey2, ep2, ed2)
-        >>> print(f"Element 2 forces [N]: {es2}")
-        Element 2 forces [N]: [57617. 57617.]
+        >>> print(f"Element 2 forces [N]: {es2[0]}")
+        Element 2 forces [N]: [57616.5803]
         >>> 
         >>> ed3 = cfc.extract_ed(Edof[2], a)
         >>> es3 = cfc.bar2s(ex3, ey3, ep3, ed3)  
-        >>> print(f"Element 3 forces [N]: {es3}")
-        Element 3 forces [N]: [37306. 37306.]
+        >>> print(f"Element 3 forces [N]: {es3[0]}")
+        Element 3 forces [N]: [37305.6995]
 
     The normal forces are :math:`N_1=-29.84` kN (compression), :math:`N_2=57.62` kN (tension) and :math:`N_3=37.31` kN (tension).
 

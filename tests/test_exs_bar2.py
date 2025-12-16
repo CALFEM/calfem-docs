@@ -6,6 +6,8 @@ Analysis of a plane truss consisting of three bars.
 import numpy as np
 import calfem.core as cfc
 
+np.set_printoptions(precision=4, linewidth=120)
+
 # Element topology matrix (DOFs only, no element numbers)  
 Edof = np.array([
     [1, 2, 5, 6],  # Element 1: DOFs 1,2,5,6
@@ -15,7 +17,7 @@ Edof = np.array([
 
 # Initialize global system
 K = np.zeros((8, 8))
-f = np.zeros(8)
+f = np.zeros((8, 1))
 f[5] = -80e3  # Load at DOF 6 (index 5 in 0-based indexing)
 print("Load vector:")
 print(f)
@@ -40,31 +42,33 @@ ey2 = np.array([0, 1.2])    # Element 2 y-coordinates
 ex3 = np.array([0, 1.6])    # Element 3 x-coordinates
 ey3 = np.array([1.2, 0])    # Element 3 y-coordinates
 
-# Compute element stiffness matrices and assemble
+# Compute element stiffness matrices
+
 Ke1 = cfc.bar2e(ex1, ey1, ep1)
-K = cfc.assem(Edof[0], K, Ke1)
+print(Ke1)
 
 Ke2 = cfc.bar2e(ex2, ey2, ep2)  
-K = cfc.assem(Edof[1], K, Ke2)
+print(Ke2)
 
 Ke3 = cfc.bar2e(ex3, ey3, ep3)
+print(Ke3)
+
+# Assemble global stiffness matrix
+
+K = cfc.assem(Edof[0], K, Ke1)
+K = cfc.assem(Edof[1], K, Ke2)
 K = cfc.assem(Edof[2], K, Ke3)
 
 print("Global stiffness matrix K:")
 print(K)
 
 # Boundary conditions (DOF, prescribed value)
-bc = np.array([
-    [1, 0],  # DOF 1 = 0 (fixed in x)
-    [2, 0],  # DOF 2 = 0 (fixed in y) 
-    [3, 0],  # DOF 3 = 0 (fixed in x)
-    [4, 0],  # DOF 4 = 0 (fixed in y)
-    [7, 0],  # DOF 7 = 0 (fixed in x)
-    [8, 0]   # DOF 8 = 0 (fixed in y)
-])
+
+bc_dof = np.array([1, 2, 3, 4, 7, 8])  # DOFs with boundary conditions
+bc_value = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 
 # Solve the system
-a, r = cfc.solveq(K, f, bc)
+a, r = cfc.solveq(K, f, bc_dof, bc_value)
 print("Displacements [m]:")
 print(a)
 print("Reaction forces [N]:")
@@ -73,12 +77,12 @@ print(r)
 # Extract element displacements and compute forces
 ed1 = cfc.extract_ed(Edof[0], a)
 es1 = cfc.bar2s(ex1, ey1, ep1, ed1)
-print(f"Element 1 forces [N]: {es1}")
+print(f"Element 1 forces [N]: {es1[0]}")
 
 ed2 = cfc.extract_ed(Edof[1], a) 
 es2 = cfc.bar2s(ex2, ey2, ep2, ed2)
-print(f"Element 2 forces [N]: {es2}")
+print(f"Element 2 forces [N]: {es2[0]}")
 
 ed3 = cfc.extract_ed(Edof[2], a)
 es3 = cfc.bar2s(ex3, ey3, ep3, ed3)  
-print(f"Element 3 forces [N]: {es3}")
+print(f"Element 3 forces [N]: {es3[0]}")

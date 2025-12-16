@@ -71,7 +71,7 @@ exs_bar2_l
 
         >>> # Initialize global system  
         >>> K = np.zeros((12, 12))
-        >>> f = np.zeros(12)
+        >>> f = np.zeros((12, 1))
         >>> 
         >>> # Apply load P=0.5 MN at 30° angle (DOFs 11,12 -> indices 10,11)
         >>> P = 0.5e6  # Load magnitude [N]
@@ -79,8 +79,18 @@ exs_bar2_l
         >>> f[11] = -P * np.cos(np.pi/6)  # y-component at DOF 12
         >>> print("Load vector:")
         >>> print(f)
-        [      0.       0.       0.       0.       0.       0.       0.       0.
-               0.       0.  250000. -433013.]
+        [[      0.    ]
+         [      0.    ]
+         [      0.    ]
+         [      0.    ]
+         [      0.    ]
+         [      0.    ]
+         [      0.    ]
+         [      0.    ]
+         [      0.    ]
+         [      0.    ]
+         [ 250000.    ]
+         [-433012.7019]]
 
     The material and geometric properties are defined, along with element coordinate matrices:
 
@@ -136,23 +146,39 @@ exs_bar2_l
     .. code-block:: python
 
         >>> # Boundary conditions (fixed supports at nodes 1 and 2)
-        >>> bc = np.array([
-        ...     [1, 0],  # DOF 1 = 0 (fixed in x)
-        ...     [2, 0],  # DOF 2 = 0 (fixed in y)
-        ...     [3, 0],  # DOF 3 = 0 (fixed in x) 
-        ...     [4, 0]   # DOF 4 = 0 (fixed in y)
-        ... ])
+        >>> bc_dof = np.array([1, 2, 3, 4])
+        >>> bc_value = np.array([0.0, 0.0, 0.0, 0.0])
         >>> 
         >>> # Solve the system
-        >>> a, r = cfc.solveq(K, f, bc)
+        >>> a, r = cfc.solveq(K, f, bc_dof, bc_value)
         >>> print("Displacements [m]:")
         >>> print(a)
-        [ 0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  2.4000e-03 -4.5000e-03
-         -1.6000e-03 -4.2000e-03  3.0000e-03 -1.0700e-02 -1.7000e-03 -1.1300e-02]
+        [[ 0.    ]
+         [ 0.    ]
+         [ 0.    ]
+         [ 0.    ]
+         [ 0.0024]
+         [-0.0045]
+         [-0.0016]
+         [-0.0042]
+         [ 0.003 ]
+         [-0.0107]
+         [-0.0017]
+         [-0.0113]]
         >>> print("Reaction forces [N]:")
         >>> print(r)
-        [-8.6603e+05  2.4009e+05  6.1603e+05  1.9293e+05  0.0000e+00  0.0000e+00
-          0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00]
+        [[-8.6603e+05]
+         [ 2.4009e+05]
+         [ 6.1603e+05]
+         [ 1.9293e+05]
+         [ 2.3283e-10]
+         [-2.3283e-10]
+         [ 1.1642e-10]
+         [-1.1642e-10]
+         [-2.3283e-10]
+         [ 3.4925e-10]
+         [-2.9104e-11]
+         [ 4.6566e-10]]
 
     The displacement at the point of loading is :math:`-1.7 \times 10^{-3}` m in the x-direction and :math:`-11.3 \times 10^{-3}` m in the y-direction. At the upper support the horizontal force is :math:`-0.866` MN and the vertical :math:`0.240` MN. At the lower support the forces are :math:`0.616` MN and :math:`0.193` MN, respectively.
 
@@ -167,12 +193,12 @@ exs_bar2_l
         >>> N = np.zeros(10)
         >>> for i in range(10):
         ...     es = cfc.bar2s(Ex[i], Ey[i], ep, ed[i])
-        ...     N[i] = es[0]  # Normal force (first component)
+        ...     N[i] = es[0][0]  # Normal force (first component)
         >>> 
         >>> print("Normal forces [N]:")
         >>> print(N)
-        [ 6.2594e+05 -4.2310e+05  1.7064e+05 -1.2370e+04 -6.9450e+04  1.7064e+05
-         -2.7284e+05 -2.4132e+05  3.3953e+05  3.7105e+05]
+        [ 625938.4856 -423099.62  170639.8843  -12372.8176 -69447.0339 170639.8843 
+        -272838.2599 -241321.2386  339534.1758  371051.1971]
 
     The largest normal force :math:`N=0.626` MN is obtained in element 1 and is equivalent to a normal stress :math:`\sigma=250` MPa.
 

@@ -56,11 +56,16 @@ exs_beam1
 
         >>> # Initialize global system
         >>> K = np.zeros((6, 6))
-        >>> f = np.zeros(6)
+        >>> f = np.zeros((6, 1))
         >>> f[2] = -10000  # Load at DOF 3 (index 2 in 0-based indexing)
         >>> print("Load vector:")
         >>> print(f)
-        [     0.      0. -10000.      0.      0.      0.]
+        [[     0.]
+         [     0.]
+         [-10000.]
+         [     0.]
+         [     0.]
+         [     0.]]
 
     The material and geometric properties are defined, along with element coordinates and stiffness matrices:
 
@@ -79,18 +84,18 @@ exs_beam1
         >>> Ke1 = cfc.beam1e(ex1, ep)
         >>> print("Element 1 stiffness matrix:")
         >>> print(Ke1)
-        [[ 2.3427e+06  3.5140e+06 -2.3427e+06  3.5140e+06]
-         [ 3.5140e+06  7.0280e+06 -3.5140e+06  3.5140e+06]
-         [-2.3427e+06 -3.5140e+06  2.3427e+06 -3.5140e+06]
-         [ 3.5140e+06  3.5140e+06 -3.5140e+06  7.0280e+06]]
+        [[ 2342666.6667  3514000.     -2342666.6667  3514000.    ]
+         [ 3514000.      7028000.     -3514000.      3514000.    ]
+         [-2342666.6667 -3514000.      2342666.6667 -3514000.    ]
+         [ 3514000.      3514000.     -3514000.      7028000.    ]]
         >>> 
         >>> Ke2 = cfc.beam1e(ex2, ep)
         >>> print("Element 2 stiffness matrix:")
         >>> print(Ke2)
-        [[ 2.9279e+05  8.7836e+05 -2.9279e+05  8.7836e+05]
-         [ 8.7836e+05  3.5135e+06 -8.7836e+05  1.7567e+06]
-         [-2.9279e+05 -8.7836e+05  2.9279e+05 -8.7836e+05]
-         [ 8.7836e+05  1.7567e+06 -8.7836e+05  3.5135e+06]]
+        [[ 292833.3333  878500.     -292833.3333  878500.    ]
+         [ 878500.     3514000.     -878500.     1757000.    ]
+         [-292833.3333 -878500.      292833.3333 -878500.    ]
+         [ 878500.     1757000.     -878500.     3514000.    ]]
 
     The element stiffness matrices are assembled into the global stiffness matrix:
 
@@ -107,19 +112,27 @@ exs_beam1
     .. code-block:: python
 
         >>> # Boundary conditions (simply supported beam)
-        >>> bc = np.array([
-        ...     [1, 0],  # DOF 1 = 0 (vertical displacement at left support)
-        ...     [5, 0]   # DOF 5 = 0 (vertical displacement at right support)
-        ... ])
+        >>> bc_dof = np.array([1, 5])
+        >>> bc_value = np.array([0.0, 0.0])
         >>> 
         >>> # Solve the system
         >>> a, r = cfc.solveq(K, f, bc)
         >>> print("Displacements:")
         >>> print(a)
-        [ 0.0000e+00 -9.5000e-03 -2.2800e-02 -3.8000e-03  0.0000e+00  7.6000e-03]
+        [[ 0.    ]
+         [-0.0095]
+         [-0.0228]
+         [-0.0038]
+         [ 0.    ]
+         [ 0.0076]]
         >>> print("Reaction forces [N]:")
         >>> print(r)
-        [ 6667.   0.   0.   0.   3333.   0.]
+        [[ 6.6667e+03]
+         [ 0.0000e+00]
+         [ 9.0949e-12]
+         [-1.0914e-11]
+         [ 3.3333e+03]
+         [ 0.0000e+00]]
 
     The section forces and element displacements are calculated from global displacements:
 
@@ -135,8 +148,18 @@ exs_beam1
         >>> 
         >>> print("Element 1 section forces [N, Nm]:")
         >>> print(es1[:5])  # Show first 5 points
+        [[-6.6667e+03  9.1437e-12]
+         [-6.6667e+03  4.0000e+03]
+         [-6.6667e+03  8.0000e+03]
+         [-6.6667e+03  1.2000e+04]
+         [-6.6667e+03  1.6000e+04]]        
         >>> print("Element 2 section forces [N, Nm]:")
         >>> print(es2[:5])  # Show first 5 points
+        [[ 3333.3333 20000.    ]
+         [ 3333.3333 18000.    ]
+         [ 3333.3333 16000.    ]
+         [ 3333.3333 14000.    ]
+         [ 3333.3333 12000.    ]]        
 
     **Results:**
 
