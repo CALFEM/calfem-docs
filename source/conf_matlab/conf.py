@@ -55,7 +55,13 @@ myst_enable_extensions = [
 # Configure MathJax settings
 mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
 
-templates_path = ['_templates']
+# Set the source directory relative to conf.py location
+import os
+conf_dir = os.path.dirname(__file__)
+source_dir = os.path.abspath(os.path.join(conf_dir, '..'))
+sys.path.insert(0, source_dir)
+
+templates_path = [os.path.join(source_dir, '_templates')]
 exclude_patterns = []
 
 # Suppress duplicate label warnings

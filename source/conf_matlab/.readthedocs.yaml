@@ -7,10 +7,9 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
-
-sphinx:
-  configuration: source/conf_matlab/conf.py
-  builder: html
+  commands:
+    - python -m pip install -q -r requirements.txt
+    - sphinx-build -b html source $READTHEDOCS_OUTPUT/html -c source/conf_matlab -t matlab
 
 python:
   install:
