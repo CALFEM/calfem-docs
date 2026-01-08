@@ -1,4 +1,4 @@
-# Read the Docs configuration file
+# Read the Docs configuration file for MATLAB documentation
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
 version: 2
@@ -9,7 +9,7 @@ build:
     python: "3.11"
 
 sphinx:
-  configuration: source/conf_python/conf.py
+  configuration: source/conf_matlab/conf.py
   builder: html
 
 python:
