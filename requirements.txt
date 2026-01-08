@@ -10,3 +10,4 @@ sphinx-copybutton
 sphinx-design
 sphinxcontrib-svg2pdfconverter
 sphinx-immaterial
+myst-parser
