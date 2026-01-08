@@ -30,9 +30,9 @@ eldraw2
 
     .. code-block:: python
 
-        cfc.eldraw2(Ex, Ey)
-        cfc.eldraw2(Ex, Ey, plotpar)
-        cfc.eldraw2(Ex, Ey, plotpar, elnum)
+        cfv.eldraw2(Ex, Ey)
+        cfv.eldraw2(Ex, Ey, plotpar)
+        cfv.eldraw2(Ex, Ey, plotpar, elnum)
 
 :Description:
     :code:`eldraw2` displays the undeformed mesh for a two dimensional structure.

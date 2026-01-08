@@ -29,9 +29,9 @@ dispbeam2
 
     .. code-block:: python
 
-        sfac = cfc.dispbeam2(ex, ey, edi)
-        sfac = cfc.dispbeam2(ex, ey, edi, plotpar)
-        cfc.dispbeam2(ex, ey, edi, plotpar, sfac)
+        sfac = cfv.dispbeam2(ex, ey, edi)
+        sfac = cfv.dispbeam2(ex, ey, edi, plotpar)
+        cfv.dispbeam2(ex, ey, edi, plotpar, sfac)
 
 :Description:
     Input variables are the coordinate matrices :code:`ex` and :code:`ey`, see e.g. :code:`beam2e`, and the element displacements :code:`edi` obtained by e.g. :code:`beam2s`.

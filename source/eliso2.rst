@@ -29,8 +29,8 @@ eliso2
 
     .. code-block:: python
 
-        cfc.eliso2(Ex, Ey, Ed, isov)
-        cfc.eliso2(Ex, Ey, Ed, isov, plotpar)
+        cfv.eliso2(Ex, Ey, Ed, isov)
+        cfv.eliso2(Ex, Ey, Ed, isov, plotpar)
 
 :Description:
     :code:`eliso2` displays element iso lines for a number of elements of the same type.

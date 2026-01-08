@@ -6,6 +6,14 @@ for element based graphics. Mesh plots, displacements, section forces, flows, is
 principal stresses can be displayed. The functions are divided into two dimensional,
 and general graphics functions.
 
+.. only:: python
+
+    To use this functions in Python the visualisation module needs to be imported, which can be done with the following statement:
+
+    .. code:: python
+
+        import calfem.vis_mpl as cfv
+
 Two dimensional graphics functions
 ----------------------------------
 

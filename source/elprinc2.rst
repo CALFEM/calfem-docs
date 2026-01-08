@@ -31,9 +31,9 @@ elprinc2
 
     .. code-block:: python
 
-        sfac = cfc.elprinc2(Ex, Ey, Es)
-        sfac = cfc.elprinc2(Ex, Ey, Es, plotpar)
-        cfc.elprinc2(Ex, Ey, Es, plotpar, sfac)
+        sfac = cfv.elprinc2(Ex, Ey, Es)
+        sfac = cfv.elprinc2(Ex, Ey, Es, plotpar)
+        cfv.elprinc2(Ex, Ey, Es, plotpar, sfac)
 
 :Description:
     :code:`elprinc2` displays element principal stresses for a number of elements of the same type. The principal stresses are displayed as arrows at the element centroids. Note that only the principal stresses are displayed. To display the element mesh, use :code:`eldraw2`.

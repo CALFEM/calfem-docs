@@ -27,8 +27,8 @@ scalfact2
 
     .. code-block:: python
 
-        sfac = cfc.scalfact2(ex, ey, ed)
-        sfac = cfc.scalfact2(ex, ey, ed, rat)
+        sfac = cfv.scalfact2(ex, ey, ed)
+        sfac = cfv.scalfact2(ex, ey, ed, rat)
 
 :Description:
     :code:`scalfact2` determines a scale factor :code:`sfac` for drawing computational results, such as displacements, section forces, or flux.

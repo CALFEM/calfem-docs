@@ -31,9 +31,9 @@ eldisp2
 
     .. code-block:: python
 
-        sfac = cfc.eldisp2(Ex, Ey, Ed)
-        sfac = cfc.eldisp2(Ex, Ey, Ed, plotpar)
-        cfc.eldisp2(Ex, Ey, Ed, plotpar, sfac)
+        sfac = cfv.eldisp2(Ex, Ey, Ed)
+        sfac = cfv.eldisp2(Ex, Ey, Ed, plotpar)
+        cfv.eldisp2(Ex, Ey, Ed, plotpar, sfac)
 
 :Description:
     :code:`eldisp2` displays the deformed mesh for a two dimensional structure.

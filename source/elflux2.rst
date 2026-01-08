@@ -30,9 +30,9 @@ elflux2
 
     .. code-block:: python
 
-        sfac = cfc.elflux2(Ex, Ey, Es)
-        sfac = cfc.elflux2(Ex, Ey, Es, plotpar)
-        cfc.elflux2(Ex, Ey, Es, plotpar, sfac)
+        sfac = cfv.elflux2(Ex, Ey, Es)
+        sfac = cfv.elflux2(Ex, Ey, Es, plotpar)
+        cfv.elflux2(Ex, Ey, Es, plotpar, sfac)
 
 :Description:
     :code:`elflux2` displays element heat flux vectors (or corresponding quantities) for a number of elements of the same type.

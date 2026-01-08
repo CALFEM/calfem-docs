@@ -10,7 +10,7 @@ import os
 
 project = 'CALFEM - A Finite Element Package for Python'
 copyright = '2025, ...'
-author = '...'
+author = 'Per-Erik Austrell, Ola Dahlblom, Henrik Danielsson, Jonas Lindemann, Anders Olsson, Karl-Gunnar Olsson, Kent Persson, Hans Petersson, Matti Ristinmaa, Göran Sandberg, Per-Anders Wernberg'
 release = '0.1'
 
 target_lang = "python"

@@ -31,10 +31,10 @@ secforce2
 
     .. code-block:: python
 
-        cfc.secforce2(ex, ey, es, plotpar, sfac)
-        cfc.secforce2(ex, ey, es, plotpar, sfac, eci)
-        sfac = cfc.secforce2(ex, ey, es)
-        sfac = cfc.secforce2(ex, ey, es, plotpar)
+        cfv.secforce2(ex, ey, es, plotpar, sfac)
+        cfv.secforce2(ex, ey, es, plotpar, sfac, eci)
+        sfac = cfv.secforce2(ex, ey, es)
+        sfac = cfv.secforce2(ex, ey, es, plotpar)
 
 :Description:
     The input variables :code:`ex` and :code:`ey` are defined in :code:`bar2e` or :code:`beam2e`. The input variable

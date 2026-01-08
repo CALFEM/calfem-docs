@@ -29,8 +29,8 @@ scalgraph2
 
     .. code-block:: python
 
-        cfc.scalgraph2(sfac, magnitude)
-        cfc.scalgraph2(sfac, magnitude, plotpar)
+        cfv.scalgraph2(sfac, magnitude)
+        cfv.scalgraph2(sfac, magnitude, plotpar)
 
 :Description:
     :code:`scalgraph2` draws a graphic scale to visualize the magnitude of displayed computational results. The input variable :code:`sfac` is a scale factor determined by the function :code:`scalfact2`. The variable :code:`magnitude` is defined as :math:`[S\;\;x\;\;y]`, where :math:`S` specifies the value corresponding to the length of the graphic scale, and :math:`(x, y)` are the coordinates of the starting point. If no coordinates are given, the starting point will be :math:`(0, -0.5)`.
