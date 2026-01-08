@@ -8,3 +8,4 @@ nbsphinx==0.9.3
 sphinx-material
 sphinx-copybutton
 sphinx-design
+sphinxcontrib-svg2pdfconverter
