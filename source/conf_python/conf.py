@@ -29,6 +29,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx_copybutton',
     'sphinx_design',
+    'sphinx_tabs.tabs',
     'sphinxcontrib.inkscapeconverter',
     'sphinx_immaterial',  # For Material Design theme
     'myst_parser',
@@ -84,7 +85,8 @@ inkscape_converter_args = ['--export-area-drawing']
 
 html_theme = 'sphinx_immaterial'
 
-html_static_path = ['_static']
+html_static_path = [os.path.join(source_dir, '_static')]
+html_css_files = ['custom.css']
 
 # Set the HTML title explicitly
 html_title = 'CALFEM - A Finite Element Package for Python'

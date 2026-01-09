@@ -1,0 +1,33 @@
+/* Add to your custom.css */
+.sphinx-tabs-tab {
+    padding: 0.2em 0.8em !important;  /* Reduce padding around tab labels */
+ }
+ 
+ .sphinx-tabs-panel {
+    padding: 0 !important;
+ }
+ 
+ .sphinx-tabs-panel .highlight {
+    margin: 0 !important;
+ }
+ 
+ .sphinx-tabs-panel .highlight pre {
+    margin: 0 !important;
+    border-radius: 0;
+ }
+
+/* Force Sphinx figures to respect percentage widths */
+.figure {
+    display: table !important;
+}
+
+.figure.align-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.figure img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+}

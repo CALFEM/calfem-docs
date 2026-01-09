@@ -8,6 +8,7 @@ nbsphinx==0.9.3
 sphinx-material
 sphinx-copybutton
 sphinx-design
+sphinx-tabs
 sphinxcontrib-svg2pdfconverter
 sphinx-immaterial
 myst-parser

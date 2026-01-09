@@ -29,6 +29,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx_copybutton',
     'sphinx_design',
+    'sphinx_tabs.tabs',
     'sphinxcontrib.inkscapeconverter',
     'sphinx_immaterial',  # For Material Design theme
     'myst_parser',
