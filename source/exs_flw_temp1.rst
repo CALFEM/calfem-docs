@@ -15,7 +15,7 @@ exs_flw_temp1
         
         .. figure:: images/exs2_1.svg
             :align: center
-            :width: 40em
+            :width: 1000px
     
     .. only:: latex
         
@@ -27,7 +27,7 @@ exs_flw_temp1
         
         .. figure:: images/exs2_2.svg
             :align: center
-            :width: 40em
+            :width: 600px
     
     .. only:: latex
         

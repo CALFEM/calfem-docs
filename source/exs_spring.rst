@@ -23,7 +23,7 @@ exs_spring
         
         .. figure:: images/exs1_1.svg
             :align: center
-            :width: 30em
+            :width: 600px
     
     .. only:: latex
         
@@ -35,7 +35,7 @@ exs_spring
         
         .. figure:: images/exs1_2.svg
             :align: center
-            :width: 40em
+            :width: 600px
     
     .. only:: latex
         

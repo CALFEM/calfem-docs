@@ -15,7 +15,7 @@ exs_bar2
         
         .. figure:: images/exs3.svg
             :align: center
-            :width: 40em
+            :width: 700px
     
     .. only:: latex
         
@@ -290,7 +290,7 @@ exs_bar2
         
         .. figure:: images/exs3_1.svg
             :align: center
-            :width: 40em
+            :width: 600px
     
     .. only:: latex
         
@@ -304,7 +304,7 @@ exs_bar2
         
         .. figure:: images/exs3_2.svg
             :align: center
-            :width: 40em
+            :width: 600px
     
     .. only:: latex
         
