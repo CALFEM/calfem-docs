@@ -15,7 +15,7 @@ exs_bar2_l
         
         .. figure:: images/exs4_1.svg
             :align: center
-            :width: 400px
+            :width: 500px
     
     .. only:: latex
         
@@ -29,7 +29,7 @@ exs_bar2_l
         
         .. figure:: images/exs4_2.svg
             :align: center
-            :width: 400px
+            :width: 500px
     
     .. only:: latex
         
@@ -48,184 +48,189 @@ exs_bar2_l
 
     .. code-block:: python
 
-        >>> import numpy as np
-        >>> import calfem.core as cfc
-        >>> 
-        >>> # Element topology matrix (DOFs only, no element numbers)
-        >>> Edof = np.array([
-        ...     [1, 2, 5, 6],    # Element 1: DOFs 1,2,5,6
-        ...     [3, 4, 7, 8],    # Element 2: DOFs 3,4,7,8  
-        ...     [5, 6, 9, 10],   # Element 3: DOFs 5,6,9,10
-        ...     [7, 8, 11, 12],  # Element 4: DOFs 7,8,11,12
-        ...     [7, 8, 5, 6],    # Element 5: DOFs 7,8,5,6
-        ...     [11, 12, 9, 10], # Element 6: DOFs 11,12,9,10
-        ...     [3, 4, 5, 6],    # Element 7: DOFs 3,4,5,6
-        ...     [7, 8, 9, 10],   # Element 8: DOFs 7,8,9,10
-        ...     [1, 2, 7, 8],    # Element 9: DOFs 1,2,7,8
-        ...     [5, 6, 11, 12]   # Element 10: DOFs 5,6,11,12
-        ... ])
+        import numpy as np
+        import calfem.core as cfc
+        import calfem.utils as cfu
+
+        edof = np.array([
+            [1, 2, 5, 6],
+            [3, 4, 7, 8],
+            [5, 6, 9, 10],
+            [7, 8, 11, 12],
+            [7, 8, 5, 6],
+            [11, 12, 9, 10],
+            [3, 4, 5, 6],
+            [7, 8, 9, 10],
+            [1, 2, 7, 8],
+            [5, 6, 11, 12],
+        ])
 
     The global stiffness matrix :code:`K` and load vector :code:`f` are initialized. The load :math:`P=0.5` MN is divided into x and y components:
 
     .. code-block:: python
 
-        >>> # Initialize global system  
-        >>> K = np.zeros((12, 12))
-        >>> f = np.zeros((12, 1))
-        >>> 
-        >>> # Apply load P=0.5 MN at 30° angle (DOFs 11,12 -> indices 10,11)
-        >>> P = 0.5e6  # Load magnitude [N]
-        >>> f[10] = P * np.sin(np.pi/6)   # x-component at DOF 11
-        >>> f[11] = -P * np.cos(np.pi/6)  # y-component at DOF 12
-        >>> print("Load vector:")
-        >>> print(f)
-        [[      0.    ]
-         [      0.    ]
-         [      0.    ]
-         [      0.    ]
-         [      0.    ]
-         [      0.    ]
-         [      0.    ]
-         [      0.    ]
-         [      0.    ]
-         [      0.    ]
-         [ 250000.    ]
-         [-433012.7019]]
+        K = np.zeros([12, 12])
+        f = np.zeros([12, 1])
+        f[10] = 0.5e6 * np.sin(np.pi / 6)
+        f[11] = -0.5e6 * np.cos(np.pi / 6)
 
     The material and geometric properties are defined, along with element coordinate matrices:
 
     .. code-block:: python
 
-        >>> # Material and geometric properties
-        >>> A = 25.0e-4   # Cross-sectional area [m²]
-        >>> E = 2.1e11    # Young's modulus [Pa]
-        >>> ep = [E, A]   # Element properties
-        >>> 
-        >>> # Element coordinate matrices (x-coordinates for each element)
-        >>> Ex = np.array([
-        ...     [0, 2],  # Element 1
-        ...     [0, 2],  # Element 2
-        ...     [2, 4],  # Element 3
-        ...     [2, 4],  # Element 4
-        ...     [2, 2],  # Element 5
-        ...     [4, 4],  # Element 6
-        ...     [0, 2],  # Element 7
-        ...     [2, 4],  # Element 8
-        ...     [0, 2],  # Element 9
-        ...     [2, 4]   # Element 10
-        ... ])
-        >>> 
-        >>> # Element coordinate matrices (y-coordinates for each element)
-        >>> Ey = np.array([
-        ...     [2, 2],  # Element 1
-        ...     [0, 0],  # Element 2
-        ...     [2, 2],  # Element 3
-        ...     [0, 0],  # Element 4
-        ...     [0, 2],  # Element 5
-        ...     [0, 2],  # Element 6
-        ...     [0, 2],  # Element 7
-        ...     [0, 2],  # Element 8
-        ...     [2, 0],  # Element 9
-        ...     [2, 0]   # Element 10
-        ... ])
+        A = 25.0e-4
+        E = 2.1e11
+        ep = [E, A]
+
+        ex = np.array([
+            [0.0, 2.0],
+            [0.0, 2.0],
+            [2.0, 4.0],
+            [2.0, 4.0],
+            [2.0, 2.0],
+            [4.0, 4.0],
+            [0.0, 2.0],
+            [2.0, 4.0],
+            [0.0, 2.0],
+            [2.0, 4.0],
+        ])
+
+        ey = np.array([
+            [2.0, 2.0],
+            [0.0, 0.0],
+            [2.0, 2.0],
+            [0.0, 0.0],
+            [0.0, 2.0],
+            [0.0, 2.0],
+            [0.0, 2.0],
+            [0.0, 2.0],
+            [2.0, 0.0],
+            [2.0, 0.0],
+        ])
 
     The element stiffness matrices are computed and assembled in a loop:
 
     .. code-block:: python
 
-        >>> # Compute element stiffness matrices and assemble
-        >>> for i in range(10):
-        ...     Ke = cfc.bar2e(Ex[i], Ey[i], ep)
-        ...     K = cfc.assem(Edof[i], K, Ke)
-        >>> 
-        >>> print("Global stiffness matrix assembled successfully")
-        Global stiffness matrix assembled successfully
+        for elx, ely, eltopo in zip(ex, ey, edof):
+            Ke = cfc.bar2e(elx, ely, ep)
+            cfc.assem(eltopo, K, Ke)
+
 
     The system of equations is solved by specifying boundary conditions and using :func:`solveq`:
 
-    .. code-block:: python
+    .. tabs::
 
-        >>> # Boundary conditions (fixed supports at nodes 1 and 2)
-        >>> bc_dof = np.array([1, 2, 3, 4])
-        >>> bc_value = np.array([0.0, 0.0, 0.0, 0.0])
-        >>> 
-        >>> # Solve the system
-        >>> a, r = cfc.solveq(K, f, bc_dof, bc_value)
-        >>> print("Displacements [m]:")
-        >>> print(a)
-        [[ 0.    ]
-         [ 0.    ]
-         [ 0.    ]
-         [ 0.    ]
-         [ 0.0024]
-         [-0.0045]
-         [-0.0016]
-         [-0.0042]
-         [ 0.003 ]
-         [-0.0107]
-         [-0.0017]
-         [-0.0113]]
-        >>> print("Reaction forces [N]:")
-        >>> print(r)
-        [[-8.6603e+05]
-         [ 2.4009e+05]
-         [ 6.1603e+05]
-         [ 1.9293e+05]
-         [ 2.3283e-10]
-         [-2.3283e-10]
-         [ 1.1642e-10]
-         [-1.1642e-10]
-         [-2.3283e-10]
-         [ 3.4925e-10]
-         [-2.9104e-11]
-         [ 4.6566e-10]]
+        .. tab:: Code
+
+            .. code:: python
+
+                bc_dofs = np.array([1, 2, 3, 4])
+                bc_vals = np.array([0.0, 0.0, 0.0, 0.0])
+                a, r = cfc.solveq(K, f, bc_dofs, bc_vals)
+
+                cfu.disp_h2("Displacements a:")
+                cfu.disp_array(a, tablefmt='plain')
+
+                cfu.disp_h2("Reaction forces r:")
+                cfu.disp_array(r, tablefmt='plain')
+
+        .. tab:: Output
+
+            .. code:: 
+
+                ## Displacements a:
+
+                 0.0000e+00
+                 0.0000e+00
+                 0.0000e+00
+                 0.0000e+00
+                 2.3845e-03
+                -4.4633e-03
+                -1.6118e-03
+                -4.1987e-03
+                 3.0346e-03
+                -1.0684e-02
+                -1.6589e-03
+                -1.1334e-02
+
+                ## Reaction forces r:
+
+                -8.6603e+05
+                 2.4009e+05
+                 6.1603e+05
+                 1.9293e+05
+                 0.0000e+00
+                -1.4552e-10
+                -1.1642e-10
+                 5.8208e-11
+                -1.1642e-10
+                 2.3283e-10
+                 2.9104e-11
+                 2.9104e-10                
+        
 
     The displacement at the point of loading is :math:`-1.7 \times 10^{-3}` m in the x-direction and :math:`-11.3 \times 10^{-3}` m in the y-direction. At the upper support the horizontal force is :math:`-0.866` MN and the vertical :math:`0.240` MN. At the lower support the forces are :math:`0.616` MN and :math:`0.193` MN, respectively.
 
     Normal forces are evaluated from element displacements. These are obtained from the global displacements using :func:`extract_ed` and the forces are calculated using :func:`bar2s`:
 
-    .. code-block:: python
+    .. tabs::
 
-        >>> # Extract element displacements
-        >>> ed = cfc.extract_ed(Edof, a)
-        >>> 
-        >>> # Compute normal forces for all elements
-        >>> N = np.zeros(10)
-        >>> for i in range(10):
-        ...     es = cfc.bar2s(Ex[i], Ey[i], ep, ed[i])
-        ...     N[i] = es[0][0]  # Normal force (first component)
-        >>> 
-        >>> print("Normal forces [N]:")
-        >>> print(N)
-        [ 625938.4856 -423099.62  170639.8843  -12372.8176 -69447.0339 170639.8843 
-        -272838.2599 -241321.2386  339534.1758  371051.1971]
+        .. tab:: Code
+
+            .. code-block:: python
+
+                ed = cfc.extract_ed(edof, a)
+                N = np.zeros([edof.shape[0]])
+
+                cfu.disp_h2("Element forces:")
+
+                i = 0
+                for elx, ely, eld in zip(ex, ey, ed):
+                    es = cfc.bar2s(elx, ely, ep, eld)
+                    N[i] = es[0][0]
+                    print("N%d = %g" % (i + 1, N[i]))
+                    i += 1
+
+        .. tab:: Output
+
+            .. code:: 
+
+                ## Element forces:
+
+                N1 = 625938
+                N2 = -423100
+                N3 = 170640
+                N4 = -12372.8
+                N5 = -69447
+                N6 = 170640
+                N7 = -272838
+                N8 = -241321
+                N9 = 339534
+                N10 = 371051                
 
     The largest normal force :math:`N=0.626` MN is obtained in element 1 and is equivalent to a normal stress :math:`\sigma=250` MPa.
 
-    To reduce the quantity of input data, the element coordinate matrices :code:`Ex` and :code:`Ey` can alternatively be created from a global coordinate matrix :code:`Coord` and a global topology matrix :code:`Dof` using :func:`coordxtr`:
+    To reduce the quantity of input data, the element coordinate matrices :code:`ex` and :code:`ey` can alternatively be created from a global coordinate matrix :code:`coord` and a global topology matrix :code:`dof` using :func:`coord_extract`:
 
     .. code-block:: python
 
-        >>> # Alternative approach using global coordinates and topology
-        >>> Coord = np.array([
-        ...     [0, 2],  # Node 1
-        ...     [0, 0],  # Node 2  
-        ...     [2, 2],  # Node 3
-        ...     [2, 0],  # Node 4
-        ...     [4, 2],  # Node 5
-        ...     [4, 0]   # Node 6
-        ... ])
-        >>> 
-        >>> Dof = np.array([
-        ...     [1, 2],    # Node 1: DOFs 1,2
-        ...     [3, 4],    # Node 2: DOFs 3,4
-        ...     [5, 6],    # Node 3: DOFs 5,6
-        ...     [7, 8],    # Node 4: DOFs 7,8
-        ...     [9, 10],   # Node 5: DOFs 9,10
-        ...     [11, 12]   # Node 6: DOFs 11,12
-        ... ])
-        >>> 
-        >>> # Extract element coordinates automatically
-        >>> ex, ey = cfc.coordxtr(Edof, Coord, Dof, 2)
-        >>> print("Extracted element coordinates match manual definition")
-        Extracted element coordinates match manual definition
+        coord = np.array([
+            [0, 2], 
+            [0, 0], 
+            [2, 2], 
+            [2, 0], 
+            [4, 2], 
+            [4, 0]
+        ])
+
+        dof = np.array([
+            [1, 2], 
+            [3, 4], 
+            [5, 6], 
+            [7, 8], 
+            [9, 10], 
+            [11, 12]
+        ])
+
+        ex, ey = cfc.coord_extract(edof, coord, dof, 2)
