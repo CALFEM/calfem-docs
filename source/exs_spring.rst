@@ -17,7 +17,7 @@ exs_spring
     * Solve the global system of equations
     * Evaluate element forces
 
-    Consider the system of three linear elastic springs, and the corresponding finite element model. The system of springs is fixed in its ends and loaded by a single load :math:`F`.
+    Consider the system of three linear elastic springs, and the corresponding finite element model. The system of springs is fixed in its ends and loaded by a single load :math:`F=100 N` and a stiffness :math:`k=1500 N/m`
 
     .. only:: html
         
