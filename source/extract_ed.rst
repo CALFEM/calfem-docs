@@ -17,16 +17,32 @@ extract_ed
     Extract element nodal quantities from a global solution vector.
 
     .. only:: html
+
+        .. only:: matlab
         
-        .. figure:: images/EXTRA.svg
-            :align: center
-            :width: 400px
+            .. figure:: images/extra_ml.svg
+                :align: center
+                :width: 400px
+
+        .. only:: python
     
+            .. figure:: images/extra.svg
+                :align: center
+                :width: 400px
+
     .. only:: latex
         
-        .. figure:: images/EXTRA.svg
-            :align: center
-            :width: 70%
+        .. only:: matlab
+        
+            .. figure:: images/extra_ml.svg
+                :align: center
+                :width: 70%
+
+        .. only:: python
+
+            .. figure:: images/extra.svg
+                :align: center
+                :width: 70%
 
 :Syntax:
 

@@ -16,6 +16,7 @@ Examples
     .. include:: exd_beam2_t.rst
     .. include:: exd_beam2_tr.rst
     .. include:: exd_beam2_b.rst
+    .. include:: exn_bar2g.rst
 
 .. only:: matlab
 

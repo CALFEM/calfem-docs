@@ -1,0 +1,115 @@
+\newpage
+\lhead[\bf exn\_bar2g]{\bf Nonlinear analysis}
+\rhead[\bf Nonlinear analysis]{\bf exn\_bar2g}
+\begin{tagx}
+\tag{Purpose:} Plane truss considering geometric nonlinearity.
+\tag{Description:} Consider a plane truss consisting of two bars with the properties
+$E=200$ GPa, $A_1=6.0\cdot10^{-4}$ m$^2$ and $A_2=3.0\cdot10^{-4}$
+m$^2$. The truss is loaded by a force $P=10$ MN to the left and a force $F=0.2$ MN downwards. 
+The corresponding finite element model consists
+of two elements and six degrees of freedom.
+
+\begin{figure}[h]
+\centerline{\bild[140mm]{exn1.eps}}
+\end{figure}
+
+The element property vectors \textsf{ep1} and \textsf{ep2}
+and the element coordinate vectors \textsf{ex1}, \textsf{ex2}, \textsf{ey1}, and \textsf{ey2}
+are defined. Initial values are given to the variables axial forces \textsf{QX1} and \textsf{QX2}. The element stiffness matrices \textsf{Ke1} and \textsf{Ke2} are computed using \textsf{bar2ge}.
+
+The computation is initialised by defining the topology matrix \textsf{Edof},
+containing element numbers and global element degrees of freedom. The element property vectors \textsf{ep1} and \textsf{ep2}
+and the element coordinate vectors \textsf{ex1}, \textsf{ex2}, \textsf{ey1}, and \textsf{ey2}
+are also defined. 
+\begin{verbatim}
+>> Edof=[1  1  2  5  6;
+>>       2  3  4  5  6]; 
+>> E=10e9;  
+>> A1=4e-2;     A2=1e-2;
+>> ep1=[E A1];  ep2=[E A2];
+>> ex1=[0 1.6]; ey1=[0 0];
+>> ex2=[0 1.6]; ey2=[1.2 0];
+\end{verbatim}
+
+The bar element function considering geometric nonlinearity {\sf bar2ge} requires the value
+axial force $Q_{\bar{x}}$. Since the axial forces are a result of the computation the computation procedure is iterative. Initially, the axial forces are set to zero, i.e.\ $Q_{\bar{x}}^{(1)}=0$ and
+$Q_{\bar{x}}^{(2)}=0$ which are stored in {\sf QX1} and {\sf QX2}. This means that the first iteration is equivalent to a linear analysis using {\sf bar2e}. To make sure that the first iteration is performed the scalar used for storing the previous axial force in element 1 {\sf QX01} is set to 1.
+To avoid dividing by 0 in the second convergence check, a nonzero but small value is assumed for the initial axial force in Element 1, i.e.\ $Q_{\bar{x}, 0}^{(1)}=0.0001$.
+In each iteration the axial forces {\sf QX1} and {\sf QX2} are updated according to the computational result. The iterations continue until the difference in axial force {\sf QX1} of the two latest iterations is less than an accepted error {\sf eps} chosen as $1.0\cdot 10^{-6}$ ({\sf QX1}$-${\sf QX01})/{\sf QX01} $<$ {\sf eps}.  
+
+\begin{verbatim}
+>> QX1=0.0001;  QX2=0;
+>> QX01=1;
+>> eps=1e-6;		
+>> n=0;			
+
+>> while(abs((QX1-QX01)/QX01)>eps)
+\end{verbatim}
+
+In each iteration the global stiffness matrix {\sf K} (6$\times$6) 
+and the load vector {\sf f} (6$\times$1) is initially filled with zeros. The nodal loads of $10.0$ MN and $0.2$ MN acting at lower right corner of the frame are placed in position 5 and 6 of the load vector, respectively. 
+Element stiffness matrices are computed by {\sf bar2ge} and assembled using {\sf assem}, after which the system of equations is solved using {\sf solveq}. Based on the computed displacements {\sf a}, new values of section forces and axial forces are computed by {\sf beam2gs}. If {\sf QX1} does not converge in 20 iterations the analysis is interrupted.
+
+\begin{verbatim}
+>>   n=n+1
+>>   K=zeros(6,6);
+>>   f=zeros(6,1);	
+>>   f(5)=-10e6;
+>>   f(6)=-0.2e6;
+>>   
+>>   Ke1=bar2ge(ex1,ey1,ep1,QX1);
+>>   Ke2=bar2ge(ex2,ey2,ep2,QX2);
+>>   K=assem(Edof(1,:),K,Ke1);
+>>   K=assem(Edof(2,:),K,Ke2);
+>>   bc=[1 0;2 0;3 0;4 0];	
+>>   [a,r]=solveq(K,f,bc)
+>>
+>>   Ed=extract_ed(Edof,a);
+>>
+>>   QX01=QX1; 
+>>   [es1,QX1]=bar2gs(ex1,ey1,ep1,Ed(1,:))
+>>   [es2,QX2]=bar2gs(ex2,ey2,ep2,Ed(2,:))
+>>   
+>>   if(n>20)
+>>      disp('The solution does not converge')
+>>      break
+>>   end
+>> end
+\end{verbatim}
+
+After 7 iterations the computation has converged and the axial forces are
+
+\begin{verbatim}
+QX1 =
+
+  -1.1136e+07
+
+QX2 =
+
+   1.4833e+06
+	
+\end{verbatim}	
+
+The displacements according to the linear analysis and the analysis 
+considering geometric nonlinearity are respectively:
+
+\begin{verbatim}
+a =                         a =
+
+         0                           0
+         0                           0
+         0                           0
+         0                           0
+   -0.0411                     -0.0445
+   -0.0659                     -0.1088
+\end{verbatim}
+
+the vertical displacement at the node to the right is 108.8 mm, 
+which is 1.6 times larger than the result from a linear computation 
+according to the first iteration. 
+The axial force in Element 2 is 1.483 kN, which is 4.5 times larger than 
+the value obtained in the linear computation.
+
+\end{tagx}
+
+\clearpage
