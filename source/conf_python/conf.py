@@ -71,6 +71,9 @@ exclude_patterns = []
 suppress_warnings = ['ref.duplicate']
 
 _rsvg_bin = shutil.which('rsvg-convert')
+if not _rsvg_bin and os.path.exists('/usr/bin/rsvg-convert'):
+    _rsvg_bin = '/usr/bin/rsvg-convert'
+
 if _rsvg_bin:
     rsvg_converter_bin = _rsvg_bin
     rsvg_converter_args = ['--format=pdf']
