@@ -24,13 +24,13 @@ beam3s
 
     .. only:: html
         
-        .. figure:: images/BEAM3S.svg
+        .. figure:: images/beam3s.svg
             :align: center
             :width: 400px
 
     .. only:: latex
 
-        .. figure:: images/BEAM3S.svg
+        .. figure:: images/beam3s.svg
             :align: center
             :width: 70%
 

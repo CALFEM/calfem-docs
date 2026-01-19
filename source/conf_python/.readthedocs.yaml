@@ -16,7 +16,7 @@ build:
     - fonts-crimson
     - fonts-pt-sans
     - fonts-firacode
-    - inkscape
+    - librsvg2-bin
     - latexmk
   commands:
     - python -m pip install -q -r requirements.txt

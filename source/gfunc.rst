@@ -10,13 +10,13 @@ gfunc
 
     .. only:: html
         
-        .. figure:: images/F32.svg
+        .. figure:: images/f32.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/F32.svg
+        .. figure:: images/f32.svg
             :align: center
             :width: 70%
 

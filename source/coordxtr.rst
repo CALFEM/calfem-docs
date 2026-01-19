@@ -18,13 +18,13 @@ coordxtr
 
     .. only:: html
 
-        .. figure:: images/COORD.svg
+        .. figure:: images/coord.svg
             :width: 70%
             :align: center
 
     .. only:: latex
 
-        .. figure:: images/COORD.svg
+        .. figure:: images/coord.svg
             :width: 70%
             :align: center
 

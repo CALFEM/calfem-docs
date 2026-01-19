@@ -29,13 +29,13 @@ The following data apply to the beams:
   
 .. only:: html
 
-    .. figure:: images/EXD1fBIG.svg
+   .. figure:: images/exd1fbig.svg
         :align: center
         :width: 500px
 
 .. only:: latex
 
-   .. figure:: images/EXD1fBIG.svg
+   .. figure:: images/exd1fbig.svg
       :align: center
       :width: 70%
 

@@ -19,13 +19,13 @@ plante
 
     .. only:: html
         
-        .. figure:: images/PLANTE.svg
+        .. figure:: images/plante.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/PLANTE.svg
+        .. figure:: images/plante.svg
             :align: center
             :width: 70%
 

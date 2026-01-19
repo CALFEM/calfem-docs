@@ -20,13 +20,13 @@ flw2i4e
 
     .. only:: html
         
-        .. figure:: images/FLW2I4E.svg
+        .. figure:: images/flw2i4e.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/FLW2I4E.svg
+        .. figure:: images/flw2i4e.svg
             :align: center
             :width: 70%
 

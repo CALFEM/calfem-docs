@@ -6,13 +6,13 @@ plantcs
 
     .. only:: html
         
-        .. figure:: images/PLANTRS.svg
+        .. figure:: images/plantrs.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/PLANTRS.svg
+        .. figure:: images/plantrs.svg
             :align: center
             :width: 70%
 

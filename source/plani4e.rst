@@ -21,13 +21,13 @@ plani4e
 
     .. only:: html
         
-        .. figure:: images/PLANI4E.svg
+        .. figure:: images/plani4e.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/PLANI4E.svg
+        .. figure:: images/plani4e.svg
             :align: center
             :width: 70%
 

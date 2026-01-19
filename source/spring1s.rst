@@ -17,13 +17,13 @@ spring1s
 
     .. only:: html
         
-        .. figure:: images/SPRING3.svg
+        .. figure:: images/spring3.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/SPRING3.svg
+        .. figure:: images/spring3.svg
             :align: center
             :width: 70%
 

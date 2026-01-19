@@ -21,13 +21,13 @@ beam2de
 
     .. only:: html
 
-        .. figure:: images/BEAM2D.svg
+        .. figure:: images/beam2d.svg
             :align: center
             :width: 400px
 
     .. only:: latex
     
-        .. figure:: images/BEAM2D.svg
+        .. figure:: images/beam2d.svg
             :align: center
             :width: 70%
 

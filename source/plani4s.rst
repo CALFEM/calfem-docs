@@ -20,13 +20,13 @@ plani4s
 
     .. only:: html
         
-        .. figure:: images/PLANI4S.svg
+        .. figure:: images/plani4s.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/PLANI4S.svg
+        .. figure:: images/plani4s.svg
             :align: center
             :width: 70%
 

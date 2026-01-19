@@ -31,7 +31,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx_copybutton',
     'sphinx_design',
     'sphinx_tabs.tabs',
-    'sphinxcontrib.inkscapeconverter',
+    'sphinxcontrib.rsvgconverter',
     'sphinx_immaterial',  # For Material Design theme
     'myst_parser',
     'sphinx.ext.autodoc',
@@ -69,20 +69,19 @@ exclude_patterns = []
 # Suppress duplicate label warnings
 suppress_warnings = ['ref.duplicate']
 
-inkscape_converter_bin = ""
+rsvg_converter_bin = ""
 
 if sys.platform.startswith('win'):
-    # On Windows, we need to use the full path to the Inkscape executable
-    # Uncomment and set the correct path if you have Inkscape installed
-    inkscape_converter_bin = 'C:\\Program Files\\Inkscape\\bin\\inkscape.exe'
+    # On Windows, rsvg-convert isn't typically available; rely on PATH if installed
+    rsvg_converter_bin = shutil.which('rsvg-convert') or 'rsvg-convert'
 else:
     # On other platforms, prefer an absolute path if available
-    inkscape_converter_bin = shutil.which('inkscape') or '/usr/bin/inkscape'
+    rsvg_converter_bin = shutil.which('rsvg-convert') or '/usr/bin/rsvg-convert'
 
-inkscape_converter_args = ['--export-area-drawing']
+rsvg_converter_args = ['--format=pdf']
 
 # Enable SVG to PDF conversion for LaTeX
-svg_converter = 'inkscape'
+svg_converter = 'rsvg'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

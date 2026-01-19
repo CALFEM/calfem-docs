@@ -21,13 +21,13 @@ soli8s
 
     .. only:: html
         
-        .. figure:: images/SOLI8S.svg
+        .. figure:: images/soli8s.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/SOLI8S.svg
+        .. figure:: images/soli8s.svg
             :align: center
             :width: 70%
         :align: center

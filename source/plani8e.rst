@@ -22,13 +22,13 @@ plani8e
 
     .. only:: html
         
-        .. figure:: images/PLANI8E.svg
+        .. figure:: images/plani8e.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/PLANI8E.svg
+        .. figure:: images/plani8e.svg
             :align: center
             :width: 70%
 

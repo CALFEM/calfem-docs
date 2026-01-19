@@ -21,13 +21,13 @@ plani8s
 
     .. only:: html
         
-        .. figure:: images/PLANI8S.svg
+        .. figure:: images/plani8s.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/PLANI8S.svg
+        .. figure:: images/plani8s.svg
             :align: center
             :width: 70%
         :align: center

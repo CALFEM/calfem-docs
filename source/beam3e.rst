@@ -21,13 +21,13 @@ beam3e
 
     .. only:: html
         
-        .. figure:: images/BEAM3E.svg
+        .. figure:: images/beam3e.svg
             :align: center
             :width: 400px
 
     .. only:: latex
 
-        .. figure:: images/BEAM3E.svg
+        .. figure:: images/beam3e.svg
             :align: center
             :width: 70%
 

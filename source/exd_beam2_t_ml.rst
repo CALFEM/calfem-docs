@@ -25,13 +25,13 @@ exd_beam2_t
 
     .. only:: html
         
-        .. figure:: images/EXD2f1.svg
+        .. figure:: images/exd2f1.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/EXD2f1.svg
+        .. figure:: images/exd2f1.svg
             :align: center
             :width: 70%
 

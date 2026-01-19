@@ -6,13 +6,13 @@ flw3i8e
 
     .. only:: html
         
-        .. figure:: images/FLW3I8E.svg
+        .. figure:: images/flw3i8e.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/FLW3I8E.svg
+        .. figure:: images/flw3i8e.svg
             :align: center
             :width: 70%
 

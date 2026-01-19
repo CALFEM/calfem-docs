@@ -16,13 +16,13 @@ assem
 
     .. only:: html
         
-        .. figure:: images/ASSEM.svg
+        .. figure:: images/assem.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/ASSEM.svg
+        .. figure:: images/assem.svg
             :align: center
             :width: 70%
 

@@ -21,13 +21,13 @@ beam2e
 
     .. only:: html
 
-        .. figure:: images/BEAM2E.svg
+        .. figure:: images/beam2e.svg
             :align: center
             :width: 400px
 
     .. only:: latex
 
-        .. figure:: images/BEAM2E.svg
+        .. figure:: images/beam2e.svg
             :align: center
             :width: 70%
 
@@ -69,13 +69,13 @@ beam2e
 
     .. only:: html
 
-        .. figure:: images/BEAM2LOA.svg
+        .. figure:: images/beam2loa.svg
             :align: center
             :width: 400px
 
     .. only:: latex
 
-        .. figure:: images/BEAM2LOA.svg
+        .. figure:: images/beam2loa.svg
             :align: center
             :width: 70%
     

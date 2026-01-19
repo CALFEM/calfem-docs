@@ -6,13 +6,13 @@ platrs
 
     .. only:: html
         
-        .. figure:: images/PLATRS.svg
+        .. figure:: images/platrs.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/PLATRS.svg
+        .. figure:: images/platrs.svg
             :align: center
             :width: 70%
 

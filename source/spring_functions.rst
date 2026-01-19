@@ -6,13 +6,13 @@ one-dimensional spring systems and for a variety of analogous physical problems.
 
 .. only:: html
     
-    .. figure:: images/SPRING1.svg
+    .. figure:: images/spring1.svg
         :align: center
         :width: 400px
 
 .. only:: latex
     
-    .. figure:: images/SPRING1.svg
+    .. figure:: images/spring1.svg
         :align: center
         :width: 70%
 

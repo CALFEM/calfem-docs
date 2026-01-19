@@ -19,13 +19,13 @@ flw2te
 
     .. only:: html
         
-        .. figure:: images/FLW2TE.svg
+        .. figure:: images/flw2te.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/FLW2TE.svg
+        .. figure:: images/flw2te.svg
             :align: center
             :width: 70%
         :alt: Two dimensional heat flow elements    

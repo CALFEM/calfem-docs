@@ -22,13 +22,13 @@ beam2gxe
 
     .. only:: html
  
-         .. figure:: images/BEAM2G.svg
+         .. figure:: images/beam2g.svg
              :align: center
              :width: 400px
  
     .. only:: latex
 
-        .. figure:: images/BEAM2G.svg
+        .. figure:: images/beam2g.svg
             :align: center
             :width: 70%
 

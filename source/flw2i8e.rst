@@ -22,13 +22,13 @@ flw2i8e
 
     .. only:: html
         
-        .. figure:: images/FLW2I8E.svg
+        .. figure:: images/flw2i8e.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/FLW2I8E.svg
+        .. figure:: images/flw2i8e.svg
             :align: center
             :width: 70%
 

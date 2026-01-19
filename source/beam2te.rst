@@ -20,14 +20,14 @@ beam2te
 
     .. only:: html
 
-        .. figure:: images/BEAM2T.svg
+        .. figure:: images/beam2t.svg
             :align: center
             :width: 400px
             :alt: Two dimensional beam element
 
     .. only:: latex
 
-        .. figure:: images/BEAM2T.svg
+        .. figure:: images/beam2t.svg
             :align: center
             :width: 70%
             :alt: Two dimensional beam element
@@ -78,7 +78,7 @@ beam2te
 
     .. only:: html
 
-        .. figure:: images/BEAM2LOA.svg
+        .. figure:: images/beam2loa.svg
             :align: center
             :width: 400px
             :alt: Uniformly distributed load
@@ -87,7 +87,7 @@ beam2te
 
     .. only:: latex
 
-        .. figure:: images/BEAM2LOA.svg
+        .. figure:: images/beam2loa.svg
             :align: center
             :width: 70%
             :alt: Uniformly distributed load

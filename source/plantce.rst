@@ -7,13 +7,13 @@ plantce
 
     .. only:: html
         
-        .. figure:: images/PLANTRE.svg
+        .. figure:: images/plantre.svg
             :align: center
             :width: 400px
     
     .. only:: latex
         
-        .. figure:: images/PLANTRE.svg
+        .. figure:: images/plantre.svg
             :align: center
             :width: 70%
 
