@@ -3,12 +3,12 @@ PyQt5
 pyvtk
 calfem-python
 ipython_genutils
-sphinx
+sphinx>=8.0,<9.0
 nbsphinx
 sphinx-material
 sphinx-copybutton
 sphinx-design
 sphinx-tabs
-sphinxcontrib-svg2pdfconverter
+sphinxcontrib-svg2pdfconverter[Inkscape]
 sphinx-immaterial
 myst-parser
