@@ -12,6 +12,10 @@ build:
     - texlive-latex-extra
     - texlive-fonts-recommended
     - texlive-fonts-extra
+    - texlive-xetex
+    - fonts-crimson
+    - fonts-pt-sans
+    - fonts-firacode
     - latexmk
   commands:
     - python -m pip install -q -r requirements.txt
