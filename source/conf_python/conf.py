@@ -208,29 +208,14 @@ latex_elements = {
 
 \allsectionsfont{\sffamily}
 
-% — Main text (serif): Crimson Text (installed system-wide)
-\setmainfont[
-  BoldFont       = {Crimson Text Bold},
-  ItalicFont     = {Crimson Text Italic},
-  BoldItalicFont = {Crimson Text Bold Italic},
-  Script         = Latin
-]{Crimson Text}
+% — Main text (serif): TeX Gyre Pagella (Palatino-like, included in TeX Live)
+\setmainfont{TeX Gyre Pagella}
 
-% — Headings (sans-serif): PT Sans
-\setsansfont[
-  BoldFont       = {PT Sans Bold},
-  ItalicFont     = {PT Sans Italic},
-  BoldItalicFont = {PT Sans Bold Italic},
-  Script         = Latin
-]{PT Sans}
+% — Headings (sans-serif): TeX Gyre Heros (Helvetica-like, included in TeX Live)
+\setsansfont{TeX Gyre Heros}
 
-% — Code (monospace): Noto Sans Mono
-%\setmonofont[
-%  BoldFont   = {Noto Sans Mono},
-%  Script     = Latin
-%]{Noto Sans Mono}
-
-\setmonofont{Fira Code}
+% — Code (monospace): TeX Gyre Cursor (included in TeX Live)
+\setmonofont{TeX Gyre Cursor}
 
 
 % — Force all headings into PT Sans:
