@@ -21,11 +21,6 @@ build:
   commands:
     - python -m pip install -q -r requirements.txt
     - sphinx-build -b html source $READTHEDOCS_OUTPUT/html -c source/conf_python -t python
-    - sphinx-build -b latex source $READTHEDOCS_OUTPUT/pdf -c source/conf_python -t python
-    - cd $READTHEDOCS_OUTPUT/pdf && make
-
-# formats:
-#  - pdf
 
 python:
   install:
