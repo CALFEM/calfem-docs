@@ -71,74 +71,6 @@ exclude_patterns = []
 # Suppress duplicate label warnings
 suppress_warnings = ['ref.duplicate']
 
-_rsvg_bin = shutil.which('rsvg-convert')
-if not _rsvg_bin and os.path.exists('/usr/bin/rsvg-convert'):
-    _rsvg_bin = '/usr/bin/rsvg-convert'
-
-if _rsvg_bin:
-    rsvg_converter_bin = _rsvg_bin
-    rsvg_converter_args = ['--format=pdf']
-    # Enable SVG to PDF conversion for LaTeX
-    svg_converter = 'rsvg'
-else:
-    # Avoid noisy warnings when rsvg-convert isn't available
-    if 'sphinxcontrib.rsvgconverter' in extensions:
-        extensions.remove('sphinxcontrib.rsvgconverter')
-
-
-_IMAGES_DIR = os.path.join(source_dir, 'images')
-_CONF_IMAGES_DIR = os.path.join(conf_dir, 'images')
-
-
-def _collect_latex_image_paths() -> list[str]:
-    if not os.path.isdir(_IMAGES_DIR):
-        return []
-
-    image_files: list[str] = []
-    for entry in os.listdir(_IMAGES_DIR):
-        lower = entry.lower()
-        if lower.endswith((".png", ".pdf", ".jpg", ".jpeg")):
-            image_files.append(os.path.join("images", entry))
-    return image_files
-
-
-def _sync_conf_images_for_latex() -> None:
-    if not os.path.isdir(_IMAGES_DIR):
-        return
-
-    os.makedirs(_CONF_IMAGES_DIR, exist_ok=True)
-    for entry in os.listdir(_IMAGES_DIR):
-        lower = entry.lower()
-        if not lower.endswith((".png", ".pdf", ".jpg", ".jpeg")):
-            continue
-        src = os.path.join(_IMAGES_DIR, entry)
-        dst = os.path.join(_CONF_IMAGES_DIR, entry)
-        if os.path.exists(dst):
-            src_mtime = os.path.getmtime(src)
-            dst_mtime = os.path.getmtime(dst)
-            if dst_mtime >= src_mtime:
-                continue
-        shutil.copy2(src, dst)
-
-
-def _rewrite_image_nodes(app, doctree):
-    if not getattr(app, "builder", None) or app.builder.name not in {"latex", "latexpdf"}:
-        return
-
-    for node in doctree.traverse(nodes.image):
-        uri = node.get("uri", "")
-        if not uri.startswith("images/"):
-            continue
-        prefix, filename = uri.split("/", 1)
-        base, ext = os.path.splitext(filename)
-        if ext.lower() == ".svg":
-            pdf_path = os.path.join(_IMAGES_DIR, f"{base}.pdf")
-            png_path = os.path.join(_IMAGES_DIR, f"{base}.png")
-            if os.path.exists(pdf_path):
-                filename = f"{base}.pdf"
-            elif os.path.exists(png_path):
-                filename = f"{base}.png"
-        node["uri"] = f"{prefix}/{filename}"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -267,14 +199,29 @@ latex_elements = {
 
 \allsectionsfont{\sffamily}
 
-% — Main text (serif): TeX Gyre Pagella (Palatino-like, included in TeX Live)
-\setmainfont{TeX Gyre Pagella}
+% — Main text (serif): Crimson Text (installed system-wide)
+\setmainfont[
+  BoldFont       = {Crimson Text Bold},
+  ItalicFont     = {Crimson Text Italic},
+  BoldItalicFont = {Crimson Text Bold Italic},
+  Script         = Latin
+]{Crimson Text}
 
-% — Headings (sans-serif): TeX Gyre Heros (Helvetica-like, included in TeX Live)
-\setsansfont{TeX Gyre Heros}
+% — Headings (sans-serif): PT Sans
+\setsansfont[
+  BoldFont       = {PT Sans Bold},
+  ItalicFont     = {PT Sans Italic},
+  BoldItalicFont = {PT Sans Bold Italic},
+  Script         = Latin
+]{PT Sans}
 
-% — Code (monospace): TeX Gyre Cursor (included in TeX Live)
-\setmonofont{TeX Gyre Cursor}
+% — Code (monospace): Noto Sans Mono
+%\setmonofont[
+%  BoldFont   = {Noto Sans Mono},
+%  Script     = Latin
+%]{Noto Sans Mono}
+
+\setmonofont{Fira Code}
 
 
 % — Force all headings into PT Sans:
@@ -391,9 +338,6 @@ latex_elements = {
     'extraclassoptions': 'openany,oneside'
 }
 
-latex_additional_files = _collect_latex_image_paths()
-
-
 # latex_elements = {
 #     # The paper size ('letterpaper' or 'a4paper').
 #     'papersize': 'a5paper',
@@ -416,54 +360,3 @@ latex_additional_files = _collect_latex_image_paths()
 # latex_logo = 'images/calfem.logo.bw.svg'
 
 
-def _convert_svgs_for_latex(app):
-    if app.builder.name not in {"latex", "latexpdf"}:
-        return
-
-    _sync_conf_images_for_latex()
-
-    if not _rsvg_bin:
-        return
-
-    app.builder.supported_image_types = [
-        "image/pdf",
-        "image/png",
-        "image/jpeg",
-    ]
-
-    for entry in os.listdir(_IMAGES_DIR):
-        if not entry.lower().endswith(".svg"):
-            continue
-        svg_path = os.path.join(_IMAGES_DIR, entry)
-        base, _ = os.path.splitext(entry)
-        pdf_path = os.path.join(_IMAGES_DIR, f"{base}.pdf")
-        if os.path.exists(pdf_path):
-            continue
-        try:
-            result = subprocess.run(
-                [_rsvg_bin, "--format=pdf", "-o", pdf_path, svg_path],
-                check=False,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-            if result.returncode != 0 or not os.path.exists(pdf_path):
-                png_path = os.path.join(_IMAGES_DIR, f"{base}.png")
-                subprocess.run(
-                    [_rsvg_bin, "--format=png", "-o", png_path, svg_path],
-                    check=False,
-                    stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL,
-                )
-        except Exception:
-            pass
-
-    extra_files = set(app.config.latex_additional_files or [])
-    extra_files.update(_collect_latex_image_paths())
-    app.config.latex_additional_files = sorted(extra_files)
-    _sync_conf_images_for_latex()
-
-
-
-def setup(app):
-    app.connect("builder-inited", _convert_svgs_for_latex)
-    app.connect("doctree-read", _rewrite_image_nodes)

@@ -24,8 +24,8 @@ build:
     - sphinx-build -b latex source $READTHEDOCS_OUTPUT/pdf -c source/conf_matlab -t matlab
     - cd $READTHEDOCS_OUTPUT/pdf && make
 
-formats:
-  - pdf
+# formats:
+#  - pdf
 
 python:
   install:
