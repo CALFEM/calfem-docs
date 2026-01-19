@@ -8,6 +8,7 @@
 import sys
 import os
 import shutil
+import re
 
 project = 'CALFEM - A Finite Element Package for Python'
 copyright = '2025, ...'
@@ -82,6 +83,36 @@ rsvg_converter_args = ['--format=pdf']
 
 # Enable SVG to PDF conversion for LaTeX
 svg_converter = 'rsvg'
+
+
+def _build_image_case_map(images_dir: str) -> dict[str, str]:
+    if not os.path.isdir(images_dir):
+        return {}
+
+    mapping: dict[str, str] = {}
+    for entry in os.listdir(images_dir):
+        path = os.path.join(images_dir, entry)
+        if os.path.isfile(path):
+            mapping[entry.lower()] = entry
+    return mapping
+
+
+_IMAGE_CASE_MAP = _build_image_case_map(os.path.join(source_dir, 'images'))
+
+
+def _rewrite_image_paths(app, docname, source):
+    if not _IMAGE_CASE_MAP:
+        return
+
+    text = source[0]
+
+    def _replace(match: re.Match) -> str:
+        full_path = match.group(1)
+        prefix, filename = full_path.split('/', 1)
+        fixed = _IMAGE_CASE_MAP.get(filename.lower(), filename)
+        return f"{prefix}/{fixed}"
+
+    source[0] = re.sub(r"\b(images/[^\s\)\]>'\"]+)", _replace, text)
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -356,3 +387,7 @@ latex_elements = {
 # }
 
 # latex_logo = 'images/calfem.logo.bw.svg'
+
+
+def setup(app):
+    app.connect("source-read", _rewrite_image_paths)
