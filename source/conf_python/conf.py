@@ -9,6 +9,7 @@ import sys
 import os
 import shutil
 import re
+import subprocess
 
 project = 'CALFEM - A Finite Element Package for Python'
 copyright = '2025, ...'
@@ -97,7 +98,8 @@ def _build_image_case_map(images_dir: str) -> dict[str, str]:
     return mapping
 
 
-_IMAGE_CASE_MAP = _build_image_case_map(os.path.join(source_dir, 'images'))
+_IMAGES_DIR = os.path.join(source_dir, 'images')
+_IMAGE_CASE_MAP = _build_image_case_map(_IMAGES_DIR)
 
 
 def _rewrite_image_paths(app, docname, source):
@@ -110,6 +112,12 @@ def _rewrite_image_paths(app, docname, source):
         full_path = match.group(1)
         prefix, filename = full_path.split('/', 1)
         fixed = _IMAGE_CASE_MAP.get(filename.lower(), filename)
+        if getattr(app, "builder", None) and app.builder.name in {"latex", "latexpdf"}:
+            base, ext = os.path.splitext(fixed)
+            if ext.lower() == ".svg":
+                pdf_path = os.path.join(_IMAGES_DIR, f"{base}.pdf")
+                if os.path.exists(pdf_path):
+                    fixed = f"{base}.pdf"
         return f"{prefix}/{fixed}"
 
     source[0] = re.sub(r"\b(images/[^\s\)\]>'\"]+)", _replace, text)
@@ -389,5 +397,32 @@ latex_elements = {
 # latex_logo = 'images/calfem.logo.bw.svg'
 
 
+def _convert_svgs_for_latex(app):
+    if app.builder.name not in {"latex", "latexpdf"}:
+        return
+
+    if not _rsvg_bin:
+        return
+
+    for entry in os.listdir(_IMAGES_DIR):
+        if not entry.lower().endswith(".svg"):
+            continue
+        svg_path = os.path.join(_IMAGES_DIR, entry)
+        base, _ = os.path.splitext(entry)
+        pdf_path = os.path.join(_IMAGES_DIR, f"{base}.pdf")
+        if os.path.exists(pdf_path):
+            continue
+        try:
+            subprocess.run(
+                [_rsvg_bin, "--format=pdf", "-o", pdf_path, svg_path],
+                check=False,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+        except Exception:
+            pass
+
+
 def setup(app):
+    app.connect("builder-inited", _convert_svgs_for_latex)
     app.connect("source-read", _rewrite_image_paths)
