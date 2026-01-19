@@ -70,19 +70,16 @@ exclude_patterns = []
 # Suppress duplicate label warnings
 suppress_warnings = ['ref.duplicate']
 
-rsvg_converter_bin = ""
-
-if sys.platform.startswith('win'):
-    # On Windows, rsvg-convert isn't typically available; rely on PATH if installed
-    rsvg_converter_bin = shutil.which('rsvg-convert') or 'rsvg-convert'
+_rsvg_bin = shutil.which('rsvg-convert')
+if _rsvg_bin:
+    rsvg_converter_bin = _rsvg_bin
+    rsvg_converter_args = ['--format=pdf']
+    # Enable SVG to PDF conversion for LaTeX
+    svg_converter = 'rsvg'
 else:
-    # On other platforms, prefer an absolute path if available
-    rsvg_converter_bin = shutil.which('rsvg-convert') or '/usr/bin/rsvg-convert'
-
-rsvg_converter_args = ['--format=pdf']
-
-# Enable SVG to PDF conversion for LaTeX
-svg_converter = 'rsvg'
+    # Avoid noisy warnings when rsvg-convert isn't available
+    if 'sphinxcontrib.rsvgconverter' in extensions:
+        extensions.remove('sphinxcontrib.rsvgconverter')
 
 
 def _build_image_case_map(images_dir: str) -> dict[str, str]:
