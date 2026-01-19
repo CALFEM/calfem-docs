@@ -8,8 +8,8 @@
 import sys
 import os
 import shutil
-import re
 import subprocess
+from docutils import nodes
 
 project = 'CALFEM - A Finite Element Package for Python'
 copyright = '2025, ...'
@@ -86,41 +86,25 @@ else:
         extensions.remove('sphinxcontrib.rsvgconverter')
 
 
-def _build_image_case_map(images_dir: str) -> dict[str, str]:
-    if not os.path.isdir(images_dir):
-        return {}
-
-    mapping: dict[str, str] = {}
-    for entry in os.listdir(images_dir):
-        path = os.path.join(images_dir, entry)
-        if os.path.isfile(path):
-            mapping[entry.lower()] = entry
-    return mapping
-
-
 _IMAGES_DIR = os.path.join(source_dir, 'images')
-_IMAGE_CASE_MAP = _build_image_case_map(_IMAGES_DIR)
-
-
-def _rewrite_image_paths(app, docname, source):
-    if not _IMAGE_CASE_MAP:
+def _rewrite_image_nodes(app, doctree):
+    if not getattr(app, "builder", None) or app.builder.name not in {"latex", "latexpdf"}:
         return
 
-    text = source[0]
-
-    def _replace(match: re.Match) -> str:
-        full_path = match.group(1)
-        prefix, filename = full_path.split('/', 1)
-        fixed = _IMAGE_CASE_MAP.get(filename.lower(), filename)
-        if getattr(app, "builder", None) and app.builder.name in {"latex", "latexpdf"}:
-            base, ext = os.path.splitext(fixed)
-            if ext.lower() == ".svg":
-                pdf_path = os.path.join(_IMAGES_DIR, f"{base}.pdf")
-                if os.path.exists(pdf_path):
-                    fixed = f"{base}.pdf"
-        return f"{prefix}/{fixed}"
-
-    source[0] = re.sub(r"\b(images/[^\s\)\]>'\"]+)", _replace, text)
+    for node in doctree.traverse(nodes.image):
+        uri = node.get("uri", "")
+        if not uri.startswith("images/"):
+            continue
+        prefix, filename = uri.split("/", 1)
+        base, ext = os.path.splitext(filename)
+        if ext.lower() == ".svg":
+            pdf_path = os.path.join(_IMAGES_DIR, f"{base}.pdf")
+            png_path = os.path.join(_IMAGES_DIR, f"{base}.png")
+            if os.path.exists(pdf_path):
+                filename = f"{base}.pdf"
+            elif os.path.exists(png_path):
+                filename = f"{base}.png"
+        node["uri"] = f"{prefix}/{filename}"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -404,6 +388,12 @@ def _convert_svgs_for_latex(app):
     if not _rsvg_bin:
         return
 
+    app.builder.supported_image_types = [
+        "image/pdf",
+        "image/png",
+        "image/jpeg",
+    ]
+
     for entry in os.listdir(_IMAGES_DIR):
         if not entry.lower().endswith(".svg"):
             continue
@@ -413,16 +403,25 @@ def _convert_svgs_for_latex(app):
         if os.path.exists(pdf_path):
             continue
         try:
-            subprocess.run(
+            result = subprocess.run(
                 [_rsvg_bin, "--format=pdf", "-o", pdf_path, svg_path],
                 check=False,
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
             )
+            if result.returncode != 0 or not os.path.exists(pdf_path):
+                png_path = os.path.join(_IMAGES_DIR, f"{base}.png")
+                subprocess.run(
+                    [_rsvg_bin, "--format=png", "-o", png_path, svg_path],
+                    check=False,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                )
         except Exception:
             pass
 
 
+
 def setup(app):
     app.connect("builder-inited", _convert_svgs_for_latex)
-    app.connect("source-read", _rewrite_image_paths)
+    app.connect("doctree-read", _rewrite_image_nodes)

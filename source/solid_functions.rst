@@ -14,28 +14,28 @@ be formed by the functions described in Section :ref:`material_functions`.
     :widths: 50 50
     :header-rows: 0
 
-    * - .. image:: images/PLANT.png
+    * - .. image:: images/plant.png
              :width: 70%
 
         .. centered:: ``plante``
-      - .. image:: images/PLANQ.png
+      - .. image:: images/planq.png
              :width: 70%
 
         .. centered:: ``planqe``
-    * - .. image:: images/PLANTR.png
+    * - .. image:: images/plantr.png
              :width: 70%
              
         .. centered:: ``planre``  
               ``plantce``
-      - .. image:: images/PLANI4.png
+      - .. image:: images/plani4.png
              :width: 70%
 
         .. centered:: ``plani4e``
-    * - .. image:: images/PLANI8.png
+    * - .. image:: images/plani8.png
              :width: 70%
 
         .. centered:: ``plani8e``
-      - .. image:: images/SOLI8.png
+      - .. image:: images/soli8.png
              :width: 70%
 
         .. centered:: ``soli8e``

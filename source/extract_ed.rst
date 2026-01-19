@@ -26,7 +26,7 @@ extract_ed
 
         .. only:: python
     
-            .. figure:: images/EXTRA.svg
+            .. figure:: images/extra.svg
                 :align: center
                 :width: 400px
 
@@ -40,7 +40,7 @@ extract_ed
 
         .. only:: python
 
-            .. figure:: images/EXTRA.svg
+            .. figure:: images/extra.svg
                 :align: center
                 :width: 70%
 

@@ -8,7 +8,7 @@ The element presumes a linear elastic material which can be isotropic or anisotr
     :widths: 50 50
     :header-rows: 0
 
-    * - .. image:: images/PLATR.png
+    * - .. image:: images/platr.png
              :width: 70%
 
         .. centered:: ``platre``

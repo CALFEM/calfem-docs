@@ -77,17 +77,17 @@ of the spring are listed in Table 1.
       - Designations
       - Description
     * - Spring
-      - .. image:: images/ANA1.png
+      - .. image:: images/ana1.png
              :width: 61mm
       - :math:`k`, :math:`u`, :math:`P`, :math:`N`
       - spring stiffness, displacement, element force, spring force
     * - Bar
-      - .. image:: images/ANA2.png
+      - .. image:: images/ana2.png
              :width: 61mm
       - :math:`L`, :math:`E`, :math:`A`, :math:`u`, :math:`P`, :math:`N`
       - length, modulus of elasticity, area of cross section, displacement, element force, normal force
     * - Thermal conduction
-      - .. image:: images/ANA3.png
+      - .. image:: images/ana3.png
              :width: 61mm
       - :math:`L`, :math:`\lambda`, :math:`T`, :math:`\bar{H}`, :math:`H`
       - length, thermal conductivity, temperature, element heat flow, internal heat flow
@@ -97,17 +97,17 @@ of the spring are listed in Table 1.
       - :math:`L`, :math:`D`, :math:`c`, :math:`\bar{H}`, :math:`H`
       - length, diffusivity, nodal concentration, nodal mass flow, element mass flow
     * - Electrical circuit
-      - .. image:: images/ANA4.png
+      - .. image:: images/ana4.png
              :width: 61mm
       - :math:`R`, :math:`U`, :math:`\bar{I}`, :math:`I`
       - resistance, potential, element current, internal current
     * - Groundwater flow
-      - .. image:: images/ANA5.png
+      - .. image:: images/ana5.png
              :width: 61mm
       - :math:`L`, :math:`k`, :math:`\phi`, :math:`\bar{H}`, :math:`H`
       - length, permeability, piezometric head, element water flow, internal water flow
     * - Pipe network (laminar flow)
-      - .. image:: images/ANA6.png
+      - .. image:: images/ana6.png
              :width: 61mm
       - :math:`L`, :math:`D`, :math:`\mu`, :math:`p`, :math:`\bar{H}`, :math:`H`
       - length, pipe diameter, viscosity, pressure, element fluid flow, internal fluid flow

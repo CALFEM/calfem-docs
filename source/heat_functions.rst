@@ -48,22 +48,22 @@ Element types
 .. list-table::
     :widths: 50 50
 
-    * - .. image:: images/FLW2T.png
+    * - .. image:: images/flw2t.png
            :width: 50%
            :align: center
 
         ``flw2te``
-      - .. image:: images/FLW2I4.png
+      - .. image:: images/flw2i4.png
            :width: 50%
            :align: center
 
         ``flw2qe``, ``flw2i4e``
-    * - .. image:: images/FLW2I8.png
+    * - .. image:: images/flw2i8.png
            :width: 50%
            :align: center
 
         ``flw2i8e``
-      - .. image:: images/FLW3I8.png
+      - .. image:: images/flw3i8.png
            :width: 50%
            :align: center
 

@@ -17,7 +17,7 @@ plants
 :Purpose:
     Compute stresses and strains in a triangular element in plane strain or plane stress.
 
-    .. image:: images/PLANTS.png
+    .. image:: images/plants.png
         :width: 70%
         :align: center
 
