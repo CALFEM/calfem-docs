@@ -7,6 +7,12 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
+  apt_packages:
+    - texlive-latex-recommended
+    - texlive-latex-extra
+    - texlive-fonts-recommended
+    - texlive-fonts-extra
+    - latexmk
   commands:
     - python -m pip install -q -r requirements.txt
     - sphinx-build -b html source $READTHEDOCS_OUTPUT/html -c source/conf_matlab -t matlab
