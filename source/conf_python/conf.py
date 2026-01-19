@@ -99,6 +99,8 @@ def _collect_latex_image_paths() -> list[str]:
         if lower.endswith((".png", ".pdf", ".jpg", ".jpeg")):
             image_files.append(os.path.join("images", entry))
     return image_files
+
+
 def _rewrite_image_nodes(app, doctree):
     if not getattr(app, "builder", None) or app.builder.name not in {"latex", "latexpdf"}:
         return
@@ -227,9 +229,6 @@ latex_elements = {
   top=20mm,
   bottom=20mm
 }
-
-latex_additional_files = _collect_latex_image_paths()
-
 \makeatletter
 \renewcommand{\sphinxcode}[1]{{\footnotesize\texttt{#1}}}
 \makeatother
@@ -371,6 +370,8 @@ latex_additional_files = _collect_latex_image_paths()
     'sphinxsetup': 'verbatimwithframe=false',
     'extraclassoptions': 'openany,oneside'
 }
+
+latex_additional_files = _collect_latex_image_paths()
 
 
 # latex_elements = {
