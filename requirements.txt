@@ -3,7 +3,7 @@ PyQt5
 pyvtk
 calfem-python
 ipython_genutils
-sphinx<8.0
+sphinx
 nbsphinx
 sphinx-material
 sphinx-copybutton
