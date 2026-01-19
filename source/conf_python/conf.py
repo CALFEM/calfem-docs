@@ -7,6 +7,7 @@
 
 import sys
 import os
+import shutil
 
 project = 'CALFEM - A Finite Element Package for Python'
 copyright = '2025, ...'
@@ -76,8 +77,8 @@ if sys.platform.startswith('win'):
     # Uncomment and set the correct path if you have Inkscape installed
     inkscape_converter_bin = 'C:\\Program Files\\Inkscape\\bin\\inkscape.exe'
 else:
-    # On other platforms, we can use just 'inkscape' if it's in the PATH
-    inkscape_converter_bin = 'inkscape'
+    # On other platforms, prefer an absolute path if available
+    inkscape_converter_bin = shutil.which('inkscape') or '/usr/bin/inkscape'
 
 inkscape_converter_args = ['--export-area-drawing']
 
