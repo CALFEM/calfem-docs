@@ -9,6 +9,6 @@ sphinx-material
 sphinx-copybutton
 sphinx-design
 sphinx-tabs
-sphinxcontrib-svg2pdfconverter[Inkscape]
+sphinxcontrib-svg2pdfconverter
 sphinx-immaterial
 myst-parser
