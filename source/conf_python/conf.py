@@ -87,6 +87,7 @@ else:
 
 
 _IMAGES_DIR = os.path.join(source_dir, 'images')
+_CONF_IMAGES_DIR = os.path.join(conf_dir, 'images')
 
 
 def _collect_latex_image_paths() -> list[str]:
@@ -99,6 +100,25 @@ def _collect_latex_image_paths() -> list[str]:
         if lower.endswith((".png", ".pdf", ".jpg", ".jpeg")):
             image_files.append(os.path.join("images", entry))
     return image_files
+
+
+def _sync_conf_images_for_latex() -> None:
+    if not os.path.isdir(_IMAGES_DIR):
+        return
+
+    os.makedirs(_CONF_IMAGES_DIR, exist_ok=True)
+    for entry in os.listdir(_IMAGES_DIR):
+        lower = entry.lower()
+        if not lower.endswith((".png", ".pdf", ".jpg", ".jpeg")):
+            continue
+        src = os.path.join(_IMAGES_DIR, entry)
+        dst = os.path.join(_CONF_IMAGES_DIR, entry)
+        if os.path.exists(dst):
+            src_mtime = os.path.getmtime(src)
+            dst_mtime = os.path.getmtime(dst)
+            if dst_mtime >= src_mtime:
+                continue
+        shutil.copy2(src, dst)
 
 
 def _rewrite_image_nodes(app, doctree):
@@ -400,6 +420,8 @@ def _convert_svgs_for_latex(app):
     if app.builder.name not in {"latex", "latexpdf"}:
         return
 
+    _sync_conf_images_for_latex()
+
     if not _rsvg_bin:
         return
 
@@ -438,6 +460,7 @@ def _convert_svgs_for_latex(app):
     extra_files = set(app.config.latex_additional_files or [])
     extra_files.update(_collect_latex_image_paths())
     app.config.latex_additional_files = sorted(extra_files)
+    _sync_conf_images_for_latex()
 
 
 
