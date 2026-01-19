@@ -30,7 +30,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx_copybutton',
     'sphinx_design',
     'sphinx_tabs.tabs',
-    'sphinxcontrib.svg2pdfconverter',
+    'sphinxcontrib.inkscapeconverter',
     'sphinx_immaterial',  # For Material Design theme
     'myst_parser',
     'sphinx.ext.autodoc',
