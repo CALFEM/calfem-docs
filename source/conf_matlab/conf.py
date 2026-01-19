@@ -28,7 +28,6 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
-    'sphinx.ext.imgconverter',
     'sphinx_copybutton',
     'sphinx_design',
     'sphinx_tabs.tabs',
@@ -84,10 +83,6 @@ inkscape_converter_args = ['--export-area-drawing']
 
 # Enable SVG to PDF conversion for LaTeX
 svg_converter = 'inkscape'
-
-# Ensure SVGs are converted for LaTeX builds
-image_converter = 'inkscape'
-image_converter_args = ['--export-type=pdf', '--export-area-drawing']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
