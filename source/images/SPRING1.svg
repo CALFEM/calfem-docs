@@ -4,10 +4,10 @@
 <svg
    version="1.1"
    id="svg1"
-   width="350.93332"
-   height="72.533333"
-   viewBox="0 0 350.93332 72.533333"
-   sodipodi:docname="SPRING1.svg"
+   width="340.89212"
+   height="66.986488"
+   viewBox="0 0 340.89212 66.986489"
+   sodipodi:docname="spring1.svg"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,28 +25,28 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="3.7443011"
-     inkscape:cx="175.46666"
-     inkscape:cy="36.321866"
-     inkscape:window-width="1920"
-     inkscape:window-height="974"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:cx="175.73373"
+     inkscape:cy="36.455402"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="g1">
     <inkscape:page
        x="0"
        y="0"
-       inkscape:label="1"
-       id="page1"
-       width="350.93332"
-       height="72.533333"
+       width="340.89212"
+       height="66.986488"
+       id="page2"
        margin="0"
        bleed="0" />
   </sodipodi:namedview>
   <g
      id="g1"
      inkscape:groupmode="layer"
-     inkscape:label="1">
+     inkscape:label="1"
+     transform="translate(-5.0078812,-5.3231869)">
     <path
        id="path2"
        d="m 57.25,195.25 h 334"
