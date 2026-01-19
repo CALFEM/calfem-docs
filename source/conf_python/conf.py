@@ -87,6 +87,18 @@ else:
 
 
 _IMAGES_DIR = os.path.join(source_dir, 'images')
+
+
+def _collect_latex_image_paths() -> list[str]:
+    if not os.path.isdir(_IMAGES_DIR):
+        return []
+
+    image_files: list[str] = []
+    for entry in os.listdir(_IMAGES_DIR):
+        lower = entry.lower()
+        if lower.endswith((".png", ".pdf", ".jpg", ".jpeg")):
+            image_files.append(os.path.join("images", entry))
+    return image_files
 def _rewrite_image_nodes(app, doctree):
     if not getattr(app, "builder", None) or app.builder.name not in {"latex", "latexpdf"}:
         return
@@ -215,6 +227,8 @@ latex_elements = {
   top=20mm,
   bottom=20mm
 }
+
+latex_additional_files = _collect_latex_image_paths()
 
 \makeatletter
 \renewcommand{\sphinxcode}[1]{{\footnotesize\texttt{#1}}}
@@ -419,6 +433,10 @@ def _convert_svgs_for_latex(app):
                 )
         except Exception:
             pass
+
+    extra_files = set(app.config.latex_additional_files or [])
+    extra_files.update(_collect_latex_image_paths())
+    app.config.latex_additional_files = sorted(extra_files)
 
 
 
