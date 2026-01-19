@@ -80,6 +80,9 @@ else:
 
 inkscape_converter_args = ['--export-area-drawing']
 
+# Enable SVG to PDF conversion for LaTeX
+svg_converter = 'inkscape'
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
