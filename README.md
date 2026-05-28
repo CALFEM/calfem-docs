@@ -1,4 +1,4 @@
-# calfem-docs
+# CALFEM Documentation
 
 Documentation sources for the CALFEM Python and MATLAB manuals.
 
