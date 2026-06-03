@@ -19,7 +19,7 @@ beam2s
 
 :Purpose:
 
-    Compute section forces in a two-dimensional beam element.
+    Compute section forces in a two dimensional beam element.
 
     .. only:: html
 
@@ -62,7 +62,7 @@ beam2s
 
     The element displacements, stored in :code:`ed`, are obtained by the function :code:`extract_ed`. If a distributed load is applied to the element, the variable :code:`eq` must be included. The number of evaluation points for section forces and displacements is determined by :code:`n`. If :code:`n` is omitted, only the ends of the beam are evaluated.
 
-    The output variables:
+    The output variables
 
     :code:`es`:math:`= \begin{bmatrix}
     N(0) & V(0) & M(0) \\
@@ -92,7 +92,7 @@ beam2s
 
 :Theory:
 
-    The nodal displacements in local coordinates are given by:
+    The nodal displacements in local coordinates are given by
 
     .. math::
 
@@ -109,7 +109,7 @@ beam2s
 
     where :math:`\mathbf{G}` is described in :code:`beam2e` and the transpose of :math:`\mathbf{a}^e` is stored in :code:`ed`.
 
-    The displacements associated with bar action and beam action are determined as:
+    The displacements associated with bar action and beam action are determined as
 
     .. math::
 
@@ -127,7 +127,7 @@ beam2s
         \bar{u}_6
         \end{bmatrix}
 
-    The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from:
+    The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
 
     .. math::
 
@@ -137,7 +137,7 @@ beam2s
 
         N(\bar{x}) = D_{EA} \mathbf{B}_{\text{bar}} \mathbf{\bar{a}}^e + N_p(\bar{x})
 
-    where:
+    where
 
     .. math::
 
@@ -171,7 +171,7 @@ beam2s
         N_p(\bar{x}) = -q_{\bar{x}}
         \left(\bar{x} - \frac{L}{2}\right)
 
-    where :math:`D_{EA}`, :math:`L`, and :math:`q_{\bar{x}}` are defined in :code:`beam2e`, and:
+    where :math:`D_{EA}`, :math:`L`, and :math:`q_{\bar{x}}` are defined in :code:`beam2e`, and
 
     .. math::
 
@@ -181,7 +181,7 @@ beam2s
         -\frac{1}{L} & \frac{1}{L}
         \end{bmatrix}
 
-    The displacement :math:`v(\bar{x})`, the bending moment :math:`M(\bar{x})`, and the shear force :math:`V(\bar{x})` are computed from:
+    The displacement :math:`v(\bar{x})`, the bending moment :math:`M(\bar{x})`, and the shear force :math:`V(\bar{x})` are computed from
 
     .. math::
 
@@ -195,7 +195,7 @@ beam2s
 
         V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}_{\text{beam}}}{d\bar{x}} \mathbf{\bar{a}}^e_{\text{beam}} + V_p(\bar{x})
 
-    where:
+    where
 
     .. math::
 
@@ -236,7 +236,7 @@ beam2s
         V_p(\bar{x}) = -q_{\bar{y}}
         \left(\bar{x} - \frac{L}{2}\right)
 
-    where :math:`D_{EI}`, :math:`L`, and :math:`q_{\bar{y}}` are defined in :code:`beam2e`, and:
+    where :math:`D_{EI}`, :math:`L`, and :math:`q_{\bar{y}}` are defined in :code:`beam2e`, and
 
     .. math::
 

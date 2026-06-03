@@ -51,7 +51,7 @@ bar3s
 
 :Description:
 
-    :code:`bar3s` computes the normal force in a three dimensional bar element (see :code:`bar3e`).
+    :code:`bar3s` computes the normal force in the three dimensional bar element :code:`bar3e`.
 
     The input variables :code:`ex`, :code:`ey`, and :code:`ep` are defined in :code:`bar3e` and the element nodal displacements, stored in :code:`ed`, are obtained by the function :code:`extract_ed`.  
     The number of evaluation points for section forces and displacements are determined by :code:`n`. If :code:`n` is omitted, only the ends of the bar are evaluated.

@@ -50,9 +50,9 @@ bar1ws
         es, edi, eci = cfc.bar1ws(ex, ep, ed, eq, n)    
 
 :Description:
-    :code:`bar1ws` computes the normal force in the one dimensional bar element :code:`bar1ws`.
+    :code:`bar1ws` computes the normal force in the one dimensional bar element :code:`bar1we`.
 
-    The input variables :code:`ex` and :code:`ep` are defined in :code:`bar1we` and the element nodal displacements, stored in :code:`ed`, are obtained by the function :code:`_ed`. If distributed load is applied to the element, the variable :code:`eq` must be included.
+    The input variables :code:`ex` and :code:`ep` are defined in :code:`bar1we` and the element nodal displacements, stored in :code:`ed`, are obtained by the function :code:`extract_ed`. If distributed load is applied to the element, the variable :code:`eq` must be included.
 
     The number of evaluation points for normal force and displacement are determined by :code:`n`. If :code:`n` is omitted, only the ends of the bar are evaluated.
 

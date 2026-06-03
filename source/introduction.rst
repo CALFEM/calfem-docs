@@ -12,7 +12,7 @@ Introduction
 
     CALFEM is a Python package for finite element applications. This manual concerns mainly the finite element functions, but it also contains descriptions of some often-used Python functions.
 
-    The finite element analysis can be carried out either interactively or in a batch-oriented fashion. In the interactive mode, the functions are evaluated one by one in an interactive Python session. In the batch-oriented mode, a sequence of functions is written in a file named `.py` file and evaluated by calling python interpreter with the filename as an argument. The batch-oriented mode is a more flexible way of performing finite element analysis because the `.py` file can be written in an ordinary editor. This way of using CALFEM is recommended because it gives a structured organization of the functions. Changes and reruns are also easily executed in the batch-oriented mode.
+    The finite element analysis can be carried out either interactively or in a batch-oriented fashion. In the interactive mode, the functions are evaluated one by one in an interactive Python session. In the batch-oriented mode, a sequence of functions is written in a file named `.py` file and evaluated by calling a python interpreter with the filename as an argument. The batch-oriented mode is a more flexible way of performing finite element analysis because the `.py` file can be written in an ordinary editor. This way of using CALFEM is recommended because it gives a structured organization of the functions. Changes and reruns are also easily executed in the batch-oriented mode.
 
     To use the CALFEM package, it must first be imported. This is done by the command:
 

@@ -13,7 +13,6 @@
 bar2s
 ^^^^^
 
-
 :Purpose:
     Compute normal force in a two dimensional bar element.
 
