@@ -51,7 +51,7 @@ beam2we
 
 :Description:
 
-    :code:`beam2we` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element with elastic support.
+    :code:`beam2we` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element on elastic support.
 
     The input variables
 

@@ -18,7 +18,7 @@ beam2ws
 
 :Purpose:
 
-    Compute section forces in a two dimensional beam element with elastic support.
+    Compute section forces in a two dimensional beam element on elastic support.
 
     .. only:: html
 
@@ -130,7 +130,7 @@ beam2ws
 
     .. math::
 
-        N(\bar{x}) = D_{EA} \mathbf{B}_{\text{bar}} \bar{\mathbf{a}}^e + N_p(\bar{x})
+        N(\bar{x}) = D_{EA} \mathbf{B}_{\text{bar}} \bar{\mathbf{a}}^e_{\text{bar}} + N_p(\bar{x})
 
     where
 

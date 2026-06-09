@@ -132,7 +132,7 @@ beam2e
 
         \mathbf{f}^e_l = \mathbf{G}^T \bar{\mathbf{f}}^e_l
 
-    where:
+    where
 
     .. math::
 

@@ -73,7 +73,7 @@ beam2ts
         \begin{aligned}
         \mathrm{es} &= \left[\; \mathbf{N} \; \mathbf{V} \; \mathbf{M}\; \right] \\
         \mathrm{edi} &= \left[\; \mathbf{u} \; \mathbf{v} \; \boldsymbol{\theta} \; \right] \\
-        \mathrm{eci} &= \left[ \mathbf{\bar{x}} \right]
+        \mathrm{eci} &= \left[ \bar{\mathbf{x}} \right]
         \end{aligned}
 
     consist of column matrices that contain
@@ -115,7 +115,7 @@ beam2ts
 
     .. math::
 
-        \mathbf{\bar{a}}^e =
+        \bar{\mathbf{a}}^e =
         \begin{bmatrix}
         \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \\ \bar{u}_5 \\ \bar{u}_6
         \end{bmatrix}
@@ -127,21 +127,21 @@ beam2ts
 
     .. math::
 
-        \mathbf{\bar{a}}^e_{\mathrm{bar}} =
+        \bar{\mathbf{a}}^e_{\mathrm{bar}} =
         \begin{bmatrix} \bar{u}_1 \\ \bar{u}_4 \end{bmatrix}
         \qquad
-        \mathbf{\bar{a}}^e_{\mathrm{beam}} =
+        \bar{\mathbf{a}}^e_{\mathrm{beam}} =
         \begin{bmatrix} \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_5 \\ \bar{u}_6 \end{bmatrix}
 
     The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
 
     .. math::
 
-        u(\bar{x}) = \mathbf{N}_{\mathrm{bar}} \mathbf{\bar{a}}^e_{\mathrm{bar}} + u_p(\bar{x})
+        u(\bar{x}) = \mathbf{N}_{\mathrm{bar}} \bar{\mathbf{a}}^e_{\mathrm{bar}} + u_p(\bar{x})
 
     .. math::
 
-        N(\bar{x}) = D_{EA} \mathbf{B}_{\mathrm{bar}} \mathbf{\bar{a}}^e + N_p(\bar{x})
+        N(\bar{x}) = D_{EA} \mathbf{B}_{\mathrm{bar}} \bar{\mathbf{a}}^e_{\mathrm{bar}} + N_p(\bar{x})
 
     where
 
@@ -176,19 +176,19 @@ beam2ts
 
     .. math::
 
-        v(\bar{x}) = \mathbf{N}_{\mathrm{beam},v} \mathbf{\bar{a}}^e_{\mathrm{beam}} + v_p(\bar{x})
+        v(\bar{x}) = \mathbf{N}_{\mathrm{beam},v} \bar{\mathbf{a}}^e_{\mathrm{beam}} + v_p(\bar{x})
 
     .. math::
 
-        \theta(\bar{x}) = \mathbf{N}_{\mathrm{beam},\theta} \mathbf{\bar{a}}^e_{\mathrm{beam}} + \theta_p(\bar{x})
+        \theta(\bar{x}) = \mathbf{N}_{\mathrm{beam},\theta} \bar{\mathbf{a}}^e_{\mathrm{beam}} + \theta_p(\bar{x})
 
     .. math::
 
-        M(\bar{x}) = D_{EI} \frac{d\theta}{dx} = D_{EI} \frac{d\mathbf{N}_{\mathrm{beam},\theta}}{d\bar{x}} \mathbf{\bar{a}}^e_{\mathrm{beam}} + M_p(\bar{x})
+        M(\bar{x}) = D_{EI} \frac{d\theta}{dx} = D_{EI} \frac{d\mathbf{N}_{\mathrm{beam},\theta}}{d\bar{x}} \bar{\mathbf{a}}^e_{\mathrm{beam}} + M_p(\bar{x})
 
     .. math::
 
-        V(\bar{x}) = D_{GA} k_s \left(\frac{d v}{dx} - \theta \right) = D_{GA} k_s \left(\frac{d\mathbf{N}_{\mathrm{beam},v}}{d\bar{x}} - \mathbf{N}_{\mathrm{beam},\theta} \right) \mathbf{\bar{a}}^e_{\mathrm{beam}} + V_p(\bar{x})
+        V(\bar{x}) = D_{GA} k_s \left(\frac{d v}{dx} - \theta \right) = D_{GA} k_s \left(\frac{d\mathbf{N}_{\mathrm{beam},v}}{d\bar{x}} - \mathbf{N}_{\mathrm{beam},\theta} \right) \bar{\mathbf{a}}^e_{\mathrm{beam}} + V_p(\bar{x})
 
     where
 

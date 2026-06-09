@@ -92,7 +92,7 @@ beam2gs
 
     .. math::
 
-        \mathbf{\bar{a}}^e =
+        \bar{\mathbf{a}}^e =
         \begin{bmatrix}
         \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \\ \bar{u}_5 \\ \bar{u}_6
         \end{bmatrix}
@@ -104,13 +104,13 @@ beam2gs
 
     .. math::
 
-        \mathbf{\bar{a}}^e_{\mathrm{bar}} =
+        \bar{\mathbf{a}}^e_{\mathrm{bar}} =
         \begin{bmatrix}
         \bar{u}_1 \\
         \bar{u}_4
         \end{bmatrix};
         \qquad
-        \mathbf{\bar{a}}^e_{\mathrm{beam}} =
+        \bar{\mathbf{a}}^e_{\mathrm{beam}} =
         \begin{bmatrix}
         \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_5 \\ \bar{u}_6
         \end{bmatrix}
@@ -119,7 +119,7 @@ beam2gs
 
     .. math::
 
-        u(\bar{x}) = \mathbf{N}_{\mathrm{bar}} \mathbf{\bar{a}}^e_{\mathrm{bar}}
+        u(\bar{x}) = \mathbf{N}_{\mathrm{bar}} \bar{\mathbf{a}}^e_{\mathrm{bar}}
 
     where
 
@@ -141,19 +141,19 @@ beam2gs
 
     .. math::
 
-        v(\bar{x}) = \mathbf{N}_{\mathrm{beam}} \mathbf{\bar{a}}^e_{\mathrm{beam}} + v_p(\bar{x})
+        v(\bar{x}) = \mathbf{N}_{\mathrm{beam}} \bar{\mathbf{a}}^e_{\mathrm{beam}} + v_p(\bar{x})
 
     .. math::
 
-        \theta(\bar{x}) = \frac{d\mathbf{N}_{\mathrm{beam}}}{dx} \mathbf{\bar{a}}^e_{\mathrm{beam}} + \theta_p(\bar{x})
+        \theta(\bar{x}) = \frac{d\mathbf{N}_{\mathrm{beam}}}{dx} \bar{\mathbf{a}}^e_{\mathrm{beam}} + \theta_p(\bar{x})
 
     .. math::
 
-        M(\bar{x}) = D_{EI} \mathbf{B}_{\mathrm{beam}} \mathbf{\bar{a}}^e_{\mathrm{beam}} + M_p(\bar{x})
+        M(\bar{x}) = D_{EI} \mathbf{B}_{\mathrm{beam}} \bar{\mathbf{a}}^e_{\mathrm{beam}} + M_p(\bar{x})
 
     .. math::
 
-        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}_{\mathrm{beam}}}{dx} \mathbf{\bar{a}}^e_{\mathrm{beam}} + V_p(\bar{x})
+        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}_{\mathrm{beam}}}{dx} \bar{\mathbf{a}}^e_{\mathrm{beam}} + V_p(\bar{x})
 
     where
 
@@ -183,7 +183,7 @@ beam2gs
         \frac{\bar{x}^4}{12}-\frac{L \bar{x}^3}{6}+\frac{L^2 \bar{x}^2}{12} \\
         \frac{\bar{x}^5}{20}-\frac{3L^2 \bar{x}^3}{20}+\frac{L^3 \bar{x}^2}{10}
         \end{bmatrix}^T
-        \mathbf{C}^{-1}_{\mathrm{beam}} \mathbf{\bar{a}}^e_{\mathrm{beam}}
+        \mathbf{C}^{-1}_{\mathrm{beam}} \bar{\mathbf{a}}^e_{\mathrm{beam}}
         + \frac{q_{\bar{y}}}{D_{EI}}\left(\frac{\bar{x}^4}{24}-\frac{L \bar{x}^3}{12}+\frac{L^2 \bar{x}^2}{24}\right)
 
     .. math::
@@ -196,7 +196,7 @@ beam2gs
         \frac{\bar{x}^3}{3}-\frac{L \bar{x}^2}{2}+\frac{L^2 \bar{x}}{6} \\
         \frac{\bar{x}^4}{4}-\frac{9L^2 \bar{x}^2}{20}+\frac{L^3 \bar{x}}{5}
         \end{bmatrix}^T
-        \mathbf{C}^{-1}_{\mathrm{beam}} \mathbf{\bar{a}}^e_{\mathrm{beam}}
+        \mathbf{C}^{-1}_{\mathrm{beam}} \bar{\mathbf{a}}^e_{\mathrm{beam}}
         + \frac{q_{\bar{y}}}{D_{EI}}\left(\frac{\bar{x}^3}{6}-\frac{L \bar{x}^2}{4}+\frac{L^2 \bar{x}}{12}\right)
 
     .. math::
@@ -209,7 +209,7 @@ beam2gs
         \bar{x}^2 - L\bar{x} + \frac{L^2}{6} \\
         \bar{x}^3 - \frac{9L^2 \bar{x}}{10} + \frac{L^3}{5}
         \end{bmatrix}^T
-        \mathbf{C}^{-1}_{\mathrm{beam}} \mathbf{\bar{a}}^e_{\mathrm{beam}}
+        \mathbf{C}^{-1}_{\mathrm{beam}} \bar{\mathbf{a}}^e_{\mathrm{beam}}
         + q_{\bar{y}}\left(\frac{\bar{x}^2}{2}-\frac{L \bar{x}}{2}+\frac{L^2}{12}\right)
 
     .. math::
@@ -222,7 +222,7 @@ beam2gs
         2\bar{x} - L \\
         3\bar{x}^2 - \frac{9L^2}{10}
         \end{bmatrix}^T
-        \mathbf{C}^{-1}_{\mathrm{beam}} \mathbf{\bar{a}}^e_{\mathrm{beam}}
+        \mathbf{C}^{-1}_{\mathrm{beam}} \bar{\mathbf{a}}^e_{\mathrm{beam}}
         - q_{\bar{y}}\left(\bar{x} - \frac{L}{2}\right)
 
     in which :math:`D_{EI}`, :math:`L`, and :math:`q_{\bar{y}}` are defined in :code:`beam2ge` and
@@ -241,7 +241,7 @@ beam2gs
 
     .. math::
 
-        Q_{\bar{x}} = D_{EA} \begin{bmatrix} 0 & 1 \end{bmatrix} \mathbf{C}^{-1}_{\mathrm{bar}} \mathbf{\bar{a}}^e_{\mathrm{bar}}
+        Q_{\bar{x}} = D_{EA} \begin{bmatrix} 0 & 1 \end{bmatrix} \mathbf{C}^{-1}_{\mathrm{bar}} \bar{\mathbf{a}}^e_{\mathrm{bar}}
 
     The normal force :math:`N(\bar{x})` is then computed as
 

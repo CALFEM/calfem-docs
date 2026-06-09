@@ -50,7 +50,7 @@ beam1we
 
 :Description:
 
-    :code:`beam1we` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a one dimensional beam element with elastic support.
+    :code:`beam1we` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a one dimensional beam element on elastic support.
 
     The input variables
 

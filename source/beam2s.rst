@@ -96,7 +96,7 @@ beam2s
 
     .. math::
 
-        \mathbf{\bar{a}}^e =
+        \bar{\mathbf{a}}^e =
         \begin{bmatrix}
         \bar{u}_1 \\
         \bar{u}_2 \\
@@ -113,13 +113,13 @@ beam2s
 
     .. math::
 
-        \mathbf{\bar{a}}^e_{\text{bar}} =
+        \bar{\mathbf{a}}^e_{\text{bar}} =
         \begin{bmatrix}
         \bar{u}_1 \\
         \bar{u}_4
         \end{bmatrix},
         \quad
-        \mathbf{\bar{a}}^e_{\text{beam}} =
+        \bar{\mathbf{a}}^e_{\text{beam}} =
         \begin{bmatrix}
         \bar{u}_2 \\
         \bar{u}_3 \\
@@ -131,11 +131,11 @@ beam2s
 
     .. math::
 
-        u(\bar{x}) = \mathbf{N}_{\text{bar}} \mathbf{\bar{a}}^e_{\text{bar}} + u_p(\bar{x})
+        u(\bar{x}) = \mathbf{N}_{\text{bar}} \bar{\mathbf{a}}^e_{\text{bar}} + u_p(\bar{x})
 
     .. math::
 
-        N(\bar{x}) = D_{EA} \mathbf{B}_{\text{bar}} \mathbf{\bar{a}}^e + N_p(\bar{x})
+        N(\bar{x}) = D_{EA} \mathbf{B}_{\text{bar}} \bar{\mathbf{a}}^e_{\text{bar}} + N_p(\bar{x})
 
     where
 
@@ -185,15 +185,15 @@ beam2s
 
     .. math::
 
-        v(\bar{x}) = \mathbf{N}_{\text{beam}} \mathbf{\bar{a}}^e_{\text{beam}} + v_p(\bar{x})
+        v(\bar{x}) = \mathbf{N}_{\text{beam}} \bar{\mathbf{a}}^e_{\text{beam}} + v_p(\bar{x})
 
     .. math::
 
-        M(\bar{x}) = D_{EI} \mathbf{B}_{\text{beam}} \mathbf{\bar{a}}^e_{\text{beam}} + M_p(\bar{x})
+        M(\bar{x}) = D_{EI} \mathbf{B}_{\text{beam}} \bar{\mathbf{a}}^e_{\text{beam}} + M_p(\bar{x})
 
     .. math::
 
-        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}_{\text{beam}}}{d\bar{x}} \mathbf{\bar{a}}^e_{\text{beam}} + V_p(\bar{x})
+        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}_{\text{beam}}}{d\bar{x}} \bar{\mathbf{a}}^e_{\text{beam}} + V_p(\bar{x})
 
     where
 

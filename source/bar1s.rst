@@ -91,19 +91,19 @@ bar1s
 
     .. math::
 
-        \mathbf{\bar{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \end{bmatrix}
+        \bar{\mathbf{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \end{bmatrix}
 
-    The transpose of :math:`\mathbf{\bar{a}}^e` is stored in :code:`ed`.
+    The transpose of :math:`\bar{\mathbf{a}}^e` is stored in :code:`ed`.
 
     The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
 
     .. math::
 
-        u(\bar{x}) = \mathbf{N} \mathbf{\bar{a}}^e + u_p(\bar{x})
+        u(\bar{x}) = \mathbf{N} \bar{\mathbf{a}}^e + u_p(\bar{x})
 
     .. math::
 
-        N(\bar{x}) = D_{EA} \mathbf{B} \mathbf{\bar{a}}^e + N_p(\bar{x})
+        N(\bar{x}) = D_{EA} \mathbf{B} \bar{\mathbf{a}}^e + N_p(\bar{x})
 
     where
 

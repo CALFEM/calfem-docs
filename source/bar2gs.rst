@@ -94,24 +94,24 @@ bar2gs
 
      .. math::
 
-          \mathbf{\bar{a}}^e = \mathbf{G} \mathbf{a}^e
+          \bar{\mathbf{a}}^e = \mathbf{G} \mathbf{a}^e
 
      where the transformation matrix :math:`\mathbf{G}` is defined in :code:`bar2ge`.
      The displacements associated with bar action are determined as
 
      .. math::
 
-          {\mathbf{\bar{a}}}^e_{\text{bar}} = \left[ \begin{array}{r} \bar{u}_1 \\ \bar{u}_3 \end{array}\right]
+          \bar{\mathbf{a}}^e_{\text{bar}} = \left[ \begin{array}{r} \bar{u}_1 \\ \bar{u}_3 \end{array}\right]
 
      The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
 
      .. math::
 
-          u(\bar{x}) = {\mathbf{N}} \mathbf{\bar{a}}^e_{\text{bar}}
+          u(\bar{x}) = {\mathbf{N}} \bar{\mathbf{a}}^e_{\text{bar}}
 
      .. math::
 
-          N(\bar{x}) = D_{EA} \mathbf{B} \mathbf{\bar{a}}^e_{\text{bar}}
+          N(\bar{x}) = D_{EA} \mathbf{B} \bar{\mathbf{a}}^e_{\text{bar}}
 
      where
 
