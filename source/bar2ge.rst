@@ -72,13 +72,13 @@ bar2ge
 
     .. math::
 
-        \mathbf{K}^e = \mathbf{G}^T\,\mathbf{\bar{K}}^e\,\mathbf{G}
+        \mathbf{K}^e = \mathbf{G}^T\,\bar{\mathbf{K}}^e\,\mathbf{G}
 
     where
 
     .. math::
 
-        \mathbf{\bar{K}}^e = \frac{D_{EA}}{L}
+        \bar{\mathbf{K}}^e = \frac{D_{EA}}{L}
         \begin{bmatrix}
         1 & 0 & -1 & 0 \\
         0 & 0 & 0 & 0 \\

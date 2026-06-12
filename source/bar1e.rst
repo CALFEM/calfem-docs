@@ -29,7 +29,6 @@ bar1e
             :align: center
             :width: 70%
     
-
 :Syntax:
 
 .. only:: matlab
@@ -49,6 +48,7 @@ bar1e
 :Description:
 
     :code:`bar1e` provides the element stiffness matrix :math:`\bar{\mathbf{K}}^e` for a one dimensional bar element.
+    
     The input variables
 
     :code:`ex`:math:`= [x_1 \;\; x_2]`

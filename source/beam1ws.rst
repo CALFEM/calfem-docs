@@ -18,7 +18,7 @@ beam1ws
 
 :Purpose:
 
-    Compute section forces in a one dimensional beam element with elastic support.
+    Compute section forces in a one dimensional beam element on elastic support.
 
     .. only:: html
 
@@ -99,7 +99,7 @@ beam1ws
 
     .. math::
 
-        \mathbf{\bar{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \end{bmatrix}
+        \bar{\mathbf{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \end{bmatrix}
 
     where the transpose of :math:`\mathbf{a}^e` is stored in :code:`ed`.
 
@@ -107,15 +107,15 @@ beam1ws
 
     .. math::
 
-        v(\bar{x}) = \mathbf{N} \mathbf{\bar{a}}^e + v_p(\bar{x})
+        v(\bar{x}) = \mathbf{N} \bar{\mathbf{a}}^e + v_p(\bar{x})
 
     .. math::
 
-        M(\bar{x}) = D_{EI} \mathbf{B} \mathbf{\bar{a}}^e + M_p(\bar{x})
+        M(\bar{x}) = D_{EI} \mathbf{B} \bar{\mathbf{a}}^e + M_p(\bar{x})
 
     .. math::
 
-        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}}{dx} \mathbf{\bar{a}}^e + V_p(\bar{x})
+        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}}{dx} \bar{\mathbf{a}}^e + V_p(\bar{x})
 
     where
 
@@ -139,7 +139,7 @@ beam1ws
         \frac{\bar{x}^5 - 3L^2\bar{x}^3 + 2L^3\bar{x}^2}{120} \\
         \frac{\bar{x}^6 - 4L^3\bar{x}^3 + 3L^4\bar{x}^2}{360} \\
         \frac{\bar{x}^7 - 5L^4\bar{x}^3 + 4L^5\bar{x}^2}{840}
-        \end{bmatrix}^T \mathbf{C}^{-1} \mathbf{\bar{a}}^e
+        \end{bmatrix}^T \mathbf{C}^{-1} \bar{\mathbf{a}}^e
         + \frac{q_{\bar{y}}}{D_{EI}}\left(\frac{\bar{x}^4}{24} - \frac{L\bar{x}^3}{12} + \frac{L^2\bar{x}^2}{24}\right)
 
     .. math::
@@ -150,7 +150,7 @@ beam1ws
         \frac{10\bar{x}^3 - 9L^2\bar{x} + 2L^3}{60} \\
         \frac{5\bar{x}^4 - 4L^3\bar{x} + L^4}{60} \\
         \frac{21\bar{x}^5 - 15L^4\bar{x} + 4L^5}{420}
-        \end{bmatrix}^T \mathbf{C}^{-1} \mathbf{\bar{a}}^e
+        \end{bmatrix}^T \mathbf{C}^{-1} \bar{\mathbf{a}}^e
         + q_{\bar{y}}\left(\frac{\bar{x}^2}{2} - \frac{L\bar{x}}{2} + \frac{L^2}{12}\right)
 
     .. math::
@@ -161,7 +161,7 @@ beam1ws
         \frac{10\bar{x}^2 - 3L^2}{20} \\
         \frac{5\bar{x}^3 - L^3}{15} \\
         \frac{7\bar{x}^4 - L^4}{28}
-        \end{bmatrix}^T \mathbf{C}^{-1} \mathbf{\bar{a}}^e
+        \end{bmatrix}^T \mathbf{C}^{-1} \bar{\mathbf{a}}^e
         - q_{\bar{y}}\left(\bar{x} - \frac{L}{2}\right)
 
     in which :math:`D_{EI}`, :math:`k_{\bar{y}}`, :math:`L`, and :math:`q_{\bar{y}}`

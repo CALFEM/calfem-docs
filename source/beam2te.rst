@@ -32,8 +32,6 @@ beam2te
             :width: 70%
             :alt: Two dimensional beam element
 
-        Two dimensional beam element
-
 :Syntax:
 
 .. only:: matlab
@@ -83,16 +81,12 @@ beam2te
             :width: 400px
             :alt: Uniformly distributed load
 
-            Uniformly distributed load
-
     .. only:: latex
 
         .. figure:: images/beam2loa.svg
             :align: center
             :width: 70%
             :alt: Uniformly distributed load
-
-            Uniformly distributed load
 
 :Theory:
 

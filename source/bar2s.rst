@@ -13,7 +13,6 @@
 bar2s
 ^^^^^
 
-
 :Purpose:
     Compute normal force in a two dimensional bar element.
 
@@ -96,7 +95,7 @@ bar2s
 
      .. math::
 
-          \mathbf{\bar{a}}^e = \mathbf{G} \mathbf{a}^e
+          \bar{\mathbf{a}}^e = \mathbf{G} \mathbf{a}^e
 
      where the transformation matrix :math:`\mathbf{G}` is defined in :code:`bar2e`.
 
@@ -104,11 +103,11 @@ bar2s
 
      .. math::
 
-          u(\bar{x}) = \mathbf{N} \mathbf{\bar{a}}^e + u_p(\bar{x})
+          u(\bar{x}) = \mathbf{N} \bar{\mathbf{a}}^e + u_p(\bar{x})
 
      .. math::
 
-          N(\bar{x}) = D_{EA} \mathbf{B} \mathbf{\bar{a}}^e + N_p(\bar{x})
+          N(\bar{x}) = D_{EA} \mathbf{B} \bar{\mathbf{a}}^e + N_p(\bar{x})
 
      where
 

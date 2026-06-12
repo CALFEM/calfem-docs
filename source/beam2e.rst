@@ -17,7 +17,7 @@ beam2e
 
 :Purpose:
 
-    Compute element stiffness matrix for a two-dimensional beam element.
+    Compute element stiffness matrix for a two dimensional beam element.
 
     .. only:: html
 
@@ -51,7 +51,7 @@ beam2e
 
     :code:`beam2e` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two-dimensional beam element.
 
-    The input variables:
+    The input variables
 
     :code:`ex`:math:`= [x_1 \;\; x_2]`
     :math:`\qquad` 
@@ -61,7 +61,7 @@ beam2e
 
     supply the element nodal coordinates :math:`x_1`, :math:`y_1`, :math:`x_2`, and :math:`y_2`, the modulus of elasticity :math:`E`, the cross-section area :math:`A`, and the moment of inertia :math:`I`.
 
-    The element load vector :math:`{\mathbf{f}}_l^e` can also be computed if a uniformly distributed transverse load is applied to the element. The optional input variable:
+    The element load vector :math:`{\mathbf{f}}_l^e` can also be computed if a uniformly distributed transverse load is applied to the element. The optional input variable
 
     :code:`eq`:math:`= [q_{\bar{x}} \; q_{\bar{y}}]`
 
@@ -81,13 +81,13 @@ beam2e
     
 :Theory:
 
-    The element stiffness matrix :math:`\mathbf{K}^e`, stored in :code:`Ke`, is computed according to:
+    The element stiffness matrix :math:`\mathbf{K}^e`, stored in :code:`Ke`, is computed according to
 
     .. math::
 
         \mathbf{K}^e = \mathbf{G}^T \bar{\mathbf{K}}^e \mathbf{G}
 
-    where:
+    where
 
     .. math::
 
@@ -113,26 +113,26 @@ beam2e
         0 & 0 & 0 & 0 & 0 & 1
         \end{bmatrix}
 
-    where the axial stiffness :math:`D_{EA}`, the bending stiffness :math:`D_{EI}`, and the length :math:`L` are given by:
+    where the axial stiffness :math:`D_{EA}`, the bending stiffness :math:`D_{EI}`, and the length :math:`L` are given by
 
     .. math::
 
         D_{EA} = EA, \quad D_{EI} = EI, \quad L = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 
-    The transformation matrix :math:`\mathbf{G}` contains the direction cosines:
+    The transformation matrix :math:`\mathbf{G}` contains the direction cosines
 
     .. math::
 
         n_{x\bar{x}} = n_{y\bar{y}} = \frac{x_2 - x_1}{L}, \quad
         n_{y\bar{x}} = -n_{x\bar{y}} = \frac{y_2 - y_1}{L}
 
-    The element loads :math:`\mathbf{f}^e_l`, stored in the variable :code:`fe`, are computed according to:
+    The element loads :math:`\mathbf{f}^e_l`, stored in the variable :code:`fe`, are computed according to
 
     .. math::
 
         \mathbf{f}^e_l = \mathbf{G}^T \bar{\mathbf{f}}^e_l
 
-    where:
+    where
 
     .. math::
 

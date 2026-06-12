@@ -58,9 +58,7 @@ bar1we
 
     supply the element nodal coordinates :math:`x_1` and :math:`x_2`, the modulus of elasticity :math:`E`, the cross section area :math:`A` and the stiffness of the axial springs :math:`k_{\bar{x}}`.
 
-    The element load vector :math:`\bar{\mathbf{f}}_l^e` can also be computed if a uniformly distributed load is applied to the element.
-       
-    The optional input variable
+    The element load vector :math:`\bar{\mathbf{f}}_l^e` can also be computed if a uniformly distributed load is applied to the element. The optional input variable
 
     :code:`eq`:math:`= [q_{\bar{x}}]`
 
@@ -77,8 +75,6 @@ bar1we
         .. figure:: images/bar1e_2.svg
             :align: center
             :width: 60%
-
-    Bar element with distributed load
 
 :Theory:
 

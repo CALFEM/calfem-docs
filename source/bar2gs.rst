@@ -49,7 +49,7 @@ bar2gs
         es, Qx, edi, eci = cfc.bar2gs(ex, ey, ep, ed, n)    
 
 :Description:
-     :code:`bar2gs` computes the normal force in the two dimensional bar elements :code:`bar2ge`.
+     :code:`bar2gs` computes the axial force and the normal force in the two dimensional bar elements :code:`bar2ge`.
 
      The input variables :code:`ex`, :code:`ey`, and :code:`ep` are defined in :code:`bar2ge` and the element nodal displacements, stored in :code:`ed`, are obtained by the function :code:`extract_ed`. The number of evaluation points for section forces and displacements are determined by ``n``. If ``n`` is omitted, only the ends of the bar are evaluated.
 
@@ -94,24 +94,24 @@ bar2gs
 
      .. math::
 
-          \mathbf{\bar{a}}^e = \mathbf{G} \mathbf{a}^e
+          \bar{\mathbf{a}}^e = \mathbf{G} \mathbf{a}^e
 
      where the transformation matrix :math:`\mathbf{G}` is defined in :code:`bar2ge`.
      The displacements associated with bar action are determined as
 
      .. math::
 
-          {\mathbf{\bar{a}}}^e_{\text{bar}} = \left[ \begin{array}{r} \bar{u}_1 \\ \bar{u}_3 \end{array}\right]
+          \bar{\mathbf{a}}^e_{\text{bar}} = \left[ \begin{array}{r} \bar{u}_1 \\ \bar{u}_3 \end{array}\right]
 
      The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
 
      .. math::
 
-          u(\bar{x}) = {\mathbf{N}} \mathbf{\bar{a}}^e_{\text{bar}}
+          u(\bar{x}) = {\mathbf{N}} \bar{\mathbf{a}}^e_{\text{bar}}
 
      .. math::
 
-          N(\bar{x}) = D_{EA} \mathbf{B} \mathbf{\bar{a}}^e_{\text{bar}}
+          N(\bar{x}) = D_{EA} \mathbf{B} \bar{\mathbf{a}}^e_{\text{bar}}
 
      where
 

@@ -100,7 +100,7 @@ beam1s
 
     .. math::
 
-        \mathbf{\bar{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \end{bmatrix}
+        \bar{\mathbf{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \end{bmatrix}
 
     where the transpose of :math:`\mathbf{a}^e` is stored in :code:`ed`.
 
@@ -108,15 +108,15 @@ beam1s
 
     .. math::
 
-        v(\bar{x}) = \mathbf{N} \mathbf{\bar{a}}^e + v_p(\bar{x})
+        v(\bar{x}) = \mathbf{N} \bar{\mathbf{a}}^e + v_p(\bar{x})
 
     .. math::
 
-        M(\bar{x}) = D_{EI} \mathbf{B} \mathbf{\bar{a}}^e + M_p(\bar{x})
+        M(\bar{x}) = D_{EI} \mathbf{B} \bar{\mathbf{a}}^e + M_p(\bar{x})
 
     .. math::
 
-        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}}{dx} \mathbf{\bar{a}}^e + V_p(\bar{x})
+        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}}{dx} \bar{\mathbf{a}}^e + V_p(\bar{x})
 
     where
 

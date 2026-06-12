@@ -50,9 +50,9 @@ bar1ws
         es, edi, eci = cfc.bar1ws(ex, ep, ed, eq, n)    
 
 :Description:
-    :code:`bar1ws` computes the normal force in the one dimensional bar element :code:`bar1ws`.
+    :code:`bar1ws` computes the normal force in the one dimensional bar element :code:`bar1we`.
 
-    The input variables :code:`ex` and :code:`ep` are defined in :code:`bar1we` and the element nodal displacements, stored in :code:`ed`, are obtained by the function :code:`_ed`. If distributed load is applied to the element, the variable :code:`eq` must be included.
+    The input variables :code:`ex` and :code:`ep` are defined in :code:`bar1we` and the element nodal displacements, stored in :code:`ed`, are obtained by the function :code:`extract_ed`. If distributed load is applied to the element, the variable :code:`eq` must be included.
 
     The number of evaluation points for normal force and displacement are determined by :code:`n`. If :code:`n` is omitted, only the ends of the bar are evaluated.
 
@@ -89,19 +89,19 @@ bar1ws
 
     .. math::
 
-        \mathbf{\bar{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \end{bmatrix}
+        \bar{\mathbf{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \end{bmatrix}
 
-    The transpose of :math:`\mathbf{\bar{a}}^e` is stored in :code:`ed`.
+    The transpose of :math:`\bar{\mathbf{a}}^e` is stored in :code:`ed`.
 
     The displacement :math:`u(\bar{x})` and the normal force :math:`N(\bar{x})` are computed from
 
     .. math::
 
-        u(\bar{x}) = \mathbf{N} \mathbf{\bar{a}}^e + u_p(\bar{x})
+        u(\bar{x}) = \mathbf{N} \bar{\mathbf{a}}^e + u_p(\bar{x})
 
     .. math::
 
-        N(\bar{x}) = D_{EA} \mathbf{B} \mathbf{\bar{a}}^e + N_p(\bar{x})
+        N(\bar{x}) = D_{EA} \mathbf{B} \bar{\mathbf{a}}^e + N_p(\bar{x})
 
     where
 
@@ -115,12 +115,12 @@ bar1ws
 
     .. math::
 
-        u_p(\bar{x}) = \frac{k_{\bar{x}}}{D_{EA}} \left[ \frac{\bar{x}^2 - L\bar{x}}{2} \quad \frac{\bar{x}^3 - L^2\bar{x}}{6} \right] \mathbf{C}^{-1} \mathbf{\bar{a}}^e
+        u_p(\bar{x}) = \frac{k_{\bar{x}}}{D_{EA}} \left[ \frac{\bar{x}^2 - L\bar{x}}{2} \quad \frac{\bar{x}^3 - L^2\bar{x}}{6} \right] \mathbf{C}^{-1} \bar{\mathbf{a}}^e
         - \frac{q_{\bar{x}}}{D_{EA}} \left( \frac{\bar{x}^2}{2} - \frac{L\bar{x}}{2} \right)
 
     .. math::
 
-        N_p(\bar{x}) = k_{\bar{x}} \left[ \frac{2\bar{x} - L}{2} \quad \frac{3\bar{x}^2 - L^2}{6} \right] \mathbf{C}^{-1} \mathbf{\bar{a}}^e
+        N_p(\bar{x}) = k_{\bar{x}} \left[ \frac{2\bar{x} - L}{2} \quad \frac{3\bar{x}^2 - L^2}{6} \right] \mathbf{C}^{-1} \bar{\mathbf{a}}^e
         - q_{\bar{x}} \left( \bar{x} - \frac{L}{2} \right)
 
     in which :math:`D_{EA}`, :math:`L`, :math:`k_{\bar{x}}` and :math:`q_{\bar{x}}` are defined in :code:`bar1we` and
