@@ -84,7 +84,7 @@ beam2de
         0 & -13L & -3L^2 & 0 & -22L & 4L^2
         \end{bmatrix}
 
-    and the matrix :math:`\bar{\mathbf{C}}^e` is computed by combining :math:`\bar{\mathbf{K}}^e` and :math:`\bar{\mathbf{M}}^e`:
+    and the matrix :math:`\bar{\mathbf{C}}^e` is computed by combining :math:`\bar{\mathbf{K}}^e` and :math:`\bar{\mathbf{M}}^e` according to
 
     .. math::
 

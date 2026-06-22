@@ -96,7 +96,7 @@ beam2gxs
 
     .. math::
 
-        \mathbf{\bar{a}}^e =
+        \bar{\mathbf{a}}^e =
         \begin{bmatrix}
         \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \\ \bar{u}_5 \\ \bar{u}_6
         \end{bmatrix}
@@ -106,13 +106,13 @@ beam2gxs
 
     .. math::
 
-        \mathbf{\bar{a}}^e_{\text{bar}} =
+        \bar{\mathbf{a}}^e_{\text{bar}} =
         \begin{bmatrix}
         \bar{u}_1 \\
         \bar{u}_4
         \end{bmatrix}
         ; \quad
-        \mathbf{\bar{a}}^e_{\text{beam}} =
+        \bar{\mathbf{a}}^e_{\text{beam}} =
         \begin{bmatrix}
         \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_5 \\ \bar{u}_6
         \end{bmatrix}
@@ -121,7 +121,7 @@ beam2gxs
 
     .. math::
 
-        u(\bar{x}) = \mathbf{N}_{\text{bar}} \mathbf{\bar{a}}^e_{\text{bar}}
+        u(\bar{x}) = \mathbf{N}_{\text{bar}} \bar{\mathbf{a}}^e_{\text{bar}}
 
     where
 
@@ -150,19 +150,19 @@ beam2gxs
 
     .. math::
 
-        v(\bar{x}) = \mathbf{N}_{\text{beam}} \mathbf{\bar{a}}^e_{\text{beam}} + v_p(\bar{x})
+        v(\bar{x}) = \mathbf{N}_{\text{beam}} \bar{\mathbf{a}}^e_{\text{beam}} + v_p(\bar{x})
 
     .. math::
 
-        \theta(\bar{x}) = \frac{d\mathbf{N}_{\text{beam}}}{dx} \mathbf{\bar{a}}^e_{\text{beam}} + \theta_p(\bar{x})
+        \theta(\bar{x}) = \frac{d\mathbf{N}_{\text{beam}}}{dx} \bar{\mathbf{a}}^e_{\text{beam}} + \theta_p(\bar{x})
 
     .. math::
 
-        M(\bar{x}) = D_{EI} \mathbf{B}_{\text{beam}} \mathbf{\bar{a}}^e_{\text{beam}} + M_p(\bar{x})
+        M(\bar{x}) = D_{EI} \mathbf{B}_{\text{beam}} \bar{\mathbf{a}}^e_{\text{beam}} + M_p(\bar{x})
 
     .. math::
 
-        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}_{\text{beam}}}{dx} \mathbf{\bar{a}}^e_{\text{beam}} + V_p(\bar{x})
+        V(\bar{x}) = -D_{EI} \frac{d\mathbf{B}_{\text{beam}}}{dx} \bar{\mathbf{a}}^e_{\text{beam}} + V_p(\bar{x})
 
     For an axial compressive force (:math:`Q_{\bar{x}} < 0`) we have
 
@@ -238,7 +238,7 @@ beam2gxs
         3\bar{x}^2 - \frac{9L^2}{10}
         \end{bmatrix}^T
         \mathbf{C}^{-1}_{\text{beam}}
-        \mathbf{\bar{a}}^e_{\text{beam}}
+        \bar{\mathbf{a}}^e_{\text{beam}}
         - q_{\bar{y}}\left(\bar{x} - \frac{L}{2}\right)
 
     in which :math:`D_{EI}`, :math:`L`, and :math:`q_{\bar{y}}` are defined in :code:`beam2gxe` and
@@ -262,7 +262,7 @@ beam2gxs
         0 & 1
         \end{bmatrix}
         \mathbf{C}^{-1}_{\text{bar}}
-        \mathbf{\bar{a}}^e_{\text{bar}}
+        \bar{\mathbf{a}}^e_{\text{bar}}
 
     The normal force :math:`N(\bar{x})` is then computed as
 

@@ -96,7 +96,7 @@ beam3s
 
     .. math::
 
-        \mathbf{\bar{a}}^e=
+        \bar{\mathbf{a}}^e=
         \begin{bmatrix}
         \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \\ \bar{u}_5 \\
         \bar{u}_6 \\ \bar{u}_7 \\ \bar{u}_8 \\ \bar{u}_9 \\ \bar{u}_{10} \\ \bar{u}_{11} \\
@@ -110,23 +110,23 @@ beam3s
 
     .. math::
 
-        \mathbf{\bar{a}}^e_{\text{bar}}=
+        \bar{\mathbf{a}}^e_{\text{bar}}=
         \begin{bmatrix}
         \bar{u}_1 \\
         \bar{u}_7
         \end{bmatrix};
         \quad
-        \mathbf{\bar{a}}^e_{\text{beam},\bar{z}}=
+        \bar{\mathbf{a}}^e_{\text{beam},\bar{z}}=
         \begin{bmatrix}
         \bar{u}_2 \\ \bar{u}_6 \\ \bar{u}_8 \\ \bar{u}_{12}
         \end{bmatrix};
         \quad
-        \mathbf{\bar{a}}^e_{\text{beam},\bar{y}}=
+        \bar{\mathbf{a}}^e_{\text{beam},\bar{y}}=
         \begin{bmatrix}
         \bar{u}_3 \\ -\bar{u}_5 \\ \bar{u}_9 \\ -\bar{u}_{11}
         \end{bmatrix};
         \quad
-        \mathbf{\bar{a}}^e_{\text{torsion}}=
+        \bar{\mathbf{a}}^e_{\text{torsion}}=
         \begin{bmatrix}
         \bar{u}_4 \\
         \bar{u}_{10}
@@ -136,11 +136,11 @@ beam3s
 
     .. math::
 
-        u(\bar{x}) = \mathbf{N}_{\text{bar}} \mathbf{\bar{a}}^e_{\text{bar}} + u_p(\bar{x})
+        u(\bar{x}) = \mathbf{N}_{\text{bar}} \bar{\mathbf{a}}^e_{\text{bar}} + u_p(\bar{x})
 
     .. math::
 
-        N(\bar{x}) = D_{EA} \mathbf{B}_{\text{bar}} \mathbf{\bar{a}}^e + N_p(\bar{x})
+        N(\bar{x}) = D_{EA} \mathbf{B}_{\text{bar}} \bar{\mathbf{a}}^e_{\text{bar}} + N_p(\bar{x})
 
     where
 
@@ -174,15 +174,15 @@ beam3s
 
     .. math::
 
-        v(\bar{x}) = \mathbf{N}_{\text{beam}} \mathbf{\bar{a}}^e_{\text{beam},\bar{z}} + v_p(\bar{x})
+        v(\bar{x}) = \mathbf{N}_{\text{beam}} \bar{\mathbf{a}}^e_{\text{beam},\bar{z}} + v_p(\bar{x})
 
     .. math::
 
-        M_{\bar{z}}(\bar{x}) = D_{EI_{\bar{z}}} \mathbf{B}_{\text{beam}} \mathbf{\bar{a}}^e_{\text{beam},\bar{z}} + M_{\bar{z},p}(\bar{x})
+        M_{\bar{z}}(\bar{x}) = D_{EI_{\bar{z}}} \mathbf{B}_{\text{beam}} \bar{\mathbf{a}}^e_{\text{beam},\bar{z}} + M_{\bar{z},p}(\bar{x})
 
     .. math::
 
-        V_{\bar{y}}(\bar{x}) = -D_{EI_{\bar{z}}} \frac{d\mathbf{B}_{\text{beam}}}{dx} \mathbf{\bar{a}}^e_{\text{beam},\bar{z}} + V_{\bar{y},p}(\bar{x})
+        V_{\bar{y}}(\bar{x}) = -D_{EI_{\bar{z}}} \frac{d\mathbf{B}_{\text{beam}}}{dx} \bar{\mathbf{a}}^e_{\text{beam},\bar{z}} + V_{\bar{y},p}(\bar{x})
 
     where
 
@@ -226,15 +226,15 @@ beam3s
 
     .. math::
 
-        w(\bar{x}) = \mathbf{N}_{\text{beam}} \mathbf{\bar{a}}^e_{\text{beam},\bar{y}} + w_p(\bar{x})
+        w(\bar{x}) = \mathbf{N}_{\text{beam}} \bar{\mathbf{a}}^e_{\text{beam},\bar{y}} + w_p(\bar{x})
 
     .. math::
 
-        M_{\bar{y}}(\bar{x}) = -D_{EI_{\bar{y}}} \mathbf{B}_{\text{beam}} \mathbf{\bar{a}}^e_{\text{beam},\bar{y}} + M_{\bar{y},p}(\bar{x})
+        M_{\bar{y}}(\bar{x}) = -D_{EI_{\bar{y}}} \mathbf{B}_{\text{beam}} \bar{\mathbf{a}}^e_{\text{beam},\bar{y}} + M_{\bar{y},p}(\bar{x})
 
     .. math::
 
-        V_{\bar{z}}(\bar{x}) = -D_{EI_{\bar{y}}} \frac{d\mathbf{B}_{\text{beam}}}{dx} \mathbf{\bar{a}}^e_{\text{beam},\bar{y}} + V_{\bar{z},p}(\bar{x})
+        V_{\bar{z}}(\bar{x}) = -D_{EI_{\bar{y}}} \frac{d\mathbf{B}_{\text{beam}}}{dx} \bar{\mathbf{a}}^e_{\text{beam},\bar{y}} + V_{\bar{z},p}(\bar{x})
 
     where
 
@@ -256,11 +256,11 @@ beam3s
 
     .. math::
 
-        \varphi(\bar{x}) = \mathbf{N}_{\text{torsion}} \mathbf{\bar{a}}^e_{\text{torsion}} + \varphi_p(\bar{x})
+        \varphi(\bar{x}) = \mathbf{N}_{\text{torsion}} \bar{\mathbf{a}}^e_{\text{torsion}} + \varphi_p(\bar{x})
 
     .. math::
 
-        T(\bar{x}) = D_{GK} \mathbf{B}_{\text{torsion}} \mathbf{\bar{a}}^e + T_p(\bar{x})
+        T(\bar{x}) = D_{GK} \mathbf{B}_{\text{torsion}} \bar{\mathbf{a}}^e_{\text{torsion}} + T_p(\bar{x})
 
     where
 
