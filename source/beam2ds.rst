@@ -55,18 +55,18 @@ beam2ds
     The input variables :code:`ex`, :code:`ey` and :code:`ep` are defined in
     :code:`beam2de`. The element displacements, velocities, and accelerations, stored in :code:`ed`, :code:`ev`, and :code:`ea` respectively, are obtained by the function :code:`extract_ed`.
 
-    The output variable :code:`es` contains the section forces at the ends of the beam:
+    The output variable :code:`es` 
 
-    .. math::
+    :code:`es`:math:`= \begin{bmatrix}
+    N_1 & V_1 & M_1 \\
+    N_2 & V_2 & M_2
+    \end{bmatrix}`
 
-        es = \begin{bmatrix}
-        N_1 & V_1 & M_1 \\
-        N_2 & V_2 & M_2
-        \end{bmatrix}
+    contains the section forces at the ends of the beam.
 
 :Theory:
 
-    The section forces at the ends of the beam are obtained from the element force vector:
+    The section forces at the ends of the beam are obtained from the element force vector
 
     .. math::
 
@@ -75,7 +75,7 @@ beam2ds
         -N_1 & -V_1 & -M_1 & N_2 & V_2 & M_2
         \end{bmatrix}^T
 
-    computed according to:
+    computed according to
 
     .. math::
 
@@ -86,7 +86,7 @@ beam2ds
 
     The matrices :math:`\bar{\mathbf{K}}^e` and :math:`\mathbf{G}` are described in :code:`beam2e`, and the matrices :math:`\bar{\mathbf{M}}^e` and :math:`\bar{\mathbf{C}}^e` are described in :code:`beam2d`.
 
-    The nodal displacements:
+    The nodal displacements
 
     .. math::
 
@@ -94,7 +94,7 @@ beam2ds
         u_1 & u_2 & u_3 & u_4 & u_5 & u_6
         \end{bmatrix}^T
 
-    shown in :code:`beam2de` also define the directions of the nodal velocities:
+    shown in :code:`beam2de` also define the directions of the nodal velocities
 
     .. math::
 
@@ -102,7 +102,7 @@ beam2ds
         \dot{u}_1 & \dot{u}_2 & \dot{u}_3 & \dot{u}_4 & \dot{u}_5 & \dot{u}_6
         \end{bmatrix}^T
 
-    and the nodal accelerations:
+    and the nodal accelerations
 
     .. math::
 
