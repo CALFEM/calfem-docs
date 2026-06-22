@@ -49,7 +49,7 @@ bar2gs
         es, Qx, edi, eci = cfc.bar2gs(ex, ey, ep, ed, n)    
 
 :Description:
-     :code:`bar2gs` computes the axial force and the normal force in the two dimensional bar elements :code:`bar2ge`.
+     :code:`bar2gs` computes the axial force and the normal force in the two dimensional bar element :code:`bar2ge`.
 
      The input variables :code:`ex`, :code:`ey`, and :code:`ep` are defined in :code:`bar2ge` and the element nodal displacements, stored in :code:`ed`, are obtained by the function :code:`extract_ed`. The number of evaluation points for section forces and displacements are determined by ``n``. If ``n`` is omitted, only the ends of the bar are evaluated.
 

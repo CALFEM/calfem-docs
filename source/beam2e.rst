@@ -49,7 +49,7 @@ beam2e
 
 :Description:
 
-    :code:`beam2e` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two-dimensional beam element.
+    :code:`beam2e` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element.
 
     The input variables
 
