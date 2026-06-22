@@ -7,7 +7,8 @@
    width="412"
    height="100"
    viewBox="0 0 412 100"
-   sodipodi:docname="exs5_1.eps"
+   sodipodi:docname="exs5_1.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -278,7 +279,16 @@
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1">
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.184466"
+     inkscape:cx="206"
+     inkscape:cy="49.929878"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="489"
+     inkscape:window-y="2149"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1">
     <inkscape:page
        x="0"
        y="0"
@@ -293,15 +303,6 @@
      id="g1"
      inkscape:groupmode="layer"
      inkscape:label="1">
-    <text
-       id="text1"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3331867,265.71867,98.44792)"
-       clip-path="url(#clipPath1)"><tspan
-         id="tspan1"
-         style="font-variant:normal;font-weight:normal;font-size:12.0006px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         y="0">6.0</tspan></text>
     <path
        id="path2"
        d="M 116.25,125.051 H 2990"
@@ -494,33 +495,55 @@
        style="fill:none;stroke:#000000;stroke-width:1.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        transform="matrix(0.13333333,0,0,-0.13333333,0,100)"
        clip-path="url(#clipPath65)" />
-    <text
-       id="text65"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3331867,72.049467,97.613027)"
-       clip-path="url(#clipPath66)"><tspan
-         id="tspan65"
-         style="font-variant:normal;font-weight:normal;font-size:12.0006px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         y="0">3.0</tspan><tspan
-         id="tspan66"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:12.0006px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="59.46994"
-         y="-65.116959">P</tspan></text>
-    <text
-       id="text66"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3331867,250.21067,28.1552)"
-       clip-path="url(#clipPath67)"><tspan
-         id="tspan67"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:12.0006px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         y="0">E, I</tspan></text>
     <path
        id="path68"
        d="m 1588.48,372.82 267.03,148.832 4.37,4.379"
        style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        transform="matrix(0.13333333,0,0,-0.13333333,0,100)"
        clip-path="url(#clipPath69)" />
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="252.39597"
+       y="28.771917"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="252.39597"
+         y="28.771917"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">E, I </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="148.13986"
+       y="12.442648"
+       id="text2-7"><tspan
+         sodipodi:role="line"
+         id="tspan2-6"
+         x="148.13986"
+         y="12.442648"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">P</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="72.32634"
+       y="79.132339"
+       id="text2-2-8-6"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-9"
+         x="72.32634"
+         y="79.132339"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">3.0 m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="262.05719"
+       y="79.446373"
+       id="text2-2-8-6-7"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-9-7"
+         x="262.05719"
+         y="79.446373"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">6.0 m</tspan></text>
   </g>
 </svg>

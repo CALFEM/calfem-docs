@@ -13,7 +13,12 @@ from docutils import nodes
 
 project = 'CALFEM - A Finite Element Package for Python'
 copyright = '2025, ...'
-author = 'Per-Erik Austrell, Ola Dahlblom, Henrik Danielsson, Jonas Lindemann, Anders Olsson, Karl-Gunnar Olsson, Kent Persson, Hans Petersson, Matti Ristinmaa, Göran Sandberg, Per-Anders Wernberg'
+author = 'Per-Erik Austrell, Håkan Carlsson, Ola Dahlblom, Henrik Danielsson, Susanne Heyden, Jonas Lindemann, Anders Olsson, Karl-Gunnar Olsson, Kent Persson, Anders Peterson, Hans Petersson, Matti Ristinmaa, Göran Sandberg, Erik Serrano, Per-Anders Wernberg'
+author_names = [name.strip() for name in author.split(',')]
+latex_author = r'\\'.join(
+    ', '.join(author_names[i:i + 2])
+    for i in range(0, len(author_names), 2)
+)
 release = '0.1'
 
 target_lang = "python"
@@ -161,7 +166,7 @@ latex_use_xindy = False
 latex_engine = 'xelatex'
 
 latex_documents = [
-    ('index', 'calfem-python.tex', 'CALFEM for Python', author, 'manual'),
+    ('index', 'calfem-python.tex', 'CALFEM for Python', latex_author, 'manual'),
 ]
 
 #     'makeindex': r'\usepackage{makeidx}\makeindex',    
@@ -183,6 +188,47 @@ latex_elements = {
 }
 \makeatletter
 \renewcommand{\sphinxcode}[1]{{\footnotesize\texttt{#1}}}
+\renewcommand{\sphinxmaketitle}{%
+  \let\sphinxrestorepageanchorsetting\relax
+  \ifHy@pageanchor\def\sphinxrestorepageanchorsetting{\Hy@pageanchortrue}\fi
+  \hypersetup{pageanchor=false}%
+  \begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \noindent\rule{\textwidth}{1pt}\par
+      \begingroup
+       \def\endgraf{ }\def\and{\& }%
+       \pdfstringdefDisableCommands{\def\\{, }}%
+       \hypersetup{pdfauthor={\@author}, pdftitle={\@title}}%
+      \endgroup
+    \begin{flushright}%
+      \sphinxlogo
+      \py@HeaderFamily
+      {\Huge \@title \par}
+      {\itshape\LARGE \py@release\releaseinfo \par}
+      \vfill
+      {\LARGE
+        \begin{minipage}{\textwidth}
+          \raggedleft
+          \@author
+        \end{minipage}
+        \par}
+      \vfill\vfill
+      {\large
+       \@date \par
+       \vfill
+       \py@authoraddress \par
+      }%
+    \end{flushright}%
+    \@thanks
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  \let\thanks\relax\let\maketitle\relax
+  \clearpage
+  \ifdefined\sphinxbackoftitlepage\sphinxbackoftitlepage\fi
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \sphinxrestorepageanchorsetting
+}
 \makeatother
 
 \usepackage{graphicx}
@@ -294,7 +340,7 @@ latex_elements = {
 \fancypagestyle{plain}{
     \fancyhf{}
     \fancyfoot[LE,RO]{\thepage}
-    \fancyfoot[LO,RE]{\sffamily \tiny \copyright\ FÖRFATTAREN OCH STUDENTLITTERATUR}
+    \fancyfoot[LO,RE]{\sffamily \tiny \copyright\ Structural Mechanics and Solid Mechanics}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }

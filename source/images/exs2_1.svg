@@ -7,7 +7,8 @@
    width="550.66669"
    height="152"
    viewBox="0 0 550.66669 152"
-   sodipodi:docname="exs2_1.eps"
+   sodipodi:docname="exs2_1.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -350,7 +351,16 @@
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1">
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.3825665"
+     inkscape:cx="289.60367"
+     inkscape:cy="42.391261"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1">
     <inkscape:page
        x="0"
        y="0"
@@ -407,44 +417,6 @@
        style="fill:none;stroke:#231f20;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.86369;stroke-dasharray:none;stroke-opacity:1"
        transform="matrix(0.13333333,0,0,-0.13333333,0,152)"
        clip-path="url(#clipPath14)" />
-    <text
-       id="text14"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3333333,87.292133,137.814)"
-       clip-path="url(#clipPath15)"><tspan
-         id="tspan14"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         dx="0 -0.30000001 -0.15000001 -0.30000001 -0.30000001 -0.30000001 -0.15000001"
-         y="0">0.070 m</tspan></text>
-    <text
-       id="text15"
-       xml:space="preserve"
-       transform="matrix(1.33298,-0.03069573,0.03069573,1.33298,7.9677067,16.472)"
-       clip-path="url(#clipPath16)"><tspan
-         id="tspan15"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:8px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         y="0">o</tspan></text>
-    <text
-       id="text16"
-       xml:space="preserve"
-       transform="matrix(1.3332261,-0.01691199,0.01691199,1.3332261,15.609333,14.681333)"
-       clip-path="url(#clipPath17)"><tspan
-         id="tspan16"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         dx="0 0 0 0.0094818501 0 0 0 0.0094814096"
-         y="0">= -17 °C</tspan></text>
-    <text
-       id="text17"
-       xml:space="preserve"
-       transform="matrix(1.3333156,0.00686856,-0.00686856,1.3333156,-0.89375067,14.681333)"
-       clip-path="url(#clipPath18)"><tspan
-         id="tspan17"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         y="0">T</tspan></text>
     <path
        id="path19"
        d="m 465.23,1127.21 h 1895"
@@ -577,152 +549,12 @@
        style="fill:none;stroke:#231f20;stroke-width:4.31557;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.86369;stroke-dasharray:none;stroke-opacity:1"
        transform="matrix(0.13333333,0,0,-0.13333333,0,152)"
        clip-path="url(#clipPath62)" />
-    <text
-       id="text62"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3333333,163.31733,137.874)"
-       clip-path="url(#clipPath63)"><tspan
-         id="tspan62"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         dx="0 -0.30000001 -0.15000001 -0.30000001 -0.30000001 -0.30000001 -0.15000001"
-         y="0">0.100 m</tspan><tspan
-         id="tspan63"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="66.447304"
-         dx="0 -0.30000001 -0.15000001 -0.30000001 -0.30000001 -0.30000001 -0.15000001"
-         y="0.113281">0.100 m</tspan></text>
-    <text
-       id="text63"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3333333,321.696,12.278667)"
-       clip-path="url(#clipPath64)"><tspan
-         id="tspan64"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         y="0">T</tspan></text>
-    <text
-       id="text64"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3333333,328.02133,14.954667)"
-       clip-path="url(#clipPath65)"><tspan
-         id="tspan65"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:8px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         y="0">i</tspan></text>
-    <text
-       id="text65"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3333333,332.92533,12.278667)"
-       clip-path="url(#clipPath79)"><tspan
-         id="tspan66"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         y="0">= 20 °C</tspan><tspan
-         id="tspan67"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="-9.5706997"
-         dx="0 0 0 -0.0097655999 0 0 -0.0097655999 0 0 0.0097655999 0 -0.0097655999 0 0 0 0 0 -0.0097655999"
-         y="49.060902">heat source 10 W/m</tspan><tspan
-         id="tspan68"
-         style="font-variant:normal;font-weight:normal;font-size:6.4px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="67.435501"
-         y="45.220669">2 </tspan><tspan
-         id="tspan69"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="-8.7917995"
-         dx="0 0 0 0 0.0097655999 0 -0.0097655999 0 0 0 0 -0.0097655999 0.0097655999 0 -0.0097655999 0 0 0.0097655999 -0.0097655999 0 -0.0097655999 0 -0.0097655999 0 0 -0.0097655999"
-         y="73.209373">surface thermal resistance, </tspan><tspan
-         id="tspan70"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="95.646202"
-         y="73.209373">R</tspan><tspan
-         id="tspan71"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="101.51495"
-         y="73.209373"> = 0.13 m</tspan><tspan
-         id="tspan72"
-         style="font-variant:normal;font-weight:normal;font-size:6.4px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="138.39626"
-         y="69.36953">2</tspan><tspan
-         id="tspan73"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="141.59625"
-         y="73.209373"> K/W</tspan><tspan
-         id="tspan74"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="-9.5697498"
-         dx="0 0 0 0 -0.0097655999 0.0097655999 0 -0.0097655999"
-         y="62.303471">concrete, </tspan><tspan
-         id="tspan75"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="27.724051"
-         y="62.303471">λ</tspan><tspan
-         id="tspan76"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="31.886551"
-         dx="0 0 0 0 0 0 0 0 0 -0.0097655999"
-         y="62.303471"> = 1.7 W/mK</tspan><tspan
-         id="tspan77"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="-9.8294497"
-         dx="0 0 -0.0097655999 0 0 0.0097655999 -0.0097655999"
-         y="36.59687">mineral wool, </tspan><tspan
-         id="tspan78"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="45.876751"
-         y="36.59687">λ </tspan><tspan
-         id="tspan79"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="52.439251"
-         dx="0 0 0 0 0 0 0 0 0 -0.0097655999"
-         y="36.59687">= 0.04 W/mK</tspan></text>
     <path
        id="path80"
        d="m 2279.34,335.961 h 86.01"
        style="fill:none;stroke:#231f20;stroke-width:3.685;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.86369;stroke-dasharray:none;stroke-opacity:1"
        transform="matrix(0.13333333,0,0,-0.13333333,0,152)"
        clip-path="url(#clipPath81)" />
-    <text
-       id="text81"
-       xml:space="preserve"
-       transform="matrix(1.3333333,0,0,1.3333333,320.164,43.0708)"
-       clip-path="url(#clipPath88)"><tspan
-         id="tspan81"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="0"
-         dx="0 0 0 0 -0.0097655999 0.0097655999 0 -0.0097655999"
-         y="0">concrete, </tspan><tspan
-         id="tspan82"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="37.2938"
-         y="0">λ</tspan><tspan
-         id="tspan83"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="41.456299"
-         dx="0 0 0 0 0 0 0 0 0 -0.0097655999"
-         y="0"> = 1.7 W/mK</tspan><tspan
-         id="tspan84"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="9.9999997e-05"
-         dx="0 0 0 0 0.0097655999 0 -0.0097655999 0 0 0 0 -0.0097655999 0.0097655999 0 -0.0097655999 0 0 0.0097655999 -0.0097655999 0 -0.0097655999 0 -0.0097655999 0 0 -0.0097655999"
-         y="-11.6848">surface thermal resistance, </tspan><tspan
-         id="tspan85"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="104.4381"
-         y="-11.6848">R</tspan><tspan
-         id="tspan86"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="110.30685"
-         y="-11.6848"> = 0.04 m</tspan><tspan
-         id="tspan87"
-         style="font-variant:normal;font-weight:normal;font-size:6.4px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="147.18816"
-         y="-15.52464">2</tspan><tspan
-         id="tspan88"
-         style="font-variant:normal;font-weight:normal;font-size:9.6px;font-family:'Times New Roman';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="150.38815"
-         y="-11.6848"> K/W</tspan></text>
     <path
        id="path89"
        d="m 513.48,24.9805 88.282,83.1285 -5.203,-2.621"
@@ -765,5 +597,178 @@
        transform="matrix(85.44,0,0,117.44,133.33333,1.0333333)"
        id="image97"
        clip-path="url(#clipPath98)" />
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="83.566315"
+       y="138.35085"
+       id="text2-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8"
+         x="83.566315"
+         y="138.35085"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">0.070 m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="158.66254"
+       y="139.19028"
+       id="text2-2-8-2"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7"
+         x="158.66254"
+         y="139.19028"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">0.100 m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="242.1859"
+       y="137.51141"
+       id="text2-2-8-2-2"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5"
+         x="242.1859"
+         y="137.51141"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">0.100 m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="316.89526"
+       y="13.852873"
+       id="text2-2-8-2-2-0"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5-0"
+         x="316.89526"
+         y="13.852873"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan1">T<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan2">i</tspan></tspan> = 20 °C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="0.43689379"
+       y="13.551268"
+       id="text2-2-8-2-2-0-9"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5-0-6"
+         x="0.43689379"
+         y="13.551268"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan1-1">T<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan2-7">o</tspan></tspan> = −17 °C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="314.79669"
+       y="28.542913"
+       id="text2-2-8-2-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5-6"
+         x="314.79669"
+         y="28.542913"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"> <tspan
+   style="font-size:12px"
+   id="tspan11">surface thermal resistance, </tspan><tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan3">R</tspan><tspan
+   style="font-size:12px"
+   id="tspan12"> = 0.04 m</tspan><tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan14">2</tspan><tspan
+   style="font-size:12px"
+   id="tspan13"> K/W</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="315.72864"
+       y="42.99292"
+       id="text2-2-8-2-2-8-6"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5-6-6"
+         x="315.72864"
+         y="42.99292"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"> <tspan
+   style="font-size:12px"
+   id="tspan15">concrete, <tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan16">λ</tspan> = 1.7 W/mK</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="315.62195"
+       y="58.762924"
+       id="text2-2-8-2-2-8-6-4"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5-6-6-1"
+         x="315.62195"
+         y="58.762924"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"> <tspan
+   style="font-size:12px"
+   id="tspan17">mineral wool, <tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan16-2">λ</tspan> = 0.04 W/mK</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic';fill:#000000;stroke-width:0.8;stroke-dasharray:3.2, 1.6, 0.8, 1.6"
+       x="419.29575"
+       y="115.84147"
+       id="text18"><tspan
+         sodipodi:role="line"
+         id="tspan18"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="315.89227"
+       y="76.810692"
+       id="text2-2-8-2-2-8-6-4-6"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5-6-6-1-6"
+         x="315.89227"
+         y="76.810692"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"> <tspan
+   style="font-size:12px"
+   id="tspan19">heat source 10 W/m</tspan><tspan
+   id="tspan21"
+   style="font-size:65%;baseline-shift:super">2</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="315.62195"
+       y="94.858452"
+       id="text2-2-8-2-2-8-6-3"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5-6-6-5"
+         x="315.62195"
+         y="94.858452"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"> <tspan
+   style="font-size:12px"
+   id="tspan15-0">concrete, <tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan16-3">λ</tspan> = 1.7 W/mK</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
+       x="315.72867"
+       y="109.72768"
+       id="text2-2-8-2-2-8-0"><tspan
+         sodipodi:role="line"
+         id="tspan2-6-8-7-5-6-5"
+         x="315.72867"
+         y="109.72768"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"> <tspan
+   style="font-size:12px"
+   id="tspan11-3">surface thermal resistance, </tspan><tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan3-2">R</tspan><tspan
+   style="font-size:12px"
+   id="tspan12-7"> = 0.13 m</tspan><tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan14-1">2</tspan><tspan
+   style="font-size:12px"
+   id="tspan13-5"> K/W</tspan></tspan></text>
   </g>
 </svg>

@@ -17,7 +17,7 @@ CALFEM is an interactive computer program for teaching the finite element method
 
 CALFEM, the program and its built-in philosophy have been developed at the Division of Structural Mechanics, Lund University, starting in the late 70’s. Many coworkers, former and present, have been engaged in the development at different stages, of whom we might mention 
 
-   *Per-Erik Austrell, Håkan Carlsson, Ola Dahlblom, Susanne Heyden, Jonas Lindemann, Anders Olsson, Karl-Gunnar Olsson, Kent Persson, Anders Peterson, Hans Petersson, Matti Ristinmaa, Göran Sandberg, Erik Serrano, Per-Anders Wernberg*
+   *Per-Erik Austrell, Håkan Carlsson, Ola Dahlblom, Henrik Danielsson, Susanne Heyden, Jonas Lindemann, Anders Olsson, Karl-Gunnar Olsson, Kent Persson, Anders Peterson, Hans Petersson, Matti Ristinmaa, Göran Sandberg, Erik Serrano, Per-Anders Wernberg*
 
 .. only:: python
 
@@ -45,6 +45,7 @@ The authors
    material_functions
    element_functions
    system_functions
+   mesh_functions
    graphics_functions
    general_purpose_matlab
    general_purpose_python
