@@ -28,27 +28,15 @@ dmises
 
     The input variable :code:`ptype` is used to define the type of analysis, cf. :code:`hooke`.
 
-    The vector :code:`mp` contains the material constants:
+    The vector :code:`mp` contains the material constants
 
-    .. only:: python
-
-        :code:`mp = [`:math:`\small{E, \nu, h}`:code:`]`
-
-    .. only:: matlab
-
-        :code:`mp = [`:math:`\small{\, E\;\nu\;h\,}`:code:`]`
+    :code:`mp`:math:`= [E \; \nu \; h]`
 
     where :math:`E` is the modulus of elasticity, :math:`\nu` is the Poisson's ratio, and :math:`h` is the plastic modulus.
 
-    The matrix :code:`es` contains current stresses obtained from :code:`plants` or some similar :code:`s`-function, and the vector :code:`st` contains the current state parameters:
+    The matrix :code:`es` contains current stresses obtained from :code:`plants` or some similar :code:`s`-function, and the vector :code:`st` contains the current state parameters
 
-    .. only:: python
-
-        :code:`st = [`:math:`\small{\, yi\;\sigma_y\;\varepsilon_{eff}^p\,}`:code:`]`
-
-    .. only:: matlab
-
-        :code:`st = [`:math:`\small{\, yi\;\sigma_y\;\varepsilon_{eff}^p\,}`:code:`]`
+    :code:`st`:math:`= [yi \; \sigma_y \; \varepsilon_{eff}^p]`
 
     where :math:`yi = 1` if the material behaviour is elasto-plastic, and :math:`yi = 0` if the material behaviour is elastic. The current yield stress is denoted by :math:`\sigma_y`, and the current effective plastic strain by :math:`\varepsilon_{eff}^p`.
 

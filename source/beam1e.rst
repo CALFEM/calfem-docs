@@ -49,7 +49,7 @@ beam1e
 
 :Description:
 
-    :code:`beam1e` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a one dimensional beam element.
+    :code:`beam1e` provides the element stiffness matrix :math:`\bar{\mathbf{K}}^e` for a one dimensional beam element.
 
     The input variables
 

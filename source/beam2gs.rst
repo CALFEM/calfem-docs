@@ -18,7 +18,7 @@ beam2gs
 
 :Purpose:
 
-    Compute section forces in a two dimensional nonlinear beam element with geometrical nonlinearity.
+    Compute section forces in a two dimensional beam element with geometric nonlinearity considering approximate solution.
 
     .. only:: html
 
@@ -54,7 +54,7 @@ beam2gs
 
 :Description:
 
-    :code:`beam2gs` computes the section forces and displacements in local directions along the geometric nonlinear beam element :code:`beam2ge`.
+    :code:`beam2gs` computes the section forces, axial force and displacements in local directions along the beam element :code:`beam2ge`.
 
     The input variables :code:`ex`, :code:`ey`, :code:`ep`, :code:`Qx` and :code:`eq`, are described in :code:`beam2ge`. The element displacements, stored in :code:`ed`, are obtained by the function :code:`extract_ed`. If a distributed transversal load is applied to the element, the variable :code:`eq` must be included. The number of evaluation points for section forces and displacements are determined by :code:`n`. If :code:`n` is omitted, only the ends of the beam are evaluated.
 

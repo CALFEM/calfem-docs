@@ -18,7 +18,7 @@ beam2ws
 
 :Purpose:
 
-    Compute section forces in a two dimensional beam element on elastic support.
+    Compute section forces in a two dimensional beam element with elastic support.
 
     .. only:: html
 

@@ -16,7 +16,7 @@ bar2ge
 ^^^^^^
 
 :Purpose:
-    Compute element stiffness matrix for a two dimensional geometric nonlinear bar.
+    Compute element stiffness matrix for a two dimensional bar element with geometric nonlinearity.
 
     .. only:: html
         
@@ -45,8 +45,7 @@ bar2ge
         Ke = cfc.bar2ge(ex, ey, ep, Qx)
     
 :Description:
-    :code:`bar2ge` provides the element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional
-    geometric nonlinear bar element.
+    :code:`bar2ge` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional bar element with geometric nonlinearity.
 
     The input variables
 
@@ -74,19 +73,26 @@ bar2ge
 
         \mathbf{K}^e = \mathbf{G}^T\,\bar{\mathbf{K}}^e\,\mathbf{G}
 
-    where
+    where :math:`\bar{\mathbf{K}}^e` is given by
 
     .. math::
 
-        \bar{\mathbf{K}}^e = \frac{D_{EA}}{L}
+        \bar{\mathbf{K}}^e = \bar{\mathbf{K}}^e_0 + \bar{\mathbf{K}}^e_{\sigma}
+
+    with
+
+    .. math::
+
+        \bar{\mathbf{K}}^e_0 = \frac{D_{EA}}{L}
         \begin{bmatrix}
         1 & 0 & -1 & 0 \\
         0 & 0 & 0 & 0 \\
         -1 & 0 & 1 & 0 \\
         0 & 0 & 0 & 0
         \end{bmatrix}
-        +
-        \frac{Q_{\bar{x}}}{L}
+    
+    .. math::
+        \bar{\mathbf{K}}^e_{\sigma} = \frac{Q_{\bar{x}}}{L}
         \begin{bmatrix}
         0 & 0 & 0 & 0 \\
         0 & 1 & 0 & -1 \\

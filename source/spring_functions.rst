@@ -2,7 +2,7 @@ Spring element functions
 ========================
 
 The spring element, shown below, can be used for the analysis of
-one-dimensional spring systems and for a variety of analogous physical problems.
+one dimensional spring systems and for a variety of analogous physical problems.
 
 .. only:: html
     

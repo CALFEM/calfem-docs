@@ -17,7 +17,7 @@ beam2ge
 
 :Purpose:
 
-    Compute element stiffness matrix for a two dimensional nonlinear beam element with respect to geometrical nonlinearity.
+    Compute element stiffness matrix for a two dimensional beam element with geometric nonlinearity considering approximate solution.
 
     .. only:: html
 
@@ -50,7 +50,7 @@ beam2ge
 
 :Description:
 
-    :code:`beam2ge` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element with respect to geometrical nonlinearity.
+    :code:`beam2ge` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element with geometric nonlinearity considering approximate solution.
 
     The input variables:
 

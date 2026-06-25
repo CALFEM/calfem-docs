@@ -18,7 +18,7 @@ beam2gxe
 
 :Purpose:
 
-    Compute element stiffness matrix for a two dimensional nonlinear beam element with exact solution.
+    Compute element stiffness matrix for a two dimensional beam element with geometric nonlinearity considering exact solution.
 
     .. only:: html
  
@@ -50,7 +50,7 @@ beam2gxe
 
 :Description:
 
-    :code:`beam2gxe` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element with respect to geometrical nonlinearity considering exact solution.
+    :code:`beam2gxe` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element with geometric nonlinearity considering exact solution.
 
     The input variables:
 

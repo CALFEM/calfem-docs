@@ -18,7 +18,7 @@ beam1we
 
 :Purpose:
 
-    Compute element stiffness matrix for a one dimensional beam element on elastic support.
+    Compute element stiffness matrix for a one dimensional beam element with elastic support.
 
     .. only:: html
 
@@ -50,7 +50,7 @@ beam1we
 
 :Description:
 
-    :code:`beam1we` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a one dimensional beam element on elastic support.
+    :code:`beam1we` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a one dimensional beam element with elastic support.
 
     The input variables
 
@@ -58,7 +58,7 @@ beam1we
     :math:`\qquad` 
     :code:`ep`:math:`=  [E\;\; I \;\; k_{\bar{y}}]`
 
-    supply the element nodal coordinates :math:`x_1` and :math:`x_2`, the modulus of elasticity :math:`E`, the moment of inertia :math:`I`, and the spring stiffness in the transverse direction :math:`k_{\bar{y}}`.
+    supply the element nodal coordinates :math:`x_1` and :math:`x_2`, the modulus of elasticity :math:`E`, the moment of inertia :math:`I`, and the spring stiffness per unit length in the transverse direction :math:`k_{\bar{y}}`.
 
     The element load vector :math:`{\mathbf{f}}_l^e` can also be computed if a uniformly distributed load is applied to the element. The optional input variable
 

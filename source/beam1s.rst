@@ -102,7 +102,7 @@ beam1s
 
         \bar{\mathbf{a}}^e = \begin{bmatrix} \bar{u}_1 \\ \bar{u}_2 \\ \bar{u}_3 \\ \bar{u}_4 \end{bmatrix}
 
-    where the transpose of :math:`\mathbf{a}^e` is stored in :code:`ed`.
+    where the transpose of :math:`\bar{\mathbf{a}}^e` is stored in :code:`ed`.
 
     The displacement :math:`v(\bar{x})`, the bending moment :math:`M(\bar{x})` and the shear force :math:`V(\bar{x})` are computed from
 

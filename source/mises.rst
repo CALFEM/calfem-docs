@@ -19,35 +19,31 @@ mises
     Compute stresses and plastic strains for an elasto-plastic isotropic hardening von Mises material.
 
 :Syntax:
-    .. code:: matlab
+
+.. only:: matlab
+
+    .. code-block:: matlab
 
         [es, deps, st] = mises(ptype, mp, est, st)
+    
+.. only:: python
+
+    .. code-block:: python
+
+        es, deps, st = mises(ptype, mp, est, st)
 
 :Description:
     The :code:`mises` function computes updated stresses, :code:`es`, plastic strain increments :code:`deps`, and state variables :code:`st` for an elasto-plastic isotropic hardening von Mises material.
 
-    The input variable :code:`ptype` defines the type of analysis, see also :code:`hooke`. The vector :code:`mp` contains the material constants:
+    The input variable :code:`ptype` defines the type of analysis, see also :code:`hooke`. The vector :code:`mp` contains the material constants
 
-
-    .. only:: python
-
-        :code:`mp = [`:math:`\small{E, \nu, h}`:code:`]`
-
-    .. only:: matlab
-
-        :code:`mp = [`:math:`\small{\, E\;\nu\;h\,}`:code:`]`
+    :code:`mp`:math:`= [E \; \nu \; h]`
 
     where :math:`E` is the modulus of elasticity, :math:`\nu` is the Poisson's ratio, and :math:`h` is the plastic modulus.
 
-    The input matrix :code:`est` contains trial stresses obtained by using the elastic material matrix :code:`D` in :code:`plants` or a similar :code:`s`-function. The input vector :code:`st` contains the state parameters:
+    The input matrix :code:`est` contains trial stresses obtained by using the elastic material matrix :code:`D` in :code:`plants` or a similar :code:`s`-function. The input vector :code:`st` contains the state parameters
 
-    .. only:: python
-
-        :code:`st = [`:math:`\small{\, yi\;\sigma_y\;\varepsilon_{eff}^p\,}`:code:`]`
-
-    .. only:: matlab
-
-        :code:`st = [`:math:`\small{\, yi\;\sigma_y\;\varepsilon_{eff}^p\,}`:code:`]`
+    :code:`st`:math:`= [yi \; \sigma_y \; \varepsilon_{eff}^p]`
 
     at the beginning of the step. The scalar :math:`yi` indicates whether the material behaviour is elasto-plastic (:math:`yi = 1`) or elastic (:math:`yi = 0`). The current yield stress is denoted by :math:`\sigma_y` and the effective plastic strain by :math:`\varepsilon_{eff}^p`.
 

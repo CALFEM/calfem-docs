@@ -42,7 +42,7 @@ spring1e
             Ke = cfc.spring1e(ep)
 
 :Description:
-    :code:`spring1e` provides the element stiffness matrix :math:`\bar{\mathbf{K}}^e` for a spring element.
+    :code:`spring1e` provides the element stiffness matrix :math:`\mathbf{K}^e` for a spring element.
 
     The input variable
 

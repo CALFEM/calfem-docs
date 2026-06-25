@@ -20,7 +20,7 @@ beam2gxs
 
 :Purpose:
 
-    Compute section forces in a two dimensional geometric nonlinear beam element with exact solution.
+    Compute section forces in a two dimensional beam element with geometric nonlinearity considering exact solution.
 
     .. only:: html
 
@@ -58,7 +58,7 @@ beam2gxs
 
 :Description:
 
-    :code:`beam2gxs` computes the section forces and displacements in local directions along the geometric nonlinear beam element :code:`beam2gxe`.
+    :code:`beam2gxs` computes the section forces, axial force and displacements in local directions along the beam element :code:`beam2gxe`.
 
     The input variables :code:`ex`, :code:`ey`, :code:`ep`, :code:`Qx` and :code:`eq`, are described in :code:`beam2gxe`. The element displacements, stored in :code:`ed`, are obtained by the function :code:`extract_ed`. If a distributed transversal load is applied to the element, the variable :code:`eq` must be included. The number of evaluation points for section forces and displacements are determined by :code:`n`. If :code:`n` is omitted, only the ends of the beam are evaluated.
 

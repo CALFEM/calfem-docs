@@ -12,9 +12,9 @@ Bar elements are available for one, two, and three dimensional analysis.
     * - bar1s
       - Compute normal force
     * - bar1we
-      - Compute element matrix for bar element with elastic support
+      - Compute element matrix for element with elastic support
     * - bar1ws
-      - Compute normal force for bar element with elastic support
+      - Compute normal force for element with elastic support
     
 
 .. list-table:: Two dimensional bar elements
@@ -28,7 +28,7 @@ Bar elements are available for one, two, and three dimensional analysis.
     * - bar2ge
       - Compute element matrix for geometric nonlinear element
     * - bar2gs
-      - Compute normal force for bar element with elastic support
+      - Compute axial and normal forces for geometric nonlinear element
     
 
 .. list-table:: Three dimensional bar elements
@@ -47,8 +47,8 @@ Bar elements are available for one, two, and three dimensional analysis.
     ======  ================================
     bar1e   Compute element matrix
     bar1s   Compute normal force
-    bar1we  Compute element matrix for bar element with elastic support
-    bar1ws  Compute normal force for bar element with elastic support
+    bar1we  Compute element matrix for element with elastic support
+    bar1ws  Compute normal force for element with elastic support
     ======  ================================
 
 .. .. table:: Two dimensional bar elements
@@ -58,7 +58,7 @@ Bar elements are available for one, two, and three dimensional analysis.
     bar2e   Compute element matrix
     bar2s   Compute normal force
     bar2ge  Compute element matrix for geometric nonlinear element
-    bar2gs  Compute normal force and axial force for geometric nonlinear element
+    bar2gs  Compute axial and normal forces for geometric nonlinear element
     ======  ================================
 
 .. .. table:: Three dimensional bar elements
@@ -70,7 +70,7 @@ Bar elements are available for one, two, and three dimensional analysis.
     ======  ================================
 
 
-.. 1 D Bar elements
+.. 1D Bar elements
 .. ---------------
 
 .. include:: bar1e.rst

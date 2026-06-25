@@ -18,7 +18,7 @@ beam2we
 
 :Purpose:
 
-    Compute element stiffness matrix for a two dimensional beam element on elastic support.
+    Compute element stiffness matrix for a two dimensional beam element with elastic support.
 
     .. only:: html
 
@@ -51,7 +51,7 @@ beam2we
 
 :Description:
 
-    :code:`beam2we` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element on elastic support.
+    :code:`beam2we` provides the global element stiffness matrix :math:`{\mathbf{K}}^e` for a two dimensional beam element with elastic support.
 
     The input variables
 
@@ -61,7 +61,7 @@ beam2we
     :math:`\qquad` 
     :code:`ep`:math:`=  [E\;\; A\;\; I\;\; k_{\bar{x}}\;\; k_{\bar{y}}]`
 
-    supply the element nodal coordinates :math:`x_1`, :math:`x_2`, :math:`y_1`, and :math:`y_2`, the modulus of elasticity :math:`E`, the cross section area :math:`A`, the moment of inertia :math:`I`, the spring stiffness in the axial direction :math:`k_{\bar{x}}`, and the spring stiffness in the transverse direction :math:`k_{\bar{y}}`.
+    supply the element nodal coordinates :math:`x_1`, :math:`x_2`, :math:`y_1`, and :math:`y_2`, the modulus of elasticity :math:`E`, the cross section area :math:`A`, the moment of inertia :math:`I`, the spring stiffness per unit length in the axial direction :math:`k_{\bar{x}}`, and the spring stiffness per unit length in the transverse direction :math:`k_{\bar{y}}`.
 
     The element load vector :math:`{\mathbf{f}}_l^e` can also be computed if uniformly distributed loads are applied to the element. The optional input variable
 
@@ -69,7 +69,7 @@ beam2we
 
         \text{eq} = [q_{\bar{x}}\;\; q_{\bar{y}}]
 
-    contains the distributed load per unit length, :math:`q_{\bar{x}}` and :math:`q_{\bar{y}}`.
+    contains the distributed loads per unit length, :math:`q_{\bar{x}}` and :math:`q_{\bar{y}}`.
 
 :Theory:
 
